@@ -14,11 +14,13 @@ TEMPLATE = app
 
 SOURCES += main.cpp\
         mainwindow.cpp \
-    centerwindow.cpp
+    centerwindow.cpp \
+    titlebar.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
-    util.h
+    util.h \
+    titlebar.h
 
 RESOURCES += \
     QFramer.qrc

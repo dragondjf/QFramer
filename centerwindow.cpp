@@ -1,10 +1,14 @@
 #include<QPushButton>
+#include<QVBoxLayout>
 #include "centerwindow.h"
-
-CenterWindow::CenterWindow(QWidget *parent) :
-    QWidget(parent)
+#include "titlebar.h"
+CenterWindow::CenterWindow(QWidget *parent)
 {
-    QPushButton *p = new QPushButton("1212121212", parent);
-    p->move(100, 200);
-    qDebug("init CenterWindow");
+    TitleBar* titleBar = new TitleBar();
+    QVBoxLayout* mainlayout = new QVBoxLayout;
+    mainlayout->addWidget(titleBar);
+    mainlayout->addStretch();
+    mainlayout->setContentsMargins(0, 0 ,0 ,0);
+    mainlayout->setSpacing(0);
+    setLayout(mainlayout);
 }

@@ -2,11 +2,11 @@
 /* QMainWindow Style*/
 /***********************************************************/
 QMainWindow{
-    color: rgb(0, 0, 255);
+    color: rgb(0, 255, 0);
 }
 
 QFrame#TitleBar{
-    background-color: transparent;
+    background-color: "darkgreen";
 }
 
 QFrame QLabel#TitleLabel{

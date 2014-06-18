@@ -1,9 +1,10 @@
 #ifndef CENTERWINDOW_H
 #define CENTERWINDOW_H
 
-#include <QWidget>
+#include <QFrame>
+#include<QWidget>
 
-class CenterWindow : public QWidget
+class CenterWindow : public QFrame
 {
     Q_OBJECT
 public:
