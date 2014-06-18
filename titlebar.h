@@ -5,11 +5,13 @@
 #include<QIcon>
 #include<QLabel>
 #include<QToolButton>
+#define Title_Height 25
 
 class TitleBar : public QFrame
 {
     Q_OBJECT
-private:
+public:
+    QIcon logoIcon;
     QIcon settingsIcon;
     QIcon skinIcon;
     QIcon minIcon;
@@ -17,11 +19,13 @@ private:
     QIcon normalIcon;
     QIcon closeIcon;
     QLabel *titleLabel;
+    QToolButton* logoButton;
     QToolButton* settingButton;
     QToolButton* skinButton;
     QToolButton* minButton;
     QToolButton* maxButton;
     QToolButton* closeButton;
+    bool normal_max_flag;
 public:
     explicit TitleBar(QWidget *parent = 0);
 
@@ -31,7 +35,7 @@ signals:
     void normaled();
     void closed();
 public slots:
-
+    void switchMaxMin();
 };
 
 #endif // TITLEBAR_H

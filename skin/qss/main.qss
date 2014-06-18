@@ -13,7 +13,7 @@ QFrame QLabel#TitleLabel{
     color: white;
     font-family: 'Verdana';
     font-size: 12px;
-    padding-left: 10px;
+    padding-left: 5px;
 }
 
 QFrame#NavgationBar{
@@ -157,6 +157,17 @@ QToolButton#close:hover{
     border: 1px;
 }
 
+QToolButton#logo{
+    background-color: transparent;
+    color: white;
+    border: 1px;
+}
+
+
+QToolButton#logo:hover{
+    background-color: transparent;
+    border: 1px;
+}
 
 QSplitter{
     border:none;

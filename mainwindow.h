@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "centerwindow.h"
 
 class MainWindow : public QMainWindow
 {
@@ -12,11 +13,16 @@ private:
     void mouseMoveEvent(QMouseEvent *e);
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
+    void mouseDoubleClickEvent(QMouseEvent *e);
     void keyPressEvent(QKeyEvent *e);
 public:
-    int i;
+    CenterWindow *c;
     MainWindow(QWidget *parent = 0);
+    void initConnect();
     ~MainWindow();
+
+public slots:
+    void swithMaxNormal();
 };
 
 #endif // MAINWINDOW_H

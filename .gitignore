@@ -19,3 +19,5 @@
 *.exe
 *.out
 *.app
+
+QFramer.pro.user.*

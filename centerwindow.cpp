@@ -4,7 +4,7 @@
 #include "titlebar.h"
 CenterWindow::CenterWindow(QWidget *parent)
 {
-    TitleBar* titleBar = new TitleBar();
+    titleBar = new TitleBar();
     QVBoxLayout* mainlayout = new QVBoxLayout;
     mainlayout->addWidget(titleBar);
     mainlayout->addStretch();

@@ -1,5 +1,5 @@
 #include "mainwindow.h"
-#include "centerwindow.h"
+
 #include "util.h"
 #include<QtCore>
 #include<QMouseEvent>
@@ -12,11 +12,28 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowFlags(Qt::FramelessWindowHint);
     setWindowTitle("QFramer");
 
-    CenterWindow *c = new CenterWindow();
+    c = new CenterWindow();
     setCentralWidget(c);
-//    qDebug("init Mainwindow");
     QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
     setStyleSheet(qss);
+    initConnect();
+}
+
+void MainWindow::initConnect()
+{
+    connect(c->titleBar, SIGNAL(minimuned()), this, SLOT(showMinimized()));
+    connect(c->titleBar, SIGNAL(maximumed()), this, SLOT(swithMaxNormal()));
+    connect(c->titleBar, SIGNAL(closed()), this, SLOT(close()));
+}
+
+void MainWindow::swithMaxNormal()
+{
+    if(isFullScreen())
+    {
+        showNormal();
+    }else{
+        showFullScreen();
+    }
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *e)
@@ -28,6 +45,17 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
     e->accept();
 }
 
+void MainWindow::mouseDoubleClickEvent(QMouseEvent *e)
+{
+    if(e->y() < Title_Height and e->x() < c->titleBar->width() - 120)
+    {
+        swithMaxNormal();
+        e->accept();
+    }else{
+        e->ignore();
+    }
+}
+
 void MainWindow::mouseReleaseEvent(QMouseEvent *e)
 {
     e->accept();
@@ -35,10 +63,14 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *e)
 
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
+    if(e->y() < Title_Height and e->x() > c->titleBar->width() - 120)
+    {
+        e->ignore();
+    }else{
+        move(e->globalPos() - dragPosition);
+        e->accept();
+    }
 
-    move(e->globalPos() - dragPosition);
-
-    e->accept();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *e)
