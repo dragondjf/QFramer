@@ -6,5 +6,6 @@ BaseToolButton::BaseToolButton(const QString& text)
     setCheckable(true);
     setFixedSize(80, 60);
     setText(text);
+    setFocusPolicy(Qt::NoFocus);
 
 }

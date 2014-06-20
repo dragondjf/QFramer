@@ -21,8 +21,8 @@ CenterWindow::CenterWindow(QWidget *parent)
     qmlViwer3->setResizeMode(qmlViwer3->SizeRootObjectToView);
     QQuickWidget* qmlViwer4 = new QQuickWidget;
     qmlViwer4->setResizeMode(qmlViwer4->SizeRootObjectToView);
-    qmlViwer1->setSource(QUrl(QString("qrc:/home/home.qml")));
-    qmlViwer2->setSource(QUrl(QString("qrc:/tiger/tiger/tiger.qml")));
+    qmlViwer1->setSource(QUrl(QString("qrc:/tiger/tiger/tiger.qml")));
+    qmlViwer2->setSource(QUrl(QString("qrc:/home/home.qml")));
     qmlViwer3->setSource(QUrl(QString("qrc:/quickwindow/application/appquick.qml")));
     qmlViwer4->setSource(QUrl(QString("qrc:/about/about.qml")));
     stackWidget->addWidget(qmlViwer1);

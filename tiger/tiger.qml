@@ -59,10 +59,8 @@ Item {
 
         Canvas {
             id: canvas
-            x: 100
-            y: 20
-            width: parent.width - x * 2
-            height: parent.height - y * 2
+            width: 320
+            height: 320
             antialiasing: true
 
             property string strokeStyle: "steelblue"
@@ -70,7 +68,7 @@ Item {
             property bool fill: true
             property bool stroke: true
             property real alpha: 1
-            property real scale: 0.8
+            property real scale: 0.5
             property real rotate: 0
             property int frame: 0
 
