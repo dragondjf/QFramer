@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include<QStatusBar>
 #include "centerwindow.h"
 
 class MainWindow : public QMainWindow
@@ -17,6 +18,8 @@ private:
     void keyPressEvent(QKeyEvent *e);
 public:
     CenterWindow *c;
+    QStatusBar *pstatusbar;
+
     MainWindow(QWidget *parent = 0);
     void initConnect();
     ~MainWindow();

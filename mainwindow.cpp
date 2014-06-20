@@ -4,16 +4,22 @@
 #include<QtCore>
 #include<QMouseEvent>
 #include<QKeyEvent>
+#include <QDesktopWidget>
+#include<QApplication>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    resize(800, 600);
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+
+    resize(desktopWidget->width() * 0.8, desktopWidget->height() *0.8);
     setWindowFlags(Qt::FramelessWindowHint);
     setWindowTitle("QFramer");
 
     c = new CenterWindow();
+    pstatusbar = new QStatusBar;
     setCentralWidget(c);
+    setStatusBar(pstatusbar);
     QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
     setStyleSheet(qss);
     initConnect();

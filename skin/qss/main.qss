@@ -2,11 +2,14 @@
 /* QMainWindow Style*/
 /***********************************************************/
 QMainWindow{
-    color: rgb(0, 255, 0);
+    background-color: lightgray;
 }
 
+QFrame#CenterWindow{
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));
+}
 QFrame#TitleBar{
-    background-color: "darkgreen";
+    background-color: transparent;
 }
 
 QFrame QLabel#TitleLabel{
@@ -205,7 +208,7 @@ QPushButton#customColorButton:hover, QPushButton#customColorButton:pressed
 }
 
 QPushButton#Home{
-    background-image: url(:/icons/dark/appbar.monitor.play.png);
+    background-image: url(:/skin/icons/dark/appbar.monitor.play.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
@@ -217,7 +220,7 @@ QPushButton#Home{
 
 QPushButton#Home:hover{
     background-color: lightgreen;
-    border:1px  solid black;
+    /*border:1px  solid black;*/
 }
 
 QPushButton#Home:checked{
@@ -230,7 +233,7 @@ QPushButton#Home:flat{
 }
 
 QPushButton#QssMaker{
-    background-image: url(:/icons/dark/appbar.tree.leaf.three.png);
+    background-image: url(:/skin/icons/dark/appbar.tree.leaf.three.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
@@ -242,7 +245,7 @@ QPushButton#QssMaker{
 
 QPushButton#QssMaker:hover{
     background-color: lightgreen;
-    border:1px  solid black;
+    /*border:1px  solid black;*/
 }
 
 QPushButton#QssMaker:checked{
@@ -256,7 +259,7 @@ QPushButton#QssMaker:flat{
 
 
 QPushButton#Qexer{
-    background-image: url(:/icons/dark/appbar.list.png);
+    background-image: url(:/skin/icons/dark/appbar.list.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
@@ -284,7 +287,7 @@ QPushButton#Qexer:flat{
 }
 
 QPushButton#About{
-    background-image: url(:/icons/dark/appbar.message.smiley.png);
+    background-image: url(:/skin/icons/dark/appbar.message.smiley.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
@@ -310,7 +313,7 @@ QPushButton#About:flat{
 }
 
 QPushButton#QtWebkit{
-    background-image: url(:/icons/dark/appbar.os.chromium.png);
+    background-image: url(:/skin/icons/dark/appbar.os.chromium.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
@@ -336,7 +339,7 @@ QPushButton#QtWebkit:flat{
 }
 
 QPushButton#QmlViewer{
-    background-image: url(:/icons/dark/appbar.image.redeye.png);
+    background-image: url(:/skin/icons/dark/appbar.image.redeye.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
@@ -363,7 +366,7 @@ QPushButton#QmlViewer:flat{
 
 
 QPushButton#Exit{
-    background-image: url(:/icons/dark/appbar.app.remove.png);
+    background-image: url(:/skin/icons/dark/appbar.app.remove.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;

@@ -2,16 +2,17 @@
 #include<QHBoxLayout>
 #include<QLabel>
 TitleBar::TitleBar(QWidget *parent)
+    :QFrame(parent)
 {
     setFixedHeight(Title_Height);
     setObjectName(QString("TitleBar"));
-    logoIcon = QIcon(QString(":/skin/images/QFramer.png"));
-    settingsIcon =  QIcon(QString(":/skin/icons/dark/appbar.control.down.png"));
-    skinIcon =  QIcon(QString(":/skin/icons/dark/appbar.clothes.shirt.png"));
-    minIcon =  QIcon(QString(":/skin/icons/dark/appbar.minus.png"));
-    maxIcon =  QIcon(QString(":/skin/icons/dark/appbar.fullscreen.box.png"));
-    normalIcon =  QIcon(QString(":/skin/icons/dark/appbar.app.png"));
-    closeIcon =  QIcon(QString(":/skin/icons/dark/appbar.close.png"));
+    logoIcon = new QIcon(QString(":/skin/images/QFramer.png"));
+    settingsIcon = new QIcon(QString(":/skin/icons/dark/appbar.control.down.png"));
+    skinIcon =  new QIcon(QString(":/skin/icons/dark/appbar.clothes.shirt.png"));
+    minIcon =  new QIcon(QString(":/skin/icons/dark/appbar.minus.png"));
+    maxIcon =  new QIcon(QString(":/skin/icons/dark/appbar.fullscreen.box.png"));
+    normalIcon =  new QIcon(QString(":/skin/icons/dark/appbar.app.png"));
+    closeIcon =  new QIcon(QString(":/skin/icons/dark/appbar.close.png"));
     titleLabel = new QLabel;
     logoButton = new QToolButton;
     settingButton = new QToolButton;
@@ -21,20 +22,20 @@ TitleBar::TitleBar(QWidget *parent)
     closeButton = new QToolButton;
     normal_max_flag = true;
 
-    logoButton->setIcon(logoIcon);
+    logoButton->setIcon(*logoIcon);
     logoButton->setIconSize(QSize(Title_Height, Title_Height));
     logoButton->setObjectName(QString("logo"));
     titleLabel->setText(tr("QFramer"));
     titleLabel->setObjectName(QString("TitleLabel"));
-    settingButton->setIcon(settingsIcon);
+    settingButton->setIcon(*settingsIcon);
     settingButton->setIconSize(QSize(Title_Height, Title_Height));
-    skinButton->setIcon(skinIcon);
+    skinButton->setIcon(*skinIcon);
     skinButton->setIconSize(QSize(Title_Height, Title_Height));
-    minButton->setIcon(minIcon);
+    minButton->setIcon(*minIcon);
     minButton->setIconSize(QSize(Title_Height, Title_Height));
-    maxButton->setIcon(normalIcon);
+    maxButton->setIcon(*normalIcon);
     maxButton->setIconSize(QSize(Title_Height, Title_Height));
-    closeButton->setIcon(closeIcon);
+    closeButton->setIcon(*closeIcon);
     closeButton->setIconSize(QSize(Title_Height, Title_Height));
     closeButton->setObjectName(tr("close"));
     QHBoxLayout* mainlayout = new QHBoxLayout;
@@ -60,11 +61,11 @@ void TitleBar::switchMaxMin()
 {
     if(normal_max_flag)
     {
-        maxButton->setIcon(maxIcon);
+        maxButton->setIcon(*maxIcon);
         normal_max_flag = false;
     }
     else{
-        maxButton->setIcon(normalIcon);
+        maxButton->setIcon(*normalIcon);
         normal_max_flag = true;
     }
 }

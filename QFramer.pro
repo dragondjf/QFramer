@@ -4,7 +4,7 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT       += core gui quick widgets quickwidgets
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -15,12 +15,16 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     centerwindow.cpp \
-    titlebar.cpp
+    titlebar.cpp \
+    navgationbar.cpp \
+    basetoolbutton.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
     util.h \
-    titlebar.h
+    titlebar.h \
+    navgationbar.h \
+    basetoolbutton.h
 
 RESOURCES += \
     QFramer.qrc

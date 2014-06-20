@@ -1,6 +1,6 @@
 #ifndef TITLEBAR_H
 #define TITLEBAR_H
-
+#include<QWidget>
 #include <QFrame>
 #include<QIcon>
 #include<QLabel>
@@ -11,14 +11,14 @@ class TitleBar : public QFrame
 {
     Q_OBJECT
 public:
-    QIcon logoIcon;
-    QIcon settingsIcon;
-    QIcon skinIcon;
-    QIcon minIcon;
-    QIcon maxIcon;
-    QIcon normalIcon;
-    QIcon closeIcon;
-    QLabel *titleLabel;
+    QIcon* logoIcon;
+    QIcon* settingsIcon;
+    QIcon* skinIcon;
+    QIcon* minIcon;
+    QIcon* maxIcon;
+    QIcon* normalIcon;
+    QIcon* closeIcon;
+    QLabel* titleLabel;
     QToolButton* logoButton;
     QToolButton* settingButton;
     QToolButton* skinButton;
