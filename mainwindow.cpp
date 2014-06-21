@@ -7,6 +7,7 @@
 #include <QDesktopWidget>
 #include<QApplication>
 
+
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -17,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 void MainWindow::initData()
 {
-
+    leftbuttonpressed = false;
 }
 
 void MainWindow::initUI()
@@ -58,6 +59,7 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
     if(e->button() & Qt::LeftButton)
     {
         dragPosition = e->globalPos() - frameGeometry().topLeft();
+        leftbuttonpressed = true;
     }
     e->accept();
 }
@@ -73,8 +75,30 @@ void MainWindow::mouseDoubleClickEvent(QMouseEvent *e)
     }
 }
 
+void MainWindow::SetCursorStyle(enum_Direction direction)
+{
+    //设置上下左右以及右上、右下、左上、坐下的鼠标形状
+    switch(direction)
+    {
+    case eTop:
+    case eBottom:
+        setCursor(Qt::SizeVerCursor);
+        break;
+    case eRight:
+    case eLeft:
+        setCursor(Qt::SizeHorCursor);
+        break;
+    case eNormal:
+        setCursor(Qt::ArrowCursor);
+    default:
+        setCursor(Qt::ArrowCursor);
+        break;
+    }
+}
+
 void MainWindow::mouseReleaseEvent(QMouseEvent *e)
 {
+    leftbuttonpressed = false;
     e->accept();
 }
 
@@ -86,6 +110,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
     }
     else
     {
+
         if(e->y() < Title_Height and e->x() > c->titleBar->width() - 120)
         {
             e->ignore();
