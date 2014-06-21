@@ -21,6 +21,8 @@ public:
     QStatusBar *pstatusbar;
 
     MainWindow(QWidget *parent = 0);
+    void initData();
+    void initUI();
     void initConnect();
     ~MainWindow();
 

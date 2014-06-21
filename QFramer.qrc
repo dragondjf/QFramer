@@ -1914,6 +1914,8 @@
     </qresource>
     <qresource prefix="/home">
         <file>home.qml</file>
+        <file>webkit.qml</file>
+        <file>MouseClick.qml</file>
     </qresource>
     <qresource prefix="/quickwindow">
         <file>application/affectors/MouseClick.qml</file>
@@ -3837,6 +3839,7 @@
         <file>application/test.qml</file>
     </qresource>
     <qresource prefix="/about">
+        <file>photowall.qml</file>
         <file>about.qml</file>
     </qresource>
     <qresource prefix="/tiger">

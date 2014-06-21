@@ -16,6 +16,8 @@ public:
     QStackedWidget* stackWidget;
 public:
     explicit CenterWindow(QWidget *parent = 0);
+    void initData();
+    void initUI();
     void initConnect();
 signals:
 

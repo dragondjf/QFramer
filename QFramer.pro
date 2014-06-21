@@ -5,12 +5,11 @@
 #-------------------------------------------------
 
 QT       += core gui quick widgets quickwidgets
-
+QT += webkitwidgets network
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QFramer
 TEMPLATE = app
-
 
 SOURCES += main.cpp\
         mainwindow.cpp \

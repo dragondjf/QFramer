@@ -2,7 +2,7 @@
 /* QMainWindow Style*/
 /***********************************************************/
 QMainWindow{
-    background-color: lightgray;
+    background-color: green;
 }
 
 QFrame#CenterWindow{
@@ -111,13 +111,19 @@ QMenu::indicator {
 
 QStatusBar {
     color: black;
-    background-color: transparent;
+    background-color: white;
 }
 
 QStatusBar QLabel#datatimelabel{
     background-color: transparent;
     font: 16px;
     color: black;
+}
+
+QSizeGrip {
+    
+    width: 16px;
+    height: 16px;
 }
 
 QToolButton{
@@ -285,6 +291,33 @@ QPushButton#Qexer:checked{
 QPushButton#Qexer:flat{
     border: none;
 }
+
+QPushButton#PhotoWall{
+    background-image: url(:/skin/icons/dark/appbar.image.hdr.png);
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    background-color: transparent;
+    color: white;
+    text-align: center bottom;
+    padding-bottom: 5px;
+}
+
+QPushButton#PhotoWall:hover{
+    background-color: lightgreen;
+    border:1px  black;
+    opacity: 0.1;
+}
+
+QPushButton#PhotoWall:checked{
+    background-color: #00CD00;
+    color: white;
+}
+
+QPushButton#PhotoWall:flat{
+    border: none;
+}
+
 
 QPushButton#About{
     background-image: url(:/skin/icons/dark/appbar.message.smiley.png);

@@ -28,7 +28,9 @@ public:
     bool normal_max_flag;
 public:
     explicit TitleBar(QWidget *parent = 0);
-
+    void initData();
+    void initUI();
+    void initConnect();
 signals:
     void maximumed();
     void minimuned();

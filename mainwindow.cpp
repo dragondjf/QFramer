@@ -10,10 +10,22 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
-    QDesktopWidget* desktopWidget = QApplication::desktop();
+    initData();
+    initUI();
+    initConnect();
+}
 
-    resize(desktopWidget->width() * 0.8, desktopWidget->height() *0.8);
-    setWindowFlags(Qt::FramelessWindowHint);
+void MainWindow::initData()
+{
+
+}
+
+void MainWindow::initUI()
+{
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+    resize(desktopWidget->availableGeometry().width() * 0.8, desktopWidget->availableGeometry().height() *0.8);
+    setMaximumSize(desktopWidget->availableGeometry().size());
+    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
     setWindowTitle("QFramer");
 
     c = new CenterWindow();
@@ -22,7 +34,6 @@ MainWindow::MainWindow(QWidget *parent)
     setStatusBar(pstatusbar);
     QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
     setStyleSheet(qss);
-    initConnect();
 }
 
 void MainWindow::initConnect()
@@ -34,11 +45,11 @@ void MainWindow::initConnect()
 
 void MainWindow::swithMaxNormal()
 {
-    if(isFullScreen())
+    if(isMaximized())
     {
         showNormal();
     }else{
-        showFullScreen();
+        showMaximized();
     }
 }
 
@@ -69,12 +80,20 @@ void MainWindow::mouseReleaseEvent(QMouseEvent *e)
 
 void MainWindow::mouseMoveEvent(QMouseEvent *e)
 {
-    if(e->y() < Title_Height and e->x() > c->titleBar->width() - 120)
+    if(isMaximized())
     {
         e->ignore();
-    }else{
-        move(e->globalPos() - dragPosition);
-        e->accept();
+    }
+    else
+    {
+        if(e->y() < Title_Height and e->x() > c->titleBar->width() - 120)
+        {
+            e->ignore();
+        }
+        else{
+            move(e->globalPos() - dragPosition);
+            e->accept();
+        }
     }
 
 }
@@ -85,12 +104,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
         close();
     }
     else if (e->key() == Qt::Key_F11) {
-        if(isFullScreen()){
-            showNormal();
-        }
-        else{
-            showFullScreen();
-        }
+        c->titleBar->maxButton->click();
     }
 }
 

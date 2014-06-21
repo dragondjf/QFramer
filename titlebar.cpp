@@ -1,11 +1,19 @@
 #include "titlebar.h"
 #include<QHBoxLayout>
 #include<QLabel>
+
+
 TitleBar::TitleBar(QWidget *parent)
     :QFrame(parent)
 {
-    setFixedHeight(Title_Height);
-    setObjectName(QString("TitleBar"));
+    initData();
+    initUI();
+    initConnect();
+}
+
+
+void TitleBar::initData()
+{
     logoIcon = new QIcon(QString(":/skin/images/QFramer.png"));
     settingsIcon = new QIcon(QString(":/skin/icons/dark/appbar.control.down.png"));
     skinIcon =  new QIcon(QString(":/skin/icons/dark/appbar.clothes.shirt.png"));
@@ -13,6 +21,14 @@ TitleBar::TitleBar(QWidget *parent)
     maxIcon =  new QIcon(QString(":/skin/icons/dark/appbar.fullscreen.box.png"));
     normalIcon =  new QIcon(QString(":/skin/icons/dark/appbar.app.png"));
     closeIcon =  new QIcon(QString(":/skin/icons/dark/appbar.close.png"));
+    normal_max_flag = true;
+}
+
+void TitleBar::initUI()
+{
+    setFixedHeight(Title_Height);
+    setObjectName(QString("TitleBar"));
+
     titleLabel = new QLabel;
     logoButton = new QToolButton;
     settingButton = new QToolButton;
@@ -20,7 +36,6 @@ TitleBar::TitleBar(QWidget *parent)
     minButton = new QToolButton;
     maxButton = new QToolButton;
     closeButton = new QToolButton;
-    normal_max_flag = true;
 
     logoButton->setIcon(*logoIcon);
     logoButton->setIconSize(QSize(Title_Height, Title_Height));
@@ -50,7 +65,10 @@ TitleBar::TitleBar(QWidget *parent)
     mainlayout->setContentsMargins(0, 0, 5, 0);
     mainlayout->setSpacing(0);
     setLayout(mainlayout);
+}
 
+void TitleBar::initConnect()
+{
     connect(maxButton, SIGNAL(clicked()), this, SIGNAL(maximumed()));
     connect(minButton, SIGNAL(clicked()), this, SIGNAL(minimuned()));
     connect(closeButton, SIGNAL(clicked()), this, SIGNAL(closed()));

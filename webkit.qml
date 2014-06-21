@@ -8,6 +8,12 @@ Rectangle {
         GradientStop {id: stop; position: 1.0; color: "white" }
     }
 
+    Text {
+        id: hometext
+        anchors.centerIn: parent
+        text: qsTr("welcom")
+    }
+
     MouseClick{
         anchors.fill: parent
         color: "transparent"
