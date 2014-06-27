@@ -16,14 +16,17 @@ SOURCES += main.cpp\
     centerwindow.cpp \
     titlebar.cpp \
     navgationbar.cpp \
-    basetoolbutton.cpp
+    basetoolbutton.cpp \
+    util.cpp \
+    settingmenu.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
-    util.h \
     titlebar.h \
     navgationbar.h \
-    basetoolbutton.h
+    basetoolbutton.h \
+    util.h \
+    settingmenu.h
 
 RESOURCES += \
     QFramer.qrc

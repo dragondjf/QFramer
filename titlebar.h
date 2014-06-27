@@ -5,6 +5,7 @@
 #include<QIcon>
 #include<QLabel>
 #include<QToolButton>
+#include"settingmenu.h"
 #define Title_Height 25
 
 class TitleBar : public QFrame
@@ -26,6 +27,8 @@ public:
     QToolButton* maxButton;
     QToolButton* closeButton;
     bool normal_max_flag;
+
+    SettingMenu* settingMenu;
 public:
     explicit TitleBar(QWidget *parent = 0);
     void initData();
@@ -36,6 +39,7 @@ signals:
     void minimuned();
     void normaled();
     void closed();
+
 public slots:
     void switchMaxMin();
 };

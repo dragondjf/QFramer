@@ -1,0 +1,12 @@
+{
+    "encoding" : "UTF-8",
+    "plug-ins" : [
+        "python",
+        "c++",
+        "ruby"
+    ],
+    "indent" : {
+        "length" : 3,
+        "use_space" : true
+    }
+}

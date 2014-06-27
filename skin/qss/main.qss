@@ -68,15 +68,17 @@ QMenu::item {
     height: 23px;
     padding: 0px 25px 0px 20px;
     /*background-image: url(gui/skin/PNG/bg_dock.png);*/
-    background: rgb(54, 178, 230);
+    background: green;
 }
 
 QMenu::item:selected {
-    background-color: lightgreen;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 green, stop: 1 yellow);
 }
 
 QMenu::icon:checked { /* appearance of a 'checked' icon */
-    background: lightgreen;
+    background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 yellow, stop: 1 green);
     border: 1px inset gray;
     position: absolute;
     top: 1px;
@@ -109,6 +111,7 @@ QMenu::indicator {
     height: 13px;
 }
 
+
 QStatusBar {
     color: black;
     background-color: white;
@@ -133,7 +136,8 @@ QToolButton{
 
 
 QToolButton:hover{
-    background-color: lightgreen;
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 yellow, stop: 1 green);
     border: 1px;
 }
 
@@ -152,6 +156,15 @@ QToolButton::menu-button {
 
 QToolButton::menu-arrow {
     image: none;
+}
+
+QToolButton::menu-indicator {
+    image: none;
+}
+
+QToolButton:open { /* when the button has its menu open */
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 green, stop: 1 yellow);
 }
 
 

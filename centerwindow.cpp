@@ -8,6 +8,7 @@
 CenterWindow::CenterWindow(QWidget *parent)
     :QFrame(parent)
 {
+    qDebug("centerwindow init");
     initData();
     initUI();
     initConnect();

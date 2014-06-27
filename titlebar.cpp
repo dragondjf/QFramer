@@ -37,6 +37,9 @@ void TitleBar::initUI()
     maxButton = new QToolButton;
     closeButton = new QToolButton;
 
+    settingMenu = new SettingMenu;
+    settingButton->setMenu(settingMenu);
+
     logoButton->setIcon(*logoIcon);
     logoButton->setIconSize(QSize(Title_Height, Title_Height));
     logoButton->setObjectName(QString("logo"));
@@ -69,6 +72,7 @@ void TitleBar::initUI()
 
 void TitleBar::initConnect()
 {
+    connect(settingButton, &QToolButton::clicked, settingButton, &QToolButton::showMenu);
     connect(maxButton, SIGNAL(clicked()), this, SIGNAL(maximumed()));
     connect(minButton, SIGNAL(clicked()), this, SIGNAL(minimuned()));
     connect(closeButton, SIGNAL(clicked()), this, SIGNAL(closed()));

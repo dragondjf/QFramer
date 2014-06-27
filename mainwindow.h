@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include<QStatusBar>
+#include<QSystemTrayIcon>
 #include "centerwindow.h"
 
 enum enum_Direction{
@@ -27,8 +28,9 @@ private:
     void keyPressEvent(QKeyEvent *e);
     void SetCursorStyle(enum_Direction i);
 public:
-    CenterWindow *c;
+    CenterWindow *centerwindow;
     QStatusBar *pstatusbar;
+    QSystemTrayIcon *trayicon;
 
     MainWindow(QWidget *parent = 0);
     void initData();
@@ -38,6 +40,7 @@ public:
 
 public slots:
     void swithMaxNormal();
+    void onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason);
 };
 
 #endif // MAINWINDOW_H

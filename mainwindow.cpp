@@ -11,6 +11,7 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    qDebug("mainwindow init");
     initData();
     initUI();
     initConnect();
@@ -29,19 +30,25 @@ void MainWindow::initUI()
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
     setWindowTitle("QFramer");
 
-    c = new CenterWindow();
+    centerwindow = new CenterWindow();
     pstatusbar = new QStatusBar;
-    setCentralWidget(c);
+    setCentralWidget(centerwindow);
     setStatusBar(pstatusbar);
+
+    trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
+    trayicon->setContextMenu(centerwindow->titleBar->settingMenu);
+    trayicon->show();
     QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
     setStyleSheet(qss);
 }
 
 void MainWindow::initConnect()
 {
-    connect(c->titleBar, SIGNAL(minimuned()), this, SLOT(showMinimized()));
-    connect(c->titleBar, SIGNAL(maximumed()), this, SLOT(swithMaxNormal()));
-    connect(c->titleBar, SIGNAL(closed()), this, SLOT(close()));
+    connect(centerwindow->titleBar, SIGNAL(minimuned()), this, SLOT(showMinimized()));
+    connect(centerwindow->titleBar, SIGNAL(maximumed()), this, SLOT(swithMaxNormal()));
+    connect(centerwindow->titleBar, SIGNAL(closed()), this, SLOT(close()));
+    connect(trayicon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+            this, SLOT(onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason)));
 }
 
 void MainWindow::swithMaxNormal()
@@ -66,7 +73,7 @@ void MainWindow::mousePressEvent(QMouseEvent *e)
 
 void MainWindow::mouseDoubleClickEvent(QMouseEvent *e)
 {
-    if(e->y() < Title_Height and e->x() < c->titleBar->width() - 120)
+    if(e->y() < Title_Height and e->x() < centerwindow->titleBar->width() - 120)
     {
         swithMaxNormal();
         e->accept();
@@ -111,7 +118,7 @@ void MainWindow::mouseMoveEvent(QMouseEvent *e)
     else
     {
 
-        if(e->y() < Title_Height and e->x() > c->titleBar->width() - 120)
+        if(e->y() < Title_Height and e->x() > centerwindow->titleBar->width() - 120)
         {
             e->ignore();
         }
@@ -129,8 +136,36 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
         close();
     }
     else if (e->key() == Qt::Key_F11) {
-        c->titleBar->maxButton->click();
+        centerwindow->titleBar->maxButton->click();
     }
+}
+
+void MainWindow::onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason)
+{
+    switch(reason)
+        {
+        //单击
+        case QSystemTrayIcon::Trigger:
+            //双击
+        case QSystemTrayIcon::DoubleClick:
+            if(this->isHidden())
+            {
+                //恢复窗口显示
+                this->show();
+                //一下两句缺一均不能有效将窗口置顶
+                this->setWindowState(Qt::WindowActive);
+                this->activateWindow();
+            }
+            else
+            {
+                this->hide();
+            }
+            break;
+        case QSystemTrayIcon::Context:
+            break;
+        default:
+            break;
+        }
 }
 
 MainWindow::~MainWindow()
