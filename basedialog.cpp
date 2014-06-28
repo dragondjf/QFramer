@@ -5,7 +5,6 @@ BaseDialog::BaseDialog(QWidget *parent) :
     QDialog(parent)
 {
     setWindowFlags(Qt::FramelessWindowHint);
-    setFixedSize(400, 300);
     setAttribute(Qt::WA_DeleteOnClose);
 //    setSizeGripEnabled(true);
     initData();

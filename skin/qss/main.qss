@@ -5,6 +5,7 @@ QMainWindow{
     background-color: green;
 }
 
+
 QFrame#CenterWindow{
     background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));
 }

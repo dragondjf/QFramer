@@ -12,7 +12,7 @@ AboutDialog::AboutDialog(QWidget *parent) :
 
 void AboutDialog::initUI()
 {
-//    BaseDialog::initUI();
+    setFixedSize(400, 300);
 
     QTextEdit* infoEdit = new QTextEdit;
     infoEdit->setObjectName(QString("info"));

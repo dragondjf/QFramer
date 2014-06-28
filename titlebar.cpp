@@ -1,4 +1,5 @@
 #include "titlebar.h"
+#include"bgskinpopup.h"
 #include<QHBoxLayout>
 #include<QLabel>
 
@@ -73,6 +74,7 @@ void TitleBar::initUI()
 void TitleBar::initConnect()
 {
     connect(settingButton, &QToolButton::clicked, settingButton, &QToolButton::showMenu);
+    connect(skinButton, &QToolButton::clicked, this, &TitleBar::changeSkin);
     connect(maxButton, SIGNAL(clicked()), this, SIGNAL(maximumed()));
     connect(minButton, SIGNAL(clicked()), this, SIGNAL(minimuned()));
     connect(closeButton, SIGNAL(clicked()), this, SIGNAL(closed()));
@@ -90,4 +92,12 @@ void TitleBar::switchMaxMin()
         maxButton->setIcon(*normalIcon);
         normal_max_flag = true;
     }
+}
+
+
+void TitleBar::changeSkin()
+{
+    BgSkinPopup* skinPopup = new BgSkinPopup;
+    skinPopup->move(QWidget::mapToGlobal(skinButton->geometry().bottomLeft()));
+    skinPopup->show();
 }

@@ -6,6 +6,7 @@
 #include<QLabel>
 #include<QToolButton>
 #include"settingmenu.h"
+#include"bgskinpopup.h"
 #define Title_Height 25
 
 class TitleBar : public QFrame
@@ -42,6 +43,7 @@ signals:
 
 public slots:
     void switchMaxMin();
+    void changeSkin();
 };
 
 #endif // TITLEBAR_H

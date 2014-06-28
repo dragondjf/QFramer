@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     settingmenucontroller.cpp \
     basedialog.cpp \
     aboutdialog.cpp \
-    settingdialog.cpp
+    settingdialog.cpp \
+    bgskinpopup.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
@@ -34,7 +35,8 @@ HEADERS  += mainwindow.h \
     settingmenucontroller.h \
     basedialog.h \
     aboutdialog.h \
-    settingdialog.h
+    settingdialog.h \
+    bgskinpopup.h
 
 RESOURCES += \
     QFramer.qrc

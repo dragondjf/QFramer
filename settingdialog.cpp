@@ -8,7 +8,7 @@ SettingDialog::SettingDialog(QWidget *parent) :
 
 void SettingDialog::initUI()
 {
-//    BaseDialog::initUI();
+    setFixedSize(450, 300);
     QVBoxLayout* mainLayout = (QVBoxLayout*)layout();
     mainLayout->addStretch();
 }
