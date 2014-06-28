@@ -3,7 +3,7 @@
 #include<QtWebKitWidgets/QWebView>
 #include<QtQuickWidgets/QQuickWidget>
 #include "centerwindow.h"
-
+#include "gradientshow.h"
 
 CenterWindow::CenterWindow(QWidget *parent)
     :QFrame(parent)
@@ -27,10 +27,11 @@ void CenterWindow::initUI()
 
     stackWidget = new QStackedWidget();
 
-//    QWebView* webkit = new QWebView(this);
-
     QQuickWidget* qmlViwer1 = new QQuickWidget;
     qmlViwer1->setResizeMode(qmlViwer1->SizeRootObjectToView);
+
+    GradientShow* gradientShow = new GradientShow;
+
 
     QQuickWidget* qmlViwer2 = new QQuickWidget;
     qmlViwer2->setResizeMode(qmlViwer2->SizeRootObjectToView);
@@ -47,7 +48,7 @@ void CenterWindow::initUI()
     qmlViwer3->setSource(QUrl(QString("qrc:/quickwindow/application/appquick.qml")));
     qmlViwer4->setSource(QUrl(QString("qrc:/about/photowall.qml")));
     qmlViwer5->setSource(QUrl(QString("qrc:/about/about.qml")));
-    stackWidget->addWidget(qmlViwer1);
+    stackWidget->addWidget(gradientShow);
     stackWidget->addWidget(qmlViwer2);
     stackWidget->addWidget(qmlViwer3);
     stackWidget->addWidget(qmlViwer4);

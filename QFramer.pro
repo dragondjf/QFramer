@@ -23,7 +23,8 @@ SOURCES += main.cpp\
     basedialog.cpp \
     aboutdialog.cpp \
     settingdialog.cpp \
-    bgskinpopup.cpp
+    bgskinpopup.cpp \
+    gradientshow.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
@@ -36,7 +37,8 @@ HEADERS  += mainwindow.h \
     basedialog.h \
     aboutdialog.h \
     settingdialog.h \
-    bgskinpopup.h
+    bgskinpopup.h \
+    gradientshow.h
 
 RESOURCES += \
     QFramer.qrc
