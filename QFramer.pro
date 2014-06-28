@@ -18,7 +18,11 @@ SOURCES += main.cpp\
     navgationbar.cpp \
     basetoolbutton.cpp \
     util.cpp \
-    settingmenu.cpp
+    settingmenu.cpp \
+    settingmenucontroller.cpp \
+    basedialog.cpp \
+    aboutdialog.cpp \
+    settingdialog.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
@@ -26,7 +30,11 @@ HEADERS  += mainwindow.h \
     navgationbar.h \
     basetoolbutton.h \
     util.h \
-    settingmenu.h
+    settingmenu.h \
+    settingmenucontroller.h \
+    basedialog.h \
+    aboutdialog.h \
+    settingdialog.h
 
 RESOURCES += \
     QFramer.qrc

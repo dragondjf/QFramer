@@ -1,36 +1,54 @@
 QDialog{
     border:2px solid rgb(41, 153, 66);
+    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 white, stop:0.511364 yellow, stop:1 green);
 }
 
-QPushButton
-{
-    color: rgb(255, 255, 255);
-    background-color: rgb(167, 205, 255);
-    background: rgb(41, 153, 66);
-    border:none;
-    font-size: 15px;
-    text-align: center;
-    width: 60px;
+QFrame#TitleBar{
+    background-color: transparent;
 }
-QPushButton:hover, QPushButton:pressed , QPushButton:checked
-{
-    background-color: rgb(85, 170, 255);
-    text-align: center;
+QFrame QLabel#TitleLabel{
+    color: white;
+    font-family: 'Verdana';
+    font-size: 12px;
+    padding-left: 5px;
 }
-QPushButton:hover
-{
-    background-repeat:no-repeat;
-    background-position: center left;
+
+QPushButton{
+    background-color: green;
+    color: white;
 }
-QPushButton:pressed, QPushButton:checked
-{
-    background-repeat:no-repeat;
-    background-position: center left;
+
+
+QPushButton:hover{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 yellow, stop: 1 green);
+    border: 1px;
 }
 
 QPushButton:disabled{
-    color: gray;
-    background-color: rgb(167, 205, 255);
+    background-color: gray;
+    border: 1px;
+}
+
+QPushButton[popupMode="1"] { /* only for MenuButtonPopup */
+    padding-right: 0px; /* make way for the popup button */
+}
+
+QPushButton::menu-button {
+    border: none;
+}
+
+QPushButton::menu-arrow {
+    image: none;
+}
+
+QPushButton::menu-indicator {
+    image: none;
+}
+
+QPushButton:open { /* when the button has its menu open */
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 green, stop: 1 yellow);
 }
 
 QLineEdit {
@@ -40,4 +58,79 @@ QLineEdit {
     border-radius: 8px;
     width:40px;
     height: 30px;
+}
+
+
+QToolButton{
+    background-color: transparent;
+    color: white;
+}
+
+
+QToolButton:hover{
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 yellow, stop: 1 green);
+    border: 1px;
+}
+
+QToolButton:disabled{
+    background-color: gray;
+    border: 1px;
+}
+
+QToolButton[popupMode="1"] { /* only for MenuButtonPopup */
+    padding-right: 0px; /* make way for the popup button */
+}
+
+QToolButton::menu-button {
+    border: none;
+}
+
+QToolButton::menu-arrow {
+    image: none;
+}
+
+QToolButton::menu-indicator {
+    image: none;
+}
+
+QToolButton:open { /* when the button has its menu open */
+    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                      stop: 0 green, stop: 1 yellow);
+}
+
+
+QToolButton#close{
+    background-color: transparent;
+    color: white;
+}
+
+
+QToolButton#close:hover{
+    background-color: red;
+    border: 1px;
+}
+
+QToolButton#logo{
+    background-color: transparent;
+    color: white;
+    border: 1px;
+}
+
+
+QToolButton#logo:hover{
+    background-color: transparent;
+    border: 1px;
+}
+
+QLabel#QFramer{
+    height: 132;
+    border-image: url(:/skin/images/logo.png);
+}
+
+QTextEdit#info{
+    background-color: transparent;
+    color:green;
+    font-size: 16px;
+    border: none;
 }
