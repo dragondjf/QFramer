@@ -3,7 +3,7 @@
 #include "aboutdialog.h"
 #include<QDesktopServices>
 #include<QUrl>
-
+#include<QApplication>
 
 SettingMenuController::SettingMenuController(QObject *parent) :
     QObject(parent)
@@ -13,6 +13,10 @@ SettingMenuController::SettingMenuController(QObject *parent) :
 
 void SettingMenuController::showSettingDialog()
 {
+    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+        if (widget->isHidden())
+            widget->show();
+    }
     SettingDialog* settingDialog = new SettingDialog;
     settingDialog->exec();
 }
@@ -34,6 +38,10 @@ void SettingMenuController::visitOfficialSite()
 
 void SettingMenuController::showAboutUs()
 {
+    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
+        if (widget->isHidden())
+            widget->show();
+    }
     AboutDialog* aboutDialog = new AboutDialog;
     aboutDialog->exec();
 

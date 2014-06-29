@@ -5,7 +5,7 @@
 #include<QStatusBar>
 #include<QSystemTrayIcon>
 #include "centerwindow.h"
-
+#include"flywidget.h"
 enum enum_Direction{
     eLeft,
     eTop,
@@ -20,6 +20,8 @@ class MainWindow : public QMainWindow
 private:
     QPoint dragPosition;
     bool leftbuttonpressed;
+    FlyWidget* flyWidget;
+
 
     void mouseMoveEvent(QMouseEvent *e);
     void mousePressEvent(QMouseEvent *e);
@@ -40,6 +42,7 @@ public:
 
 public slots:
     void swithMaxNormal();
+    void showFlyWidget();
     void onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason);
 };
 

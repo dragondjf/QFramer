@@ -27,7 +27,8 @@ SOURCES += main.cpp\
     gradientshow.cpp \
     webkitshow.cpp \
     basequickwidget.cpp \
-    qmlviwer.cpp
+    qmlviwer.cpp \
+    flywidget.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
@@ -44,7 +45,8 @@ HEADERS  += mainwindow.h \
     gradientshow.h \
     webkitshow.h \
     basequickwidget.h \
-    qmlviwer.h
+    qmlviwer.h \
+    flywidget.h
 
 RESOURCES += \
     QFramer.qrc

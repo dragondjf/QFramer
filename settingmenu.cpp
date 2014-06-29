@@ -1,5 +1,5 @@
 #include "settingmenu.h"
-
+#include <QApplication>
 SettingMenu::SettingMenu(QWidget *parent) :
     QMenu(parent)
 {
@@ -14,7 +14,7 @@ SettingMenu::SettingMenu(QWidget *parent) :
 
 void SettingMenu::initData()
 {
-    actionNames<< tr("Settings") << tr("Check update") << tr("Online help") << tr("Office site") << tr("About us");
+    actionNames<< tr("Settings") << tr("Check update") << tr("Online help") << tr("Office site") << tr("About us")<< tr("Quit");
 }
 
 void SettingMenu::initUI()
@@ -39,5 +39,5 @@ void SettingMenu::initConnect()
     connect(actionMaps[tr("Online help")], &QAction::triggered, controller, &SettingMenuController::onlineHelp);
     connect(actionMaps[tr("Office site")], &QAction::triggered, controller, &SettingMenuController::visitOfficialSite);
     connect(actionMaps[tr("About us")], &QAction::triggered, controller, &SettingMenuController::showAboutUs);
-
+    connect(actionMaps[tr("Quit")], &QAction::triggered, QApplication::instance(), &QApplication::quit);
 }

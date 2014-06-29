@@ -1,7 +1,7 @@
 #include "mainwindow.h"
 #include "util.h"
-
 #include<QtCore>
+
 #include<QMouseEvent>
 #include<QKeyEvent>
 #include <QDesktopWidget>
@@ -28,6 +28,7 @@ void MainWindow::initUI()
     resize(desktopWidget->availableGeometry().width() * 0.8, desktopWidget->availableGeometry().height() *0.8);
     setMaximumSize(desktopWidget->availableGeometry().size());
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
+//    setWindowFlags(Qt::Tool);
     setWindowTitle("QFramer");
 
     centerwindow = new CenterWindow();
@@ -38,18 +39,24 @@ void MainWindow::initUI()
     trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
     trayicon->setContextMenu(centerwindow->titleBar->settingMenu);
     trayicon->show();
+
+    flyWidget = new FlyWidget(this);
+    flyWidget->menu = centerwindow->titleBar->settingMenu;
+    flyWidget->move(desktopWidget->availableGeometry().width() * 0.8, desktopWidget->availableGeometry().height() *0.2);
+
     QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
     setStyleSheet(qss);
 }
 
 void MainWindow::initConnect()
 {
-    connect(centerwindow->titleBar, SIGNAL(minimuned()), this, SLOT(showMinimized()));
+    connect(centerwindow->titleBar, SIGNAL(minimuned()), this, SLOT(hide()));
+    connect(centerwindow->titleBar, SIGNAL(minimuned()), this, SLOT(showFlyWidget()));
     connect(centerwindow->titleBar, SIGNAL(maximumed()), this, SLOT(swithMaxNormal()));
-    connect(centerwindow->titleBar, SIGNAL(closed()), this, SLOT(close()));
+    connect(centerwindow->titleBar, SIGNAL(closed()), this, SLOT(hide()));
+    connect(centerwindow->titleBar, SIGNAL(closed()), this, SLOT(showFlyWidget()));
     connect(trayicon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason)));
-
 
 }
 
@@ -61,6 +68,12 @@ void MainWindow::swithMaxNormal()
     }else{
         showMaximized();
     }
+}
+
+
+void MainWindow::showFlyWidget()
+{
+    flyWidget->show();
 }
 
 void MainWindow::mousePressEvent(QMouseEvent *e)
