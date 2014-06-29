@@ -385,6 +385,34 @@ QPushButton#QtWebkit:flat{
     border: none;
 }
 
+
+QPushButton#QQuickWidget{
+    background-image: url(:/skin/icons/dark/appbar.layout.body.png);
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    background-color: transparent;
+    color: white;
+    text-align: center bottom;
+    padding-bottom: 5px;
+}
+
+QPushButton#QQuickWidget:hover{
+    background-color: lightgreen;
+    border:1px  black;
+    opacity: 0.1;
+}
+
+QPushButton#QQuickWidget:checked{
+    background-color: #00CD00;
+    color: white;
+}
+
+QPushButton#QQuickWidget:flat{
+    border: none;
+}
+
+
 QPushButton#QmlViewer{
     background-image: url(:/skin/icons/dark/appbar.image.redeye.png);
     background-repeat:no-repeat;

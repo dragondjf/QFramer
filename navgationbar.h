@@ -12,11 +12,6 @@ class NavgationBar : public QFrame
 public:
     QList<BaseToolButton*> buttons;
     QList<QString> buttonTitles;
-    BaseToolButton* homeButton;
-    BaseToolButton* webkitButton;
-    BaseToolButton* qmlviewerButton;
-    BaseToolButton* aboutButton;
-    BaseToolButton* photowallButton;
 public:
     explicit NavgationBar(QWidget *parent = 0);
     void initData();

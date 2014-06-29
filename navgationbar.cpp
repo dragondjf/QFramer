@@ -11,7 +11,7 @@ NavgationBar::NavgationBar(QWidget *parent)
 
 void NavgationBar::initData()
 {
-    buttonTitles << tr("Home") << tr("QtWebkit") << tr("QmlViewer") << tr("PhotoWall") << tr("About");
+    buttonTitles << tr("Home") << tr("QtWebkit") << tr("QQuickWidget")<<tr("QmlViewer") << tr("PhotoWall") << tr("About");
 }
 
 void NavgationBar::initUI()

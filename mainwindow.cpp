@@ -49,6 +49,8 @@ void MainWindow::initConnect()
     connect(centerwindow->titleBar, SIGNAL(closed()), this, SLOT(close()));
     connect(trayicon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason)));
+
+
 }
 
 void MainWindow::swithMaxNormal()

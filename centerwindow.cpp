@@ -1,10 +1,10 @@
 #include<QPushButton>
 #include<QVBoxLayout>
-#include<QtWebKitWidgets/QWebView>
-#include<QtQuickWidgets/QQuickWidget>
+#include<QQuickWidget>
+#include<QWebView>
 #include "centerwindow.h"
 #include "gradientshow.h"
-
+#include "webkitshow.h"
 CenterWindow::CenterWindow(QWidget *parent)
     :QFrame(parent)
 {
@@ -32,6 +32,8 @@ void CenterWindow::initUI()
 
     GradientShow* gradientShow = new GradientShow;
 
+    WebkitShow *webkitShow = new WebkitShow(this);
+//    webkitShow->view->load(QUrl("http://qt.nokia.com/"));
 
     QQuickWidget* qmlViwer2 = new QQuickWidget;
     qmlViwer2->setResizeMode(qmlViwer2->SizeRootObjectToView);
@@ -49,6 +51,7 @@ void CenterWindow::initUI()
     qmlViwer4->setSource(QUrl(QString("qrc:/about/photowall.qml")));
     qmlViwer5->setSource(QUrl(QString("qrc:/about/about.qml")));
     stackWidget->addWidget(gradientShow);
+    stackWidget->addWidget(webkitShow);
     stackWidget->addWidget(qmlViwer2);
     stackWidget->addWidget(qmlViwer3);
     stackWidget->addWidget(qmlViwer4);
