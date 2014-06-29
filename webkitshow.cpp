@@ -25,7 +25,8 @@ void WebkitShow::initData()
 void WebkitShow::initUI()
 {
     view = new QWebView(this);
-    QUrl url = QUrl("http://www.qt-project.org");
+    QUrl url = QUrl(QString("file:///%1/echarts-1.4.1/test/allchart/all.html").arg(QDir::currentPath()));
+    qDebug(qPrintable(QString("file:///%1/echarts-1.4.1/test/allchart/all.html").arg(QDir::currentPath())));
     view->load(url);
 //    setupInspector();
     QSplitter* splitter = new QSplitter;

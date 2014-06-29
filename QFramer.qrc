@@ -1915,7 +1915,7 @@
     </qresource>
     <qresource prefix="/home">
         <file>home.qml</file>
-        <file>webkit.qml</file>
+        <file>welcom.qml</file>
         <file>MouseClick.qml</file>
     </qresource>
     <qresource prefix="/quickwindow">
