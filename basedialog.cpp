@@ -1,6 +1,9 @@
 #include "basedialog.h"
 #include "util.h"
 #include<QVBoxLayout>
+#include<QPropertyAnimation>
+#include<QDesktopWidget>
+#include<QApplication>
 BaseDialog::BaseDialog(QWidget *parent) :
     QDialog(parent)
 {
@@ -21,6 +24,7 @@ void BaseDialog::initData()
 
 void BaseDialog::initUI()
 {
+    resize(0, 0);
     titlebar = new TitleBar;
     titlebar->settingButton->hide();
     titlebar->skinButton->hide();
@@ -38,7 +42,7 @@ void BaseDialog::initUI()
 
 void BaseDialog::initConnect()
 {
-    connect(titlebar->closeButton, SIGNAL(clicked()), this, SLOT(close()));
+    connect(titlebar->closeButton, SIGNAL(clicked()), this, SLOT(animationClose()));
 }
 
 void BaseDialog::mousePressEvent(QMouseEvent *e)
@@ -65,4 +69,39 @@ void BaseDialog::mouseMoveEvent(QMouseEvent *e)
         e->ignore();
     }
 
+}
+
+void BaseDialog::showEvent(QShowEvent *event)
+{
+
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
+    animation->setDuration(200);
+    int w = desktopWidget->availableGeometry().width();
+    int h = desktopWidget->availableGeometry().height();
+    animation->setStartValue(QRect(w * 0.5, h*0.5, 0, 0));
+    animation->setEndValue(QRect(w /2 - normalSize.width()/2,
+                                 h / 2 - normalSize.height() / 2,
+                                 normalSize.width(), normalSize.height()));
+    animation->start();
+    QWidget::showEvent(event);
+}
+
+void BaseDialog::closeEvent(QCloseEvent *event)
+{
+
+    QWidget::closeEvent(event);
+}
+
+
+void BaseDialog::animationClose()
+{
+    QRect noraml = geometry();
+    QRect closeRect = QRect(noraml.x(), noraml.y() + noraml.height()/2, noraml.width(), 0);
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
+    connect(animation, &QPropertyAnimation::finished, this, &BaseDialog::close);
+    animation->setDuration(100);
+    animation->setStartValue(noraml);
+    animation->setEndValue(closeRect);
+    animation->start();
 }
