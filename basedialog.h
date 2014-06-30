@@ -3,6 +3,8 @@
 
 #include <QDialog>
 #include<QMouseEvent>
+#include<QShowEvent>
+#include<QCloseEvent>
 #include "titlebar.h"
 
 class BaseDialog : public QDialog
@@ -17,6 +19,13 @@ private:
     void mouseReleaseEvent(QMouseEvent *e);
 
     TitleBar* titlebar;
+
+protected:
+    void showEvent(QShowEvent * event);
+    void closeEvent(QCloseEvent * event);
+public:
+    QSize normalSize;
+
 public:
     explicit BaseDialog(QWidget *parent = 0);
     void initData();
@@ -26,7 +35,7 @@ public:
 signals:
 
 public slots:
-
+    void animationClose();
 };
 
 #endif // BASEDIALOG_H
