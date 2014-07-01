@@ -1,11 +1,16 @@
 #include "gradientshow.h"
 #include<QPainter>
-
+#include<QLabel>
+#include<QPropertyAnimation>
 GradientShow::GradientShow(QWidget *parent) :
     QWidget(parent)
 {
 }
 
+void GradientShow::mousePressEvent(QMouseEvent *event)
+{
+//    cloudAntimation();
+}
 
 void GradientShow::paintEvent(QPaintEvent *e)
 {
@@ -86,4 +91,22 @@ void GradientShow::paintEvent(QPaintEvent *e)
     conicalGrad3.setSpread(QGradient::ReflectSpread);
     QRect rect_conical3(550,470,200,200);
     painter.fillRect(rect_conical3, conicalGrad3);
+}
+
+void GradientShow::cloudAntimation()
+{
+    QLabel* circle = new QLabel(this);
+    circle->setStyleSheet(QString("\
+         QLabel{background-color: green;}"\
+                                  ));
+    circle->resize(size());
+    circle->setWindowOpacity(0);
+    circle->show();
+    QPropertyAnimation *animation = new QPropertyAnimation(circle, "windowOpacity");
+    connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
+    animation->setDuration(2000);
+    animation->setStartValue(0);
+    animation->setEndValue(1);
+    animation->setEasingCurve(QEasingCurve::OutCubic);
+    animation->start();
 }
