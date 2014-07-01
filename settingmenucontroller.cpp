@@ -4,6 +4,7 @@
 #include<QDesktopServices>
 #include<QUrl>
 #include<QApplication>
+#include<mainwindow.h>
 
 SettingMenuController::SettingMenuController(QObject *parent) :
     QObject(parent)
@@ -45,4 +46,10 @@ void SettingMenuController::showAboutUs()
     AboutDialog* aboutDialog = new AboutDialog;
     aboutDialog->exec();
 
+}
+
+void SettingMenuController::closeMainWindow()
+{
+    MainWindow* p = MainWindow::getInstance();
+    p->close();
 }
