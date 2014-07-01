@@ -6,7 +6,10 @@
 #include<QKeyEvent>
 #include <QDesktopWidget>
 #include<QApplication>
+#include<QDebug>
+#include<QDir>
 
+MainWindow* MainWindow::instance = NULL;
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -25,10 +28,10 @@ void MainWindow::initData()
 void MainWindow::initUI()
 {
     QDesktopWidget* desktopWidget = QApplication::desktop();
-    resize(desktopWidget->availableGeometry().width() * 0.8, desktopWidget->availableGeometry().height() *0.8);
     setMaximumSize(desktopWidget->availableGeometry().size());
+    readSettings();
+
     setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
-//    setWindowFlags(Qt::Tool);
     setWindowTitle("QFramer");
 
     centerwindow = new CenterWindow();
@@ -58,6 +61,40 @@ void MainWindow::initConnect()
     connect(trayicon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason)));
 
+}
+
+MainWindow* MainWindow::getInstance()
+{
+    if(!instance)
+    {
+        instance = new MainWindow();
+    }
+    return instance;
+}
+
+void MainWindow::readSettings()
+{
+   QDesktopWidget* desktopWidget = QApplication::desktop();
+   int w = desktopWidget->availableGeometry().width();
+   int h = desktopWidget->availableGeometry().height();
+   QSettings settings(QDir::currentPath() + "/QFramer.ini", QSettings::IniFormat);
+   settings.beginGroup("MainWindow");
+   resize(settings.value("size", QSize(w * 0.8, h * 0.8)).toSize());
+   printf("%d\n" ,(settings.value("size", QSize(w * 0.8, h * 0.8)).toSize().height()));
+   printf("%d\n" ,(settings.value("size", QSize(w * 0.8, h * 0.8)).toSize().width()));
+   move(settings.value("pos", QPoint(w * 0.1, h * 0.1)).toPoint());
+   settings.endGroup();
+
+}
+
+void MainWindow::writeSettings()
+{
+    QSettings settings(QDir::currentPath() + "/QFramer.ini", QSettings::IniFormat);
+    qDebug(qPrintable(QDir::currentPath() + "/QFramer.ini"));
+    settings.beginGroup("MainWindow");
+    settings.setValue("size", size());
+    settings.setValue("pos", pos());
+    settings.endGroup();
 }
 
 void MainWindow::swithMaxNormal()
@@ -153,6 +190,13 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
     else if (e->key() == Qt::Key_F11) {
         centerwindow->titleBar->maxButton->click();
     }
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    printf("=========");
+    writeSettings();
+    QMainWindow::closeEvent(event);
 }
 
 void MainWindow::onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason)

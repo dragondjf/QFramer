@@ -17,6 +17,7 @@ public slots:
     void onlineHelp();
     void visitOfficialSite();
     void showAboutUs();
+    void closeMainWindow();
 };
 
 #endif // SETTINGMENUCONTROLLER_H

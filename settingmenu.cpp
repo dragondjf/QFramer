@@ -39,5 +39,5 @@ void SettingMenu::initConnect()
     connect(actionMaps[tr("Online help")], &QAction::triggered, controller, &SettingMenuController::onlineHelp);
     connect(actionMaps[tr("Office site")], &QAction::triggered, controller, &SettingMenuController::visitOfficialSite);
     connect(actionMaps[tr("About us")], &QAction::triggered, controller, &SettingMenuController::showAboutUs);
-    connect(actionMaps[tr("Quit")], &QAction::triggered, QApplication::instance(), &QApplication::quit);
+    connect(actionMaps[tr("Quit")], &QAction::triggered, controller, &SettingMenuController::closeMainWindow);
 }
