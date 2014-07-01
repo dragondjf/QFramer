@@ -47,9 +47,9 @@ void CenterWindow::initUI()
 //    qmlViwer3->setSource(QUrl(QString("qrc:/quickwindow/application/appquick.qml")));
     qmlViwer4->setSource(QUrl(QString("qrc:/about/photowall.qml")));
     qmlViwer5->setSource(QUrl(QString("qrc:/about/about.qml")));
-    stackWidget->addWidget(webkitShow);
-    stackWidget->addWidget(gradientShow);
 //    stackWidget->addWidget(webkitShow);
+    stackWidget->addWidget(gradientShow);
+    stackWidget->addWidget(webkitShow);
     stackWidget->addWidget(qmlViwer2);
     stackWidget->addWidget(qmlViwer3);
     stackWidget->addWidget(qmlViwer4);
