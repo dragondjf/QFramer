@@ -20,4 +20,5 @@
 *.out
 *.app
 
+QFramer.pro.user
 QFramer.pro.user.*

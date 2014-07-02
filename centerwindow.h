@@ -14,6 +14,7 @@ public:
     TitleBar* titleBar;
     NavgationBar* navagationBar;
     QStackedWidget* stackWidget;
+    int currentIndex;
 public:
     explicit CenterWindow(QWidget *parent = 0);
     void initData();
@@ -23,7 +24,8 @@ signals:
 
 public slots:
     void switchscreen(const int index);
-
+    void switchscreen();
+    void cloudAntimation(const int index);
 };
 
 #endif // CENTERWINDOW_H
