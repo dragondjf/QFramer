@@ -25,7 +25,7 @@ void CenterWindow::initData()
 void CenterWindow::initUI()
 {
     setObjectName(QString("CenterWindow"));
-    titleBar = new TitleBar();
+    titleBar = new FTitleBar();
     navagationBar = new NavgationBar();
 
     stackWidget = new QStackedWidget();

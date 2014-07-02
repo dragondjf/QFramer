@@ -1,4 +1,4 @@
-#include "settingmenucontroller.h"
+#include "fsettingmenucontroller.h"
 #include "settingdialog.h"
 #include "aboutdialog.h"
 #include<QDesktopServices>
@@ -6,49 +6,43 @@
 #include<QApplication>
 #include<mainwindow.h>
 
-SettingMenuController::SettingMenuController(QObject *parent) :
+FSettingMenuController::FSettingMenuController(QObject *parent) :
     QObject(parent)
 {
 
 }
 
-void SettingMenuController::showSettingDialog()
+void FSettingMenuController::showSettingDialog()
 {
-    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-        if (widget->isHidden())
-            widget->show();
-    }
+    MainWindow::getInstance()->show();
     SettingDialog* settingDialog = new SettingDialog;
     settingDialog->exec();
 }
 
-void SettingMenuController::checkUpdate()
+void FSettingMenuController::checkUpdate()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/dragondjf/QCFramer"));
 }
 
-void SettingMenuController::onlineHelp()
+void FSettingMenuController::onlineHelp()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/dragondjf/QCFramer"));
 }
 
-void SettingMenuController::visitOfficialSite()
+void FSettingMenuController::visitOfficialSite()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/dragondjf/QCFramer"));
 }
 
-void SettingMenuController::showAboutUs()
+void FSettingMenuController::showAboutUs()
 {
-    foreach (QWidget *widget, QApplication::topLevelWidgets()) {
-        if (widget->isHidden())
-            widget->show();
-    }
+    MainWindow::getInstance()->show();
     AboutDialog* aboutDialog = new AboutDialog;
     aboutDialog->exec();
 
 }
 
-void SettingMenuController::closeMainWindow()
+void FSettingMenuController::closeMainWindow()
 {
     MainWindow* p = MainWindow::getInstance();
     p->close();

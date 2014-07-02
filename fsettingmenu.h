@@ -1,10 +1,10 @@
-#ifndef SETTINGMENU_H
-#define SETTINGMENU_H
+#ifndef FSETTINGMENU_H
+#define FSETTINGMENU_H
 #include "util.h"
-#include "settingmenucontroller.h"
+#include "fsettingmenucontroller.h"
 #include <QMenu>
 #include <QAction>
-class SettingMenu : public QMenu
+class FSettingMenu : public QMenu
 {
     Q_OBJECT
 public:
@@ -17,17 +17,18 @@ public:
     QAction* onlineHelpAction;
     QAction* officialSiteAction;
     QAction* aboutAction;
-    SettingMenuController* controller;
+    FSettingMenuController* controller;
 public:
-    explicit SettingMenu(QWidget *parent = 0);
+    explicit FSettingMenu(QWidget *parent = 0);
     void initData();
     void initUI();
     void initController();
     void initConnect();
+
 signals:
 
 public slots:
-
+    void switchActionState();
 };
 
-#endif // SETTINGMENU_H
+#endif // FSETTINGMENU_H

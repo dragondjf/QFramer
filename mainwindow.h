@@ -21,7 +21,7 @@ class MainWindow : public QMainWindow
 private:
     QPoint dragPosition;
     bool leftbuttonpressed;
-    FlyWidget* flyWidget;
+
 
     void readSettings();
     void writeSettings();
@@ -38,7 +38,9 @@ public:
     CenterWindow *centerwindow;
     QStatusBar *pstatusbar;
     QSystemTrayIcon *trayicon;
+    FlyWidget* flyWidget;
     static MainWindow* instance;
+
 
     MainWindow(QWidget *parent = 0);
     void initData();

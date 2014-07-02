@@ -14,12 +14,9 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     centerwindow.cpp \
-    titlebar.cpp \
     navgationbar.cpp \
     basetoolbutton.cpp \
     util.cpp \
-    settingmenu.cpp \
-    settingmenucontroller.cpp \
     basedialog.cpp \
     aboutdialog.cpp \
     settingdialog.cpp \
@@ -28,16 +25,16 @@ SOURCES += main.cpp\
     webkitshow.cpp \
     basequickwidget.cpp \
     qmlviwer.cpp \
-    flywidget.cpp
+    flywidget.cpp \
+    ftitlebar.cpp \
+    fsettingmenu.cpp \
+    fsettingmenucontroller.cpp
 
 HEADERS  += mainwindow.h \
     centerwindow.h \
-    titlebar.h \
     navgationbar.h \
     basetoolbutton.h \
     util.h \
-    settingmenu.h \
-    settingmenucontroller.h \
     basedialog.h \
     aboutdialog.h \
     settingdialog.h \
@@ -46,7 +43,10 @@ HEADERS  += mainwindow.h \
     webkitshow.h \
     basequickwidget.h \
     qmlviwer.h \
-    flywidget.h
+    flywidget.h \
+    ftitlebar.h \
+    fsettingmenu.h \
+    fsettingmenucontroller.h
 
 RESOURCES += \
     QFramer.qrc

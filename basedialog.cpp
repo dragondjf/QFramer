@@ -25,11 +25,11 @@ void BaseDialog::initData()
 void BaseDialog::initUI()
 {
     resize(0, 0);
-    titlebar = new TitleBar;
-    titlebar->settingButton->hide();
-    titlebar->skinButton->hide();
-    titlebar->minButton->hide();
-    titlebar->maxButton->hide();
+    titlebar = new FTitleBar;
+    titlebar->setSettingButtonVisible(false);
+    titlebar->setSkinButtonVisible(false);
+    titlebar->setMinButtonVisible(false);
+    titlebar->setMaxButtonVisible(false);
 
     QVBoxLayout* mainLayout = new QVBoxLayout;
 
@@ -42,7 +42,7 @@ void BaseDialog::initUI()
 
 void BaseDialog::initConnect()
 {
-    connect(titlebar->closeButton, SIGNAL(clicked()), this, SLOT(animationClose()));
+    connect(titlebar->getCloseButton(), SIGNAL(clicked()), this, SLOT(animationClose()));
 }
 
 void BaseDialog::mousePressEvent(QMouseEvent *e)

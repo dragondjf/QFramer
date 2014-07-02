@@ -27,6 +27,7 @@ void MainWindow::initData()
 
 void MainWindow::initUI()
 {
+    setObjectName(QString("FMainWindow"));
     QDesktopWidget* desktopWidget = QApplication::desktop();
     setMaximumSize(desktopWidget->availableGeometry().size());
     readSettings();
@@ -41,6 +42,7 @@ void MainWindow::initUI()
 
     trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
     trayicon->setContextMenu(centerwindow->titleBar->settingMenu);
+    trayicon->setObjectName(QString("trayicon"));
     trayicon->show();
 
     flyWidget = new FlyWidget(this);
@@ -188,7 +190,7 @@ void MainWindow::keyPressEvent(QKeyEvent *e)
         close();
     }
     else if (e->key() == Qt::Key_F11) {
-        centerwindow->titleBar->maxButton->click();
+        centerwindow->titleBar->getMaxButton()->click();
     }
 }
 

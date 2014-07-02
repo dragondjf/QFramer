@@ -5,7 +5,7 @@
 #include<QMouseEvent>
 #include<QShowEvent>
 #include<QCloseEvent>
-#include "titlebar.h"
+#include "ftitlebar.h"
 
 class BaseDialog : public QDialog
 {
@@ -18,7 +18,7 @@ private:
     void mousePressEvent(QMouseEvent *e);
     void mouseReleaseEvent(QMouseEvent *e);
 
-    TitleBar* titlebar;
+    FTitleBar* titlebar;
 
 protected:
     void showEvent(QShowEvent * event);

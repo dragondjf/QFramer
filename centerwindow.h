@@ -4,14 +4,15 @@
 #include <QFrame>
 #include<QWidget>
 #include<QStackedWidget>
-#include "titlebar.h"
 #include "navgationbar.h"
+#include "ftitlebar.h"
 
 class CenterWindow : public QFrame
 {
     Q_OBJECT
 public:
-    TitleBar* titleBar;
+//    TitleBar* titleBar;
+    FTitleBar* titleBar;
     NavgationBar* navagationBar;
     QStackedWidget* stackWidget;
     int currentIndex;
