@@ -4,7 +4,7 @@
 #include<QDesktopServices>
 #include<QUrl>
 #include<QApplication>
-#include<mainwindow.h>
+#include"mainwindow.h"
 
 FSettingMenuController::FSettingMenuController(QObject *parent) :
     QObject(parent)

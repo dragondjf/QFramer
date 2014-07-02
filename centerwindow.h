@@ -1,31 +1,30 @@
 #ifndef CENTERWINDOW_H
 #define CENTERWINDOW_H
 
-#include <QFrame>
-#include<QWidget>
-#include<QStackedWidget>
-#include "navgationbar.h"
-#include "ftitlebar.h"
+#include"fcenterwindow.h"
+#include "gradientshow.h"
+#include "webkitshow.h"
+#include "basequickwidget.h"
+#include "qmlviwer.h"
 
-class CenterWindow : public QFrame
+class CenterWindow : public FCenterWindow
 {
     Q_OBJECT
+
 public:
-//    TitleBar* titleBar;
-    FTitleBar* titleBar;
-    NavgationBar* navagationBar;
-    QStackedWidget* stackWidget;
-    int currentIndex;
+    GradientShow* gradientShow;
+    WebkitShow *webkitShow;
+    BaseQuickWidget* qmlViwer2;
+    QmlViwer* qmlViwer3;
+    BaseQuickWidget* qmlViwer4;
+    BaseQuickWidget* qmlViwer5;
+
 public:
     explicit CenterWindow(QWidget *parent = 0);
-    void initData();
     void initUI();
-    void initConnect();
 signals:
 
 public slots:
-    void switchscreen(const int index);
-    void switchscreen();
     void cloudAntimation(const int index);
 };
 

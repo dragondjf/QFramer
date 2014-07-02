@@ -1,5 +1,5 @@
-#ifndef BASEDIALOG_H
-#define BASEDIALOG_H
+#ifndef FBASEDIALOG_H
+#define FBASEDIALOG_H
 
 #include <QDialog>
 #include<QMouseEvent>
@@ -7,7 +7,7 @@
 #include<QCloseEvent>
 #include "ftitlebar.h"
 
-class BaseDialog : public QDialog
+class FBaseDialog : public QDialog
 {
     Q_OBJECT
 private:
@@ -27,7 +27,7 @@ public:
     QSize normalSize;
 
 public:
-    explicit BaseDialog(QWidget *parent = 0);
+    explicit FBaseDialog(QWidget *parent = 0);
     void initData();
     void initUI();
     void initConnect();
@@ -38,4 +38,4 @@ public slots:
     void animationClose();
 };
 
-#endif // BASEDIALOG_H
+#endif // FBASEDIALOG_H

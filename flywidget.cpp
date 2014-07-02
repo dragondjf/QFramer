@@ -44,7 +44,7 @@ void FlyWidget::mousePressEvent(QMouseEvent *event)
 
 void FlyWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
-    p->show();
+    p->setVisible(not p->isVisible());
 }
 
 void FlyWidget::mouseMoveEvent(QMouseEvent *event)

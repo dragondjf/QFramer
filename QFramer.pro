@@ -12,12 +12,8 @@ TARGET = QFramer
 TEMPLATE = app
 
 SOURCES += main.cpp\
-        mainwindow.cpp \
-    centerwindow.cpp \
-    navgationbar.cpp \
     basetoolbutton.cpp \
     util.cpp \
-    basedialog.cpp \
     aboutdialog.cpp \
     settingdialog.cpp \
     bgskinpopup.cpp \
@@ -28,14 +24,17 @@ SOURCES += main.cpp\
     flywidget.cpp \
     ftitlebar.cpp \
     fsettingmenu.cpp \
-    fsettingmenucontroller.cpp
+    fsettingmenucontroller.cpp \
+    fnavgationbar.cpp \
+    fcenterwindow.cpp \
+    centerwindow.cpp \
+    fbasedialog.cpp \
+    fmainwindow.cpp \
+    mainwindow.cpp
 
-HEADERS  += mainwindow.h \
-    centerwindow.h \
-    navgationbar.h \
+HEADERS  += \
     basetoolbutton.h \
     util.h \
-    basedialog.h \
     aboutdialog.h \
     settingdialog.h \
     bgskinpopup.h \
@@ -46,7 +45,13 @@ HEADERS  += mainwindow.h \
     flywidget.h \
     ftitlebar.h \
     fsettingmenu.h \
-    fsettingmenucontroller.h
+    fsettingmenucontroller.h \
+    fnavgationbar.h \
+    fcenterwindow.h \
+    centerwindow.h \
+    fbasedialog.h \
+    fmainwindow.h \
+    mainwindow.h
 
 RESOURCES += \
     QFramer.qrc

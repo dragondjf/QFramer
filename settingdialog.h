@@ -1,8 +1,8 @@
 #ifndef SETTINGDIALOG_H
 #define SETTINGDIALOG_H
-#include "basedialog.h"
+#include "fbasedialog.h"
 
-class SettingDialog : public BaseDialog
+class SettingDialog : public FBaseDialog
 {
     Q_OBJECT
 public:

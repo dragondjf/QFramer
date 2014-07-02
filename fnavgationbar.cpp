@@ -1,7 +1,7 @@
-#include "navgationbar.h"
+#include "fnavgationbar.h"
 #include<QHBoxLayout>
 
-NavgationBar::NavgationBar(QWidget *parent)
+FNavgationBar::FNavgationBar(QWidget *parent)
     :QFrame(parent)
 {
     initData();
@@ -9,16 +9,15 @@ NavgationBar::NavgationBar(QWidget *parent)
     initConnect();
 }
 
-void NavgationBar::initData()
+void FNavgationBar::initData()
 {
-    buttonTitles << tr("Home") << tr("QtWebkit") << tr("QQuickWidget")<<tr("QmlViewer") << tr("PhotoWall") << tr("About");
 }
 
-void NavgationBar::initUI()
+void FNavgationBar::initUI()
 {
-    setObjectName(QString("NavgationBar"));
+    setObjectName(QString("FNavgationBar"));
     setFixedHeight(66);
-    QHBoxLayout* mainlayout = new QHBoxLayout;
+    mainlayout = new QHBoxLayout;
     mainlayout->addSpacing(10);
     for(int i=0; i < buttonTitles.length(); i++)
     {
@@ -32,7 +31,7 @@ void NavgationBar::initUI()
     setLayout(mainlayout);
 }
 
-void NavgationBar::initConnect()
+void FNavgationBar::initConnect()
 {
     for(int i=0; i<buttons.length(); i++)
     {
@@ -40,7 +39,18 @@ void NavgationBar::initConnect()
     }
 }
 
-void NavgationBar::setButtonChecked()
+void FNavgationBar::addNavgationTile(const QString &tile)
+{
+    buttonTitles  << tile;
+    BaseToolButton* button = new BaseToolButton(tile);
+    buttons.append(button);
+    button->setObjectName(tile);
+    mainlayout->insertWidget(mainlayout->count() - 1, button);
+
+    connect(button, SIGNAL(clicked()), this, SLOT(setButtonChecked()));
+}
+
+void FNavgationBar::setButtonChecked()
 {
     for (int i = 0; i < buttons.size(); ++i) {
         if (buttons.at(i) == sender())

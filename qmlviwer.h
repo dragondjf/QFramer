@@ -2,9 +2,9 @@
 #define QMLVIWER_H
 
 #include <QWidget>
-#include "basequickwidget.h"
 #include <QLineEdit>
 #include <QToolButton>
+#include "basequickwidget.h"
 class QmlViwer : public QWidget
 {
     Q_OBJECT

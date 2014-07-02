@@ -4,7 +4,7 @@
 #include<QPushButton>
 #include<QTextEdit>
 AboutDialog::AboutDialog(QWidget *parent) :
-    BaseDialog(parent)
+    FBaseDialog(parent)
 {
     initUI();
     initConnect();
@@ -37,5 +37,5 @@ void AboutDialog::initUI()
 void AboutDialog::initConnect()
 {
 //    BaseDialog::initConnect();
-    connect(enterButton, &QPushButton::clicked, this, &BaseDialog::close);
+    connect(enterButton, &QPushButton::clicked, this, &FBaseDialog::close);
 }

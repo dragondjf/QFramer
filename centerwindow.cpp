@@ -1,84 +1,35 @@
-#include<QPushButton>
-#include<QVBoxLayout>
-#include<QQuickWidget>
-#include<QWebView>
-#include<QEasingCurve>
 #include "centerwindow.h"
 #include "gradientshow.h"
 #include "webkitshow.h"
 #include "basequickwidget.h"
 #include "qmlviwer.h"
-CenterWindow::CenterWindow(QWidget *parent)
-    :QFrame(parent)
+
+CenterWindow::CenterWindow(QWidget *parent) :
+    FCenterWindow(parent)
 {
-    qDebug("centerwindow init");
-    initData();
     initUI();
-    initConnect();
-}
-
-void CenterWindow::initData()
-{
-
 }
 
 void CenterWindow::initUI()
 {
-    setObjectName(QString("CenterWindow"));
-    titleBar = new FTitleBar();
-    navagationBar = new NavgationBar();
-
-    stackWidget = new QStackedWidget();
-
-    GradientShow* gradientShow = new GradientShow;
-
-    WebkitShow *webkitShow = new WebkitShow();
-
-    BaseQuickWidget* qmlViwer2 = new BaseQuickWidget;
-
-    QmlViwer* qmlViwer3 = new QmlViwer;
-
-    BaseQuickWidget* qmlViwer4 = new BaseQuickWidget;
-
-    BaseQuickWidget* qmlViwer5 = new BaseQuickWidget;
-
-
+    gradientShow = new GradientShow;
+    webkitShow = new WebkitShow();
+    qmlViwer2 = new BaseQuickWidget;
+    qmlViwer3 = new QmlViwer;
+    qmlViwer4 = new BaseQuickWidget;
+    qmlViwer5 = new BaseQuickWidget;
     qmlViwer2->setSource(QUrl(QString("qrc:/home/welcom.qml")));
-//    qmlViwer3->setSource(QUrl(QString("qrc:/quickwindow/application/appquick.qml")));
     qmlViwer4->setSource(QUrl(QString("qrc:/about/photowall.qml")));
     qmlViwer5->setSource(QUrl(QString("qrc:/about/about.qml")));
-//    stackWidget->addWidget(webkitShow);
-    stackWidget->addWidget(gradientShow);
-    stackWidget->addWidget(webkitShow);
-    stackWidget->addWidget(qmlViwer2);
-    stackWidget->addWidget(qmlViwer3);
-    stackWidget->addWidget(qmlViwer4);
-    stackWidget->addWidget(qmlViwer5);
-    QVBoxLayout* mainlayout = new QVBoxLayout;
-    mainlayout->addWidget(titleBar);
-    mainlayout->addWidget(navagationBar);
-    mainlayout->addWidget(stackWidget);
-    mainlayout->setContentsMargins(0, 0 ,0 ,0);
-    mainlayout->setSpacing(0);
-    setLayout(mainlayout);
+
+    addWidget(tr("Home"), gradientShow);
+    addWidget(tr("QtWebkit"), webkitShow);
+    addWidget(tr("QQuickWidget"), qmlViwer2);
+    addWidget(tr("QmlViewer"), qmlViwer3);
+    addWidget(tr("PhotoWall"), qmlViwer4);
+    addWidget(tr("About"), qmlViwer5);
 }
 
-void CenterWindow::initConnect()
-{
-    connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(cloudAntimation(int)));
-}
-
-void CenterWindow::switchscreen(const int index)
-{
-    stackWidget->setCurrentIndex(index);
-//    cloudAntimation();
-}
-
-
-void CenterWindow::switchscreen()
-{
-    stackWidget->setCurrentIndex(currentIndex);
-}
 
 void CenterWindow::cloudAntimation(const int index)
 {
@@ -92,8 +43,9 @@ void CenterWindow::cloudAntimation(const int index)
     connect(animation,SIGNAL(finished()), this, SLOT(switchscreen()));
     connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
     animation->setDuration(1000);
-    animation->setStartValue(QSize(0, 0));
+    animation->setStartValue(QSize(stackWidget->width(), 0));
     animation->setEndValue(stackWidget->size());
     animation->setEasingCurve(QEasingCurve::OutCubic);
     animation->start();
+    printf("------------\n");
 }

@@ -1,9 +1,9 @@
 #ifndef ABOUTDIALOG_H
 #define ABOUTDIALOG_H
 
-#include "basedialog.h"
+#include "fbasedialog.h"
 
-class AboutDialog : public BaseDialog
+class AboutDialog : public FBaseDialog
 {
     Q_OBJECT
 private:

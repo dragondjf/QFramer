@@ -1,22 +1,28 @@
-#ifndef NAVGATIONBAR_H
-#define NAVGATIONBAR_H
+#ifndef FNAVGATIONBAR_H
+#define FNAVGATIONBAR_H
 
 #include <QFrame>
 #include<QList>
-#include "basetoolbutton.h"
 #include<QWidget>
+#include<QHBoxLayout>
+#include "basetoolbutton.h"
 
-class NavgationBar : public QFrame
+
+class FNavgationBar : public QFrame
 {
     Q_OBJECT
+private:
+    QHBoxLayout* mainlayout;
+
 public:
     QList<BaseToolButton*> buttons;
     QList<QString> buttonTitles;
 public:
-    explicit NavgationBar(QWidget *parent = 0);
+    explicit FNavgationBar(QWidget *parent = 0);
     void initData();
     void initConnect();
     void initUI();
+    void addNavgationTile(const QString& tile);
 signals:
     void indexChanged(int i);
 private slots:
@@ -24,4 +30,4 @@ private slots:
 
 };
 
-#endif // NAVGATIONBAR_H
+#endif // FNAVGATIONBAR_H

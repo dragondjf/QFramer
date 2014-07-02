@@ -1,15 +1,14 @@
-#include "basedialog.h"
+#include "fbasedialog.h"
 #include "util.h"
 #include<QVBoxLayout>
 #include<QPropertyAnimation>
 #include<QDesktopWidget>
 #include<QApplication>
-BaseDialog::BaseDialog(QWidget *parent) :
+FBaseDialog::FBaseDialog(QWidget *parent) :
     QDialog(parent)
 {
     setWindowFlags(Qt::FramelessWindowHint);
     setAttribute(Qt::WA_DeleteOnClose);
-//    setSizeGripEnabled(true);
     initData();
     initUI();
     initConnect();
@@ -17,12 +16,12 @@ BaseDialog::BaseDialog(QWidget *parent) :
     setStyleSheet(qss);
 }
 
-void BaseDialog::initData()
+void FBaseDialog::initData()
 {
 
 }
 
-void BaseDialog::initUI()
+void FBaseDialog::initUI()
 {
     resize(0, 0);
     titlebar = new FTitleBar;
@@ -40,12 +39,12 @@ void BaseDialog::initUI()
 
 }
 
-void BaseDialog::initConnect()
+void FBaseDialog::initConnect()
 {
     connect(titlebar->getCloseButton(), SIGNAL(clicked()), this, SLOT(animationClose()));
 }
 
-void BaseDialog::mousePressEvent(QMouseEvent *e)
+void FBaseDialog::mousePressEvent(QMouseEvent *e)
 {
     if(e->button() & Qt::LeftButton)
     {
@@ -54,12 +53,12 @@ void BaseDialog::mousePressEvent(QMouseEvent *e)
     e->accept();
 }
 
-void BaseDialog::mouseReleaseEvent(QMouseEvent *e)
+void FBaseDialog::mouseReleaseEvent(QMouseEvent *e)
 {
     e->accept();
 }
 
-void BaseDialog::mouseMoveEvent(QMouseEvent *e)
+void FBaseDialog::mouseMoveEvent(QMouseEvent *e)
 {
     if(e->y() < height() - 30){
         move(e->globalPos() - dragPosition);
@@ -71,7 +70,7 @@ void BaseDialog::mouseMoveEvent(QMouseEvent *e)
 
 }
 
-void BaseDialog::showEvent(QShowEvent *event)
+void FBaseDialog::showEvent(QShowEvent *event)
 {
 
     QDesktopWidget* desktopWidget = QApplication::desktop();
@@ -87,19 +86,19 @@ void BaseDialog::showEvent(QShowEvent *event)
     QWidget::showEvent(event);
 }
 
-void BaseDialog::closeEvent(QCloseEvent *event)
+void FBaseDialog::closeEvent(QCloseEvent *event)
 {
 
     QWidget::closeEvent(event);
 }
 
 
-void BaseDialog::animationClose()
+void FBaseDialog::animationClose()
 {
     QRect noraml = geometry();
     QRect closeRect = QRect(noraml.x(), noraml.y() + noraml.height()/2, noraml.width(), 0);
     QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
-    connect(animation, &QPropertyAnimation::finished, this, &BaseDialog::close);
+    connect(animation, &QPropertyAnimation::finished, this, &FBaseDialog::close);
     animation->setDuration(100);
     animation->setStartValue(noraml);
     animation->setEndValue(closeRect);

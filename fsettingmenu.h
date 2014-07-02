@@ -1,9 +1,10 @@
 #ifndef FSETTINGMENU_H
 #define FSETTINGMENU_H
-#include "util.h"
-#include "fsettingmenucontroller.h"
 #include <QMenu>
 #include <QAction>
+#include "util.h"
+#include "fsettingmenucontroller.h"
+
 class FSettingMenu : public QMenu
 {
     Q_OBJECT

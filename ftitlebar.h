@@ -4,7 +4,7 @@
 #include <QFrame>
 #include <QToolButton>
 #include <QLabel>
-#include <fsettingmenu.h>
+#include "fsettingmenu.h"
 
 #define Title_Height 25
 

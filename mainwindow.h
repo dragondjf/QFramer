@@ -1,58 +1,23 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <QMainWindow>
-#include<QStatusBar>
-#include<QSystemTrayIcon>
-#include<QCloseEvent>
-#include "centerwindow.h"
-#include"flywidget.h"
-enum enum_Direction{
-    eLeft,
-    eTop,
-    eRight,
-    eBottom,
-    eNormal
-};
+#include"fmainwindow.h"
+#include"centerwindow.h"
 
-class MainWindow : public QMainWindow
+class MainWindow : public FMainWindow
 {
     Q_OBJECT
-private:
-    QPoint dragPosition;
-    bool leftbuttonpressed;
-
-
-    void readSettings();
-    void writeSettings();
-
-protected:
-    void mouseMoveEvent(QMouseEvent *e);
-    void mousePressEvent(QMouseEvent *e);
-    void mouseReleaseEvent(QMouseEvent *e);
-    void mouseDoubleClickEvent(QMouseEvent *e);
-    void keyPressEvent(QKeyEvent *e);
-    void closeEvent(QCloseEvent * event);
-    void SetCursorStyle(enum_Direction i);
 public:
-    CenterWindow *centerwindow;
-    QStatusBar *pstatusbar;
-    QSystemTrayIcon *trayicon;
-    FlyWidget* flyWidget;
     static MainWindow* instance;
 
-
-    MainWindow(QWidget *parent = 0);
-    void initData();
+public:
+    explicit MainWindow(QWidget *parent = 0);
     void initUI();
-    void initConnect();
     static MainWindow* getInstance();
-    ~MainWindow();
+signals:
 
 public slots:
-    void swithMaxNormal();
-    void showFlyWidget();
-    void onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason);
+
 };
 
 #endif // MAINWINDOW_H

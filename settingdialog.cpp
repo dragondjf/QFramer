@@ -1,7 +1,7 @@
 #include "settingdialog.h"
 #include<QVBoxLayout>
 SettingDialog::SettingDialog(QWidget *parent) :
-    BaseDialog(parent)
+    FBaseDialog(parent)
 {
     initUI();
 }
