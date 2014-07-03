@@ -3,6 +3,7 @@
 #include "webkitshow.h"
 #include "basequickwidget.h"
 #include "qmlviwer.h"
+#include "fcenterwindow.h"
 
 CenterWindow* CenterWindow::instance = NULL;
 
@@ -30,6 +31,8 @@ void CenterWindow::initUI()
     addWidget(tr("QmlViewer"), qmlViwer3);
     addWidget(tr("PhotoWall"), qmlViwer4);
     addWidget(tr("About"), qmlViwer5);
+
+    setAlignment(TopCenter);
 }
 
 CenterWindow* CenterWindow::getInstance()
@@ -58,5 +61,4 @@ void CenterWindow::cloudAntimation(const int index)
     animation->setEndValue(stackWidget->size());
     animation->setEasingCurve(QEasingCurve::OutCubic);
     animation->start();
-    printf("------------\n");
 }

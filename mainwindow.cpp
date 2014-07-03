@@ -8,6 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     centerWindow = CenterWindow::getInstance();
     setCentralWidget(centerWindow);
+//    centerWindow->navagationBar->setFixedHeight(centerWindow->height());
+
 }
 
 MainWindow* MainWindow::getInstance()

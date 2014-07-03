@@ -4,20 +4,30 @@
 #include <QFrame>
 #include<QWidget>
 #include<QStackedWidget>
+#include<QResizeEvent>
 #include "fnavgationbar.h"
 #include "titlebar.h"
 
-enum Layout_Direction{
-    Left,
-    Top,
-    Right,
-    Bottom
-};
 
 class FCenterWindow : public QFrame
 {
     Q_OBJECT
+
 public:
+    enum Alignment_Direction{
+        TopLeft,
+        TopCenter,
+        TopRight,
+        RightTop,
+        RightCenter,
+        RightBottom,
+        BottomRight,
+        BottomCenter,
+        BottomLeft,
+        LeftBottom,
+        LeftCenter,
+        LeftTop,
+    };
     TitleBar* titleBar;
     FNavgationBar* navagationBar;
     QStackedWidget* stackWidget;
@@ -29,6 +39,7 @@ public:
     void initUI();
     void initConnect();
     void addWidget(const QString& tile, QWidget* widget);
+    void setAlignment(Alignment_Direction direction);
 signals:
 
 public slots:

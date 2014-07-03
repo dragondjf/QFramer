@@ -4,15 +4,29 @@
 #include <QFrame>
 #include<QList>
 #include<QWidget>
-#include<QBoxLayout>
+#include<QHBoxLayout>
+#include<QVBoxLayout>
 #include "basetoolbutton.h"
 
 
 class FNavgationBar : public QFrame
 {
     Q_OBJECT
+private:
+    QHBoxLayout* mainlayout_topLeft;
+    QHBoxLayout* mainlayout_topCenter;
+    QHBoxLayout* mainlayout_topRight;
+    QHBoxLayout* mainlayout_bottomLeft;
+    QHBoxLayout* mainlayout_bottomCenter;
+    QHBoxLayout* mainlayout_bottomRight;
+    QVBoxLayout* mainlayout_leftTop;
+    QVBoxLayout* mainlayout_leftCenter;
+    QVBoxLayout* mainlayout_leftBottom;
+    QVBoxLayout* mainlayout_rightTop;
+    QVBoxLayout* mainlayout_rightCenter;
+    QVBoxLayout* mainlayout_rightBottom;
 public:
-    QBoxLayout* mainlayout;
+
     QList<BaseToolButton*> buttons;
     QList<QString> buttonTitles;
 public:
@@ -21,7 +35,18 @@ public:
     void initConnect();
     void initUI();
     void addNavgationTile(const QString& tile);
-    void setAlignment(Qt::AlignmentFlag alignment);
+    void setAlignment_topLeft();
+    void setAlignment_topCenter();
+    void setAlignment_topRight();
+    void setAlignment_bottomLeft();
+    void setAlignment_bottomCenter();
+    void setAlignment_bottomRight();
+    void setAlignment_leftTop();
+    void setAlignment_leftCenter();
+    void setAlignment_leftBottom();
+    void setAlignment_rightTop();
+    void setAlignment_rightCenter();
+    void setAlignment_rightBottom();
 signals:
     void indexChanged(int i);
 private slots:
