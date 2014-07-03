@@ -5,7 +5,6 @@
 #include<QStatusBar>
 #include<QSystemTrayIcon>
 #include<QCloseEvent>
-#include "centerwindow.h"
 #include"flywidget.h"
 enum enum_Direction{
     eLeft,
@@ -34,7 +33,6 @@ protected:
     void closeEvent(QCloseEvent * event);
     void SetCursorStyle(enum_Direction i);
 public:
-    CenterWindow *centerwindow;
     QStatusBar *pstatusbar;
     QSystemTrayIcon *trayicon;
     FlyWidget* flyWidget;

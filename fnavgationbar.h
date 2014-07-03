@@ -4,17 +4,15 @@
 #include <QFrame>
 #include<QList>
 #include<QWidget>
-#include<QHBoxLayout>
+#include<QBoxLayout>
 #include "basetoolbutton.h"
 
 
 class FNavgationBar : public QFrame
 {
     Q_OBJECT
-private:
-    QHBoxLayout* mainlayout;
-
 public:
+    QBoxLayout* mainlayout;
     QList<BaseToolButton*> buttons;
     QList<QString> buttonTitles;
 public:
@@ -23,6 +21,7 @@ public:
     void initConnect();
     void initUI();
     void addNavgationTile(const QString& tile);
+    void setAlignment(Qt::AlignmentFlag alignment);
 signals:
     void indexChanged(int i);
 private slots:

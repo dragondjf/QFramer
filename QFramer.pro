@@ -30,7 +30,8 @@ SOURCES += main.cpp\
     centerwindow.cpp \
     fbasedialog.cpp \
     fmainwindow.cpp \
-    mainwindow.cpp
+    mainwindow.cpp \
+    titlebar.cpp
 
 HEADERS  += \
     basetoolbutton.h \
@@ -51,7 +52,8 @@ HEADERS  += \
     centerwindow.h \
     fbasedialog.h \
     fmainwindow.h \
-    mainwindow.h
+    mainwindow.h \
+    titlebar.h
 
 RESOURCES += \
     QFramer.qrc

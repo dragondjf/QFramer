@@ -18,10 +18,11 @@ public:
     QmlViwer* qmlViwer3;
     BaseQuickWidget* qmlViwer4;
     BaseQuickWidget* qmlViwer5;
-
+    static CenterWindow* instance;
 public:
     explicit CenterWindow(QWidget *parent = 0);
     void initUI();
+    static CenterWindow* getInstance();
 signals:
 
 public slots:

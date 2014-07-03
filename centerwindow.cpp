@@ -4,6 +4,8 @@
 #include "basequickwidget.h"
 #include "qmlviwer.h"
 
+CenterWindow* CenterWindow::instance = NULL;
+
 CenterWindow::CenterWindow(QWidget *parent) :
     FCenterWindow(parent)
 {
@@ -13,7 +15,7 @@ CenterWindow::CenterWindow(QWidget *parent) :
 void CenterWindow::initUI()
 {
     gradientShow = new GradientShow;
-    webkitShow = new WebkitShow();
+//    webkitShow = new WebkitShow();
     qmlViwer2 = new BaseQuickWidget;
     qmlViwer3 = new QmlViwer;
     qmlViwer4 = new BaseQuickWidget;
@@ -23,11 +25,20 @@ void CenterWindow::initUI()
     qmlViwer5->setSource(QUrl(QString("qrc:/about/about.qml")));
 
     addWidget(tr("Home"), gradientShow);
-    addWidget(tr("QtWebkit"), webkitShow);
+//    addWidget(tr("QtWebkit"), webkitShow);
     addWidget(tr("QQuickWidget"), qmlViwer2);
     addWidget(tr("QmlViewer"), qmlViwer3);
     addWidget(tr("PhotoWall"), qmlViwer4);
     addWidget(tr("About"), qmlViwer5);
+}
+
+CenterWindow* CenterWindow::getInstance()
+{
+    if(!instance)
+    {
+        instance = new CenterWindow();
+    }
+    return instance;
 }
 
 

@@ -9,7 +9,7 @@ class MainWindow : public FMainWindow
     Q_OBJECT
 public:
     static MainWindow* instance;
-
+    CenterWindow* centerWindow;
 public:
     explicit MainWindow(QWidget *parent = 0);
     void initUI();

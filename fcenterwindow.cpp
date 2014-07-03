@@ -7,8 +7,6 @@
 #include<QEasingCurve>
 
 
-
-
 FCenterWindow::FCenterWindow(QWidget *parent)
     :QFrame(parent)
 {
@@ -26,19 +24,48 @@ void FCenterWindow::initData()
 void FCenterWindow::initUI()
 {
     setObjectName(QString("FCenterWindow"));
-    titleBar = new FTitleBar();
+    titleBar = TitleBar::getInstance();
     navagationBar = new FNavgationBar();
-
     stackWidget = new QStackedWidget();
+
+
+
+    navlayout = new QBoxLayout(QBoxLayout::TopToBottom);
+    navlayout->addWidget(navagationBar);
+    navlayout->addWidget(stackWidget);
+    navlayout->setContentsMargins(0, 0 ,0 ,0);
+    navlayout->setSpacing(0);
+    swicthLayout(QBoxLayout::BottomToTop);
 
     QVBoxLayout* mainlayout = new QVBoxLayout;
     mainlayout->addWidget(titleBar);
-    mainlayout->addWidget(navagationBar);
-    mainlayout->addWidget(stackWidget);
+    mainlayout->addLayout(navlayout);
     mainlayout->setContentsMargins(0, 0 ,0 ,0);
     mainlayout->setSpacing(0);
     setLayout(mainlayout);
 }
+
+void FCenterWindow::swicthLayout(QBoxLayout::Direction direction)
+{
+    navlayout->setDirection(direction);
+    switch (direction) {
+    case QBoxLayout::LeftToRight:
+        navagationBar->mainlayout->setDirection(QBoxLayout::TopToBottom);
+        break;
+    case QBoxLayout::RightToLeft:
+        navagationBar->mainlayout->setDirection(QBoxLayout::TopToBottom);
+        break;
+    case QBoxLayout::TopToBottom:
+        navagationBar->mainlayout->setDirection(QBoxLayout::LeftToRight);
+        break;
+    case QBoxLayout::BottomToTop:
+        navagationBar->mainlayout->setDirection(QBoxLayout::LeftToRight);
+        break;
+    default:
+        break;
+    }
+}
+
 
 void FCenterWindow::initConnect()
 {
