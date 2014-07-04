@@ -12,7 +12,6 @@ TARGET = QFramer
 TEMPLATE = app
 
 SOURCES += main.cpp\
-    util.cpp \
     aboutdialog.cpp \
     settingdialog.cpp \
     bgskinpopup.cpp \
@@ -30,7 +29,8 @@ SOURCES += main.cpp\
     QFramer/fbasetoolbutton.cpp \
     settingmenu.cpp \
     settingmenucontroller.cpp \
-    QFramer/fmainwindow.cpp
+    QFramer/fmainwindow.cpp \
+    QFramer/futil.cpp
 
 HEADERS  += \
     util.h \
@@ -51,7 +51,8 @@ HEADERS  += \
     QFramer/fbasetoolbutton.h \
     settingmenu.h \
     settingmenucontroller.h \
-    QFramer/fmainwindow.h
+    QFramer/fmainwindow.h \
+    QFramer/futil.h
 
 RESOURCES += \
     QFramer.qrc
