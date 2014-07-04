@@ -34,9 +34,11 @@ private:
 
 public:
     QString title;
+    static FTitleBar* instance;
 
 public:
     explicit FTitleBar(QWidget *parent = 0);
+    static FTitleBar* getInstace();
 
     void setTitleBarHeight(int height);
     void setSettingMenu(QMenu* menu);

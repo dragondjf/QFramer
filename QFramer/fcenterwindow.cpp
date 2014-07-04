@@ -24,7 +24,6 @@ void FCenterWindow::initData()
 
 void FCenterWindow::initUI()
 {
-
     setObjectName(QString("FCenterWindow"));
     navagationBar = new FNavgationBar();
     stackWidget = new QStackedWidget();
@@ -36,6 +35,7 @@ void FCenterWindow::initUI()
     navlayout->setSpacing(0);
 
     mainLayout = new QVBoxLayout;
+    mainLayout->addWidget(FTitleBar::getInstace());
     mainLayout->addLayout(navlayout);
     mainLayout->setContentsMargins(0, 0 ,0 ,0);
     mainLayout->setSpacing(0);
@@ -126,10 +126,6 @@ void FCenterWindow::initConnect()
     connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(cloudAntimation(int)));
 }
 
-void FCenterWindow::setTitleBar(FTitleBar *ftitleBar)
-{
-    mainLayout->insertWidget(0, ftitleBar);
-}
 
 void FCenterWindow::addWidget(const QString &tile, QWidget *widget)
 {

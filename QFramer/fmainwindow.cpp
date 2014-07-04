@@ -27,7 +27,7 @@ void FMainWindow::initData()
 
 void FMainWindow::initUI()
 {
-    titleBar = new FTitleBar;
+    titleBar = FTitleBar::getInstace();
 
     setObjectName(QString("FMainWindow"));
     QDesktopWidget* desktopWidget = QApplication::desktop();

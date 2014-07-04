@@ -2,7 +2,7 @@
 #define SETTINGMENU_H
 #include <QMenu>
 #include <QAction>
-#include "util.h"
+#include "QFramer/futil.h"
 #include "settingmenucontroller.h"
 
 class SettingMenu : public QMenu

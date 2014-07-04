@@ -37,7 +37,6 @@ public:
     void initData();
     void initUI();
     void initConnect();
-    void setTitleBar(FTitleBar* ftitleBar);
     void addWidget(const QString& tile, QWidget* widget);
     void setAlignment(Alignment_Direction direction);
 signals:

@@ -1,5 +1,5 @@
 #include "fbasedialog.h"
-#include "util.h"
+#include "futil.h"
 #include<QVBoxLayout>
 #include<QPropertyAnimation>
 #include<QDesktopWidget>

@@ -1,12 +1,23 @@
 #include "ftitlebar.h"
 #include<QHBoxLayout>
 
+FTitleBar* FTitleBar::instance = NULL;
+
 FTitleBar::FTitleBar(QWidget *parent) :
     QFrame(parent)
 {
     initData();
     initUI();
     initConnect();
+}
+
+FTitleBar* FTitleBar::getInstace()
+{
+    if(!instance)
+    {
+        instance = new FTitleBar();
+    }
+    return instance;
 }
 
 void FTitleBar::initData()
