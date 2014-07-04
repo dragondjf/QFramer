@@ -7,6 +7,7 @@ FlyWidget::FlyWidget(QWidget *parent) :
     QWidget(parent)
 {
     p = parent;
+    settingmenu = NULL;
     setWindowFlags(Qt::FramelessWindowHint);
     setWindowFlags(Qt::ToolTip);
     initData();
@@ -30,6 +31,11 @@ void FlyWidget::initConnect()
 
 }
 
+void FlyWidget::setMenu(QMenu *menu)
+{
+    settingmenu = menu;
+}
+
 void FlyWidget::mousePressEvent(QMouseEvent *event)
 {
     //按住左键可以托动窗口，按下右键关闭程序
@@ -39,7 +45,9 @@ void FlyWidget::mousePressEvent(QMouseEvent *event)
         event->accept();
     }
     else if(event->button() == Qt::RightButton)
-        menu->exec(QCursor::pos());
+    {
+        settingmenu->exec(QCursor::pos());
+    }
 }
 
 void FlyWidget::mouseDoubleClickEvent(QMouseEvent *event)

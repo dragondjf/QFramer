@@ -1,4 +1,4 @@
-#include "fsettingmenucontroller.h"
+#include "settingmenucontroller.h"
 #include "settingdialog.h"
 #include "aboutdialog.h"
 #include<QDesktopServices>
@@ -6,35 +6,35 @@
 #include<QApplication>
 #include"mainwindow.h"
 
-FSettingMenuController::FSettingMenuController(QObject *parent) :
+SettingMenuController::SettingMenuController(QObject *parent) :
     QObject(parent)
 {
 
 }
 
-void FSettingMenuController::showSettingDialog()
+void SettingMenuController::showSettingDialog()
 {
     MainWindow::getInstance()->show();
     SettingDialog* settingDialog = new SettingDialog;
     settingDialog->exec();
 }
 
-void FSettingMenuController::checkUpdate()
+void SettingMenuController::checkUpdate()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/dragondjf/QCFramer"));
 }
 
-void FSettingMenuController::onlineHelp()
+void SettingMenuController::onlineHelp()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/dragondjf/QCFramer"));
 }
 
-void FSettingMenuController::visitOfficialSite()
+void SettingMenuController::visitOfficialSite()
 {
     QDesktopServices::openUrl(QUrl("https://github.com/dragondjf/QCFramer"));
 }
 
-void FSettingMenuController::showAboutUs()
+void SettingMenuController::showAboutUs()
 {
     MainWindow::getInstance()->show();
     AboutDialog* aboutDialog = new AboutDialog;
@@ -42,7 +42,7 @@ void FSettingMenuController::showAboutUs()
 
 }
 
-void FSettingMenuController::closeMainWindow()
+void SettingMenuController::closeMainWindow()
 {
     MainWindow* p = MainWindow::getInstance();
     p->close();

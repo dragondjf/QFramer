@@ -6,6 +6,8 @@
 #include<QSystemTrayIcon>
 #include<QCloseEvent>
 #include"flywidget.h"
+#include"ftitlebar.h"
+#include"fcenterwindow.h"
 enum enum_Direction{
     eLeft,
     eTop,
@@ -33,15 +35,18 @@ protected:
     void closeEvent(QCloseEvent * event);
     void SetCursorStyle(enum_Direction i);
 public:
+    FTitleBar * titleBar;
     QStatusBar *pstatusbar;
     QSystemTrayIcon *trayicon;
     FlyWidget* flyWidget;
 
+public:
     FMainWindow(QWidget *parent = 0);
     void initData();
     void initUI();
     void initConnect();
-
+//    void getTitleBar();
+//    void setAlignment(FCenterWindow::Alignment_Direction direction);
     ~FMainWindow();
 
 public slots:

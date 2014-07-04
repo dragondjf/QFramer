@@ -1,6 +1,6 @@
-#include "basetoolbutton.h"
+#include "fbasetoolbutton.h"
 
-BaseToolButton::BaseToolButton(const QString& text)
+FBaseToolButton::FBaseToolButton(const QString& text)
 {
     setFlat(true);
     setCheckable(true);

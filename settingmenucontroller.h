@@ -1,13 +1,13 @@
-#ifndef FSETTINGMENUCONTROLLER_H
-#define FSETTINGMENUCONTROLLER_H
+#ifndef SETTINGMENUCONTROLLER_H
+#define SETTINGMENUCONTROLLER_H
 
 #include <QObject>
 
-class FSettingMenuController : public QObject
+class SettingMenuController : public QObject
 {
     Q_OBJECT
 public:
-    explicit FSettingMenuController(QObject *parent = 0);
+    explicit SettingMenuController(QObject *parent = 0);
 
 signals:
 
@@ -20,4 +20,4 @@ public slots:
     void closeMainWindow();
 };
 
-#endif // FSETTINGMENUCONTROLLER_H
+#endif // SETTINGMENUCONTROLLER_H

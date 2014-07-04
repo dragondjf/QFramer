@@ -1,6 +1,6 @@
 #ifndef SETTINGDIALOG_H
 #define SETTINGDIALOG_H
-#include "fbasedialog.h"
+#include "QFramer/fbasedialog.h"
 
 class SettingDialog : public FBaseDialog
 {

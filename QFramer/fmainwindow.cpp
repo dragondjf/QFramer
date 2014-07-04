@@ -1,6 +1,6 @@
 #include "fmainwindow.h"
 #include "util.h"
-#include"titlebar.h"
+#include"QFramer/ftitlebar.h"
 #include"centerwindow.h"
 #include<QtCore>
 
@@ -27,6 +27,8 @@ void FMainWindow::initData()
 
 void FMainWindow::initUI()
 {
+    titleBar = new FTitleBar;
+
     setObjectName(QString("FMainWindow"));
     QDesktopWidget* desktopWidget = QApplication::desktop();
     setMaximumSize(desktopWidget->availableGeometry().size());
@@ -37,14 +39,11 @@ void FMainWindow::initUI()
 
     pstatusbar = new QStatusBar;
     setStatusBar(pstatusbar);
-
     trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
-    trayicon->setContextMenu(TitleBar::getInstance()->settingMenu);
     trayicon->setObjectName(QString("trayicon"));
     trayicon->show();
 
     flyWidget = new FlyWidget(this);
-    flyWidget->menu = TitleBar::getInstance()->settingMenu;
     flyWidget->move(desktopWidget->availableGeometry().width() * 0.8, desktopWidget->availableGeometry().height() *0.2);
 
     QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
@@ -54,14 +53,13 @@ void FMainWindow::initUI()
 
 void FMainWindow::initConnect( )
 {
-    connect(TitleBar::getInstance(), SIGNAL(minimuned()), this, SLOT(hide()));
-    connect(TitleBar::getInstance(), SIGNAL(minimuned()), this, SLOT(showFlyWidget()));
-    connect(TitleBar::getInstance(), SIGNAL(maximumed()), this, SLOT(swithMaxNormal()));
-    connect(TitleBar::getInstance(), SIGNAL(closed()), this, SLOT(hide()));
-    connect(TitleBar::getInstance(), SIGNAL(closed()), this, SLOT(showFlyWidget()));
+    connect(titleBar, SIGNAL(minimuned()), this, SLOT(hide()));
+    connect(titleBar, SIGNAL(minimuned()), this, SLOT(showFlyWidget()));
+    connect(titleBar, SIGNAL(maximumed()), this, SLOT(swithMaxNormal()));
+    connect(titleBar, SIGNAL(closed()), this, SLOT(hide()));
+    connect(titleBar, SIGNAL(closed()), this, SLOT(showFlyWidget()));
     connect(trayicon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
             this, SLOT(onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason)));
-
 }
 
 
@@ -77,7 +75,6 @@ void FMainWindow::readSettings()
    printf("%d\n" ,(settings.value("size", QSize(w * 0.8, h * 0.8)).toSize().width()));
    move(settings.value("pos", QPoint(w * 0.1, h * 0.1)).toPoint());
    settings.endGroup();
-
 }
 
 void FMainWindow::writeSettings()
@@ -118,7 +115,7 @@ void FMainWindow::mousePressEvent(QMouseEvent *e)
 
 void FMainWindow::mouseDoubleClickEvent(QMouseEvent *e)
 {
-    if(e->y() < TitleBar::getInstance()->height() and e->x() < TitleBar::getInstance()->width() - 120)
+    if(e->y() < titleBar->height() and e->x() < titleBar->width() - 120)
     {
         swithMaxNormal();
         e->accept();
@@ -163,7 +160,7 @@ void FMainWindow::mouseMoveEvent(QMouseEvent *e)
     else
     {
 
-        if(e->y() < TitleBar::getInstance()->height() and e->x() > TitleBar::getInstance()->width() - 120)
+        if(e->y() < titleBar->height() and e->x() > titleBar->width() - 120)
         {
             e->ignore();
         }
@@ -181,7 +178,7 @@ void FMainWindow::keyPressEvent(QKeyEvent *e)
         close();
     }
     else if (e->key() == Qt::Key_F11) {
-        TitleBar::getInstance()->getMaxButton()->click();
+        titleBar->getMaxButton()->click();
     }
     else if (e->key() == Qt::Key_F6) {
         CenterWindow::getInstance()->swicthLayout(QBoxLayout::LeftToRight);

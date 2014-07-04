@@ -20,9 +20,24 @@ QFrame QLabel#FTitleLabel{
     padding-left: 5px;
 }
 
-QFrame#FNavgationBar{
+QFrame#FNavgationBar_bottom{
     background-color: transparent;
     border-bottom: 2px solid black;
+}
+
+QFrame#FNavgationBar_top{
+    background-color: transparent;
+    border-top: 2px solid black;
+}
+
+QFrame#FNavgationBar_left{
+    background-color: transparent;
+    border-left: 2px solid black;
+}
+
+QFrame#FNavgationBar_right{
+    background-color: transparent;
+    border-right: 2px solid black;
 }
 
 QFrame#QWebBrowserPage{

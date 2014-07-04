@@ -1,7 +1,7 @@
 #ifndef ABOUTDIALOG_H
 #define ABOUTDIALOG_H
 
-#include "fbasedialog.h"
+#include "QFramer/fbasedialog.h"
 
 class AboutDialog : public FBaseDialog
 {
