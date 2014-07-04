@@ -5,7 +5,7 @@
 #include<QPixmap>
 #include<QMouseEvent>
 #include<QPainter>
-#include"fsettingmenu.h"
+#include"settingmenu.h"
 
 class FlyWidget : public QWidget
 {
@@ -25,7 +25,7 @@ private:
     QPoint m_CurrentPos;
     QPixmap m_Pixmap;
 public:
-    FSettingMenu* menu;
+    SettingMenu* menu;
 public:
     explicit FlyWidget(QWidget *parent = 0);
     void initData();

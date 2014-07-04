@@ -5,7 +5,7 @@
 #include<QWebView>
 #include<QPropertyAnimation>
 #include<QEasingCurve>
-
+#include<QLabel>
 
 FCenterWindow::FCenterWindow(QWidget *parent)
     :QFrame(parent)
@@ -24,7 +24,6 @@ void FCenterWindow::initData()
 void FCenterWindow::initUI()
 {
     setObjectName(QString("FCenterWindow"));
-    titleBar = TitleBar::getInstance();
     navagationBar = new FNavgationBar();
     stackWidget = new QStackedWidget();
 
@@ -34,8 +33,7 @@ void FCenterWindow::initUI()
     navlayout->setContentsMargins(0, 0 ,0 ,0);
     navlayout->setSpacing(0);
 
-    QVBoxLayout* mainlayout = new QVBoxLayout;
-    mainlayout->addWidget(titleBar);
+    mainlayout = new QVBoxLayout;
     mainlayout->addLayout(navlayout);
     mainlayout->setContentsMargins(0, 0 ,0 ,0);
     mainlayout->setSpacing(0);

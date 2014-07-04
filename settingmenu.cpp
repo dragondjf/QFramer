@@ -1,8 +1,8 @@
-#include "fsettingmenu.h"
+#include "settingmenu.h"
 #include "mainwindow.h"
 #include <QApplication>
 
-FSettingMenu::FSettingMenu(QWidget *parent) :
+SettingMenu::SettingMenu(QWidget *parent) :
     QMenu(parent)
 {
     initData();
@@ -14,12 +14,12 @@ FSettingMenu::FSettingMenu(QWidget *parent) :
     setStyleSheet(qss);
 }
 
-void FSettingMenu::initData()
+void SettingMenu::initData()
 {
     actionNames<< tr("Show flyWindow")<<tr("Settings") << tr("Check update") << tr("Online help") << tr("Office site") << tr("About us")<< tr("Quit");
 }
 
-void FSettingMenu::initUI()
+void SettingMenu::initUI()
 {
     for(int i=0; i< actionNames.length() ; ++i)
     {
@@ -29,12 +29,12 @@ void FSettingMenu::initUI()
     addActions(actions);
 }
 
-void FSettingMenu::initController()
+void SettingMenu::initController()
 {
-    controller = new FSettingMenuController();
+    controller = new SettingMenuController();
 }
 
-void FSettingMenu::initConnect()
+void SettingMenu::initConnect()
 {
 //    connect(actionMaps[tr("Settings")], &QAction::triggered, controller, &FSettingMenuController::showSettingDialog);
 //    connect(actionMaps[tr("Check update")], &QAction::triggered, controller, &FSettingMenuController::checkUpdate);
@@ -52,7 +52,7 @@ void FSettingMenu::initConnect()
 }
 
 
-void FSettingMenu::switchActionState()
+void SettingMenu::switchActionState()
 {
     MainWindow::getInstance()->flyWidget->setVisible(
                 not MainWindow::getInstance()->flyWidget->isVisible());

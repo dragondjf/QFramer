@@ -12,7 +12,6 @@ TARGET = QFramer
 TEMPLATE = app
 
 SOURCES += main.cpp\
-    basetoolbutton.cpp \
     util.cpp \
     aboutdialog.cpp \
     settingdialog.cpp \
@@ -22,19 +21,20 @@ SOURCES += main.cpp\
     basequickwidget.cpp \
     qmlviwer.cpp \
     flywidget.cpp \
-    ftitlebar.cpp \
-    fsettingmenu.cpp \
-    fsettingmenucontroller.cpp \
-    fnavgationbar.cpp \
-    fcenterwindow.cpp \
+    QFramer/ftitlebar.cpp\
     centerwindow.cpp \
-    fbasedialog.cpp \
     fmainwindow.cpp \
     mainwindow.cpp \
-    titlebar.cpp
+    titlebar.cpp \
+    qcustomplot.cpp \
+    QFramer/fnavgationbar.cpp \
+    QFramer/fbasetoolbutton.cpp \
+    QFramer/fcenterwindow.cpp \
+    QFramer/fbasedialog.cpp \
+    settingmenu.cpp \
+    settingmenucontroller.cpp
 
 HEADERS  += \
-    basetoolbutton.h \
     util.h \
     aboutdialog.h \
     settingdialog.h \
@@ -44,16 +44,19 @@ HEADERS  += \
     basequickwidget.h \
     qmlviwer.h \
     flywidget.h \
-    ftitlebar.h \
-    fsettingmenu.h \
-    fsettingmenucontroller.h \
-    fnavgationbar.h \
-    fcenterwindow.h \
+    QFramer/ftitlebar.h\
     centerwindow.h \
-    fbasedialog.h \
     fmainwindow.h \
     mainwindow.h \
-    titlebar.h
+    titlebar.h \
+    qcustomplot.h \
+    QFramer/fnavgationbar.h \
+    QFramer/fbasetoolbutton.h \
+    QFramer/fcenterwindow.h \
+    QFramer/fbasedialog.h \
+    settingmenu.h \
+    settingmenucontroller.h
+
 
 RESOURCES += \
     QFramer.qrc

@@ -1,10 +1,13 @@
 #include "titlebar.h"
+#include "QFramer/ftitlebar.h"
 
 TitleBar* TitleBar::instance = NULL;
 
 TitleBar::TitleBar(QWidget *parent) :
     FTitleBar(parent)
 {
+    menu = new SettingMenu;
+    setSettingMenu(menu);
 }
 
 

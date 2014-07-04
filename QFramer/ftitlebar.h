@@ -4,7 +4,7 @@
 #include <QFrame>
 #include <QToolButton>
 #include <QLabel>
-#include "fsettingmenu.h"
+
 
 #define Title_Height 25
 
@@ -35,7 +35,6 @@ private:
 
 public:
     QString title;
-    FSettingMenu* settingMenu;
 
 public:
     explicit FTitleBar(QWidget *parent = 0);

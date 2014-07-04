@@ -6,7 +6,7 @@
 #include<QWidget>
 #include<QHBoxLayout>
 #include<QVBoxLayout>
-#include "basetoolbutton.h"
+#include "fbasetoolbutton.h"
 
 
 class FNavgationBar : public QFrame
@@ -27,7 +27,7 @@ private:
     QVBoxLayout* mainlayout_rightBottom;
 public:
 
-    QList<BaseToolButton*> buttons;
+    QList<FBaseToolButton*> buttons;
     QList<QString> buttonTitles;
 public:
     explicit FNavgationBar(QWidget *parent = 0);

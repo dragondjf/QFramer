@@ -3,7 +3,9 @@
 #include "webkitshow.h"
 #include "basequickwidget.h"
 #include "qmlviwer.h"
-#include "fcenterwindow.h"
+#include "QFramer/fcenterwindow.h"
+#include "titlebar.h"
+#include<QVBoxLayout>
 
 CenterWindow* CenterWindow::instance = NULL;
 
@@ -15,6 +17,8 @@ CenterWindow::CenterWindow(QWidget *parent) :
 
 void CenterWindow::initUI()
 {
+    titleBar = TitleBar::getInstance();
+
     gradientShow = new GradientShow;
 //    webkitShow = new WebkitShow();
     qmlViwer2 = new BaseQuickWidget;
@@ -32,6 +36,7 @@ void CenterWindow::initUI()
     addWidget(tr("PhotoWall"), qmlViwer4);
     addWidget(tr("About"), qmlViwer5);
 
+    mainlayout->insertWidget(0, titleBar);
     setAlignment(TopCenter);
 }
 

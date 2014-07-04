@@ -50,9 +50,6 @@ void FTitleBar::initUI()
     mainlayout->setSpacing(0);
     setLayout(mainlayout);
 
-    settingMenu = new FSettingMenu;
-    setSettingMenu(settingMenu);
-
 }
 
 void FTitleBar::initConnect()

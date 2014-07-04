@@ -47,7 +47,7 @@ void FNavgationBar::initConnect()
 void FNavgationBar::addNavgationTile(const QString &tile)
 {
     buttonTitles  << tile;
-    BaseToolButton* button = new BaseToolButton(tile);
+    FBaseToolButton* button = new FBaseToolButton(tile);
     buttons.append(button);
     button->setObjectName(tile);
     connect(button, SIGNAL(clicked()), this, SLOT(setButtonChecked()));

@@ -1,7 +1,8 @@
 #ifndef TITLEBAR_H
 #define TITLEBAR_H
 
-#include"ftitlebar.h"
+#include"QFramer/ftitlebar.h"
+#include "settingmenu.h"
 
 class TitleBar : public FTitleBar
 {
@@ -9,6 +10,7 @@ class TitleBar : public FTitleBar
 
 public:
     static TitleBar* instance;
+    SettingMenu* menu;
 public:
     explicit TitleBar(QWidget *parent = 0);
     static TitleBar* getInstance();
