@@ -23,7 +23,10 @@ void FCenterWindow::initData()
 
 void FCenterWindow::initUI()
 {
+<<<<<<< HEAD
 
+=======
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633
     setObjectName(QString("FCenterWindow"));
     navagationBar = new FNavgationBar();
     stackWidget = new QStackedWidget();
@@ -34,12 +37,20 @@ void FCenterWindow::initUI()
     navlayout->setContentsMargins(0, 0 ,0 ,0);
     navlayout->setSpacing(0);
 
+<<<<<<< HEAD
     mainLayout = new QVBoxLayout;
     mainLayout->addLayout(navlayout);
     mainLayout->setContentsMargins(0, 0 ,0 ,0);
     mainLayout->setSpacing(0);
     setLayout(mainLayout);
 
+=======
+    mainlayout = new QVBoxLayout;
+    mainlayout->addLayout(navlayout);
+    mainlayout->setContentsMargins(0, 0 ,0 ,0);
+    mainlayout->setSpacing(0);
+    setLayout(mainlayout);
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633
 }
 
 void FCenterWindow::swicthLayout(QBoxLayout::Direction direction)
@@ -126,11 +137,14 @@ void FCenterWindow::initConnect()
     connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(cloudAntimation(int)));
 }
 
+<<<<<<< HEAD
 void FCenterWindow::setTitleBar(FTitleBar *ftitleBar)
 {
     mainLayout->insertWidget(0, ftitleBar);
 }
 
+=======
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633
 void FCenterWindow::addWidget(const QString &tile, QWidget *widget)
 {
     navagationBar->addNavgationTile(tile);

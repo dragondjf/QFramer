@@ -21,6 +21,7 @@ SOURCES += main.cpp\
     basequickwidget.cpp \
     qmlviwer.cpp \
     flywidget.cpp \
+<<<<<<< HEAD
     centerwindow.cpp \
     mainwindow.cpp \
     QFramer/fbasedialog.cpp \
@@ -32,6 +33,20 @@ SOURCES += main.cpp\
     settingmenucontroller.cpp \
     QFramer/fmainwindow.cpp
 
+=======
+    QFramer/ftitlebar.cpp\
+    centerwindow.cpp \
+    fmainwindow.cpp \
+    mainwindow.cpp \
+    titlebar.cpp \
+    qcustomplot.cpp \
+    QFramer/fnavgationbar.cpp \
+    QFramer/fbasetoolbutton.cpp \
+    QFramer/fcenterwindow.cpp \
+    QFramer/fbasedialog.cpp \
+    settingmenu.cpp \
+    settingmenucontroller.cpp
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633
 
 HEADERS  += \
     util.h \
@@ -43,6 +58,7 @@ HEADERS  += \
     basequickwidget.h \
     qmlviwer.h \
     flywidget.h \
+<<<<<<< HEAD
     centerwindow.h \
     mainwindow.h \
     QFramer/fbasedialog.h \
@@ -53,6 +69,21 @@ HEADERS  += \
     settingmenu.h \
     settingmenucontroller.h \
     QFramer/fmainwindow.h
+=======
+    QFramer/ftitlebar.h\
+    centerwindow.h \
+    fmainwindow.h \
+    mainwindow.h \
+    titlebar.h \
+    qcustomplot.h \
+    QFramer/fnavgationbar.h \
+    QFramer/fbasetoolbutton.h \
+    QFramer/fcenterwindow.h \
+    QFramer/fbasedialog.h \
+    settingmenu.h \
+    settingmenucontroller.h
+
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633
 
 RESOURCES += \
     QFramer.qrc

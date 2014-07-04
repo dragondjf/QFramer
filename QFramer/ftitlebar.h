@@ -4,6 +4,11 @@
 #include <QFrame>
 #include <QToolButton>
 #include <QLabel>
+<<<<<<< HEAD:QFramer/ftitlebar.h
+=======
+
+
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633:QFramer/ftitlebar.h
 #define Title_Height 25
 
 class FTitleBar : public QFrame

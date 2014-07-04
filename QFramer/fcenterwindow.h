@@ -5,8 +5,14 @@
 #include<QWidget>
 #include<QStackedWidget>
 #include<QResizeEvent>
+<<<<<<< HEAD:QFramer/fcenterwindow.h
 #include "fnavgationbar.h"
 #include"ftitlebar.h"
+=======
+#include "QFramer/fnavgationbar.h"
+
+
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633:QFramer/fcenterwindow.h
 class FCenterWindow : public QFrame
 {
     Q_OBJECT
@@ -30,8 +36,12 @@ public:
     FNavgationBar* navagationBar;
     QStackedWidget* stackWidget;
     QBoxLayout* navlayout;
+<<<<<<< HEAD:QFramer/fcenterwindow.h
 
     QVBoxLayout* mainLayout;
+=======
+    QVBoxLayout* mainlayout;
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633:QFramer/fcenterwindow.h
     int currentIndex;
 public:
     explicit FCenterWindow(QWidget *parent = 0);

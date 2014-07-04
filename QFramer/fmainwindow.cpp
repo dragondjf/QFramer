@@ -40,10 +40,18 @@ void FMainWindow::initUI()
     pstatusbar = new QStatusBar;
     setStatusBar(pstatusbar);
     trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
+<<<<<<< HEAD:QFramer/fmainwindow.cpp
+=======
+    trayicon->setContextMenu(TitleBar::getInstance()->menu);
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633:fmainwindow.cpp
     trayicon->setObjectName(QString("trayicon"));
     trayicon->show();
 
     flyWidget = new FlyWidget(this);
+<<<<<<< HEAD:QFramer/fmainwindow.cpp
+=======
+    flyWidget->menu = TitleBar::getInstance()->menu;
+>>>>>>> 93f3b82cf553ccbd90eec91b9860c38978134633:fmainwindow.cpp
     flyWidget->move(desktopWidget->availableGeometry().width() * 0.8, desktopWidget->availableGeometry().height() *0.2);
 
     QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
