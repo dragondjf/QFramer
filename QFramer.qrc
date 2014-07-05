@@ -1893,6 +1893,7 @@
         <file>skin/qss/dialog.qss</file>
         <file>skin/qss/main.qss</file>
         <file>skin/qss/settingmenu.qss</file>
+        <file>skin/images/balboa.jpg</file>
     </qresource>
     <qresource prefix="/QUItBattery">
         <file>QUItBattery/images/arrows.png</file>

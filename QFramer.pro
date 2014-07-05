@@ -30,7 +30,11 @@ SOURCES += main.cpp\
     mainwindow/settingmenucontroller.cpp \
     dialogs/aboutdialog.cpp \
     dialogs/bgskinpopup.cpp \
-    dialogs/settingdialog.cpp
+    dialogs/settingdialog.cpp \
+    functionpages/pdftool.cpp \
+    qcustomplot/qcustomplot.cpp \
+    functionpages/mathplot.cpp \
+    qcustomplot/fcustomplot.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -51,7 +55,11 @@ HEADERS  += \
     mainwindow/settingmenucontroller.h \
     dialogs/aboutdialog.h \
     dialogs/bgskinpopup.h \
-    dialogs/settingdialog.h
+    dialogs/settingdialog.h \
+    functionpages/pdftool.h \
+    qcustomplot/qcustomplot.h \
+    functionpages/mathplot.h \
+    qcustomplot/fcustomplot.h
 
 RESOURCES += \
     QFramer.qrc

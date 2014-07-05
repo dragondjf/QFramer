@@ -293,31 +293,30 @@ QPushButton#QssMaker:flat{
 }
 
 
-QPushButton#Qexer{
-    background-image: url(:/skin/icons/dark/appbar.list.png);
+QPushButton#MathPlot{
+    background-image: url(:/skin/icons/dark/appbar.graph.line.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
     background-color: transparent;
     color: white;
-    font-family: "Verdana";
     text-align: center bottom;
     padding-bottom: 5px;
 
 }
 
-QPushButton#Qexer:hover{
+QPushButton#MathPlot:hover{
     background-color: lightgreen;
     border:1px  black;
     opacity: 0.1;
 }
 
-QPushButton#Qexer:checked{
+QPushButton#MathPlot:checked{
     background-color: #00CD00;
     color: white;
 }
 
-QPushButton#Qexer:flat{
+QPushButton#MathPlot:flat{
     border: none;
 }
 
@@ -478,6 +477,28 @@ QPushButton#Exit:checked{
 }
 
 QPushButton#Exit:flat{
+    border: none;
+}
+
+
+QPushButton{
+
+    color: white;
+    text-align: center center;
+}
+
+QPushButton:hover{
+    background-color: lightgreen;
+    border:1px  black;
+    opacity: 0.1;
+}
+
+QPushButton:checked{
+    background-color: #00CD00;
+    color: white;
+}
+
+QPushButton:flat{
     border: none;
 }
 

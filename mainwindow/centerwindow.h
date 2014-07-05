@@ -6,6 +6,7 @@
 #include "functionpages/webkitshow.h"
 #include "functionpages/basequickwidget.h"
 #include "functionpages/qmlviwer.h"
+#include "functionpages/pdftool.h"
 #include<QVBoxLayout>
 
 class CenterWindow : public FCenterWindow
@@ -14,6 +15,7 @@ class CenterWindow : public FCenterWindow
 
 public:
     GradientShow* gradientShow;
+    PDFTool* pdfTool;
     WebkitShow *webkitShow;
     BaseQuickWidget* qmlViwer2;
     QmlViwer* qmlViwer3;
