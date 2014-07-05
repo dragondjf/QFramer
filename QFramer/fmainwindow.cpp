@@ -1,7 +1,5 @@
 #include "fmainwindow.h"
 #include "futil.h"
-#include"titlebar.h"
-#include"centerwindow.h"
 #include<QtCore>
 
 #include<QMouseEvent>
@@ -179,9 +177,6 @@ void FMainWindow::keyPressEvent(QKeyEvent *e)
     }
     else if (e->key() == Qt::Key_F11) {
         titleBar->getMaxButton()->click();
-    }
-    else if (e->key() == Qt::Key_F6) {
-        CenterWindow::getInstance()->swicthLayout(QBoxLayout::LeftToRight);
     }
 }
 

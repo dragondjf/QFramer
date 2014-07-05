@@ -6,7 +6,7 @@
 #include<QStackedWidget>
 #include<QResizeEvent>
 #include "fnavgationbar.h"
-#include"ftitlebar.h"
+
 class FCenterWindow : public QFrame
 {
     Q_OBJECT

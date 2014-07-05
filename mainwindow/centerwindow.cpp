@@ -20,9 +20,9 @@ void CenterWindow::initUI()
     qmlViwer3 = new QmlViwer;
     qmlViwer4 = new BaseQuickWidget;
     qmlViwer5 = new BaseQuickWidget;
-    qmlViwer2->setSource(QUrl(QString("qrc:/home/welcom.qml")));
-    qmlViwer4->setSource(QUrl(QString("qrc:/about/photowall.qml")));
-    qmlViwer5->setSource(QUrl(QString("qrc:/about/about.qml")));
+    qmlViwer2->setSource(QUrl(QString("qrc:/home/qml/home.qml")));
+    qmlViwer4->setSource(QUrl(QString("qrc:/home/qml/photowall.qml")));
+    qmlViwer5->setSource(QUrl(QString("qrc:/home/qml/about.qml")));
 
     addWidget(tr("Home"), gradientShow);
     addWidget(tr("QtWebkit"), webkitShow);

@@ -29,7 +29,7 @@ void QmlViwer::initUI()
     loadLayout->addWidget(qmlUrlEdit);
 
     viewer = new BaseQuickWidget;
-    viewer->setSource(QUrl(QString("qrc:/home/welcom.qml")));
+    viewer->setSource(QUrl(QString("qrc:/home/qml/home.qml")));
     QVBoxLayout* mainLayout = new QVBoxLayout;
     mainLayout->addLayout(loadLayout);
     mainLayout->addWidget(viewer);

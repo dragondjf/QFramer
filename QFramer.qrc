@@ -1914,9 +1914,10 @@
         <file>QUItBattery/images/background2.jpg</file>
     </qresource>
     <qresource prefix="/home">
-        <file>home.qml</file>
-        <file>welcom.qml</file>
-        <file>MouseClick.qml</file>
+        <file>qml/about.qml</file>
+        <file>qml/home.qml</file>
+        <file>qml/MouseClick.qml</file>
+        <file>qml/photowall.qml</file>
     </qresource>
     <qresource prefix="/quickwindow">
         <file>application/affectors/MouseClick.qml</file>
@@ -3838,10 +3839,6 @@
         <file>application/appquick.qml</file>
         <file>application/appwindow.qml</file>
         <file>application/test.qml</file>
-    </qresource>
-    <qresource prefix="/about">
-        <file>photowall.qml</file>
-        <file>about.qml</file>
     </qresource>
     <qresource prefix="/tiger">
         <file>tiger/tiger.js</file>

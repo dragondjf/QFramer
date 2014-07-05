@@ -6,7 +6,7 @@
 #include<QPropertyAnimation>
 #include<QEasingCurve>
 #include<QLabel>
-
+#include"ftitlebar.h"
 
 FCenterWindow::FCenterWindow(QWidget *parent)
     :QFrame(parent)
