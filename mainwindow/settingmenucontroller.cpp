@@ -1,6 +1,6 @@
 #include "settingmenucontroller.h"
-#include "settingdialog.h"
-#include "aboutdialog.h"
+#include "dialogs/settingdialog.h"
+#include "dialogs/aboutdialog.h"
 #include<QDesktopServices>
 #include<QUrl>
 #include<QApplication>

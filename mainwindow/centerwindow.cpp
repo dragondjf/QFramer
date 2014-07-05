@@ -1,8 +1,8 @@
 #include "centerwindow.h"
-#include "gradientshow.h"
-#include "webkitshow.h"
-#include "basequickwidget.h"
-#include "qmlviwer.h"
+#include "functionpages/gradientshow.h"
+#include "functionpages/webkitshow.h"
+#include "functionpages/basequickwidget.h"
+#include "functionpages/qmlviwer.h"
 #include "QFramer/fcenterwindow.h"
 CenterWindow* CenterWindow::instance = NULL;
 

@@ -2,11 +2,10 @@
 #define CENTERWINDOW_H
 
 #include"QFramer/fcenterwindow.h"
-#include"titlebar.h"
-#include "gradientshow.h"
-#include "webkitshow.h"
-#include "basequickwidget.h"
-#include "qmlviwer.h"
+#include "functionpages/gradientshow.h"
+#include "functionpages/webkitshow.h"
+#include "functionpages/basequickwidget.h"
+#include "functionpages/qmlviwer.h"
 #include<QVBoxLayout>
 
 class CenterWindow : public FCenterWindow
@@ -14,7 +13,6 @@ class CenterWindow : public FCenterWindow
     Q_OBJECT
 
 public:
-    TitleBar* titleBar;
     GradientShow* gradientShow;
     WebkitShow *webkitShow;
     BaseQuickWidget* qmlViwer2;

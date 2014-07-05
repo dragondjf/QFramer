@@ -1,7 +1,6 @@
 #include <QApplication>
 #include "QFramer/futil.h"
-#include "mainwindow.h"
-#include "webkitshow.h"
+#include "mainwindow/mainwindow.h"
 int main(int argc, char *argv[])
 {
     qInstallMessageHandler(myMessageOutput);
@@ -12,9 +11,6 @@ int main(int argc, char *argv[])
 
     MainWindow *main = MainWindow::getInstance();
     main->show();
-
-//    WebkitShow w;
-//    w.show();
     return a.exec();
     delete main;
 }

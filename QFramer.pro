@@ -12,47 +12,46 @@ TARGET = QFramer
 TEMPLATE = app
 
 SOURCES += main.cpp\
-    aboutdialog.cpp \
-    settingdialog.cpp \
-    bgskinpopup.cpp \
-    gradientshow.cpp \
-    webkitshow.cpp \
-    basequickwidget.cpp \
-    qmlviwer.cpp \
-    flywidget.cpp \
-    centerwindow.cpp \
-    mainwindow.cpp \
     QFramer/fbasedialog.cpp \
     QFramer/fcenterwindow.cpp \
     QFramer/fnavgationbar.cpp \
     QFramer/ftitlebar.cpp \
     QFramer/fbasetoolbutton.cpp \
-    settingmenu.cpp \
-    settingmenucontroller.cpp \
     QFramer/fmainwindow.cpp \
-    QFramer/futil.cpp
+    QFramer/futil.cpp \
+    QFramer/flywidget.cpp \
+    functionpages/basequickwidget.cpp \
+    functionpages/gradientshow.cpp \
+    functionpages/qmlviwer.cpp \
+    functionpages/webkitshow.cpp \
+    mainwindow/centerwindow.cpp \
+    mainwindow/mainwindow.cpp \
+    mainwindow/settingmenu.cpp \
+    mainwindow/settingmenucontroller.cpp \
+    dialogs/aboutdialog.cpp \
+    dialogs/bgskinpopup.cpp \
+    dialogs/settingdialog.cpp
 
 HEADERS  += \
-    util.h \
-    aboutdialog.h \
-    settingdialog.h \
-    bgskinpopup.h \
-    gradientshow.h \
-    webkitshow.h \
-    basequickwidget.h \
-    qmlviwer.h \
-    flywidget.h \
-    centerwindow.h \
-    mainwindow.h \
     QFramer/fbasedialog.h \
     QFramer/fcenterwindow.h \
     QFramer/fnavgationbar.h \
     QFramer/ftitlebar.h \
     QFramer/fbasetoolbutton.h \
-    settingmenu.h \
-    settingmenucontroller.h \
     QFramer/fmainwindow.h \
-    QFramer/futil.h
+    QFramer/futil.h \
+    QFramer/flywidget.h \
+    functionpages/basequickwidget.h \
+    functionpages/gradientshow.h \
+    functionpages/qmlviwer.h \
+    functionpages/webkitshow.h \
+    mainwindow/centerwindow.h \
+    mainwindow/mainwindow.h \
+    mainwindow/settingmenu.h \
+    mainwindow/settingmenucontroller.h \
+    dialogs/aboutdialog.h \
+    dialogs/bgskinpopup.h \
+    dialogs/settingdialog.h
 
 RESOURCES += \
     QFramer.qrc
