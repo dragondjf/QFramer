@@ -10,7 +10,7 @@ int main(int argc, char *argv[])
     QApplication::setApplicationName("QFramer");
 
     MainWindow *main = MainWindow::getInstance();
+    main->setAttribute(Qt::WA_DeleteOnClose);
     main->show();
     return a.exec();
-    delete main;
 }

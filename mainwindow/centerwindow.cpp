@@ -15,21 +15,21 @@ CenterWindow::CenterWindow(QWidget *parent) :
 void CenterWindow::initUI()
 {
     gradientShow = new GradientShow;
-    webkitShow = new WebkitShow();
-    qmlViwer2 = new BaseQuickWidget;
-    qmlViwer3 = new QmlViwer;
-    qmlViwer4 = new BaseQuickWidget;
-    qmlViwer5 = new BaseQuickWidget;
-    qmlViwer2->setSource(QUrl(QString("qrc:/home/qml/home.qml")));
-    qmlViwer4->setSource(QUrl(QString("qrc:/home/qml/photowall.qml")));
-    qmlViwer5->setSource(QUrl(QString("qrc:/home/qml/about.qml")));
+//    webkitShow = new WebkitShow();
+//    qmlViwer2 = new BaseQuickWidget;
+//    qmlViwer3 = new QmlViwer;
+//    qmlViwer4 = new BaseQuickWidget;
+//    qmlViwer5 = new BaseQuickWidget;
+//    qmlViwer2->setSource(QUrl(QString("qrc:/home/qml/home.qml")));
+//    qmlViwer4->setSource(QUrl(QString("qrc:/home/qml/photowall.qml")));
+//    qmlViwer5->setSource(QUrl(QString("qrc:/home/qml/about.qml")));
 
     addWidget(tr("Home"), gradientShow);
-    addWidget(tr("QtWebkit"), webkitShow);
-    addWidget(tr("QQuickWidget"), qmlViwer2);
-    addWidget(tr("QmlViewer"), qmlViwer3);
-    addWidget(tr("PhotoWall"), qmlViwer4);
-    addWidget(tr("About"), qmlViwer5);
+//    addWidget(tr("QtWebkit"), webkitShow);
+//    addWidget(tr("QQuickWidget"), qmlViwer2);
+//    addWidget(tr("QmlViewer"), qmlViwer3);
+//    addWidget(tr("PhotoWall"), qmlViwer4);
+//    addWidget(tr("About"), qmlViwer5);
 
     setAlignment(TopCenter);
 }
