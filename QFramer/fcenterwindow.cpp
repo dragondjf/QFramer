@@ -4,6 +4,7 @@
 #include<QQuickWidget>
 #include<QWebView>
 #include<QPropertyAnimation>
+#include<QParallelAnimationGroup>
 #include<QEasingCurve>
 #include<QLabel>
 #include<QTime>
@@ -131,6 +132,7 @@ void FCenterWindow::initConnect()
 void FCenterWindow::addWidget(const QString &tile, QWidget *widget)
 {
     navagationBar->addNavgationTile(tile);
+    widget->setObjectName(tile);
     stackWidget->addWidget(widget);
 }
 
@@ -201,15 +203,14 @@ void FCenterWindow::switchscreen()
 void FCenterWindow::cloudAntimation(animation_Direction direction)
 {
     QLabel* circle = new QLabel(stackWidget->currentWidget());
-//    circle->setStyleSheet(QString("\
-//         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
-//                                  ));
+    circle->setStyleSheet(QString("\
+         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
+                                  ));
     circle->setPixmap(stackWidget->widget(preindex)->grab());
     circle->show();
     circle->resize(stackWidget->currentWidget()->size());
     QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
-    connect(animation,SIGNAL(finished()), circle, SLOT(hide()));
-    connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
+
     animation->setDuration(1000);
     animation->setStartValue(circle->geometry());
     switch (direction) {
@@ -244,5 +245,21 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
         break;
     }
     animation->setEasingCurve(QEasingCurve::OutCubic);
-    animation->start();
+
+    QPropertyAnimation* animation_opacity = new QPropertyAnimation(circle, "windowOpacity");
+    animation_opacity->setDuration(1000);
+    animation_opacity->setStartValue(1);
+    animation_opacity->setEndValue(0);
+    animation_opacity->setEasingCurve(QEasingCurve::OutCubic);
+
+    QParallelAnimationGroup *group = new QParallelAnimationGroup;
+
+    connect(group,SIGNAL(finished()), circle, SLOT(hide()));
+    connect(group,SIGNAL(finished()), circle, SLOT(deleteLater()));
+    connect(group,SIGNAL(finished()), group, SLOT(deleteLater()));
+    connect(group,SIGNAL(finished()), animation, SLOT(deleteLater()));
+    connect(group,SIGNAL(finished()), animation_opacity, SLOT(deleteLater()));
+    group->addAnimation(animation);
+    group->addAnimation(animation_opacity);
+    group->start();
 }
