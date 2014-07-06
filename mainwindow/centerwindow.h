@@ -31,7 +31,7 @@ public:
 signals:
 
 public slots:
-    void cloudAntimation(const int index);
+//    void cloudAntimation();
 };
 
 #endif // CENTERWINDOW_H

@@ -6,6 +6,7 @@
 #include<QPropertyAnimation>
 #include<QEasingCurve>
 #include<QLabel>
+#include<QTime>
 #include"ftitlebar.h"
 
 FCenterWindow::FCenterWindow(QWidget *parent)
@@ -123,7 +124,7 @@ void FCenterWindow::setAlignment(Alignment_Direction direction)
 
 void FCenterWindow::initConnect()
 {
-    connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(cloudAntimation(int)));
+    connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(switchscreen(int)));
 }
 
 
@@ -136,6 +137,40 @@ void FCenterWindow::addWidget(const QString &tile, QWidget *widget)
 void FCenterWindow::switchscreen(const int index)
 {
     stackWidget->setCurrentIndex(index);
+
+    QTime time;
+    time= QTime::currentTime();
+    qsrand(time.msec()+time.second()*1000);
+    int n = qrand()%8;
+    switch (n) {
+    case 0:
+        cloudAntimation(animationTop);
+        break;
+    case 1:
+        cloudAntimation(animationTopRight);
+        break;
+    case 2:
+        cloudAntimation(animationRight);
+        break;
+    case 3:
+        cloudAntimation(animationBottomRight);
+        break;
+    case 4:
+        cloudAntimation(animationBottom);
+        break;
+    case 5:
+        cloudAntimation(animationBottomLeft);
+        break;
+    case 6:
+        cloudAntimation(animationLeft);
+        break;
+    case 7:
+        cloudAntimation(animationTopLeft);
+        break;
+    default:
+        break;
+    }
+
 }
 
 
@@ -144,20 +179,47 @@ void FCenterWindow::switchscreen()
     stackWidget->setCurrentIndex(currentIndex);
 }
 
-void FCenterWindow::cloudAntimation(const int index)
+void FCenterWindow::cloudAntimation(animation_Direction direction)
 {
-    currentIndex = index;
-    QLabel* circle = new QLabel(stackWidget);
+    QLabel* circle = new QLabel(stackWidget->currentWidget());
     circle->setStyleSheet(QString("\
          QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
                                   ));
     circle->show();
-    QPropertyAnimation *animation = new QPropertyAnimation(circle, "size");
-    connect(animation,SIGNAL(finished()), this, SLOT(switchscreen()));
+    circle->resize(stackWidget->currentWidget()->size());
+    QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
+    connect(animation,SIGNAL(finished()), circle, SLOT(hide()));
     connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
     animation->setDuration(1000);
-    animation->setStartValue(QSize(0, 0));
-    animation->setEndValue(stackWidget->size());
+    animation->setStartValue(circle->geometry());
+    switch (direction) {
+    case animationTop:
+        animation->setEndValue(QRect(circle->x(), circle->y(), circle->width(), 0));
+        break;
+    case animationTopRight:
+        animation->setEndValue(QRect(circle->width(), 0, 0, 0));
+        break;
+    case animationRight:
+        animation->setEndValue(QRect(circle->width(), 0, 0, circle->height()));
+        break;
+    case animationBottomRight:
+        animation->setEndValue(QRect(circle->width(), circle->height(), 0, 0));
+        break;
+    case animationBottom:
+        animation->setEndValue(QRect(0, circle->height(), circle->width(), 0));
+        break;
+    case animationBottomLeft:
+        animation->setEndValue(QRect(0, circle->height(), 0, 0));
+        break;
+    case animationLeft:
+        animation->setEndValue(QRect(0, 0, 0, circle->height()));
+        break;
+    case animationTopLeft:
+        animation->setEndValue(QRect(0, 0, 0, 0));
+        break;
+    default:
+        break;
+    }
     animation->setEasingCurve(QEasingCurve::OutCubic);
     animation->start();
 }

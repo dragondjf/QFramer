@@ -27,6 +27,17 @@ public:
         LeftTop,
     };
 
+    enum animation_Direction{
+        animationTop,
+        animationRight,
+        animationBottom,
+        animationLeft,
+        animationTopLeft,
+        animationTopRight,
+        animationBottomRight,
+        animationBottomLeft,
+    };
+
     FNavgationBar* navagationBar;
     QStackedWidget* stackWidget;
     QBoxLayout* navlayout;
@@ -45,7 +56,7 @@ public slots:
     void switchscreen(const int index);
     void switchscreen();
     void swicthLayout(QBoxLayout::Direction direction);
-    virtual void cloudAntimation(const int index);
+    virtual void cloudAntimation(animation_Direction direction);
 };
 
 #endif // FCENTERWINDOW_H

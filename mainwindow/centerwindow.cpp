@@ -47,21 +47,60 @@ CenterWindow* CenterWindow::getInstance()
     return instance;
 }
 
+//void  CenterWindow::cloudAntimation()
+//{
+//    cloudAntimation_Right();
+//}
 
-void CenterWindow::cloudAntimation(const int index)
-{
-    currentIndex = index;
-    QLabel* circle = new QLabel(stackWidget);
-    circle->setStyleSheet(QString("\
-         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
-                                  ));
-    circle->show();
-    QPropertyAnimation *animation = new QPropertyAnimation(circle, "size");
-    connect(animation,SIGNAL(finished()), this, SLOT(switchscreen()));
-    connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
-    animation->setDuration(1000);
-    animation->setStartValue(QSize(stackWidget->width(), 0));
-    animation->setEndValue(stackWidget->size());
-    animation->setEasingCurve(QEasingCurve::OutCubic);
-    animation->start();
-}
+//void CenterWindow::cloudAntimation_Bottom()
+//{
+//    QLabel* circle = new QLabel(stackWidget->currentWidget());
+//    circle->setStyleSheet(QString("\
+//         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
+//                                  ));
+//    circle->resize(stackWidget->currentWidget()->size());
+//    circle->show();
+//    QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
+//    connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
+//    animation->setDuration(1000);
+//    animation->setStartValue(stackWidget->geometry());
+
+
+//    animation->setEndValue(QRect(0, stackWidget->height(), stackWidget->width(), 0));
+//    animation->setEasingCurve(QEasingCurve::OutCubic);
+//    animation->start();
+//}
+
+//void CenterWindow::cloudAntimation_Right()
+//{
+//    QLabel* circle = new QLabel(stackWidget->currentWidget());
+//    circle->setStyleSheet(QString("\
+//         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
+//                                  ));
+//    circle->resize(stackWidget->currentWidget()->size());
+//    circle->show();
+//    QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
+//    connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
+//    animation->setDuration(1000);
+//    animation->setStartValue(stackWidget->geometry());
+//    animation->setEndValue(QRect(stackWidget->width(), 0, 0,  stackWidget->height()));
+//    animation->setEasingCurve(QEasingCurve::OutCubic);
+//    animation->start();
+//}
+
+//void CenterWindow::cloudAntimation_BottomRight()
+//{
+//    QLabel* circle = new QLabel(stackWidget->currentWidget());
+//    circle->setStyleSheet(QString("\
+//         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
+//                                  ));
+//    circle->resize(stackWidget->currentWidget()->size());
+//    circle->show();
+//    QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
+//    connect(animation,SIGNAL(finished()), circle, SLOT(deleteLater()));
+//    animation->setDuration(1000);
+//    animation->setStartValue(stackWidget->geometry());
+//    animation->setEndValue(QRect(stackWidget->width(), stackWidget->height(), 0, 0));
+//    animation->setEasingCurve(QEasingCurve::OutCubic);
+//    animation->start();
+//}
