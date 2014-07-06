@@ -5,12 +5,14 @@
 #include<QWidget>
 #include<QStackedWidget>
 #include<QResizeEvent>
+#include<QPixmap>
 #include "fnavgationbar.h"
 
 class FCenterWindow : public QFrame
 {
     Q_OBJECT
-
+private:
+    int preindex;
 public:
     enum Alignment_Direction{
         TopLeft,
@@ -36,6 +38,7 @@ public:
         animationTopRight,
         animationBottomRight,
         animationBottomLeft,
+        animationCenter
     };
 
     FNavgationBar* navagationBar;

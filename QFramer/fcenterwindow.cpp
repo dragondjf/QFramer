@@ -20,7 +20,7 @@ FCenterWindow::FCenterWindow(QWidget *parent)
 
 void FCenterWindow::initData()
 {
-
+    preindex = 0;
 }
 
 void FCenterWindow::initUI()
@@ -136,12 +136,18 @@ void FCenterWindow::addWidget(const QString &tile, QWidget *widget)
 
 void FCenterWindow::switchscreen(const int index)
 {
+    if (index == stackWidget->currentIndex())
+    {
+        return;
+    }
+
     stackWidget->setCurrentIndex(index);
 
     QTime time;
     time= QTime::currentTime();
     qsrand(time.msec()+time.second()*1000);
-    int n = qrand()%8;
+    int n = qrand()%9;
+    n = 4;
     switch (n) {
     case 0:
         cloudAntimation(animationTop);
@@ -167,9 +173,13 @@ void FCenterWindow::switchscreen(const int index)
     case 7:
         cloudAntimation(animationTopLeft);
         break;
+    case 8:
+        cloudAntimation(animationCenter);
+        break;
     default:
         break;
     }
+    preindex = index;
 
 }
 
@@ -182,9 +192,10 @@ void FCenterWindow::switchscreen()
 void FCenterWindow::cloudAntimation(animation_Direction direction)
 {
     QLabel* circle = new QLabel(stackWidget->currentWidget());
-    circle->setStyleSheet(QString("\
-         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
-                                  ));
+//    circle->setStyleSheet(QString("\
+//         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
+//                                  ));
+    circle->setPixmap(stackWidget->widget(preindex)->grab());
     circle->show();
     circle->resize(stackWidget->currentWidget()->size());
     QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
@@ -206,7 +217,7 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
         animation->setEndValue(QRect(circle->width(), circle->height(), 0, 0));
         break;
     case animationBottom:
-        animation->setEndValue(QRect(0, circle->height(), circle->width(), 0));
+        animation->setEndValue(QRect(0, circle->height() + 10, circle->width(), 0));
         break;
     case animationBottomLeft:
         animation->setEndValue(QRect(0, circle->height(), 0, 0));
@@ -216,6 +227,9 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
         break;
     case animationTopLeft:
         animation->setEndValue(QRect(0, 0, 0, 0));
+        break;
+    case animationCenter:
+        animation->setEndValue(QRect(circle->width()/2, circle->height()/2, 0, 0));
         break;
     default:
         break;
