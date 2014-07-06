@@ -1,8 +1,10 @@
 #include "aboutdialog.h"
+#include"QFramer/fbasepushbutton.h"
 #include<QVBoxLayout>
 #include<QLabel>
 #include<QPushButton>
 #include<QTextEdit>
+
 AboutDialog::AboutDialog(QWidget *parent) :
     FBaseDialog(parent)
 {
@@ -19,7 +21,8 @@ void AboutDialog::initUI()
     infoEdit->setText(QString("<h1>QFramer</h1><p>Github: https://github.com/dragondjf/QCFramer</p><p>Email: ding4656398889@163.com</p>"));
     infoEdit->setReadOnly(true);
 
-    enterButton = new QPushButton(QString("Close"));
+    enterButton = new FBasePushButton();
+    enterButton->setText(tr("Close"));
     QHBoxLayout* controlLayout = new QHBoxLayout;
     controlLayout->addStretch();
     controlLayout->addWidget(enterButton);
@@ -31,6 +34,8 @@ void AboutDialog::initUI()
     mainLayout->addSpacing(10);
     mainLayout->addLayout(controlLayout);
     mainLayout->addSpacing(10);
+
+
 
 }
 

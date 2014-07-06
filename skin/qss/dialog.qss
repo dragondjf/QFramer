@@ -1,5 +1,4 @@
 QDialog{
-    border:2px solid rgb(41, 153, 66);
     background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 white, stop:0.511364 yellow, stop:1 green);
 }
 
@@ -13,43 +12,27 @@ QFrame QLabel#TitleLabel{
     padding-left: 5px;
 }
 
+
 QPushButton{
-    background-color: green;
-    color: white;
-}
-
-
-QPushButton:hover{
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 yellow, stop: 1 green);
-    border: 1px;
-}
-
-QPushButton:disabled{
-    background-color: gray;
-    border: 1px;
-}
-
-QPushButton[popupMode="1"] { /* only for MenuButtonPopup */
-    padding-right: 0px; /* make way for the popup button */
-}
-
-QPushButton::menu-button {
+    background-color: lightgray;
     border: none;
 }
 
-QPushButton::menu-arrow {
-    image: none;
+QPushButton:hover{
+    background-color: white;
+    border: 1px solid green;
 }
 
-QPushButton::menu-indicator {
-    image: none;
+QPushButton:pressed{
+    background-color: lightgray;
+    border: 1px solid green;
 }
 
-QPushButton:open { /* when the button has its menu open */
+/*QPushButton:pressed{
     background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 green, stop: 1 yellow);
-}
+                                      stop: 0 yellow, stop: 1 green);
+}*/
+
 
 QLineEdit {
     padding: 1px;

@@ -4,6 +4,8 @@
 #include<QPropertyAnimation>
 #include<QDesktopWidget>
 #include<QApplication>
+#include<QGraphicsDropShadowEffect>
+#include<QPushButton>
 FBaseDialog::FBaseDialog(QWidget *parent) :
     QDialog(parent)
 {
@@ -36,7 +38,6 @@ void FBaseDialog::initUI()
     mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->setSpacing(0);
     setLayout(mainLayout);
-
 }
 
 void FBaseDialog::initConnect()
