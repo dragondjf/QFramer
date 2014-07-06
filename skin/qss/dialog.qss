@@ -5,13 +5,26 @@ QDialog{
 QFrame#TitleBar{
     background-color: transparent;
 }
-QFrame QLabel#TitleLabel{
+QLabel#FTitleLabel{
     color: white;
     font-family: 'Verdana';
     font-size: 12px;
     padding-left: 5px;
 }
 
+QLabel#logoLabel{
+    color: green;
+    font-family: 'Verdana';
+    font-size: 16px;
+    padding-left: 5px;
+}
+
+QLabel#content{
+    color: darkgreen;
+    font-family: 'Verdana';
+    font-size: 14px;
+    padding-left: 5px;
+}
 
 QPushButton{
     background-color: lightgray;
