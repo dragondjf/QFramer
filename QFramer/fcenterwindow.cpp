@@ -136,18 +136,27 @@ void FCenterWindow::addWidget(const QString &tile, QWidget *widget)
 
 void FCenterWindow::switchscreen(const int index)
 {
+    int n = 0;
     if (index == stackWidget->currentIndex())
     {
         return;
     }
+    else if(index > stackWidget->currentIndex())
+    {
+        n = 2;
+    }
+    else if (index < stackWidget->currentIndex())
+    {
+        n = 6;
+    }
 
     stackWidget->setCurrentIndex(index);
 
-    QTime time;
-    time= QTime::currentTime();
-    qsrand(time.msec()+time.second()*1000);
-    int n = qrand()%9;
-    n = 4;
+//    QTime time;
+//    time= QTime::currentTime();
+//    qsrand(time.msec()+time.second()*1000);
+//    int n = qrand()%9;
+//    n = 0;
     switch (n) {
     case 0:
         cloudAntimation(animationTop);
@@ -205,13 +214,13 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
     animation->setStartValue(circle->geometry());
     switch (direction) {
     case animationTop:
-        animation->setEndValue(QRect(circle->x(), circle->y(), circle->width(), 0));
+        animation->setEndValue(QRect(circle->x(), circle->y() - 10, circle->width(), 0));
         break;
     case animationTopRight:
         animation->setEndValue(QRect(circle->width(), 0, 0, 0));
         break;
     case animationRight:
-        animation->setEndValue(QRect(circle->width(), 0, 0, circle->height()));
+        animation->setEndValue(QRect(circle->width() + 10, 0, 0, circle->height()));
         break;
     case animationBottomRight:
         animation->setEndValue(QRect(circle->width(), circle->height(), 0, 0));
@@ -223,7 +232,7 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
         animation->setEndValue(QRect(0, circle->height(), 0, 0));
         break;
     case animationLeft:
-        animation->setEndValue(QRect(0, 0, 0, circle->height()));
+        animation->setEndValue(QRect(-10, 0, 0, circle->height()));
         break;
     case animationTopLeft:
         animation->setEndValue(QRect(0, 0, 0, 0));
