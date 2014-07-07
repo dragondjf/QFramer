@@ -26,6 +26,11 @@ private:
     void readSettings();
     void writeSettings();
 
+    FTitleBar * titleBar;
+    QStatusBar *pstatusbar;
+    QSystemTrayIcon *trayicon;
+    FlyWidget* flyWidget;
+
 protected:
     void mouseMoveEvent(QMouseEvent *e);
     void mousePressEvent(QMouseEvent *e);
@@ -34,19 +39,16 @@ protected:
     void keyPressEvent(QKeyEvent *e);
     void closeEvent(QCloseEvent * event);
     void SetCursorStyle(enum_Direction i);
-public:
-    FTitleBar * titleBar;
-    QStatusBar *pstatusbar;
-    QSystemTrayIcon *trayicon;
-    FlyWidget* flyWidget;
 
 public:
     FMainWindow(QWidget *parent = 0);
     void initData();
     void initUI();
     void initConnect();
-//    void getTitleBar();
-//    void setAlignment(FCenterWindow::Alignment_Direction direction);
+    FTitleBar* getTitleBar();
+    QStatusBar* getStatusBar();
+    QSystemTrayIcon* getQSystemTrayIcon();
+    FlyWidget* getFlyWidget();
     ~FMainWindow();
 
 public slots:

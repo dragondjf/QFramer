@@ -10,9 +10,9 @@ MainWindow::MainWindow(QWidget *parent) :
     setCentralWidget(centerWindow);
 
     settingmenu = new SettingMenu;
-    titleBar->setSettingMenu(settingmenu);
-    trayicon->setContextMenu(settingmenu);
-    flyWidget->setMenu(settingmenu);
+    getTitleBar()->setSettingMenu(settingmenu);
+    getQSystemTrayIcon()->setContextMenu(settingmenu);
+    getFlyWidget()->setMenu(settingmenu);
 
     QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
     setStyleSheet(qss);

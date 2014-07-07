@@ -54,10 +54,10 @@ void SettingMenu::initConnect()
 
 void SettingMenu::switchActionState()
 {
-    MainWindow::getInstance()->flyWidget->setVisible(
-                not MainWindow::getInstance()->flyWidget->isVisible());
+    MainWindow::getInstance()->getFlyWidget()->setVisible(
+                not MainWindow::getInstance()->getFlyWidget()->isVisible());
 
-    if(MainWindow::getInstance()->flyWidget->isVisible())
+    if(MainWindow::getInstance()->getFlyWidget()->isVisible())
     {
         actionMaps[tr("Show flyWindow")]->setText(tr("Hide flyWindow"));
     }

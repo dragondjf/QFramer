@@ -82,6 +82,26 @@ void FMainWindow::writeSettings()
     settings.endGroup();
 }
 
+FTitleBar* FMainWindow::getTitleBar()
+{
+    return titleBar;
+}
+
+QStatusBar* FMainWindow::getStatusBar()
+{
+    return pstatusbar;
+}
+
+QSystemTrayIcon* FMainWindow::getQSystemTrayIcon()
+{
+    return trayicon;
+}
+
+FlyWidget* FMainWindow::getFlyWidget()
+{
+    return flyWidget;
+}
+
 void FMainWindow::swithMaxNormal()
 {
     if(isMaximized())
