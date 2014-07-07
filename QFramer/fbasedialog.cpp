@@ -14,7 +14,7 @@ FBaseDialog::FBaseDialog(QWidget *parent) :
     initData();
     initUI();
     initConnect();
-    QString qss = getQssFromFile(QString(":/skin/qss/dialog.qss"));
+    QString qss = getQssFromFile(QString(":/qss/skin/qss/dialog.qss"));
     setStyleSheet(qss);
 }
 

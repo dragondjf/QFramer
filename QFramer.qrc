@@ -1890,9 +1890,6 @@
         <file>skin/images/logo.png</file>
         <file>skin/images/QFramer.png</file>
         <file>skin/images/splash.png</file>
-        <file>skin/qss/dialog.qss</file>
-        <file>skin/qss/main.qss</file>
-        <file>skin/qss/settingmenu.qss</file>
         <file>skin/images/balboa.jpg</file>
     </qresource>
     <qresource prefix="/QUItBattery">
@@ -3844,5 +3841,10 @@
     <qresource prefix="/tiger">
         <file>tiger/tiger.js</file>
         <file>tiger/tiger.qml</file>
+    </qresource>
+    <qresource prefix="/qss">
+        <file>skin/qss/dialog.qss</file>
+        <file>skin/qss/main.qss</file>
+        <file>skin/qss/settingmenu.qss</file>
     </qresource>
 </RCC>

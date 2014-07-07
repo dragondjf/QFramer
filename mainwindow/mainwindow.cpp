@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "centerwindow.h"
-
+#include "QFramer/futil.h"
 MainWindow* MainWindow::instance = NULL;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -14,6 +14,8 @@ MainWindow::MainWindow(QWidget *parent) :
     trayicon->setContextMenu(settingmenu);
     flyWidget->setMenu(settingmenu);
 
+    QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
+    setStyleSheet(qss);
 }
 
 MainWindow* MainWindow::getInstance()

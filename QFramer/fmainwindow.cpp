@@ -43,9 +43,6 @@ void FMainWindow::initUI()
 
     flyWidget = new FlyWidget(this);
     flyWidget->move(desktopWidget->availableGeometry().width() * 0.8, desktopWidget->availableGeometry().height() *0.2);
-
-    QString qss = getQssFromFile(QString(":/skin/qss/main.qss"));
-    setStyleSheet(qss);
 }
 
 
