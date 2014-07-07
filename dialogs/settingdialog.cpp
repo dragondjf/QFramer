@@ -23,5 +23,6 @@ void SettingDialog::initUI()
     tabwidget->addTab(tab1, tr("Home"));
     tabwidget->addTab(tab2, tr("Plot"));
     tabwidget->addTab(tab3, tr("About"));
+    mainLayout->addSpacing(5);
     mainLayout->addWidget(tabwidget);
 }

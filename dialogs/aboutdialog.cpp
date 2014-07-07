@@ -5,7 +5,7 @@
 #include<QPushButton>
 #include<QTextEdit>
 #include<QGraphicsDropShadowEffect>
-
+#include<QPropertyAnimation>
 AboutDialog::AboutDialog(QWidget *parent) :
     FBaseDialog(parent)
 {
@@ -81,5 +81,16 @@ void AboutDialog::initUI()
 void AboutDialog::initConnect()
 {
 //    BaseDialog::initConnect();
-    connect(enterButton, &QPushButton::clicked, this, &FBaseDialog::close);
+    connect(enterButton, &QPushButton::clicked, this, &AboutDialog::animationClose);
+}
+
+
+void AboutDialog::animationClose()
+{
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+    connect(animation, &QPropertyAnimation::finished, this, &AboutDialog::close);
+    animation->setDuration(1000);
+    animation->setStartValue(1);
+    animation->setEndValue(0);
+    animation->start();
 }

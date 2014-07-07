@@ -45,5 +45,5 @@ void SettingMenuController::showAboutUs()
 void SettingMenuController::closeMainWindow()
 {
     MainWindow* p = MainWindow::getInstance();
-    p->close();
+    p->animationClose();
 }

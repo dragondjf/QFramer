@@ -36,6 +36,7 @@ void FMainWindow::initUI()
     setWindowTitle("QFramer");
 
     pstatusbar = new QStatusBar;
+    pstatusbar->setFixedHeight(35);
     setStatusBar(pstatusbar);
     trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
     trayicon->setObjectName(QString("trayicon"));
@@ -201,6 +202,17 @@ void FMainWindow::closeEvent(QCloseEvent *event)
 {
     writeSettings();
     QMainWindow::closeEvent(event);
+}
+
+
+void FMainWindow::animationClose()
+{
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+    connect(animation, &QPropertyAnimation::finished, this, &FMainWindow::close);
+    animation->setDuration(1000);
+    animation->setStartValue(1);
+    animation->setEndValue(0);
+    animation->start();
 }
 
 void FMainWindow::onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason)

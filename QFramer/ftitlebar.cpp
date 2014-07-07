@@ -24,12 +24,18 @@ void FTitleBar::initData()
 {
     title = tr("");
     logoButton = new QToolButton;
+    logoButton->setObjectName("titleToolButton");
     titleLabel = new QLabel;
     settingButton = new QToolButton;
+    settingButton->setObjectName("titleToolButton");
     skinButton = new QToolButton;
+    skinButton->setObjectName("titleToolButton");
     minButton = new QToolButton;
+    minButton->setObjectName("titleToolButton");
     maxButton = new QToolButton;
+    maxButton->setObjectName("titleToolButton");
     closeButton = new QToolButton;
+    closeButton->setObjectName("titleToolButton");
     normal_max_flag = true;
 
     maxIcon =  new QIcon(QString(":/skin/icons/dark/appbar.fullscreen.box.png"));
@@ -39,8 +45,8 @@ void FTitleBar::initData()
 void FTitleBar::initUI()
 {
     setTitleBarHeight(Title_Height);
-
-    setLogoButton(":/skin/images/QFramer.png", "Logo");
+    setObjectName(QString("FTitleBar"));
+    setLogoButton(":/skin/images/QFramer.png");
     setTitleLabel(tr("QFramer"), "FTitleLabel");
     setSettingButton(":/skin/icons/dark/appbar.control.down.png");
     setSkinButton(":/skin/icons/dark/appbar.clothes.shirt.png");

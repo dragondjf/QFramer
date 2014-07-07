@@ -36,7 +36,7 @@ public:
 signals:
 
 public slots:
-    void animationClose();
+   virtual void animationClose();
 };
 
 #endif // FBASEDIALOG_H

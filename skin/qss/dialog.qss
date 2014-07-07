@@ -1,5 +1,5 @@
 QDialog{
-    background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 white, stop:0.511364 yellow, stop:1 green);
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
 QFrame#TitleBar{
@@ -7,45 +7,37 @@ QFrame#TitleBar{
 }
 QLabel#FTitleLabel{
     color: white;
-    font-family: 'Verdana';
     font-size: 12px;
     padding-left: 5px;
 }
 
 QLabel#logoLabel{
-    color: green;
-    font-family: 'Verdana';
-    font-size: 16px;
+    color: white;
+    font-size: 18px;
     padding-left: 5px;
 }
 
 QLabel#content{
-    color: darkgreen;
-    font-family: 'Verdana';
-    font-size: 14px;
+    color: white;
+    font-size: 16px;
     padding-left: 5px;
 }
 
 QPushButton{
-    background-color: lightgray;
+    background-color: rgb(33, 50, 70);
     border: none;
+    color: white;
 }
 
 QPushButton:hover{
-    background-color: white;
-    border: 1px solid green;
-    color: green;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    color: white;
 }
 
 QPushButton:pressed{
-    background-color: lightgray;
-    border: 1px solid green;
+    background-color: rgb(34, 44, 56);
+    color: white;
 }
-
-/*QPushButton:pressed{
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 yellow, stop: 1 green);
-}*/
 
 
 QLineEdit {
@@ -65,8 +57,7 @@ QToolButton{
 
 
 QToolButton:hover{
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 yellow, stop: 1 green);
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
     border: 1px;
 }
 
@@ -92,8 +83,7 @@ QToolButton::menu-indicator {
 }
 
 QToolButton:open { /* when the button has its menu open */
-    background-color: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
-                                      stop: 0 green, stop: 1 yellow);
+    background-color: rgb(34, 44, 56);
 }
 
 
@@ -139,18 +129,18 @@ QTabWidget::pane { /* The tab widget frame */
 QTabBar::tab {
     border-top: 1px solid black;
     border-right: 1px solid black;
-    height: 20px;
+    height: 25px;
     width: 120px;
     color: white;
     font-size: 15px;
-    font-family: "Verdana";
-    background-color: rgb(40, 47, 63);
+    /*font-family: "Verdana";*/
+    background-color: rgb(33, 50, 70);
 }
 
 QTabBar::tab:selected{
-    background-color: rgb(63, 147, 168);
+    background-color: rgb(34, 44, 56);
 }
 
 QTabBar::tab:hover {
-    background-color: rgb(69, 187, 217);
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }

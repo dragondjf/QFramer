@@ -49,6 +49,7 @@ public:
     QStatusBar* getStatusBar();
     QSystemTrayIcon* getQSystemTrayIcon();
     FlyWidget* getFlyWidget();
+    void animationClose();
     ~FMainWindow();
 
 public slots:
