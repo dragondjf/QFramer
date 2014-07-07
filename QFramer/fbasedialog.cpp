@@ -45,6 +45,11 @@ void FBaseDialog::initConnect()
     connect(titlebar->getCloseButton(), SIGNAL(clicked()), this, SLOT(animationClose()));
 }
 
+FTitleBar* FBaseDialog::getTitleBar()
+{
+    return titlebar;
+}
+
 void FBaseDialog::mousePressEvent(QMouseEvent *e)
 {
     if(e->button() & Qt::LeftButton)

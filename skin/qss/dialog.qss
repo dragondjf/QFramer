@@ -131,3 +131,26 @@ QTextEdit#info{
     font-size: 16px;
     border: none;
 }
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid rgb(5, 9, 21);
+}
+
+QTabBar::tab {
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    height: 20px;
+    width: 120px;
+    color: white;
+    font-size: 15px;
+    font-family: "Verdana";
+    background-color: rgb(40, 47, 63);
+}
+
+QTabBar::tab:selected{
+    background-color: rgb(63, 147, 168);
+}
+
+QTabBar::tab:hover {
+    background-color: rgb(69, 187, 217);
+}

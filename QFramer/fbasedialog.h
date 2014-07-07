@@ -31,6 +31,7 @@ public:
     void initData();
     void initUI();
     void initConnect();
+    FTitleBar* getTitleBar();
 
 signals:
 
