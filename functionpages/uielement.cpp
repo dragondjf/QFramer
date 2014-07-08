@@ -17,14 +17,11 @@ UIElement::UIElement(QWidget *parent) :
 void UIElement::initUI()
 {
     initBaseElements();
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    for(int i = 1; i< 10; ++i)
+    {
+        QLabel* label = new QLabel(QString::number(i));
+        addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString("NavgationTab"), label);
+    }
 }
 
 void UIElement::initBaseElements()

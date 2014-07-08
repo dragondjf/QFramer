@@ -557,6 +557,13 @@ QPushButton#normal:pressed{
 
 QLabel{
     background-color: transparent;
+    qproperty-alignment: AlignCenter;
+}
+
+QLabel#NavgationTab{
+    background-color: transparent;
+    qproperty-alignment: AlignCenter;
+    font-size: 60px;
 }
 
 QGroupBox {

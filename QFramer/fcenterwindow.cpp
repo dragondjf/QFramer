@@ -232,7 +232,7 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
         break;
     case animationRight:
         line->move(0, stackWidget->y() - 2);
-        animation->setEndValue(QRect(circle->width() + 1, 0, 0, circle->height()));
+        animation->setEndValue(QRect(circle->width() + 3, 0, 0, circle->height()));
         animation_line->setStartValue(QSize(0, 2));
         animation_line->setEndValue(QSize(stackWidget->width(), 2));
         break;
@@ -246,7 +246,7 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
         animation->setEndValue(QRect(0, circle->height(), 0, 0));
         break;
     case animationLeft:
-        animation->setEndValue(QRect(-1, 0, 0, circle->height()));
+        animation->setEndValue(QRect(-3, 0, 0, circle->height()));
         line->move(stackWidget->x(), stackWidget->y() - 2);
         animation_line->setStartValue(QSize(0, 2));
         animation_line->setEndValue(QSize(stackWidget->width(), 2));
