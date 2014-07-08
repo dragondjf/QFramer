@@ -3,43 +3,33 @@
 
 #include <QWidget>
 #include<QStackedLayout>
-#include"fnavgationbar.h"
+#include"fbasetoolbutton.h"
 #include"QBoxLayout"
 
 class FTabWidget : public QWidget
 {
     Q_OBJECT
+
+private:
+    QList<FBaseToolButton*> buttons;
+    QList<QString> buttonTitles;
+
 private:
     void initUI();
     void initConnect();
-    void swicthLayout(QBoxLayout::Direction direction);
 
 public:
-    enum Alignment_Direction{
-        TopLeft,
-        TopCenter,
-        TopRight,
-        RightTop,
-        RightCenter,
-        RightBottom,
-        BottomRight,
-        BottomCenter,
-        BottomLeft,
-        LeftBottom,
-        LeftCenter,
-        LeftTop,
-    };
-    FNavgationBar* navagationBar;
+    QWidget* tabTile;
     QBoxLayout* mainLayout;
     QStackedLayout* stackLayout;
+    QVBoxLayout* tabLayout;
 public:
     explicit FTabWidget(QWidget *parent = 0);
-    void setAlignment(Alignment_Direction direction);
 signals:
-
+        void indexChanged(int i);
 public slots:
     void addWidget(const QString &tile, const QString &objectName, QWidget *widget);
-    void setCurrentIndex(int index);
+    void setButtonChecked();
 };
 
 #endif // FTABWIDGET_H

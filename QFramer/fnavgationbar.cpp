@@ -18,22 +18,6 @@ void FNavgationBar::initUI()
 {
     setObjectName(QString("FNavgationBar"));
     setFixedHeight(66);
-//    mainlayout = new QBoxLayout(QBoxLayout::LeftToRight);
-//    mainlayout->addSpacing(10);
-//    mainlayout->addStretch();
-//    for(int i=0; i < buttonTitles.length(); i++)
-//    {
-//        buttons.append(new BaseToolButton(buttonTitles.at((i))));
-//        buttons.at(i)->setObjectName(QString(buttonTitles.at(i)));
-//        mainlayout->addWidget(buttons.at(i));
-//    }
-//    mainlayout->addStretch();
-//    mainlayout->setContentsMargins(0, 0, 0, 0);
-//    mainlayout->setSpacing(0);
-//    setLayout(mainlayout);
-
-//    setAlignment(Qt::AlignRight);
-//    setAlignment(Qt::AlignCenter);
 }
 
 void FNavgationBar::initConnect()

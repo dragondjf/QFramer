@@ -1,4 +1,5 @@
 #include "ftabwidget.h"
+#include "fbasetoolbutton.h"
 #include<QVBoxLayout>
 #include<QHBoxLayout>
 #include<QBoxLayout>
@@ -7,111 +8,59 @@ FTabWidget::FTabWidget(QWidget *parent) :
     QWidget(parent)
 {
     initUI();
+    initConnect();
 }
 
 void FTabWidget::initUI()
 {
-    setObjectName(QString("FCenterWindow"));
-    navagationBar = new FNavgationBar();
+    tabTile = new QWidget;
+    tabTile->setObjectName(QString("FTabTile"));
+
     stackLayout = new QStackedLayout;
+    tabLayout = new QVBoxLayout;
+    tabLayout->addStretch();
+    tabLayout->setContentsMargins(0, 0, 0, 0);
+    tabLayout->setSpacing(0);
+    tabTile->setLayout(tabLayout);
 
-    mainLayout = new QBoxLayout(QBoxLayout::TopToBottom);
-    mainLayout->addWidget(navagationBar);
+    mainLayout = new QHBoxLayout;
+    mainLayout->addWidget(tabTile);
     mainLayout->addLayout(stackLayout);
-    mainLayout->setContentsMargins(0, 0 ,0 ,0);
+    mainLayout->setContentsMargins(0, 0, 0, 0);
     mainLayout->setSpacing(0);
+    setLayout(mainLayout);
 }
-
-
-void FTabWidget::swicthLayout(QBoxLayout::Direction direction)
-{
-    mainLayout->setDirection(direction);
-}
-
-
-void FTabWidget::setAlignment(Alignment_Direction direction)
-{
-    switch (direction) {
-    case TopLeft:
-        navagationBar->setObjectName(QString("FNavgationBar_bottom"));
-        navagationBar->setAlignment_topLeft();
-        swicthLayout(QBoxLayout::TopToBottom);
-        break;
-    case TopCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_bottom"));
-        navagationBar->setAlignment_topCenter();
-        swicthLayout(QBoxLayout::TopToBottom);
-        break;
-    case TopRight:
-        navagationBar->setObjectName(QString("FNavgationBar_bottom"));
-        navagationBar->setAlignment_topRight();
-        swicthLayout(QBoxLayout::TopToBottom);
-        break;
-    case RightTop:
-        navagationBar->setObjectName(QString("FNavgationBar_left"));
-        navagationBar->setAlignment_rightTop();
-        swicthLayout(QBoxLayout::RightToLeft);
-        break;
-    case RightCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_left"));
-        navagationBar->setAlignment_rightCenter();
-        swicthLayout(QBoxLayout::RightToLeft);
-        break;
-    case RightBottom:
-        navagationBar->setObjectName(QString("FNavgationBar_left"));
-        navagationBar->setAlignment_rightBottom();
-        swicthLayout(QBoxLayout::RightToLeft);
-        break;
-    case BottomRight:
-        navagationBar->setObjectName(QString("FNavgationBar_top"));
-        navagationBar->setAlignment_bottomRight();
-        swicthLayout(QBoxLayout::BottomToTop);
-        break;
-    case BottomCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_top"));
-        navagationBar->setAlignment_bottomCenter();
-        swicthLayout(QBoxLayout::BottomToTop);
-        break;
-    case BottomLeft:
-        navagationBar->setObjectName(QString("FNavgationBar_top"));
-        navagationBar->setAlignment_bottomLeft();
-        swicthLayout(QBoxLayout::BottomToTop);
-        break;
-    case LeftBottom:
-        navagationBar->setObjectName(QString("FNavgationBar_right"));
-        navagationBar->setAlignment_leftBottom();
-        swicthLayout(QBoxLayout::LeftToRight);
-        break;
-    case LeftCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_right"));
-        navagationBar->setAlignment_leftCenter();
-        swicthLayout(QBoxLayout::LeftToRight);
-        break;
-    case LeftTop:
-        navagationBar->setObjectName(QString("FNavgationBar_right"));
-        navagationBar->setAlignment_leftTop();
-        swicthLayout(QBoxLayout::LeftToRight);
-        break;
-    default:
-        break;
-    }
-}
-
 
 void FTabWidget::initConnect()
 {
-    connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(switchscreen(int)));
-}
 
+
+}
 
 void FTabWidget::addWidget(const QString &tile, const QString &objectName, QWidget *widget)
 {
-    navagationBar->addNavgationTile(tile, objectName);
+    buttonTitles  << tile;
+    FBaseToolButton* button = new FBaseToolButton(tile);
+    buttons.append(button);
+    button->setObjectName(objectName);
+    button->setFixedSize(200, 60);
+    tabLayout->insertWidget(tabLayout->count() - 1, button);
+    connect(button, SIGNAL(clicked()), this, SLOT(setButtonChecked()));
     widget->setObjectName(objectName);
     stackLayout->addWidget(widget);
 }
 
-void FTabWidget::setCurrentIndex(const int index)
+void FTabWidget::setButtonChecked()
 {
-    stackLayout->setCurrentIndex(index);
+    for (int i = 0; i < buttons.size(); ++i) {
+        if (buttons.at(i) == sender())
+        {
+            buttons.at(i)->setChecked(true);
+            stackLayout->setCurrentIndex(i);
+            emit indexChanged(i);
+        }
+        else{
+            buttons.at(i)->setChecked(false);
+        }
+    }
 }

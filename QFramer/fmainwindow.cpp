@@ -123,8 +123,15 @@ void FMainWindow::mousePressEvent(QMouseEvent *e)
 {
     if(e->button() & Qt::LeftButton)
     {
-        dragPosition = e->globalPos() - frameGeometry().topLeft();
-        leftbuttonpressed = true;
+        if(e->y() < titleBar->height() and e->x() > titleBar->width() - 120)
+        {
+            leftbuttonpressed = false;
+        }
+        else
+        {
+            dragPosition = e->globalPos() - frameGeometry().topLeft();
+            leftbuttonpressed = true;
+        }
     }
     e->accept();
 }
@@ -181,8 +188,12 @@ void FMainWindow::mouseMoveEvent(QMouseEvent *e)
             e->ignore();
         }
         else{
-            move(e->globalPos() - dragPosition);
-            e->accept();
+            if(leftbuttonpressed)
+            {
+                move(e->globalPos() - dragPosition);
+                e->accept();
+            }
+
         }
     }
 

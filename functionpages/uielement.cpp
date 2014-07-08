@@ -1,15 +1,15 @@
 #include "uielement.h"
+#include "QFramer/ftabwidget.h"
 #include <QGridLayout>
 #include <QGroupBox>
 #include<QLabel>
 #include<QPushButton>
 #include<QRadioButton>
 #include<QCheckBox>
+
 UIElement::UIElement(QWidget *parent) :
-    QTabWidget(parent)
+    FTabWidget(parent)
 {
-    setTabPosition(QTabWidget::West);
-    setObjectName(QString("UIElement"));
     initUI();
 }
 
@@ -17,6 +17,14 @@ UIElement::UIElement(QWidget *parent) :
 void UIElement::initUI()
 {
     initBaseElements();
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), new QLabel(tr("898989")));
 }
 
 void UIElement::initBaseElements()
@@ -86,10 +94,10 @@ void UIElement::initBaseElements()
     baseLayout->addWidget(labelGroup, 0, 1);
     baseLayout->addWidget(raidoGroup, 1, 0);
     baseLayout->addWidget(checkBoxGroup, 1, 1);
-    baseLayout->setContentsMargins(100, 100, 100, 100);
+    baseLayout->setContentsMargins(50, 50, 50, 50);
     baseElement->setLayout(baseLayout);
 
-    addTab(baseElement, tr("Base element"));
+    addWidget(tr("Base UI Element"), QString("NavgationTab"), baseElement);
 
 }
 

@@ -15,7 +15,7 @@ CenterWindow::CenterWindow(QWidget *parent) :
 
 void CenterWindow::initUI()
 {
-    uiElements = new UIElement;
+    uiElements = new UIElement(this);
 //    pdfTool = new PDFTool;
     MathPlot* p1 = new MathPlot;
 //    webkitShow = new WebkitShow();

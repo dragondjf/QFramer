@@ -2,10 +2,11 @@
 #define UIELEMENT_H
 
 #include <QTabWidget>
-
-class UIElement : public QTabWidget
+#include "QFramer/ftabwidget.h"
+class UIElement : public FTabWidget
 {
     Q_OBJECT
+
 public:
     explicit UIElement(QWidget *parent = 0);
     void initUI();
