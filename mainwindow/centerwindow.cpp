@@ -1,10 +1,10 @@
 #include "centerwindow.h"
-#include "functionpages/gradientshow.h"
 #include "functionpages/webkitshow.h"
 #include "functionpages/basequickwidget.h"
 #include "functionpages/qmlviwer.h"
 #include "QFramer/fcenterwindow.h"
 #include "functionpages/mathplot.h"
+#include"functionpages/uielement.h"
 CenterWindow* CenterWindow::instance = NULL;
 
 CenterWindow::CenterWindow(QWidget *parent) :
@@ -15,7 +15,7 @@ CenterWindow::CenterWindow(QWidget *parent) :
 
 void CenterWindow::initUI()
 {
-    gradientShow = new GradientShow;
+    uiElements = new UIElement;
 //    pdfTool = new PDFTool;
     MathPlot* p1 = new MathPlot;
 //    webkitShow = new WebkitShow();
@@ -27,8 +27,8 @@ void CenterWindow::initUI()
 //    qmlViwer4->setSource(QUrl(QString("qrc:/home/qml/photowall.qml")));
 //    qmlViwer5->setSource(QUrl(QString("qrc:/home/qml/about.qml")));
 
-    addWidget(tr("Home"), gradientShow);
-    addWidget(tr("MathPlot"), p1);
+    addWidget(tr("Home"), tr("Home"), uiElements);
+    addWidget(tr("MathPlot"),tr("MathPlot"),p1);
 //    addWidget(tr("QtWebkit"), webkitShow);
 //    addWidget(tr("QQuickWidget"), qmlViwer2);
 //    addWidget(tr("QmlViewer"), qmlViwer3);

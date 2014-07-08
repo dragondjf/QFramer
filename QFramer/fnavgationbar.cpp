@@ -44,12 +44,12 @@ void FNavgationBar::initConnect()
     }
 }
 
-void FNavgationBar::addNavgationTile(const QString &tile)
+void FNavgationBar::addNavgationTile(const QString &tile, const QString &objectName)
 {
     buttonTitles  << tile;
     FBaseToolButton* button = new FBaseToolButton(tile);
     buttons.append(button);
-    button->setObjectName(tile);
+    button->setObjectName(objectName);
     connect(button, SIGNAL(clicked()), this, SLOT(setButtonChecked()));
 }
 

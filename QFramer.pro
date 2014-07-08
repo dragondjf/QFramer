@@ -35,7 +35,9 @@ SOURCES += main.cpp\
     qcustomplot/qcustomplot.cpp \
     functionpages/mathplot.cpp \
     qcustomplot/fcustomplot.cpp \
-    QFramer/fbasepushbutton.cpp
+    QFramer/fbasepushbutton.cpp \
+    functionpages/uielement.cpp \
+    QFramer/ftabwidget.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -61,7 +63,9 @@ HEADERS  += \
     qcustomplot/qcustomplot.h \
     functionpages/mathplot.h \
     qcustomplot/fcustomplot.h \
-    QFramer/fbasepushbutton.h
+    QFramer/fbasepushbutton.h \
+    functionpages/uielement.h \
+    QFramer/ftabwidget.h
 
 RESOURCES += \
     QFramer.qrc

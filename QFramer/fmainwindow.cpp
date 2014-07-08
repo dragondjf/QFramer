@@ -209,7 +209,7 @@ void FMainWindow::animationClose()
 {
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
     connect(animation, &QPropertyAnimation::finished, this, &FMainWindow::close);
-    animation->setDuration(2000);
+    animation->setDuration(1500);
     animation->setStartValue(1);
     animation->setEndValue(0);
     animation->start();

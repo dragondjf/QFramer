@@ -2,11 +2,11 @@
 #define CENTERWINDOW_H
 
 #include"QFramer/fcenterwindow.h"
-#include "functionpages/gradientshow.h"
 #include "functionpages/webkitshow.h"
 #include "functionpages/basequickwidget.h"
 #include "functionpages/qmlviwer.h"
 #include "functionpages/pdftool.h"
+#include"functionpages/uielement.h"
 #include<QVBoxLayout>
 
 class CenterWindow : public FCenterWindow
@@ -14,7 +14,7 @@ class CenterWindow : public FCenterWindow
     Q_OBJECT
 
 public:
-    GradientShow* gradientShow;
+    UIElement* uiElements;
     PDFTool* pdfTool;
     WebkitShow *webkitShow;
     BaseQuickWidget* qmlViwer2;

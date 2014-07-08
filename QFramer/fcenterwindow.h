@@ -51,7 +51,7 @@ public:
     void initData();
     void initUI();
     void initConnect();
-    void addWidget(const QString& tile, QWidget* widget);
+    void addWidget(const QString& tile, const QString &obejctName, QWidget* widget);
     void setAlignment(Alignment_Direction direction);
 signals:
 

@@ -232,6 +232,33 @@ QPushButton#customColorButton:hover, QPushButton#customColorButton:pressed
     text-align: center;
 }
 
+
+QPushButton#NavgationTab{
+    background-image: url(:/skin/icons/dark/appbar.monitor.play.png);
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    color: rgb(92, 113, 134);
+    text-align: center bottom;
+    padding-bottom: 5px;
+    border-bottom: 2px solid black;
+}
+
+QPushButton#NavgationTab:hover{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    color: rgb(33, 50, 70);
+    /*border:1px  solid black;*/
+}
+
+QPushButton#NavgationTab:checked{
+    background-color: rgb(34, 44, 56);
+    color: white;
+}
+
+QPushButton#NavgationTab:flat{
+    border: none;
+}
+
 QPushButton#Home{
     background-image: url(:/skin/icons/dark/appbar.monitor.play.png);
     background-repeat:no-repeat;
@@ -245,7 +272,7 @@ QPushButton#Home{
 
 QPushButton#Home:hover{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
-    color: white;
+    color: rgb(33, 50, 70);
     /*border:1px  solid black;*/
 }
 
@@ -298,7 +325,7 @@ QPushButton#MathPlot{
 
 QPushButton#MathPlot:hover{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
-    color: white;
+    color: rgb(33, 50, 70);
     /*border:1px  black;*/
 }
 
@@ -528,4 +555,25 @@ QPushButton#normal:hover{
 QPushButton#normal:pressed{
     background-color: rgb(34, 44, 56);
     color: white;
+}
+
+
+QLabel{
+    background-color: transparent;
+}
+
+QGroupBox {
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    border: 1px solid rgb(33, 50, 70);
+    margin-top: 5px;  /*leave space at the top for the title */
+}
+
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left; /* position at the top center 
+    /*padding: 5px 5px;*/
+    font-size: 15px;
+    font-weight:  bold;
+    color:white;
+    /*background-color: transparent;*/
 }

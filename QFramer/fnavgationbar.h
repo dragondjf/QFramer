@@ -34,7 +34,7 @@ public:
     void initData();
     void initConnect();
     void initUI();
-    void addNavgationTile(const QString& tile);
+    void addNavgationTile(const QString& tile, const QString &objectName);
     void setAlignment_topLeft();
     void setAlignment_topCenter();
     void setAlignment_topRight();

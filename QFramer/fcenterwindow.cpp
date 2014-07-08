@@ -129,10 +129,10 @@ void FCenterWindow::initConnect()
 }
 
 
-void FCenterWindow::addWidget(const QString &tile, QWidget *widget)
+void FCenterWindow::addWidget(const QString &tile, const QString &obejctName, QWidget *widget)
 {
-    navagationBar->addNavgationTile(tile);
-    widget->setObjectName(tile);
+    navagationBar->addNavgationTile(tile, obejctName);
+    widget->setObjectName(obejctName);
     stackWidget->addWidget(widget);
 }
 
