@@ -19,6 +19,14 @@
 *.exe
 *.out
 *.app
+Makefile
+Makefile.*
+*.Debug
+*.Release
+*.rc
+
+debug
+release
 
 QFramer.pro.user
 QFramer.pro.user.*
