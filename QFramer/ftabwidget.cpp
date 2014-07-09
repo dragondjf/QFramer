@@ -46,7 +46,7 @@ void FTabWidget::addWidget(const QString &tile, const QString &objectName, QWidg
     button->setFixedSize(200, 60);
     tabLayout->insertWidget(tabLayout->count() - 1, button);
     connect(button, SIGNAL(clicked()), this, SLOT(setButtonChecked()));
-    widget->setObjectName(objectName);
+//    widget->setObjectName(objectName);
     stackLayout->addWidget(widget);
 }
 

@@ -1,4 +1,5 @@
 #include "uielement.h"
+#include "ftablewidget.h"
 #include "QFramer/ftabwidget.h"
 #include <QGridLayout>
 #include <QGroupBox>
@@ -17,7 +18,8 @@ UIElement::UIElement(QWidget *parent) :
 void UIElement::initUI()
 {
     initBaseElements();
-    for(int i = 1; i< 10; ++i)
+    initTableWidget();
+    for(int i = 1; i< 9; ++i)
     {
         QLabel* label = new QLabel(QString::number(i));
         addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString("NavgationTab"), label);
@@ -100,7 +102,8 @@ void UIElement::initBaseElements()
 
 void UIElement::initTableWidget()
 {
-
+    FTableWidget* table = new FTableWidget;
+    addWidget(tr("FTabelWidget"), QString("NavgationTab"), table);
 }
 
 void UIElement::initTreeWidget()

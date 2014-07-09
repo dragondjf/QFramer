@@ -535,12 +535,127 @@ QHeaderView::section {
 }
 
 
-QTableWidget{
-    border: none;
-    background-color: rgb(48, 48, 48);
-    selection-color: #252a31;
-    selection-background-color:lightgray;
+QTreeWidget {
+    border: 1px solid #485260;
+    /*border: none;*/
+    color: white;
+    background-color: #5B677A;
+    selection-background-color:#485260;
 }
+
+
+QTreeWidget::branch:closed:has-children:!has-siblings,
+QTreeWidget::branch:closed:has-children:has-siblings {
+    border-image: none;
+    image: url(:/skin/images/rightsolidarrow.png);
+}
+
+QTreeWidget::branch:closed:has-children:!has-siblings,
+QTreeWidget::branch:closed:has-children:has-siblings:hover {
+    border-image: none;
+    image: url(:/skin/images/rightsolidarrow.png);
+}
+
+QTreeWidget::branch:open:has-children:!has-siblings,
+QTreeWidget::branch:open:has-children:has-siblings  {
+    border-image: none;
+    image: url(:/skin/images/downsolidarrow.png);
+}
+QTreeWidget::branch:open:has-children:!has-siblings,
+QTreeWidget::branch:open:has-children:has-siblings:hover  {
+    border-image: none;
+    image: url(:/skin/images/downsolidarrow.png);
+}
+
+
+QTableWidget{
+    /*border: 1px solid #485260;*/
+    border: none;
+    color: white;
+    background-color: #5B677A;
+    selection-color: #252a31;
+    selection-background-color:#485260;
+}
+
+QTableWidget:disabled{
+    /*border: 1px solid #485260;*/
+    border: none;
+    /*color: white;*/
+    background-color: gray;
+}
+
+QScrollBar:vertical {
+    border: 1px solid #252A31;
+    width: 10px;
+    margin: 15px 0 15px 0;
+    background: #31394E;
+}
+QScrollBar::handle:vertical {
+    background: #5B677A;;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical {
+    background: #252A31;
+    height: 20px;
+    subcontrol-position: bottom;
+    subcontrol-origin: margin;
+}
+
+QScrollBar::sub-line:vertical {
+    background: #252A31;
+    height: 20px;
+    subcontrol-position: top;
+    subcontrol-origin: margin;
+}
+
+/*QScrollBar::up-arrow:vertical, QScrollBar::down-arrow:vertical {
+    width: 3px;
+    height: 3px;
+    background: #31394E;
+}*/
+
+QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
+    background: none;
+}
+
+
+QScrollBar:horizontal {
+    border: 1px solid #252A31;
+    background: #31394E;
+    height: 10px;
+    margin: 0px 15px 0 15px;
+}
+QScrollBar::handle:horizontal {
+    background: #5B677A;
+    min-width: 20px;
+}
+QScrollBar::add-line:horizontal {
+    background: #252A31;
+    width: 20px;
+    subcontrol-position: right;
+    subcontrol-origin: margin;
+}
+QScrollBar::sub-line:horizontal {
+    background: #252A31;
+    width: 20px;
+    subcontrol-position: left;
+    subcontrol-origin: margin;
+}
+/*QScrollBar:left-arrow:horizontal, QScrollBar::right-arrow:horizontal {
+    width: 3px;
+    height: 3px;
+    background: #31394E;
+}*/
+QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
+    background: none;
+}
+
+QTabWidget::pane { /* The tab widget frame */
+    border-top: 2px solid rgb(5, 9, 21);
+}
+
+
 
 
 QPushButton#normal{

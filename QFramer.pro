@@ -41,7 +41,8 @@ SOURCES += main.cpp\
     functionpages/rightfloatwindow.cpp \
     QFramer/fmovablewidget.cpp \
     mainwindow/lockmenu.cpp \
-    mainwindow/lockcontroller.cpp
+    mainwindow/lockcontroller.cpp \
+    functionpages/ftablewidget.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -73,7 +74,8 @@ HEADERS  += \
     functionpages/rightfloatwindow.h \
     QFramer/fmovablewidget.h \
     mainwindow/lockmenu.h \
-    mainwindow/lockcontroller.h
+    mainwindow/lockcontroller.h \
+    functionpages/ftablewidget.h
 
 RESOURCES += \
     QFramer.qrc

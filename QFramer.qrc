@@ -1891,6 +1891,8 @@
         <file>skin/images/QFramer.png</file>
         <file>skin/images/splash.png</file>
         <file>skin/images/balboa.jpg</file>
+        <file>skin/images/downsolidarrow.png</file>
+        <file>skin/images/rightsolidarrow.png</file>
     </qresource>
     <qresource prefix="/QUItBattery">
         <file>QUItBattery/images/arrows.png</file>
