@@ -1,5 +1,6 @@
 #include "settingmenu.h"
 #include "mainwindow.h"
+#include "functionpages/rightfloatwindow.h"
 #include <QApplication>
 
 SettingMenu::SettingMenu(QWidget *parent) :
@@ -16,7 +17,10 @@ SettingMenu::SettingMenu(QWidget *parent) :
 
 void SettingMenu::initData()
 {
-    actionNames<< tr("Show flyWindow")<<tr("Settings") << tr("Check update") << tr("Online help") << tr("Office site") << tr("About us")<< tr("Quit");
+    actionNames<< tr("Show flyWindow")<<tr("Settings")\
+              << tr("Show rightBar")\
+              << tr("Check update") << tr("Online help") \
+              << tr("Office site") << tr("About us")<< tr("Quit");
 }
 
 void SettingMenu::initUI()
@@ -36,13 +40,8 @@ void SettingMenu::initController()
 
 void SettingMenu::initConnect()
 {
-//    connect(actionMaps[tr("Settings")], &QAction::triggered, controller, &FSettingMenuController::showSettingDialog);
-//    connect(actionMaps[tr("Check update")], &QAction::triggered, controller, &FSettingMenuController::checkUpdate);
-//    connect(actionMaps[tr("Online help")], &QAction::triggered, controller, &FSettingMenuController::onlineHelp);
-//    connect(actionMaps[tr("Office site")], &QAction::triggered, controller, &FSettingMenuController::visitOfficialSite);
-//    connect(actionMaps[tr("About us")], &QAction::triggered, controller, &FSettingMenuController::showAboutUs);
-//    connect(actionMaps[tr("Quit")], &QAction::triggered, controller, &FSettingMenuController::closeMainWindow);
     connect(actionMaps[tr("Show flyWindow")], SIGNAL(triggered()), this, SLOT(switchActionState()));
+    connect(actionMaps[tr("Show rightBar")], SIGNAL(triggered()), this, SLOT(switchFloatWindow()));
     connect(actionMaps[tr("Settings")], SIGNAL(triggered()), controller, SLOT(showSettingDialog()));
     connect(actionMaps[tr("Check update")], SIGNAL(triggered()), controller, SLOT(checkUpdate()));
     connect(actionMaps[tr("Online help")], SIGNAL(triggered()), controller, SLOT(onlineHelp()));
@@ -64,5 +63,19 @@ void SettingMenu::switchActionState()
     else
     {
         actionMaps[tr("Show flyWindow")]->setText(tr("Show flyWindow"));
+    }
+}
+
+void SettingMenu::switchFloatWindow()
+{
+    MainWindow::getInstance()->getRightFloatWindow()->setVisible(\
+        not MainWindow::getInstance()->getRightFloatWindow()->isVisible());
+    if(MainWindow::getInstance()->getRightFloatWindow()->isVisible())
+    {
+        actionMaps[tr("Show rightBar")]->setText(tr("Hide rightBar"));
+    }
+    else
+    {
+        actionMaps[tr("Show rightBar")]->setText(tr("Show rightBar"));
     }
 }

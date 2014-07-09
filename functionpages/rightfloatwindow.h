@@ -1,0 +1,29 @@
+#ifndef RIGHTFLOATWINDOW_H
+#define RIGHTFLOATWINDOW_H
+
+#include <QWidget>
+#include <QResizeEvent>
+#include <QShowEvent>
+#include "QFramer/fmovablewidget.h"
+class RightFloatWindow : public FMovableWidget
+{
+    Q_OBJECT
+private:
+    int cwidth;
+private:
+    void initData();
+    void initUI();
+    void initConnect();
+protected:
+    void showEvent(QShowEvent * event);
+    void mouseMoveEvent(QMouseEvent *event);
+public:
+    explicit RightFloatWindow(QWidget *parent = 0);
+
+signals:
+
+public slots:
+
+};
+
+#endif // RIGHTFLOATWINDOW_H

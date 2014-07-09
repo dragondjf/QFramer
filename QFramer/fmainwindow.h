@@ -22,6 +22,8 @@ class FMainWindow : public QMainWindow
 private:
     QPoint dragPosition;
     bool leftbuttonpressed;
+    bool lockmoved;
+    bool locked;
 
     void readSettings();
     void writeSettings();
@@ -50,12 +52,18 @@ public:
     QSystemTrayIcon* getQSystemTrayIcon();
     FlyWidget* getFlyWidget();
     void animationClose();
+    bool isMoved();
+    bool isLocked();
     ~FMainWindow();
 
+signals:
+    void Hidden();
 public slots:
     void swithMaxNormal();
     void showFlyWidget();
     void onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason);
+    void setLockMoved(bool flag);
+    void setLocked(bool flag);
 };
 
 #endif // MAINWINDOW_H

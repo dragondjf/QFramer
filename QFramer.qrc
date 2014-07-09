@@ -3846,5 +3846,6 @@
         <file>skin/qss/dialog.qss</file>
         <file>skin/qss/main.qss</file>
         <file>skin/qss/settingmenu.qss</file>
+        <file>skin/qss/rightFloatWindow.qss</file>
     </qresource>
 </RCC>

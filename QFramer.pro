@@ -37,7 +37,11 @@ SOURCES += main.cpp\
     qcustomplot/fcustomplot.cpp \
     QFramer/fbasepushbutton.cpp \
     functionpages/uielement.cpp \
-    QFramer/ftabwidget.cpp
+    QFramer/ftabwidget.cpp \
+    functionpages/rightfloatwindow.cpp \
+    QFramer/fmovablewidget.cpp \
+    mainwindow/lockmenu.cpp \
+    mainwindow/lockcontroller.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -65,7 +69,11 @@ HEADERS  += \
     qcustomplot/fcustomplot.h \
     QFramer/fbasepushbutton.h \
     functionpages/uielement.h \
-    QFramer/ftabwidget.h
+    QFramer/ftabwidget.h \
+    functionpages/rightfloatwindow.h \
+    QFramer/fmovablewidget.h \
+    mainwindow/lockmenu.h \
+    mainwindow/lockcontroller.h
 
 RESOURCES += \
     QFramer.qrc

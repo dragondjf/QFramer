@@ -24,18 +24,21 @@ void FTitleBar::initData()
 {
     title = tr("");
     logoButton = new QToolButton;
-    logoButton->setObjectName("titleToolButton");
+    logoButton->setObjectName(QString("titleToolButton"));
     titleLabel = new QLabel;
     settingButton = new QToolButton;
-    settingButton->setObjectName("titleToolButton");
+    settingButton->setFocusPolicy(Qt::NoFocus);
+    settingButton->setObjectName(QString("titleToolButton"));
     skinButton = new QToolButton;
-    skinButton->setObjectName("titleToolButton");
+    skinButton->setObjectName(QString("titleToolButton"));
+    fixButton = new QToolButton;
+    fixButton->setObjectName(QString("titleToolButton"));
     minButton = new QToolButton;
-    minButton->setObjectName("titleToolButton");
+    minButton->setObjectName(QString("titleToolButton"));
     maxButton = new QToolButton;
-    maxButton->setObjectName("titleToolButton");
+    maxButton->setObjectName(QString("titleToolButton"));
     closeButton = new QToolButton;
-    closeButton->setObjectName("titleToolButton");
+    closeButton->setObjectName(QString("titleToolButton"));
     normal_max_flag = true;
 
     maxIcon =  new QIcon(QString(":/skin/icons/dark/appbar.fullscreen.box.png"));
@@ -50,6 +53,7 @@ void FTitleBar::initUI()
     setTitleLabel(tr("QFramer"), "FTitleLabel");
     setSettingButton(":/skin/icons/dark/appbar.control.down.png");
     setSkinButton(":/skin/icons/dark/appbar.clothes.shirt.png");
+    setFixButton(":/skin/icons/dark/appbar.lock.png");
     setMinButton(":/skin/icons/dark/appbar.minus.png");
     setMaxButton(":/skin/icons/dark/appbar.app.png");
     setCloseButton(":/skin/icons/dark/appbar.close.png", "close");
@@ -60,6 +64,7 @@ void FTitleBar::initUI()
     mainlayout->addStretch();
     mainlayout->addWidget(settingButton);
     mainlayout->addWidget(skinButton);
+    mainlayout->addWidget(fixButton);
     mainlayout->addWidget(minButton);
     mainlayout->addWidget(maxButton);
     mainlayout->addWidget(closeButton);
@@ -72,10 +77,21 @@ void FTitleBar::initConnect()
 {
     connect(settingButton, SIGNAL(clicked()), settingButton, SLOT(showMenu()));
     connect(skinButton, SIGNAL(clicked()), this, SLOT(changeSkin()));
+    connect(fixButton, SIGNAL(clicked()), fixButton, SLOT(showMenu()));
     connect(maxButton, SIGNAL(clicked()), this, SIGNAL(maximumed()));
     connect(minButton, SIGNAL(clicked()), this, SIGNAL(minimuned()));
     connect(closeButton, SIGNAL(clicked()), this, SIGNAL(closed()));
     connect(maxButton, SIGNAL(clicked()), this, SLOT(switchMaxMin()));
+}
+
+void FTitleBar::clearChecked()
+{
+    settingButton->setChecked(false);
+    skinButton->setChecked(false);
+    fixButton->setChecked(false);
+    minButton->setChecked(false);
+    maxButton->setChecked(false);
+    closeButton->setChecked(false);
 }
 
 void FTitleBar::setSettingMenu(QMenu *menu)
@@ -220,6 +236,34 @@ void FTitleBar::setSkinButtonVisible(bool visible)
 bool FTitleBar::isSkinButtonVisible()
 {
     return skinButton->isVisible();
+}
+
+
+void FTitleBar::setFixButton(const char *str, const char *objectName)
+{
+
+    fixButton->setIcon(QIcon(QString(str)));
+    fixButton->setIconSize(QSize(height(), height()));
+    if(objectName)
+    {
+        fixButton->setObjectName(QString(objectName));
+    }
+}
+
+QToolButton* FTitleBar::getFixButton()
+{
+    return fixButton;
+}
+
+
+void FTitleBar::setFixButtonVisible(bool visible)
+{
+    fixButton->setVisible(visible);
+}
+
+bool FTitleBar::isFixButtonVisible()
+{
+    return fixButton->isVisible();
 }
 
 void FTitleBar::setMinButton(const char *str, const char *objectName)

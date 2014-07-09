@@ -22,6 +22,7 @@ private:
     QToolButton* logoButton;
     QToolButton* settingButton;
     QToolButton* skinButton;
+    QToolButton* fixButton;
     QToolButton* minButton;
     QToolButton* maxButton;
     QToolButton* closeButton;
@@ -63,6 +64,11 @@ public:
     void setSkinButtonVisible(bool visible);
     bool isSkinButtonVisible();
 
+    void setFixButton(const char * str, const char *objectName=NULL);
+    QToolButton* getFixButton();
+    void setFixButtonVisible(bool visible);
+    bool isFixButtonVisible();
+
     void setMinButton(const char * str, const char *objectName=NULL);
     QToolButton* getMinButton();
     void setMinButtonVisible(bool visible);
@@ -87,6 +93,7 @@ signals:
 public slots:
     void switchMaxMin();
     void changeSkin();
+    void clearChecked();
 
 };
 

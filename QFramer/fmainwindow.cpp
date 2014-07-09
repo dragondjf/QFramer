@@ -21,6 +21,8 @@ FMainWindow::FMainWindow(QWidget *parent)
 void FMainWindow::initData()
 {
     leftbuttonpressed = false;
+    lockmoved = false;
+    locked = false;
 }
 
 void FMainWindow::initUI()
@@ -40,6 +42,7 @@ void FMainWindow::initUI()
     setStatusBar(pstatusbar);
     trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
     trayicon->setObjectName(QString("trayicon"));
+    trayicon->setToolTip(QString(qApp->applicationName()));
     trayicon->show();
 
     flyWidget = new FlyWidget(this);
@@ -49,6 +52,8 @@ void FMainWindow::initUI()
 
 void FMainWindow::initConnect( )
 {
+    connect(titleBar, SIGNAL(minimuned()), this, SIGNAL(Hidden()));
+    connect(titleBar, SIGNAL(closed()), this, SIGNAL(Hidden()));
     connect(titleBar, SIGNAL(minimuned()), this, SLOT(hide()));
     connect(titleBar, SIGNAL(minimuned()), this, SLOT(showFlyWidget()));
     connect(titleBar, SIGNAL(maximumed()), this, SLOT(swithMaxNormal()));
@@ -81,6 +86,26 @@ void FMainWindow::writeSettings()
     settings.setValue("size", size());
     settings.setValue("pos", pos());
     settings.endGroup();
+}
+
+bool FMainWindow::isMoved()
+{
+    return lockmoved;
+}
+
+bool FMainWindow::isLocked()
+{
+    return locked;
+}
+
+void FMainWindow::setLockMoved(bool flag)
+{
+    lockmoved = flag;
+}
+
+void FMainWindow::setLocked(bool flag)
+{
+    locked = flag;
 }
 
 FTitleBar* FMainWindow::getTitleBar()
@@ -171,6 +196,7 @@ void FMainWindow::SetCursorStyle(enum_Direction direction)
 void FMainWindow::mouseReleaseEvent(QMouseEvent *e)
 {
     leftbuttonpressed = false;
+    titleBar->clearChecked();
     e->accept();
 }
 
@@ -190,7 +216,10 @@ void FMainWindow::mouseMoveEvent(QMouseEvent *e)
         else{
             if(leftbuttonpressed)
             {
-                move(e->globalPos() - dragPosition);
+                if(lockmoved)
+                {
+                    move(e->globalPos() - dragPosition);
+                }
                 e->accept();
             }
 
@@ -241,10 +270,14 @@ void FMainWindow::onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reas
                 //一下两句缺一均不能有效将窗口置顶
                 setWindowState(Qt::WindowActive);
                 activateWindow();
+                setLocked(locked);
             }
             else
             {
-                hide();
+                if(not locked)
+                {
+                    hide();
+                }
             }
             break;
         case QSystemTrayIcon::Context:

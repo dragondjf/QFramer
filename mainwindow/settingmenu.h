@@ -8,7 +8,7 @@
 class SettingMenu : public QMenu
 {
     Q_OBJECT
-public:
+private:
     QList<QAction*> actions;
     QList<QString> actionNames;
     QList<QString> actionicons;
@@ -30,6 +30,7 @@ signals:
 
 public slots:
     void switchActionState();
+    void switchFloatWindow();
 };
 
 #endif // SETTINGMENU_H
