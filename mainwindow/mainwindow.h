@@ -20,6 +20,7 @@ protected:
     void mouseMoveEvent(QMouseEvent *event);
     void resizeEvent(QResizeEvent * event);
     void hideEvent(QHideEvent * event);
+    void showEvent(QHideEvent * event);
     void mouseDoubleClickEvent(QMouseEvent *event);
 public:
     static MainWindow* instance;

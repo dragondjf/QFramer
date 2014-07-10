@@ -517,16 +517,12 @@ QHeaderView::section:checked {
 }
 
 QHeaderView{
-    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                       stop:0 #485260, stop: 0.5 #252a31,
-                                       stop: 0.6 #252a31, stop:1 #485260);
+    background-color: rgb(34, 44, 56);
 }
 
 QHeaderView::section {
     /*background-color: #252a31;*/
-    background-color: qlineargradient(x1:0, y1:0, x2:0, y2:1,
-                                       stop:0 #485260, stop: 0.5 #252a31,
-                                       stop: 0.6 #252a31, stop:1 #485260);
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));;
     color: white;
     font-size: 16px;
     min-height: 25px;
@@ -573,8 +569,8 @@ QTableWidget{
     border: none;
     color: white;
     background-color: #5B677A;
-    selection-color: #252a31;
-    selection-background-color:#485260;
+    selection-color: white;
+    selection-background-color:rgb(34, 44, 56);
 }
 
 QTableWidget:disabled{
@@ -591,7 +587,7 @@ QScrollBar:vertical {
     background: #31394E;
 }
 QScrollBar::handle:vertical {
-    background: #5B677A;;
+    background: lightgray;
     min-height: 20px;
 }
 
@@ -627,7 +623,7 @@ QScrollBar:horizontal {
     margin: 0px 15px 0 15px;
 }
 QScrollBar::handle:horizontal {
-    background: #5B677A;
+    background: lightgray;
     min-width: 20px;
 }
 QScrollBar::add-line:horizontal {

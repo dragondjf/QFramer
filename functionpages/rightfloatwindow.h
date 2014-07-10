@@ -4,6 +4,7 @@
 #include <QWidget>
 #include <QResizeEvent>
 #include <QShowEvent>
+#include <QHideEvent>
 #include "QFramer/fmovablewidget.h"
 class RightFloatWindow : public FMovableWidget
 {
@@ -17,6 +18,7 @@ private:
 protected:
     void showEvent(QShowEvent * event);
     void mouseMoveEvent(QMouseEvent *event);
+    void hideEvent(QHideEvent *event);
 public:
     explicit RightFloatWindow(QWidget *parent = 0);
 

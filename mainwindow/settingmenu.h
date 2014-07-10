@@ -25,7 +25,7 @@ public:
     void initUI();
     void initController();
     void initConnect();
-
+    QMap<QString, QAction*> getActionMaps();
 signals:
 
 public slots:

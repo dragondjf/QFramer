@@ -50,6 +50,11 @@ void SettingMenu::initConnect()
     connect(actionMaps[tr("Quit")], SIGNAL(triggered()), controller, SLOT(closeMainWindow()));
 }
 
+QMap<QString, QAction*> SettingMenu::getActionMaps()
+{
+    return actionMaps;
+}
+
 
 void SettingMenu::switchActionState()
 {
@@ -70,12 +75,4 @@ void SettingMenu::switchFloatWindow()
 {
     MainWindow::getInstance()->getRightFloatWindow()->setVisible(\
         not MainWindow::getInstance()->getRightFloatWindow()->isVisible());
-    if(MainWindow::getInstance()->getRightFloatWindow()->isVisible())
-    {
-        actionMaps[tr("Show rightBar")]->setText(tr("Hide rightBar"));
-    }
-    else
-    {
-        actionMaps[tr("Show rightBar")]->setText(tr("Show rightBar"));
-    }
 }

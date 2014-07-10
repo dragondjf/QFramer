@@ -67,9 +67,15 @@ void MainWindow::mouseMoveEvent(QMouseEvent *event)
     FMainWindow::mouseMoveEvent(event);
 }
 
+void MainWindow::showEvent(QHideEvent *event)
+{
+    rightfloatWindow->setVisible(true);
+    event->accept();
+}
+
 void MainWindow::hideEvent(QHideEvent *event)
 {
-//    rightfloatWindow->setVisible(not rightfloatWindow->isVisible());
+    rightfloatWindow->setVisible(false);
     event->accept();
 }
 
