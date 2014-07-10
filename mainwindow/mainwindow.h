@@ -22,6 +22,7 @@ protected:
     void hideEvent(QHideEvent * event);
     void showEvent(QHideEvent * event);
     void mouseDoubleClickEvent(QMouseEvent *event);
+    void keyPressEvent(QKeyEvent *event);
 public:
     static MainWindow* instance;
     CenterWindow* centerWindow;

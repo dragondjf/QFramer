@@ -25,6 +25,7 @@ private:
     QVBoxLayout* mainlayout_rightTop;
     QVBoxLayout* mainlayout_rightCenter;
     QVBoxLayout* mainlayout_rightBottom;
+    bool cIndex;
 public:
 
     QList<FBaseToolButton*> buttons;
@@ -34,6 +35,9 @@ public:
     void initData();
     void initConnect();
     void initUI();
+    int currentIndex();
+    int count();
+    void setCurrentIndex(int index);
     void addNavgationTile(const QString& tile, const QString &objectName);
     void setAlignment_topLeft();
     void setAlignment_topCenter();

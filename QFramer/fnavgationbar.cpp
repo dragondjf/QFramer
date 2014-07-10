@@ -12,6 +12,7 @@ FNavgationBar::FNavgationBar(QWidget *parent)
 
 void FNavgationBar::initData()
 {
+    cIndex = 0;
 }
 
 void FNavgationBar::initUI()
@@ -199,6 +200,20 @@ void FNavgationBar::setAlignment_rightBottom()
     setLayout(mainlayout_rightBottom);
 }
 
+int FNavgationBar::currentIndex()
+{
+    return cIndex;
+}
+
+void FNavgationBar::setCurrentIndex(int index)
+{
+    buttons.at(index)->click();
+}
+
+int FNavgationBar::count()
+{
+    return buttons.length();
+}
 
 void FNavgationBar::setButtonChecked()
 {
@@ -207,6 +222,7 @@ void FNavgationBar::setButtonChecked()
         {
             buttons.at(i)->setChecked(true);
             emit indexChanged(i);
+            cIndex = i;
         }
         else{
             buttons.at(i)->setChecked(false);

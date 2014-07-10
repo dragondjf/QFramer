@@ -20,6 +20,7 @@ void MainWindow::initUI()
 {
     centerWindow = new CenterWindow;
     setCentralWidget(centerWindow);
+    centerWindow->navagationBar->setCurrentIndex(0);
 
     settingmenu = new SettingMenu;
     getTitleBar()->getSettingButton()->setMenu(settingmenu);
@@ -86,4 +87,30 @@ void MainWindow::mouseDoubleClickEvent(QMouseEvent *event)
         rightfloatWindow->setVisible(not rightfloatWindow->isVisible());
     }
     FMainWindow::mouseDoubleClickEvent(event);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if(event->key() == Qt::Key_Left)
+    {
+        int index = centerWindow->navagationBar->currentIndex();
+        int count = centerWindow->navagationBar->count();
+        if(index == 0){
+            centerWindow->navagationBar->setCurrentIndex(count - 1);
+        }else if(index > 0){
+            centerWindow->navagationBar->setCurrentIndex(index - 1);
+        }
+    }
+    else if(event->key() == Qt::Key_Right)
+    {
+        int index = centerWindow->navagationBar->currentIndex();
+        int count = centerWindow->navagationBar->count();
+        if(index == count){
+            centerWindow->navagationBar->setCurrentIndex(0);
+        }else if(index > 0){
+            centerWindow->navagationBar->setCurrentIndex(index + 1);
+        }
+    }
+
+    FMainWindow::keyPressEvent(event);
 }
