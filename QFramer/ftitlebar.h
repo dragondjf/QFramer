@@ -27,6 +27,7 @@ private:
     QToolButton* maxButton;
     QToolButton* closeButton;
     bool normal_max_flag;
+    bool fixflag;
 
 private:
     void initData();
@@ -40,6 +41,8 @@ public:
 public:
     explicit FTitleBar(QWidget *parent = 0);
     static FTitleBar* getInstace();
+
+    bool getFixedflag();
 
     void setTitleBarHeight(int height);
     void setSettingMenu(QMenu* menu);
@@ -94,6 +97,7 @@ public slots:
     void switchMaxMin();
     void changeSkin();
     void clearChecked();
+    void changeFix();
 
 };
 

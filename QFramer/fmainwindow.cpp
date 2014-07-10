@@ -216,7 +216,7 @@ void FMainWindow::mouseMoveEvent(QMouseEvent *e)
         else{
             if(leftbuttonpressed)
             {
-                if(lockmoved)
+                if(getTitleBar()->getFixedflag())
                 {
                     move(e->globalPos() - dragPosition);
                 }

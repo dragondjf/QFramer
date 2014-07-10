@@ -40,6 +40,7 @@ void FTitleBar::initData()
     closeButton = new QToolButton;
     closeButton->setObjectName(QString("titleToolButton"));
     normal_max_flag = true;
+    fixflag = false;
 
     maxIcon =  new QIcon(QString(":/skin/icons/dark/appbar.fullscreen.box.png"));
     normalIcon =  new QIcon(QString(":/skin/icons/dark/appbar.app.png"));
@@ -77,11 +78,29 @@ void FTitleBar::initConnect()
 {
     connect(settingButton, SIGNAL(clicked()), settingButton, SLOT(showMenu()));
     connect(skinButton, SIGNAL(clicked()), this, SLOT(changeSkin()));
-    connect(fixButton, SIGNAL(clicked()), fixButton, SLOT(showMenu()));
+    connect(fixButton, SIGNAL(clicked()), this, SLOT(changeFix()));
     connect(maxButton, SIGNAL(clicked()), this, SIGNAL(maximumed()));
     connect(minButton, SIGNAL(clicked()), this, SIGNAL(minimuned()));
     connect(closeButton, SIGNAL(clicked()), this, SIGNAL(closed()));
     connect(maxButton, SIGNAL(clicked()), this, SLOT(switchMaxMin()));
+}
+
+void FTitleBar::changeFix()
+{
+    if(fixflag)
+    {
+        fixButton->setIcon(QIcon(":/skin/icons/dark/appbar.lock.png"));
+    }
+    else{
+        fixButton->setIcon(QIcon(":/skin/icons/dark/appbar.unlock.keyhole.png"));
+    }
+    fixflag = not fixflag;
+}
+
+
+bool FTitleBar::getFixedflag()
+{
+    return fixflag;
 }
 
 void FTitleBar::clearChecked()
