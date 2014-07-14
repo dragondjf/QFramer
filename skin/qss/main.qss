@@ -211,7 +211,7 @@ QSplitter{
 }
 
 QSplitter::handle {
-    background-color: gray;
+    background-color: rgb(33, 50, 70);
 }
 
 QSplitter::handle:horizontal {
@@ -223,7 +223,7 @@ QSplitter::handle:vertical {
 }
 
 QSplitter::handle:pressed {
-    background-color: green;
+    background-color: rgb(34, 44, 56);
 }
 
 QPushButton#customColorButton{
