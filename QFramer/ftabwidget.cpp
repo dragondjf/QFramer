@@ -50,6 +50,11 @@ void FTabWidget::addWidget(const QString &tile, const QString &objectName, QWidg
     stackLayout->addWidget(widget);
 }
 
+QList<FBaseToolButton*> FTabWidget::getButtons()
+{
+    return buttons;
+}
+
 void FTabWidget::setButtonChecked()
 {
     for (int i = 0; i < buttons.size(); ++i) {

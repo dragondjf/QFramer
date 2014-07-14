@@ -13,6 +13,10 @@ QWidget#MathPlot{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
+QWidget#About{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
 QFrame#RightFloatWindow
 {
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:0.5 rgba(255, 255, 255, 255), stop:1 rgba(33, 50, 70, 255));
@@ -262,7 +266,7 @@ QPushButton#NavgationTab:flat{
 }
 
 QPushButton#Home{
-    background-image: url(:/skin/icons/dark/appbar.monitor.play.png);
+    background-image: url(:/skin/icons/dark/appbar.home.png);
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
@@ -373,19 +377,18 @@ QPushButton#About{
     background-position: center bottom;
     background-color: transparent;
     background-color: transparent;
-    color: white;
+    color: rgb(92, 113, 134);
     text-align: center bottom;
     padding-bottom: 5px;
 }
 
 QPushButton#About:hover{
-    background-color: lightgreen;
-    border:1px  black;
-    opacity: 0.1;
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    color: rgb(33, 50, 70);
 }
 
 QPushButton#About:checked{
-    background-color: #00CD00;
+    background-color: rgb(34, 44, 56);
     color: white;
 }
 
@@ -681,6 +684,25 @@ QLabel#NavgationTab{
     qproperty-alignment: AlignCenter;
     font-size: 60px;
 }
+
+QLabel#logoLabel{
+    color: white;
+    font-size: 28px;
+    padding-left: 5px;
+}
+
+QLabel#content{
+    color: white;
+    font-size: 20px;
+    padding-left: 5px;
+}
+
+QLabel#version{
+    color: rgb(34, 44, 56);
+    font-size: 20px;
+    padding-left: 5px;
+}
+
 
 QGroupBox {
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));

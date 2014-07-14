@@ -25,6 +25,8 @@ public:
     QVBoxLayout* tabLayout;
 public:
     explicit FTabWidget(QWidget *parent = 0);
+    QList<FBaseToolButton*> getButtons();
+
 signals:
         void indexChanged(int i);
 public slots:

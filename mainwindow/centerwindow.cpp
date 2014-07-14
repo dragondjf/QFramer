@@ -5,6 +5,7 @@
 #include "QFramer/fcenterwindow.h"
 #include "functionpages/mathplot.h"
 #include"functionpages/uielement.h"
+#include"functionpages/aboutpage.h"
 CenterWindow* CenterWindow::instance = NULL;
 
 CenterWindow::CenterWindow(QWidget *parent) :
@@ -29,11 +30,12 @@ void CenterWindow::initUI()
 
     addWidget(tr("Home"), tr("Home"), uiElements);
     addWidget(tr("MathPlot"),tr("MathPlot"),p1);
+    addWidget(tr("About"),tr("About"), new AboutPage);
 //    addWidget(tr("QtWebkit"), webkitShow);
 //    addWidget(tr("QQuickWidget"), qmlViwer2);
 //    addWidget(tr("QmlViewer"), qmlViwer3);
 //    addWidget(tr("PhotoWall"), qmlViwer4);
-//    addWidget(tr("About"), qmlViwer5);
+//    addWidget(tr("About"),tr("About"), qmlViwer5);
 
     setAlignment(TopCenter);
 }

@@ -30,6 +30,7 @@ void UIElement::initUI()
         QLabel* label = new QLabel(QString::number(i));
         addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString("NavgationTab"), label);
     }
+    getButtons().at(0)->click();
 }
 
 void UIElement::initBaseElements()

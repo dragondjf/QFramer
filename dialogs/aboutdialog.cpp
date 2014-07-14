@@ -42,7 +42,7 @@ void AboutDialog::initUI()
     logoLabel->setObjectName(QString("logoLabel"));
     logoLabel->setGraphicsEffect(shadow_effect1);
 
-    QLabel *infoLabel = new QLabel(tr("            Faster Easier Stronger"));
+    QLabel *infoLabel = new QLabel(tr("            Faster Easier Stronger Prettier"));
     infoLabel->setObjectName(QString("content"));
     infoLabel->setGraphicsEffect(shadow_effect2);
 
