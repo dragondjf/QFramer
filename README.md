@@ -15,10 +15,13 @@ With  user interactive experience(UE) become more and more important in modern s
 + `......`
 
 ####4: Snapshot
-    ![4](doc/1.png)
-    ![3](doc/2.png)
-    ![1](doc/3.png)
-    ![1](doc/4.png)
+
+![1](doc/v0.2_1.png)
+![2](doc/v0.2_2.png)
+![3](doc/v0.2_4.png)
+![4](doc/v0.2_6.png)
+![4](doc/v0.2_5.png)
+
 ####4.Contact
 + `Email:` ding465398889@163.com or dragondjf@gmail.com or 465398889@qq.com
 + `Github:` https://github.com/dragondjf/QCFramer
