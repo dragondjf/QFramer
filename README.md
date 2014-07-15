@@ -14,7 +14,10 @@ With  user interactive experience(UE) become more and more important in modern s
 + `custom skin`: support custom ui skin by qss
 + `......`
 
-####3
+####3 Download
+
++`source:` https://github.com/dragondjf/QCFramer
++`Realease`: http://pan.baidu.com/s/1eQzj05c
 
 ####4: Snapshot
 
