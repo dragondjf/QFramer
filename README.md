@@ -15,10 +15,8 @@ With  user interactive experience(UE) become more and more important in modern s
 + `......`
 
 ####3 Download
-
-+`source:` https://github.com/dragondjf/QCFramer
-
-+`Realease`: http://pan.baidu.com/s/1eQzj05c
++ `source:` https://github.com/dragondjf/QCFramer    
++ `Realease`: http://pan.baidu.com/s/1eQzj05c
 
 ####4: Snapshot
 
