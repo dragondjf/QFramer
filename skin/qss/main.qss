@@ -13,8 +13,8 @@ QWidget#MathPlot{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
-QWidget#About{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+QFrame#About{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:0.5 rgba(255, 255, 255, 255), stop:1 rgba(33, 50, 70, 255));
 }
 
 QFrame#RightFloatWindow
@@ -686,19 +686,19 @@ QLabel#NavgationTab{
 }
 
 QLabel#logoLabel{
-    color: white;
+    color: rgb(34, 44, 56);
     font-size: 28px;
     padding-left: 5px;
 }
 
 QLabel#content{
-    color: white;
+    color: rgb(34, 44, 56);
     font-size: 20px;
     padding-left: 5px;
 }
 
 QLabel#version{
-    color: rgb(34, 44, 56);
+    color: white;
     font-size: 20px;
     padding-left: 5px;
 }

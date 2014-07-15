@@ -27,10 +27,11 @@ void CenterWindow::initUI()
 //    qmlViwer2->setSource(QUrl(QString("qrc:/home/qml/home.qml")));
 //    qmlViwer4->setSource(QUrl(QString("qrc:/home/qml/photowall.qml")));
 //    qmlViwer5->setSource(QUrl(QString("qrc:/home/qml/about.qml")));
+    AboutPage* aboutPage = new AboutPage;
 
     addWidget(tr("Home"), tr("Home"), uiElements);
     addWidget(tr("MathPlot"),tr("MathPlot"),p1);
-    addWidget(tr("About"),tr("About"), new AboutPage);
+    addWidget(tr("About"),tr("About"), aboutPage);
 //    addWidget(tr("QtWebkit"), webkitShow);
 //    addWidget(tr("QQuickWidget"), qmlViwer2);
 //    addWidget(tr("QmlViewer"), qmlViwer3);

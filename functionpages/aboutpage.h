@@ -1,13 +1,15 @@
 #ifndef ABOUTPAGE_H
 #define ABOUTPAGE_H
 
-#include <QWidget>
-
-class AboutPage : public QWidget
+#include <QFrame>
+#include <QPaintEvent>
+class AboutPage : public QFrame
 {
     Q_OBJECT
 private:
     void initUI();
+protected:
+    void paintEvent(QPaintEvent *event);
 public:
     explicit AboutPage(QWidget *parent = 0);
 

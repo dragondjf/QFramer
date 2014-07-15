@@ -31,8 +31,6 @@ void MainWindow::initUI()
 //    getTitleBar()->getFixButton()->setMenu(lockMenu);
 
     rightfloatWindow = new RightFloatWindow;
-    QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
-    setStyleSheet(qss);
 }
 
 void MainWindow::initConnect()
