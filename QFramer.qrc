@@ -3845,8 +3845,6 @@
         <file>tiger/tiger.qml</file>
     </qresource>
     <qresource prefix="/qss">
-        <file>skin/qss/dialog.qss</file>
         <file>skin/qss/main.qss</file>
-        <file>skin/qss/settingmenu.qss</file>
     </qresource>
 </RCC>
