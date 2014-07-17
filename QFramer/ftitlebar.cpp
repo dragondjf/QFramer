@@ -29,7 +29,8 @@ void FTitleBar::initData()
     settingButton = new QToolButton;
     settingButton->setFocusPolicy(Qt::NoFocus);
     settingButton->setObjectName(QString("titleToolButton"));
-    skinButton = new QToolButton;
+    skinButton = new QToolButton;\
+    skinButton->setFocusPolicy(Qt::NoFocus);
     skinButton->setObjectName(QString("titleToolButton"));
     fixButton = new QToolButton;
     fixButton->setObjectName(QString("titleToolButton"));
@@ -77,7 +78,7 @@ void FTitleBar::initUI()
 void FTitleBar::initConnect()
 {
     connect(settingButton, SIGNAL(clicked()), settingButton, SLOT(showMenu()));
-    connect(skinButton, SIGNAL(clicked()), this, SLOT(changeSkin()));
+    connect(skinButton, SIGNAL(clicked()), skinButton, SLOT(showMenu()));
     connect(fixButton, SIGNAL(clicked()), this, SLOT(changeFix()));
     connect(maxButton, SIGNAL(clicked()), this, SIGNAL(maximumed()));
     connect(minButton, SIGNAL(clicked()), this, SIGNAL(minimuned()));

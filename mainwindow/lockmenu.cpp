@@ -1,5 +1,4 @@
 #include "lockmenu.h"
-#include "QFramer/futil.h"
 LockMenu::LockMenu(QWidget *parent) :
     QMenu(parent)
 {
@@ -7,9 +6,6 @@ LockMenu::LockMenu(QWidget *parent) :
     initUI();
     initController();
     initConnect();
-
-    QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
-    setStyleSheet(qss);
 }
 
 void LockMenu::initData()

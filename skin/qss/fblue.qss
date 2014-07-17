@@ -2,11 +2,11 @@
 /* QMainWindow Style*/
 /***********************************************************/
 QMainWindow{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0 rgba(119, 255, 255, 255), stop:1 rgba(32, 127, 155, 255));
 }
 
 QToolBar {
-    background: rgb(33, 50, 70);
+    background: rgb(40, 47, 63);
     spacing: 0px; /* spacing between items in the tool bar */
 }
 
@@ -32,22 +32,22 @@ QProgressBar QLineEdit{
 /* ******************QMenu****************** */
 QMenu {
     color: white;
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
     margin: 2px; 
 }
 
 QMenu::item {
     height: 23px;
     padding: 0px 25px 0px 20px;
-    background: rgb(33, 50, 70);
+    background: rgb(40, 47, 63);
 }
 
 QMenu::item:selected {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
 }
 
 QMenu::icon:checked { /* appearance of a 'checked' icon */
-    background: rgb(34, 44, 56);
+    background: rgb(63, 147, 168);
     border: 1px inset gray;
     position: absolute;
     top: 1px;
@@ -84,8 +84,8 @@ QMenu::indicator {
 
 /* ******************QStatusBar****************** */
 QStatusBar {
-    color: black;
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:1 rgba(33, 50, 70, 255), stop:0 rgba(255, 255, 255, 255));
+    color: white;
+    background-color: rgb(40, 47, 63);
     border-top: 1px solid black;
 }
 
@@ -108,7 +108,7 @@ QSplitter{
 }
 
 QSplitter::handle {
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
 }
 
 QSplitter::handle:horizontal {
@@ -120,7 +120,7 @@ QSplitter::handle:vertical {
 }
 
 QSplitter::handle:pressed {
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
 }
 
 /* ******************QSplitter****************** */
@@ -143,11 +143,11 @@ QHeaderView::section:checked {
 }
 
 QHeaderView{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
 }
 
 QHeaderView::section {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));;
+    background-color: rgb(69, 187, 217);;
     color: white;
     font-size: 16px;
     min-height: 25px;
@@ -196,7 +196,7 @@ QTableWidget{
     color: white;
     background-color: #5B677A;
     selection-color: white;
-    selection-background-color:rgb(34, 44, 56);
+    selection-background-color:rgb(63, 147, 168);
 }
 
 QTableWidget:disabled{
@@ -278,23 +278,23 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 
 
 QPushButton{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
     border: none;
     color: white;
 }
 
 QPushButton:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
     color: white;
 }
 
 QPushButton:checked{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
     color: white;
 }
 
 QPushButton:pressed{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
     color: white;
 }
 
@@ -306,8 +306,8 @@ QLabel{
 
 /* ******************QGroupBox****************** */
 QGroupBox {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
-    border: 1px solid rgb(33, 50, 70);
+    background-color: rgb(69, 187, 217);
+    border: 1px solid rgb(40, 47, 63);
     margin-top: 5px;  /*leave space at the top for the title */
 }
 
@@ -326,7 +326,7 @@ QGroupBox::title {
 /* ******************FTitleBar****************** */
 
 QFrame#FTitleBar{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
 }
 
 QToolButton#titleToolButton{
@@ -336,7 +336,7 @@ QToolButton#titleToolButton{
 
 
 QToolButton#titleToolButton:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
     color: white;
     border: 1px;
 }
@@ -363,7 +363,7 @@ QToolButton#titleToolButton::menu-indicator {
 }
 
 QToolButton#titleToolButton:open { /* when the button has its menu open */
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
 }
 
 
@@ -384,7 +384,7 @@ QToolButton#close:hover{
 
 
 QWidget#FTabTile{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
 }
 
 QFrame QLabel#FTitleLabel{
@@ -395,22 +395,22 @@ QFrame QLabel#FTitleLabel{
 }
 
 QFrame#FNavgationBar_bottom{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
     border-bottom: 1px solid black;
 }
 
 QFrame#FNavgationBar_top{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
     border-top: 1px solid black;
 }
 
 QFrame#FNavgationBar_left{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
     border-left: 1px solid black;
 }
 
 QFrame#FNavgationBar_right{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
     border-right: 1px solid black;
 }
 
@@ -418,20 +418,20 @@ QFrame#FNavgationBar_right{
 
 /* ******************centerwindow****************** */
 QWidget#Home{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
 }
 
 QWidget#MathPlot{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
 }
 
 QFrame#About{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:0.5 rgba(255, 255, 255, 255), stop:1 rgba(33, 50, 70, 255));
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0 rgba(119, 255, 255, 255), stop:1 rgba(32, 127, 155, 255));
 }
 
 QFrame#RightFloatWindow
 {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:0.5 rgba(255, 255, 255, 255), stop:1 rgba(33, 50, 70, 255));
+background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0 rgba(119, 255, 255, 255), stop:1 rgba(32, 127, 155, 255));
 }
 /* ******************centerwindow****************** */
 
@@ -448,13 +448,13 @@ QPushButton#Home{
 }
 
 QPushButton#Home:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
-    color: rgb(33, 50, 70);
+    background-color: rgb(69, 187, 217);
+    color: rgb(40, 47, 63);
     /*border:1px  solid black;*/
 }
 
 QPushButton#Home:checked{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
     color: white;
 }
 
@@ -476,13 +476,13 @@ QPushButton#MathPlot{
 }
 
 QPushButton#MathPlot:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
-    color: rgb(33, 50, 70);
+    background-color: rgb(69, 187, 217);
+    color: rgb(40, 47, 63);
     /*border:1px  black;*/
 }
 
 QPushButton#MathPlot:checked{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
     color: white;
 }
 
@@ -503,12 +503,12 @@ QPushButton#About{
 }
 
 QPushButton#About:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
-    color: rgb(33, 50, 70);
+    background-color: rgb(69, 187, 217);
+    color: rgb(40, 47, 63);
 }
 
 QPushButton#About:checked{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
     color: white;
 }
 
@@ -517,19 +517,19 @@ QPushButton#About:flat{
 }
 
 QLabel#logoLabel{
-    color: rgb(34, 44, 56);
+    color: rgb(40, 47, 63);
     font-size: 28px;
     padding-left: 5px;
 }
 
 QLabel#content{
-    color: rgb(34, 44, 56);
+    color: rgb(40, 47, 63);
     font-size: 20px;
     padding-left: 5px;
 }
 
 QLabel#version{
-    color: white;
+    color: rgb(40, 47, 63);
     font-size: 20px;
     padding-left: 5px;
 }
@@ -537,7 +537,7 @@ QLabel#version{
 /* ******************FDialog****************** */
 
 QDialog{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0 rgba(119, 255, 255, 255), stop:1 rgba(32, 127, 155, 255));
 }
 
 QDialog QFrame#TitleBar{
@@ -550,30 +550,30 @@ QDialog QLabel#FTitleLabel{
 }
 
 QDialog QLabel#logoLabel{
-    color: white;
+    color: rgb(40, 47, 63);
     font-size: 18px;
     padding-left: 5px;
 }
 
 QDialog QLabel#content{
-    color: rgb(34, 44, 56);
+    color: rgb(40, 47, 63);
     font-size: 16px;
     padding-left: 5px;
 }
 
 QDialog QPushButton{
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
     border: none;
     color: white;
 }
 
 QDialog QPushButton:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
     color: white;
 }
 
 QDialog QPushButton:pressed{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
     color: white;
 }
 
@@ -595,7 +595,7 @@ QDialog QToolButton{
 
 
 QDialog QToolButton:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
     border: 1px;
 }
 
@@ -621,7 +621,7 @@ QDialog QToolButton::menu-indicator {
 }
 
 QDialog QToolButton:open { /* when the button has its menu open */
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
 }
 
 
@@ -672,13 +672,13 @@ QDialog QTabBar::tab {
     color: white;
     font-size: 15px;
     /*font-family: "Verdana";*/
-    background-color: rgb(33, 50, 70);
+    background-color: rgb(40, 47, 63);
 }
 
 QDialog QTabBar::tab:selected{
-    background-color: rgb(34, 44, 56);
+    background-color: rgb(63, 147, 168);
 }
 
 QDialog QTabBar::tab:hover {
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    background-color: rgb(69, 187, 217);
 }

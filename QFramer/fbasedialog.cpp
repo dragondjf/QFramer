@@ -1,5 +1,4 @@
 #include "fbasedialog.h"
-#include "futil.h"
 #include<QVBoxLayout>
 #include<QPropertyAnimation>
 #include<QDesktopWidget>
@@ -14,8 +13,6 @@ FBaseDialog::FBaseDialog(QWidget *parent) :
     initData();
     initUI();
     initConnect();
-    QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
-    setStyleSheet(qss);
 }
 
 void FBaseDialog::initData()

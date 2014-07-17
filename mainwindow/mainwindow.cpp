@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "centerwindow.h"
 #include "QFramer/futil.h"
+#include "thememenu.h"
 #include"functionpages/rightfloatwindow.h"
 MainWindow* MainWindow::instance = NULL;
 
@@ -22,11 +23,13 @@ void MainWindow::initUI()
     setCentralWidget(centerWindow);
     centerWindow->navagationBar->setCurrentIndex(0);
 
-    settingmenu = new SettingMenu;
-    getTitleBar()->getSettingButton()->setMenu(settingmenu);
-    getQSystemTrayIcon()->setContextMenu(settingmenu);
-    getFlyWidget()->setMenu(settingmenu);
+    settingMenu = new SettingMenu;
+    getTitleBar()->getSettingButton()->setMenu(settingMenu);
+    getQSystemTrayIcon()->setContextMenu(settingMenu);
+    getFlyWidget()->setMenu(settingMenu);
 
+    themeMenu = new ThemeMenu;
+    getTitleBar()->getSkinButton()->setMenu(themeMenu);
 //    lockMenu = new LockMenu(this);
 //    getTitleBar()->getFixButton()->setMenu(lockMenu);
 

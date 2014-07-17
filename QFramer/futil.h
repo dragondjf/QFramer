@@ -7,10 +7,10 @@
 #include<QJsonObject>
 #include<QJsonArray>
 #include<QDebug>
-
+#include <QApplication>
 void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 QString getQssFromFile(QString filename);
 QString readFile(const QString filename);
-
+QString setSkinForApp(QApplication &app, QString filename);
 
 #endif // UTIL_H

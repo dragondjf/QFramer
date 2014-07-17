@@ -3846,5 +3846,6 @@
     </qresource>
     <qresource prefix="/qss">
         <file>skin/qss/main.qss</file>
+        <file>skin/qss/fblue.qss</file>
     </qresource>
 </RCC>

@@ -6,6 +6,7 @@
 #include"settingmenu.h"
 #include"lockmenu.h"
 #include"functionpages/rightfloatwindow.h"
+#include"thememenu.h"
 #include <QResizeEvent>
 #include <QMouseEvent>
 #include <QHideEvent>
@@ -26,7 +27,8 @@ protected:
 public:
     static MainWindow* instance;
     CenterWindow* centerWindow;
-    SettingMenu* settingmenu;
+    SettingMenu* settingMenu;
+    ThemeMenu* themeMenu;
     LockMenu* lockMenu;
     RightFloatWindow* rightfloatWindow;
 public:

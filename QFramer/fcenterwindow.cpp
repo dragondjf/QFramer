@@ -204,12 +204,10 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
 {
     QLabel* circle = new QLabel(stackWidget->currentWidget());
     QLabel* line = new QLabel(this);
+    line->setObjectName(QString("line"));
     line->resize(0, 2);
     line->show();
-    line->setStyleSheet(QString("QLabel{background-color: green;}"));
-    circle->setStyleSheet(QString("\
-         QLabel{background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(1, 255, 255, 255), stop:0.511364 rgba(255, 255, 0, 255), stop:1 rgba(0, 137, 0, 238));}"\
-                                  ));
+    line->setStyleSheet(QString("QLabel{background-color: white;}"));
 
     circle->setPixmap(stackWidget->widget(preindex)->grab());
     circle->show();

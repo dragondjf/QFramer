@@ -53,3 +53,10 @@ QString readFile(const QString filename)
         return in.readAll();
     }
 }
+
+
+QString setSkinForApp(QApplication &app, QString filename)
+{
+    QString qss = getQssFromFile(filename);
+    app.setStyleSheet(qss);
+}

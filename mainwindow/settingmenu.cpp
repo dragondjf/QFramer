@@ -10,9 +10,6 @@ SettingMenu::SettingMenu(QWidget *parent) :
     initUI();
     initController();
     initConnect();
-
-    QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
-    setStyleSheet(qss);
 }
 
 void SettingMenu::initData()

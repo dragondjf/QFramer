@@ -5,14 +5,14 @@
 int main(int argc, char *argv[])
 {
     qInstallMessageHandler(myMessageOutput);
-    QApplication a(argc, argv);
+    QApplication app(argc, argv);
     QApplication::setOrganizationName("DJF");
     QApplication::setOrganizationDomain("https://github.com/dragondjf");
     QApplication::setApplicationName("QFramer");
-    QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
-    a.setStyleSheet(qss);
+    setSkinForApp(app, QString(":/qss/skin/qss/main.qss"));
+
     MainWindow *main = MainWindow::getInstance();
     main->setAttribute(Qt::WA_DeleteOnClose);
     main->show();
-    return a.exec();
+    return app.exec();
 }

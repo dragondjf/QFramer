@@ -19,12 +19,14 @@ private:
     QAction* officialSiteAction;
     QAction* aboutAction;
     SettingMenuController* controller;
-public:
-    explicit SettingMenu(QWidget *parent = 0);
+private:
     void initData();
     void initUI();
     void initController();
     void initConnect();
+public:
+    explicit SettingMenu(QWidget *parent = 0);
+
     QMap<QString, QAction*> getActionMaps();
 signals:
 

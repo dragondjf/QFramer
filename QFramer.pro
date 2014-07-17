@@ -44,7 +44,8 @@ SOURCES += main.cpp\
     mainwindow/lockcontroller.cpp \
     functionpages/ftablewidget.cpp \
     functionpages/aboutpage.cpp \
-    QFramer/fshadowlabel.cpp
+    QFramer/fshadowlabel.cpp \
+    mainwindow/thememenu.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -79,7 +80,8 @@ HEADERS  += \
     mainwindow/lockcontroller.h \
     functionpages/ftablewidget.h \
     functionpages/aboutpage.h \
-    QFramer/fshadowlabel.h
+    QFramer/fshadowlabel.h \
+    mainwindow/thememenu.h
 
 RESOURCES += \
     QFramer.qrc
