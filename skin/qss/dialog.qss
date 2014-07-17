@@ -2,45 +2,45 @@ QDialog{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
-QFrame#TitleBar{
+QDialog QFrame#TitleBar{
     background-color: transparent;
 }
-QLabel#FTitleLabel{
+QDialog QLabel#FTitleLabel{
     color: white;
     font-size: 12px;
     padding-left: 5px;
 }
 
-QLabel#logoLabel{
+QDialog QLabel#logoLabel{
     color: white;
     font-size: 18px;
     padding-left: 5px;
 }
 
-QLabel#content{
+QDialog QLabel#content{
     color: white;
     font-size: 16px;
     padding-left: 5px;
 }
 
-QPushButton{
+QDialog QPushButton{
     background-color: rgb(33, 50, 70);
     border: none;
     color: white;
 }
 
-QPushButton:hover{
+QDialog QPushButton:hover{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
     color: white;
 }
 
-QPushButton:pressed{
+QDialog QPushButton:pressed{
     background-color: rgb(34, 44, 56);
     color: white;
 }
 
 
-QLineEdit {
+QDialog QLineEdit {
     padding: 1px;
     border-style: solid;
     border: 2px solid lightgray;
@@ -50,83 +50,83 @@ QLineEdit {
 }
 
 
-QToolButton{
+QDialog QToolButton{
     background-color: transparent;
     color: white;
 }
 
 
-QToolButton:hover{
+QDialog QToolButton:hover{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
     border: 1px;
 }
 
-QToolButton:disabled{
+QDialog QToolButton:disabled{
     background-color: gray;
     border: 1px;
 }
 
-QToolButton[popupMode="1"] { /* only for MenuButtonPopup */
+QDialog QToolButton[popupMode="1"] { /* only for MenuButtonPopup */
     padding-right: 0px; /* make way for the popup button */
 }
 
-QToolButton::menu-button {
+QDialog QToolButton::menu-button {
     border: none;
 }
 
-QToolButton::menu-arrow {
+QDialog QToolButton::menu-arrow {
     image: none;
 }
 
-QToolButton::menu-indicator {
+QDialog QToolButton::menu-indicator {
     image: none;
 }
 
-QToolButton:open { /* when the button has its menu open */
+QDialog QToolButton:open { /* when the button has its menu open */
     background-color: rgb(34, 44, 56);
 }
 
 
-QToolButton#close{
+QDialog QToolButton#close{
     background-color: transparent;
     color: white;
 }
 
 
-QToolButton#close:hover{
+QDialog QToolButton#close:hover{
     background-color: red;
     border: 1px;
 }
 
-QToolButton#logo{
+QDialog QToolButton#logo{
     background-color: transparent;
     color: white;
     border: 1px;
 }
 
 
-QToolButton#logo:hover{
+QDialog QToolButton#logo:hover{
     background-color: transparent;
     border: 1px;
 }
 
-QLabel#QFramer{
+QDialog QLabel#QFramer{
     height: 132;
     border-image: url(:/skin/images/logo.png);
 }
 
-QTextEdit#info{
+QDialog QTextEdit#info{
     background-color: transparent;
     color:green;
     font-size: 16px;
     border: none;
 }
 
-QTabWidget::pane { /* The tab widget frame */
+QDialog QTabWidget::pane { /* The tab widget frame */
     border-top: 1px solid rgb(5, 9, 21);
 }
 
-QTabBar::tab {
+QDialog QTabBar::tab {
     border-top: 1px solid black;
     border-right: 1px solid black;
     height: 25px;
@@ -137,10 +137,10 @@ QTabBar::tab {
     background-color: rgb(33, 50, 70);
 }
 
-QTabBar::tab:selected{
+QDialog QTabBar::tab:selected{
     background-color: rgb(34, 44, 56);
 }
 
-QTabBar::tab:hover {
+QDialog QTabBar::tab:hover {
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }

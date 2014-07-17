@@ -14,7 +14,7 @@ FBaseDialog::FBaseDialog(QWidget *parent) :
     initData();
     initUI();
     initConnect();
-    QString qss = getQssFromFile(QString(":/qss/skin/qss/dialog.qss"));
+    QString qss = getQssFromFile(QString(":/qss/skin/qss/main.qss"));
     setStyleSheet(qss);
 }
 
@@ -29,6 +29,7 @@ void FBaseDialog::initUI()
     titlebar = new FTitleBar;
     titlebar->setSettingButtonVisible(false);
     titlebar->setSkinButtonVisible(false);
+    titlebar->setFixButtonVisible(false);
     titlebar->setMinButtonVisible(false);
     titlebar->setMaxButtonVisible(false);
 

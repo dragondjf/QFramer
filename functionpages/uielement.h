@@ -1,7 +1,6 @@
 #ifndef UIELEMENT_H
 #define UIELEMENT_H
 
-#include <QTabWidget>
 #include <QProgressBar>
 #include "QFramer/ftabwidget.h"
 class UIElement : public FTabWidget

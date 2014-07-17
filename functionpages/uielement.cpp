@@ -28,7 +28,7 @@ void UIElement::initUI()
     for(int i = 1; i< 8; ++i)
     {
         QLabel* label = new QLabel(QString::number(i));
-        addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString("NavgationTab"), label);
+        addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString(""), label);
     }
     getButtons().at(0)->click();
 }
@@ -47,7 +47,7 @@ void UIElement::initBaseElements()
          {
              QPushButton *button = new QPushButton(tr("%1-2").arg(i, j));
              button->setFixedSize(100, 60);
-             button->setObjectName(QString("normal"));
+//             button->setObjectName(QString("normal"));
              buttonlayout->addWidget(button, i, j);
          }
     }
@@ -61,7 +61,7 @@ void UIElement::initBaseElements()
          {
              QLabel *label = new QLabel(tr("%1-2").arg(i, j));
              label->setFixedSize(100, 60);
-             label->setObjectName(QString("normal"));
+//             label->setObjectName(QString("normal"));
              labellayout->addWidget(label, i, j);
          }
     }
@@ -75,7 +75,7 @@ void UIElement::initBaseElements()
          {
              QRadioButton *raido = new QRadioButton(tr("%1-2").arg(i, j));
              raido->setFixedSize(100, 60);
-             raido->setObjectName(QString("normal"));
+//             raido->setObjectName(QString("normal"));
              raidolayout->addWidget(raido, i, j);
          }
     }
@@ -90,7 +90,7 @@ void UIElement::initBaseElements()
          {
              QCheckBox *check = new QCheckBox(tr("%1-2").arg(i, j));
              check->setFixedSize(100, 60);
-             check->setObjectName(QString("normal"));
+//             check->setObjectName(QString("normal"));
              checklayout->addWidget(check, i, j);
          }
     }
@@ -103,14 +103,14 @@ void UIElement::initBaseElements()
     baseLayout->setContentsMargins(50, 50, 50, 50);
     baseElement->setLayout(baseLayout);
 
-    addWidget(tr("Base UI Element"), QString("NavgationTab"), baseElement);
+    addWidget(tr("Base UI Element"), QString(""), baseElement);
 
 }
 
 void UIElement::initTableWidget()
 {
     FTableWidget* table = new FTableWidget;
-    addWidget(tr("TabelWidget"), QString("NavgationTab"), table);
+    addWidget(tr("TabelWidget"), QString(""), table);
 }
 
 void UIElement::initTreeWidget()
@@ -189,7 +189,7 @@ void UIElement::initTreeWidget()
     vsplitter->addWidget(splitter);
     vsplitter->addWidget(treeWidget3);
 
-    addWidget(tr("TreeWidget"), QString("NavgationTab"), vsplitter);
+    addWidget(tr("TreeWidget"), QString(""), vsplitter);
 }
 
 void UIElement::initProgressBar()
@@ -205,7 +205,7 @@ void UIElement::initProgressBar()
         progressBars.append(p);
     }
     progressBarsWidget->setLayout(progressLayout);
-    addWidget(tr("ProgressBar"), QString("NavgationTab"), progressBarsWidget);
+    addWidget(tr("ProgressBar"), QString(""), progressBarsWidget);
     QTimer * ptimer = new QTimer;
     ptimer->setInterval(20);
     connect(ptimer, SIGNAL(timeout()), this, SLOT(updateProgressBar()));

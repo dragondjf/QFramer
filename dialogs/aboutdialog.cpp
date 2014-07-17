@@ -1,5 +1,6 @@
 #include "aboutdialog.h"
 #include"QFramer/fbasepushbutton.h"
+#include"QFramer/fshadowlabel.h"
 #include<QVBoxLayout>
 #include<QLabel>
 #include<QPushButton>
@@ -17,43 +18,21 @@ void AboutDialog::initUI()
 {
     normalSize = QSize(400, 300);
 
-    QGraphicsDropShadowEffect *shadow_effect1 = new QGraphicsDropShadowEffect(this);
-    shadow_effect1->setOffset(-5, 5);
-    shadow_effect1->setColor(Qt::darkGreen);
-    shadow_effect1->setBlurRadius(8);
-
-    QGraphicsDropShadowEffect *shadow_effect2 = new QGraphicsDropShadowEffect(this);
-    shadow_effect2->setOffset(-5, 5);
-    shadow_effect2->setColor(Qt::darkGreen);
-    shadow_effect2->setBlurRadius(8);
-
-    QGraphicsDropShadowEffect *shadow_effect3 = new QGraphicsDropShadowEffect(this);
-    shadow_effect3->setOffset(-5, 5);
-    shadow_effect3->setColor(Qt::darkGreen);
-    shadow_effect3->setBlurRadius(8);
-
-    QGraphicsDropShadowEffect *shadow_effect4 = new QGraphicsDropShadowEffect(this);
-    shadow_effect4->setOffset(-5, 5);
-    shadow_effect4->setColor(Qt::darkGreen);
-    shadow_effect4->setBlurRadius(8);
-
-
-    QLabel *logoLabel = new QLabel(tr("    QFramer"));
+    FShadowLabel *logoLabel = new FShadowLabel(tr("QFramer"));
     logoLabel->setObjectName(QString("logoLabel"));
-    logoLabel->setGraphicsEffect(shadow_effect1);
 
-    QLabel *infoLabel = new QLabel(tr("            Faster Easier Stronger Prettier"));
+    FShadowLabel *infoLabel = new FShadowLabel(tr("Faster Easier Stronger Prettier"));
     infoLabel->setObjectName(QString("content"));
-    infoLabel->setGraphicsEffect(shadow_effect2);
 
-    QLabel *authorLabel = new QLabel(tr("     author:dragondjf"));
+    FShadowLabel *lincenceLabel = new FShadowLabel(tr("lincence: LGPL v2"), this);
+    lincenceLabel->setObjectName(QString("content"));
+
+    FShadowLabel *authorLabel = new FShadowLabel(tr("author:dragondjf"));
     authorLabel->setObjectName(QString("content"));
-    authorLabel->setGraphicsEffect(shadow_effect3);
 
 
-    QLabel *versionLabel = new QLabel(tr("     version:0.2.0.0"));
+    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.0.0"));
     versionLabel->setObjectName(QString("content"));
-    versionLabel->setGraphicsEffect(shadow_effect4);
 
 
     enterButton = new FBasePushButton();
@@ -68,6 +47,7 @@ void AboutDialog::initUI()
     mainLayout->addWidget(logoLabel);
     mainLayout->addWidget(infoLabel);
     mainLayout->addSpacing(30);
+    mainLayout->addWidget(lincenceLabel);
     mainLayout->addWidget(authorLabel);
     mainLayout->addWidget(versionLabel);
     mainLayout->addSpacing(10);
