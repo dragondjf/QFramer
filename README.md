@@ -24,7 +24,10 @@ With  user interactive experience(UE) become more and more important in modern s
 ![2](doc/v0.2_2.png)
 ![3](doc/v0.2_4.png)
 ![4](doc/v0.2_6.png)
-![4](doc/v0.2_5.png)
+![5](doc/v0.2_5.png)
+![6](doc/v0.21_1.png)
+![7](doc/v0.21_2.png)
+![8](doc/v0.21_3.png)
 
 ####5.Contact
 + `Email:` ding465398889@163.com or dragondjf@gmail.com or 465398889@qq.com
