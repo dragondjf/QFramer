@@ -136,6 +136,10 @@ void FCenterWindow::addWidget(const QString &tile, const QString &obejctName, QW
     stackWidget->addWidget(widget);
 }
 
+FNavgationBar* FCenterWindow::getNavgationBar(){
+    return navagationBar;
+}
+
 void FCenterWindow::switchscreen(const int index)
 {
     int n = 0;

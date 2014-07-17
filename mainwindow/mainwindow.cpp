@@ -21,7 +21,7 @@ void MainWindow::initUI()
 {
     centerWindow = new CenterWindow;
     setCentralWidget(centerWindow);
-    centerWindow->navagationBar->setCurrentIndex(0);
+    centerWindow->getNavgationBar()->setCurrentIndex(0);
 
     settingMenu = new SettingMenu;
     getTitleBar()->getSettingButton()->setMenu(settingMenu);
@@ -94,22 +94,22 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     if(event->key() == Qt::Key_Left)
     {
-        int index = centerWindow->navagationBar->currentIndex();
-        int count = centerWindow->navagationBar->count();
+        int index = centerWindow->getNavgationBar()->currentIndex();
+        int count = centerWindow->getNavgationBar()->count();
         if(index == 0){
-            centerWindow->navagationBar->setCurrentIndex(count - 1);
+            centerWindow->getNavgationBar()->setCurrentIndex(count - 1);
         }else if(index > 0){
-            centerWindow->navagationBar->setCurrentIndex(index - 1);
+            centerWindow->getNavgationBar()->setCurrentIndex(index - 1);
         }
     }
     else if(event->key() == Qt::Key_Right)
     {
-        int index = centerWindow->navagationBar->currentIndex();
-        int count = centerWindow->navagationBar->count();
+        int index = centerWindow->getNavgationBar()->currentIndex();
+        int count = centerWindow->getNavgationBar()->count();
         if(index == count){
-            centerWindow->navagationBar->setCurrentIndex(0);
+            centerWindow->getNavgationBar()->setCurrentIndex(0);
         }else if(index > 0){
-            centerWindow->navagationBar->setCurrentIndex(index + 1);
+            centerWindow->getNavgationBar()->setCurrentIndex(index + 1);
         }
     }
 

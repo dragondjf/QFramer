@@ -12,6 +12,11 @@ class FCenterWindow : public QFrame
 {
     Q_OBJECT
 private:
+    FNavgationBar* navagationBar;
+    QStackedWidget* stackWidget;
+    QBoxLayout* navlayout;
+    QVBoxLayout* mainLayout;
+    int currentIndex;
     int preindex;
 public:
     enum Alignment_Direction{
@@ -41,11 +46,6 @@ public:
         animationCenter
     };
 
-    FNavgationBar* navagationBar;
-    QStackedWidget* stackWidget;
-    QBoxLayout* navlayout;
-    QVBoxLayout* mainLayout;
-    int currentIndex;
 public:
     explicit FCenterWindow(QWidget *parent = 0);
     void initData();
@@ -53,6 +53,7 @@ public:
     void initConnect();
     void addWidget(const QString& tile, const QString &obejctName, QWidget* widget);
     void setAlignment(Alignment_Direction direction);
+    FNavgationBar* getNavgationBar();
 signals:
 
 public slots:

@@ -45,7 +45,8 @@ SOURCES += main.cpp\
     functionpages/ftablewidget.cpp \
     functionpages/aboutpage.cpp \
     QFramer/fshadowlabel.cpp \
-    mainwindow/thememenu.cpp
+    mainwindow/thememenu.cpp \
+    QFramer/fwigglywidget.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -81,7 +82,8 @@ HEADERS  += \
     functionpages/ftablewidget.h \
     functionpages/aboutpage.h \
     QFramer/fshadowlabel.h \
-    mainwindow/thememenu.h
+    mainwindow/thememenu.h \
+    QFramer/fwigglywidget.h
 
 RESOURCES += \
     QFramer.qrc

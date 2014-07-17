@@ -6,6 +6,8 @@
 #include "functionpages/mathplot.h"
 #include"functionpages/uielement.h"
 #include"functionpages/aboutpage.h"
+#include"QFramer/fwigglywidget.h"
+#include<QHBoxLayout>
 CenterWindow* CenterWindow::instance = NULL;
 
 CenterWindow::CenterWindow(QWidget *parent) :
@@ -37,7 +39,7 @@ void CenterWindow::initUI()
 //    addWidget(tr("QmlViewer"), qmlViwer3);
 //    addWidget(tr("PhotoWall"), qmlViwer4);
 //    addWidget(tr("About"),tr("About"), qmlViwer5);
-
+    addWiggleWiget();
     setAlignment(TopCenter);
 }
 
@@ -48,4 +50,28 @@ CenterWindow* CenterWindow::getInstance()
         instance = new CenterWindow();
     }
     return instance;
+}
+
+
+void CenterWindow::addWiggleWiget()
+{
+//    QWidget* w = new QWidget(getNavgationBar());
+//    QGridLayout* mLayout = new QGridLayout;
+
+//    FWigglyWidget* wiggleWidget1 = new FWigglyWidget("QFramer");
+
+//    wiggleWidget1->setFixedWidth(100);
+    FWigglyWidget* wiggleWidget2 = new FWigglyWidget("Faster Easier Stronger Prettier", getNavgationBar());
+    wiggleWidget2->move(40, 5);
+    wiggleWidget2->setFixedSize(400, 60);
+    wiggleWidget2->setStyleSheet("background-color: transparent;\
+                                 font-size: 20px;");
+//    mLayout->addWidget(wiggleWidget1, 0, 0);
+//    mLayout->addWidget(wiggleWidget2, 1, 1);
+//    mLayout->setContentsMargins(0, 0, 0, 0);
+//    w->setLayout(mLayout);
+
+//    w->setFixedSize(360, 60);
+//    w->move(0, 0);
+
 }

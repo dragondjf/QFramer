@@ -5,6 +5,10 @@ QMainWindow{
     background-color: qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:1, fx:0.5, fy:0.5, stop:0 rgba(119, 255, 255, 255), stop:1 rgba(32, 127, 155, 255));
 }
 
+QWigdet{
+    background-color: transparent;
+}
+
 QToolBar {
     background: rgb(40, 47, 63);
     spacing: 0px; /* spacing between items in the tool bar */

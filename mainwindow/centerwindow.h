@@ -28,6 +28,7 @@ public:
     explicit CenterWindow(QWidget *parent = 0);
     void initUI();
     static CenterWindow* getInstance();
+    void addWiggleWiget();
 signals:
 
 public slots:
