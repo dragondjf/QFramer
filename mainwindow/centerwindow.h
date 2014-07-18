@@ -2,10 +2,8 @@
 #define CENTERWINDOW_H
 
 #include"QFramer/fcenterwindow.h"
-#include "functionpages/webkitshow.h"
-#include "functionpages/basequickwidget.h"
-#include "functionpages/qmlviwer.h"
-#include "functionpages/pdftool.h"
+#include "functionpages/aboutpage.h"
+#include "functionpages/mathplot.h"
 #include"functionpages/uielement.h"
 #include<QVBoxLayout>
 
@@ -15,12 +13,8 @@ class CenterWindow : public FCenterWindow
 
 public:
     UIElement* uiElements;
-    PDFTool* pdfTool;
-    WebkitShow *webkitShow;
-    BaseQuickWidget* qmlViwer2;
-    QmlViwer* qmlViwer3;
-    BaseQuickWidget* qmlViwer4;
-    BaseQuickWidget* qmlViwer5;
+    MathPlot* mathPlot;
+    AboutPage* aboutPage;
 
     static CenterWindow* instance;
 

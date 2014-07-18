@@ -4,8 +4,6 @@
 #include <stdlib.h>
 #include <QFile>
 #include <QTextStream>
-#include<QJsonObject>
-#include<QJsonArray>
 #include<QDebug>
 #include <QApplication>
 void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg);
