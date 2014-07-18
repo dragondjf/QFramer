@@ -46,9 +46,9 @@ void BgSkinPopup::initUI()
 
 void BgSkinPopup::initConnect()
 {
-    connect(redSlider, &QSlider::valueChanged, this, &BgSkinPopup::updateBackgroundColor);
-    connect(greenSlider, &QSlider::valueChanged, this, &BgSkinPopup::updateBackgroundColor);
-    connect(blueSlider, &QSlider::valueChanged, this, &BgSkinPopup::updateBackgroundColor);
+    connect(redSlider, SIGNAL(valueChanged()), this, SLOT(updateBackgroundColor()));
+    connect(greenSlider, SIGNAL(valueChanged()), this, SLOT(updateBackgroundColor()));
+    connect(blueSlider, SIGNAL(valueChanged()), this, SLOT(updateBackgroundColor()));
 }
 
 

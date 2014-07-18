@@ -55,7 +55,7 @@ void WebkitShow::setupInspector()
 
     QShortcut* shortCut = new QShortcut(this);
     shortCut->setKey(Qt::Key_F12);
-    connect(shortCut, &QShortcut::activated, this, &WebkitShow::toggleInspector);
+    connect(shortCut, SIGNAL(activated()), this, SLOT(toggleInspector()));
 }
 
 void WebkitShow::toggleInspector()

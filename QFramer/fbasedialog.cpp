@@ -102,7 +102,7 @@ void FBaseDialog::animationClose()
     QRect noraml = geometry();
     QRect closeRect = QRect(noraml.x(), noraml.y() + noraml.height()/2, noraml.width(), 0);
     QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
-    connect(animation, &QPropertyAnimation::finished, this, &FBaseDialog::close);
+    connect(animation, SIGNAL(finished()), this, SLOT(close()));
     animation->setDuration(100);
     animation->setStartValue(noraml);
     animation->setEndValue(closeRect);

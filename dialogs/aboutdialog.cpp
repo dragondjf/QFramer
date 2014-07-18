@@ -61,14 +61,14 @@ void AboutDialog::initUI()
 void AboutDialog::initConnect()
 {
 //    BaseDialog::initConnect();
-    connect(enterButton, &QPushButton::clicked, this, &AboutDialog::animationClose);
+    connect(enterButton, SIGNAL(clicked()), this, SLOT(animationClose()));
 }
 
 
 void AboutDialog::animationClose()
 {
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
-    connect(animation, &QPropertyAnimation::finished, this, &AboutDialog::close);
+    connect(animation, SIGNAL(finished()), this, SLOT(close()));
     animation->setDuration(1500);
     animation->setStartValue(1);
     animation->setEndValue(0);

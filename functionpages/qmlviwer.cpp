@@ -41,10 +41,10 @@ void QmlViwer::initUI()
 
 void QmlViwer::initConnect()
 {
-    connect(loadQmlButton, &QToolButton::clicked, this, &QmlViwer::getQmlUrl);
-    connect(qmlUrlEdit, &QLineEdit::editingFinished, this, &QmlViwer::loadQml);
-    connect(qmlUrlEdit, &QLineEdit::returnPressed, this, &QmlViwer::loadQml);
-    connect(qmlUrlEdit, &QLineEdit::textChanged, this, &QmlViwer::loadQml);
+    connect(loadQmlButton, SIGNAL(clicked()), this, SLOT(getQmlUrl()));
+    connect(qmlUrlEdit, SIGNAL(editingFinished()), this, SLOT(loadQml()));
+    connect(qmlUrlEdit, SIGNAL(returnPressed()), this, SLOT(loadQml()));
+    connect(qmlUrlEdit, SIGNAL(textChanged()), this, SLOT(loadQml()));
 }
 
 void QmlViwer::getQmlUrl()

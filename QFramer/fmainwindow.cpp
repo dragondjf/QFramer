@@ -248,7 +248,7 @@ void FMainWindow::closeEvent(QCloseEvent *event)
 void FMainWindow::animationClose()
 {
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
-    connect(animation, &QPropertyAnimation::finished, this, &FMainWindow::close);
+    connect(animation, SIGNAL(finished()), this, SLOT(close()));
     animation->setDuration(1500);
     animation->setStartValue(1);
     animation->setEndValue(0);
