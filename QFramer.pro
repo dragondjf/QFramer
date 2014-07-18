@@ -46,7 +46,8 @@ SOURCES += main.cpp\
     functionpages/aboutpage.cpp \
     QFramer/fshadowlabel.cpp \
     mainwindow/thememenu.cpp \
-    QFramer/fwigglywidget.cpp
+    QFramer/fwigglywidget.cpp \
+    QFramer/fnofocusdelegate.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -83,7 +84,8 @@ HEADERS  += \
     functionpages/aboutpage.h \
     QFramer/fshadowlabel.h \
     mainwindow/thememenu.h \
-    QFramer/fwigglywidget.h
+    QFramer/fwigglywidget.h \
+    QFramer/fnofocusdelegate.h
 
 RESOURCES += \
     QFramer.qrc

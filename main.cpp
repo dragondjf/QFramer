@@ -9,7 +9,7 @@ int main(int argc, char *argv[])
     QApplication::setOrganizationName("DJF");
     QApplication::setOrganizationDomain("https://github.com/dragondjf");
     QApplication::setApplicationName("QFramer");
-    setSkinForApp(app, QString(":/qss/skin/qss/main.qss"));
+    setSkinForApp(app, QString(":/qss/skin/qss/fblue.qss"));
 
     MainWindow *main = MainWindow::getInstance();
     main->setAttribute(Qt::WA_DeleteOnClose);

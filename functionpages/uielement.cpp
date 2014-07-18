@@ -1,6 +1,7 @@
 #include "uielement.h"
 #include "ftablewidget.h"
 #include "QFramer/ftabwidget.h"
+#include "QFramer/fnofocusdelegate.h"
 #include <QGridLayout>
 #include <QGroupBox>
 #include<QLabel>
@@ -110,12 +111,16 @@ void UIElement::initBaseElements()
 void UIElement::initTableWidget()
 {
     FTableWidget* table = new FTableWidget;
+//    table->setItemDelegate(new FNoFocusDelegate);
+    table->setFocusPolicy(Qt::NoFocus);
     addWidget(tr("TabelWidget"), QString(""), table);
 }
 
 void UIElement::initTreeWidget()
 {
     QTreeWidget *treeWidget = new QTreeWidget();
+//    treeWidget->setItemDelegate(new FNoFocusDelegate);
+    treeWidget->setFocusPolicy(Qt::NoFocus);
     treeWidget->setHeaderHidden(true);
     treeWidget->setColumnCount(1);
     QList<QTreeWidgetItem *> items;
@@ -130,7 +135,8 @@ void UIElement::initTreeWidget()
     treeWidget->insertTopLevelItems(0, items);
 
     QTreeWidget *treeWidget2 = new QTreeWidget();
-
+//    treeWidget2->setItemDelegate(new FNoFocusDelegate);
+    treeWidget2->setFocusPolicy(Qt::NoFocus);
     QStringList labels;
     labels << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
     treeWidget2->setHeaderLabels(labels);
@@ -153,6 +159,8 @@ void UIElement::initTreeWidget()
 
 
     QTreeWidget *treeWidget3 = new QTreeWidget();
+//    treeWidget3->setItemDelegate(new FNoFocusDelegate);
+    treeWidget3->setFocusPolicy(Qt::NoFocus);
     QStringList labels3;
     labels3 << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
     treeWidget3->setHeaderLabels(labels3);
