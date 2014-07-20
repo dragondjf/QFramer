@@ -567,6 +567,13 @@ QPushButton#About:flat{
     border: none;
 }
 
+QPushButton#Record{
+    background-color: transparent;
+}
+
+QPushButton#Record:disabled{
+    background-color: gray;
+}
 
 QLabel#Listening{
     color: white;

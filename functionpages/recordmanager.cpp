@@ -127,14 +127,12 @@ void RecordManager::initUI()
     voiceButton = new FStateButton(QString(":/images/skin/images/fvoice.png"),\
                                                  QString(":/images/skin/images/bvoice.png"),\
                                                  0, this);
-    voiceButton->setObjectName("record");
-    voiceButton->setStyleSheet("QPushButton{background-color: transparent;}");
+    voiceButton->setObjectName("Record");
+    voiceButton->setDisabled(true);
     voiceLabel = new FShadowLabel;
     voiceLabel->setObjectName("Listening");
-    QVBoxLayout* voiceLayout = new QVBoxLayout;
-
     wavRecord = new WavRecord;
-
+    QVBoxLayout* voiceLayout = new QVBoxLayout;
     voiceLayout->addWidget(wavRecord);
     voiceLayout->addWidget(voiceButton);
     voiceLayout->addWidget(voiceLabel);
@@ -149,6 +147,7 @@ void RecordManager::initUI()
 void RecordManager::initConnect()
 {
     connect(voiceButton, SIGNAL(stateChanged()), this, SLOT(changeVoiceLabel()));
+    connect(wavRecord->newWavButton, SIGNAL(clicked()), this, SLOT(setVoiceButtonDisbled()));
 }
 
 void RecordManager::changeVoiceLabel()
@@ -158,13 +157,21 @@ void RecordManager::changeVoiceLabel()
         voiceButton->setToolTip(tr("Recording on "));
         voiceLabel->setText("Listening...");
         wavRecord->setEnabled(false);
+        wavRecord->newWavButton->setEnabled(false);
     }
     else if (voiceButton->getState() == 0)
     {
         voiceButton->setToolTip(tr("Recording off"));
         voiceLabel->setText("");
         wavRecord->setEnabled(true);
+        wavRecord->newWavButton->setEnabled(true);
     }
+}
+
+void RecordManager::setVoiceButtonDisbled()
+{
+    wavRecord->newWavButton->setEnabled(false);
+    voiceButton->setEnabled(true);
 }
 
 

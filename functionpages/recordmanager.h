@@ -74,6 +74,7 @@ signals:
 
 public slots:
     void changeVoiceLabel();
+    void setVoiceButtonDisbled();
 };
 
 
