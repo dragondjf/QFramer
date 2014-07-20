@@ -47,7 +47,10 @@ SOURCES += main.cpp\
     QFramer/fshadowlabel.cpp \
     mainwindow/thememenu.cpp \
     QFramer/fwigglywidget.cpp \
-    QFramer/fnofocusdelegate.cpp
+    QFramer/fnofocusdelegate.cpp \
+    functionpages/recordmanager.cpp \
+    QFramer/fstatebutton.cpp \
+    functionpages/recordthread.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -85,7 +88,10 @@ HEADERS  += \
     QFramer/fshadowlabel.h \
     mainwindow/thememenu.h \
     QFramer/fwigglywidget.h \
-    QFramer/fnofocusdelegate.h
+    QFramer/fnofocusdelegate.h \
+    functionpages/recordmanager.h \
+    QFramer/fstatebutton.h \
+    functionpages/recordthread.h
 
 RESOURCES += \
     QFramer.qrc

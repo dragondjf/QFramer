@@ -306,24 +306,20 @@ QPushButton{
     color: white;
 }
 
-QPushButton:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
-    color: white;
-}
-
-QPushButton:checked{
-    background-color: rgb(34, 44, 56);
-    color: white;
-}
 
 QPushButton:pressed{
     background-color: rgb(34, 44, 56);
     color: white;
 }
 
+QPushButton:disabled{
+    background-color: gray;
+}
+
 
 QLabel{
     background-color: transparent;
+    color: white;
     qproperty-alignment: AlignCenter;
 }
 
@@ -448,6 +444,10 @@ QWidget#MathPlot{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
+QWidget#Voice{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
 QFrame#About{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:0.5 rgba(255, 255, 255, 255), stop:1 rgba(33, 50, 70, 255));
 }
@@ -514,6 +514,33 @@ QPushButton#MathPlot:flat{
 }
 
 
+QPushButton#Voice{
+    background-image: url(:/skin/icons/dark/appbar.sound.stereo.png);
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    background-color: transparent;
+    color: rgb(92, 113, 134);
+    text-align: center bottom;
+    padding-bottom: 5px;
+
+}
+
+QPushButton#Voice:hover{
+    background-color: rgb(69, 187, 217);
+    color: rgb(40, 47, 63);
+    /*border:1px  black;*/
+}
+
+QPushButton#Voice:checked{
+    background-color: rgb(63, 147, 168);
+    color: white;
+}
+
+QPushButton#Voice:flat{
+    border: none;
+}
+
 QPushButton#About{
     background-image: url(:/skin/icons/dark/appbar.message.smiley.png);
     background-repeat:no-repeat;
@@ -537,6 +564,11 @@ QPushButton#About:checked{
 
 QPushButton#About:flat{
     border: none;
+}
+
+QLabel#Listening{
+    color: white;
+    font-size: 20px;
 }
 
 QLabel#logoLabel{

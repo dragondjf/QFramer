@@ -8,6 +8,7 @@ class FShadowLabel : public QLabel
     Q_OBJECT
 public:
     explicit FShadowLabel(const QString &text, QWidget *parent = 0);
+    explicit FShadowLabel(QWidget *parent = 0);
 
 signals:
 

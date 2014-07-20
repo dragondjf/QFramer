@@ -26,6 +26,6 @@ signals:
 
 public slots:
 
-};
+}; 
 
 #endif // RIGHTFLOATWINDOW_H

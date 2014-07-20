@@ -1,5 +1,4 @@
 #include "centerwindow.h"
-
 #include"QFramer/fwigglywidget.h"
 #include<QHBoxLayout>
 CenterWindow* CenterWindow::instance = NULL;
@@ -14,10 +13,12 @@ void CenterWindow::initUI()
 {
     uiElements = new UIElement(this);
     mathPlot = new MathPlot;
+    recordManger = new RecordManager;
     aboutPage = new AboutPage;
 
     addWidget(tr("Home"), tr("Home"), uiElements);
     addWidget(tr("MathPlot"),tr("MathPlot"), mathPlot);
+    addWidget(tr("Voice"), tr("Voice"), recordManger);
     addWidget(tr("About"),tr("About"), aboutPage);
     addWiggleWiget();
     setAlignment(TopCenter);

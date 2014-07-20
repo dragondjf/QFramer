@@ -3848,4 +3848,8 @@
         <file>skin/qss/main.qss</file>
         <file>skin/qss/fblue.qss</file>
     </qresource>
+    <qresource prefix="/images">
+        <file>skin/images/bvoice.png</file>
+        <file>skin/images/fvoice.png</file>
+    </qresource>
 </RCC>
