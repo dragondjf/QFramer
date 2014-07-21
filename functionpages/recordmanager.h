@@ -6,8 +6,16 @@
 #include <QLineEdit>
 #include <QComboBox>
 #include <QSpinBox>
+#include <QAudioBuffer>
+#include <QAudioProbe>
+#include <QAudioRecorder>
+#include <QDir>
+#include <QFileDialog>
+#include <QMediaRecorder>
+
 #include "QFramer/fstatebutton.h"
 #include "QFramer/fshadowlabel.h"
+#include "audiorecord/qaudiolevel.h"
 
 class WavRecord: public QWidget
 {
@@ -33,6 +41,9 @@ public:
     FShadowLabel* bitsLabel;
     QComboBox* bitsComBox;
     FShadowLabel* bitsUnit;
+
+    FShadowLabel* contanerLabel;
+    QComboBox* containerComBox;
 
     FShadowLabel* durationLabel;
     QSpinBox* durationSpinBox;
@@ -63,10 +74,16 @@ private:
     FStateButton* voiceButton;
     FShadowLabel* voiceLabel;
     WavRecord* wavRecord;
+
+    QAudioRecorder *audioRecorder;
+    QAudioProbe *probe;
+    QList<QAudioLevel*> audioLevels;
+
 private:
     void initData();
     void initUI();
     void initConnect();
+    void clearAudioLevels();
 public:
     explicit RecordManager(QWidget *parent = 0);
 
@@ -75,6 +92,10 @@ signals:
 public slots:
     void changeVoiceLabel();
     void setVoiceButtonDisbled();
+    void toggleRecord();
+    void updateStatus(QMediaRecorder::Status);
+    void updateProgress(qint64 pos);
+    void processBuffer(const QAudioBuffer&);
 };
 
 

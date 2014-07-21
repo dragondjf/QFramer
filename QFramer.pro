@@ -50,7 +50,7 @@ SOURCES += main.cpp\
     QFramer/fnofocusdelegate.cpp \
     functionpages/recordmanager.cpp \
     QFramer/fstatebutton.cpp \
-    functionpages/recordthread.cpp
+    functionpages/audiorecord/qaudiolevel.cpp
 
 HEADERS  += \
     QFramer/fbasedialog.h \
@@ -91,7 +91,7 @@ HEADERS  += \
     QFramer/fnofocusdelegate.h \
     functionpages/recordmanager.h \
     QFramer/fstatebutton.h \
-    functionpages/recordthread.h
+    functionpages/audiorecord/qaudiolevel.h
 
 RESOURCES += \
     QFramer.qrc
