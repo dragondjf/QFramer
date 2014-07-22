@@ -1,7 +1,6 @@
 #include <QApplication>
 #include "QFramer/futil.h"
 #include "mainwindow/mainwindow.h"
-#include "QFramer/futil.h"
 int main(int argc, char *argv[])
 {
     qInstallMessageHandler(myMessageOutput);

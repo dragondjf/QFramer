@@ -196,8 +196,6 @@ void RecordManager::updateProgress(qint64 duration)
 
 void RecordManager::updateStatus(QMediaRecorder::Status status)
 {
-    QString statusMessage;
-
     switch (status) {
     case QMediaRecorder::RecordingStatus:
         if (audioLevels.count() != audioRecorder->audioSettings().channelCount()) {
@@ -246,7 +244,7 @@ void RecordManager::toggleRecord()
 
 
         QString fileName = QString("%1/test.wav").arg(QDir::currentPath());
-        bool flag = audioRecorder->setOutputLocation(QUrl::fromLocalFile(fileName));
+        audioRecorder->setOutputLocation(QUrl::fromLocalFile(fileName));
         qDebug(qPrintable(fileName));
 
         audioRecorder->record();
