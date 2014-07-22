@@ -4,8 +4,10 @@
 #
 #-------------------------------------------------
 
-QT       += core gui quick widgets quickwidgets
-QT += webkitwidgets network
+QT       += core gui  widgets
+QT += network
+QT += printsupport
+QT += multimedia
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QFramer
@@ -20,10 +22,7 @@ SOURCES += main.cpp\
     QFramer/fmainwindow.cpp \
     QFramer/futil.cpp \
     QFramer/flywidget.cpp \
-    functionpages/basequickwidget.cpp \
     functionpages/gradientshow.cpp \
-    functionpages/qmlviwer.cpp \
-    functionpages/webkitshow.cpp \
     mainwindow/centerwindow.cpp \
     mainwindow/mainwindow.cpp \
     mainwindow/settingmenu.cpp \
@@ -61,10 +60,7 @@ HEADERS  += \
     QFramer/fmainwindow.h \
     QFramer/futil.h \
     QFramer/flywidget.h \
-    functionpages/basequickwidget.h \
     functionpages/gradientshow.h \
-    functionpages/qmlviwer.h \
-    functionpages/webkitshow.h \
     mainwindow/centerwindow.h \
     mainwindow/mainwindow.h \
     mainwindow/settingmenu.h \

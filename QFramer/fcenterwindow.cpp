@@ -1,8 +1,6 @@
 #include "fcenterwindow.h"
 #include<QPushButton>
 #include<QVBoxLayout>
-#include<QQuickWidget>
-#include<QWebView>
 #include<QPropertyAnimation>
 #include<QParallelAnimationGroup>
 #include<QEasingCurve>
