@@ -1,6 +1,6 @@
 #include "thememenu.h"
 #include "QFramer/futil.h"
-#include<QApplication>
+#include "mainwindow.h"
 ThemeMenu::ThemeMenu(QWidget *parent) :
     QMenu(parent)
 {
@@ -32,10 +32,10 @@ void ThemeMenu::initConnect()
 
 void ThemeMenu::changeTheme1()
 {
-    setSkinForApp(*(QApplication*)QApplication::instance(), QString(":/qss/skin/qss/main.qss"));
+    setSkinForApp(QString(":/qss/skin/qss/main.qss"));
 }
 
 void ThemeMenu::changeTheme2()
 {
-    setSkinForApp(*(QApplication*)QApplication::instance(), QString(":/qss/skin/qss/fblue.qss"));
+    setSkinForApp(QString(":/qss/skin/qss/fblue.qss"));
 }

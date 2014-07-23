@@ -54,9 +54,8 @@ QString readFile(const QString filename)
     }
 }
 
-
-QString setSkinForApp(QApplication &app, QString filename)
+void setSkinForApp(QString filename)
 {
     QString qss = getQssFromFile(filename);
-    app.setStyleSheet(qss);
+    qApp->setStyleSheet(qss);
 }
