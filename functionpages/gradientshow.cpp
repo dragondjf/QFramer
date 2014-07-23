@@ -29,7 +29,7 @@ void GradientShow::mousePressEvent(QMouseEvent *event)
     QWidget::mousePressEvent(event);
 }
 
-void GradientShow::paintEvent(QPaintEvent *e)
+void GradientShow::paintEvent(QPaintEvent *event)
 {
     QPainter painter(this);
 

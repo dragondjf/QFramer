@@ -12,7 +12,7 @@ class GradientShow : public QWidget
 {
     Q_OBJECT
 protected:
-     void paintEvent(QPaintEvent *e);
+     void paintEvent(QPaintEvent *event);
      void mousePressEvent(QMouseEvent *event);
 public:
     explicit GradientShow(QWidget *parent = 0);

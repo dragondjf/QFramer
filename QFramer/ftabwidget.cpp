@@ -1,5 +1,4 @@
 #include "ftabwidget.h"
-#include "fbasetoolbutton.h"
 #include<QVBoxLayout>
 #include<QHBoxLayout>
 #include<QBoxLayout>
@@ -40,9 +39,9 @@ void FTabWidget::initConnect()
 void FTabWidget::addWidget(const QString &tile, const QString &objectName, QWidget *widget)
 {
     buttonTitles  << tile;
-    FBaseToolButton* button = new FBaseToolButton(tile);
+    FCheckabelButton* button = new FCheckabelButton(tile);
     buttons.append(button);
-    button->setObjectName(objectName);
+//    button->setObjectName(objectName);
     button->setFixedSize(200, 60);
     tabLayout->insertWidget(tabLayout->count() - 1, button);
     connect(button, SIGNAL(clicked()), this, SLOT(setButtonChecked()));
@@ -50,7 +49,7 @@ void FTabWidget::addWidget(const QString &tile, const QString &objectName, QWidg
     stackLayout->addWidget(widget);
 }
 
-QList<FBaseToolButton*> FTabWidget::getButtons()
+QList<FCheckabelButton*> FTabWidget::getButtons()
 {
     return buttons;
 }

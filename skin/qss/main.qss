@@ -298,8 +298,6 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 
 /* ******************QScrollBar****************** */
 
-
-
 QPushButton{
     background-color: rgb(33, 50, 70);
     border: none;
@@ -313,6 +311,32 @@ QPushButton:pressed{
 }
 
 QPushButton:disabled{
+    background-color: gray;
+}
+
+
+QPushButton#checkable{
+    background-color: rgb(33, 50, 70);
+    border: none;
+    color: white;
+}
+
+QPushButton#checkable:hover{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    color: rgb(33, 50, 70);
+}
+
+QPushButton#checkable:checked{
+    background-color: rgb(34, 44, 56);
+    color: white;
+}
+
+QPushButton#checkable:pressed{
+    background-color: rgb(34, 44, 56);
+    color: white;
+}
+
+QPushButton#checkable:disabled{
     background-color: gray;
 }
 
