@@ -11,9 +11,9 @@ CenterWindow::CenterWindow(QWidget *parent) :
 
 void CenterWindow::initUI()
 {
-    uiElements = new UIElement(this);
+    uiElements = new UIElement;
     mathPlot = new MathPlot;
-    recordManger = new RecordManager;
+    recordManger = new WavRecordManager;
     aboutPage = new AboutPage;
 
     addWidget(tr("Home"), tr("Home"), uiElements);

@@ -9,6 +9,7 @@
 #include<QRadioButton>
 #include<QCheckBox>
 #include<QTreeWidget>
+#include<QTabWidget>
 #include<QSplitter>
 #include<QHeaderView>
 #include<QProgressBar>
@@ -112,30 +113,30 @@ void UIElement::initTableWidget()
 {
     FTableWidget* table = new FTableWidget;
 //    table->setItemDelegate(new FNoFocusDelegate);
-    table->setFocusPolicy(Qt::NoFocus);
+//    table->setFocusPolicy(Qt::NoFocus);
     addWidget(tr("TabelWidget"), QString(""), table);
 }
 
 void UIElement::initTreeWidget()
 {
-    QTreeWidget *treeWidget = new QTreeWidget();
-//    treeWidget->setItemDelegate(new FNoFocusDelegate);
+    QTreeWidget *treeWidget = new QTreeWidget;
+    treeWidget->setItemDelegate(new FNoFocusDelegate);
     treeWidget->setFocusPolicy(Qt::NoFocus);
     treeWidget->setHeaderHidden(true);
     treeWidget->setColumnCount(1);
     QList<QTreeWidgetItem *> items;
     for (int i = 0; i < 10; ++i)
     {
-        items.append(new QTreeWidgetItem((QTreeWidget*)0, QStringList(QString("item: %1").arg(i))));
+        items.append(new QTreeWidgetItem(treeWidget, QStringList(QString("item: %1").arg(i))));
         for(int j=0; j <10; j++)
         {
-            items.at(i)->addChild(new QTreeWidgetItem((QTreeWidget*)0, QStringList(QString("child: %1").arg(j))));
+            items.at(i)->addChild(new QTreeWidgetItem(treeWidget, QStringList(QString("child: %1").arg(j))));
         }
     }
     treeWidget->insertTopLevelItems(0, items);
 
-    QTreeWidget *treeWidget2 = new QTreeWidget();
-//    treeWidget2->setItemDelegate(new FNoFocusDelegate);
+    QTreeWidget *treeWidget2 = new QTreeWidget;
+    treeWidget2->setItemDelegate(new FNoFocusDelegate);
     treeWidget2->setFocusPolicy(Qt::NoFocus);
     QStringList labels;
     labels << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
@@ -147,19 +148,19 @@ void UIElement::initTreeWidget()
     QList<QTreeWidgetItem *> items2;
     for (int i = 0; i < 10; ++i)
     {
-        items2.append(new QTreeWidgetItem((QTreeWidget*)0, QStringList(QString("item: %1").arg(i))));
+        items2.append(new QTreeWidgetItem(treeWidget2, QStringList(QString("item: %1").arg(i))));
         for(int j=0; j <10; j++)
         {
             QStringList childs;
             childs << tr("%1").arg(j) << tr("alert") << tr("show warning");
-            items2.at(i)->addChild(new QTreeWidgetItem((QTreeWidget*)0, childs));
+            items2.at(i)->addChild(new QTreeWidgetItem(treeWidget2, childs));
         }
     }
     treeWidget2->insertTopLevelItems(0, items2);
 
 
-    QTreeWidget *treeWidget3 = new QTreeWidget();
-//    treeWidget3->setItemDelegate(new FNoFocusDelegate);
+    QTreeWidget *treeWidget3 = new QTreeWidget;
+    treeWidget3->setItemDelegate(new FNoFocusDelegate);
     treeWidget3->setFocusPolicy(Qt::NoFocus);
     QStringList labels3;
     labels3 << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
@@ -171,7 +172,7 @@ void UIElement::initTreeWidget()
     QList<QTreeWidgetItem *> items3;
     for (int i = 0; i < 10; ++i)
     {
-        QTreeWidgetItem* fitem = new QTreeWidgetItem((QTreeWidget*)0, QStringList(QString("item: %1").arg(i)));
+        QTreeWidgetItem* fitem = new QTreeWidgetItem(treeWidget3, QStringList(QString("item: %1").arg(i)));
         fitem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsSelectable |Qt::ItemIsEnabled);
         fitem->setCheckState(0, Qt::Checked);
         items3.append(fitem);
@@ -179,7 +180,7 @@ void UIElement::initTreeWidget()
         {
             QStringList childs3;
             childs3 << tr("%1").arg(j) << tr("alert") << tr("show warning");
-            QTreeWidgetItem* sitem = new QTreeWidgetItem((QTreeWidget*)0, childs3);
+            QTreeWidgetItem* sitem = new QTreeWidgetItem(treeWidget3, childs3);
             sitem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsSelectable |Qt::ItemIsEnabled);
             sitem->setCheckState(0, Qt::Checked);
             items3.at(i)->addChild(sitem);

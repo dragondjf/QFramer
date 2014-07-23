@@ -6,8 +6,7 @@
 #include<QWidget>
 #include<QHBoxLayout>
 #include<QVBoxLayout>
-#include "fbasetoolbutton.h"
-
+#include "fcheckablebutton.h"
 
 class FNavgationBar : public QFrame
 {
@@ -28,7 +27,7 @@ private:
     bool cIndex;
 public:
 
-    QList<FBaseToolButton*> buttons;
+    QList<FCheckabelButton*> buttons;
     QList<QString> buttonTitles;
 public:
     explicit FNavgationBar(QWidget *parent = 0);

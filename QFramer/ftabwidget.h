@@ -3,7 +3,7 @@
 
 #include <QWidget>
 #include<QStackedLayout>
-#include"fbasetoolbutton.h"
+#include"fcheckablebutton.h"
 #include"QBoxLayout"
 
 class FTabWidget : public QWidget
@@ -11,7 +11,7 @@ class FTabWidget : public QWidget
     Q_OBJECT
 
 private:
-    QList<FBaseToolButton*> buttons;
+    QList<FCheckabelButton*> buttons;
     QList<QString> buttonTitles;
 
 private:
@@ -25,7 +25,7 @@ public:
     QVBoxLayout* tabLayout;
 public:
     explicit FTabWidget(QWidget *parent = 0);
-    QList<FBaseToolButton*> getButtons();
+    QList<FCheckabelButton*> getButtons();
 
 signals:
         void indexChanged(int i);

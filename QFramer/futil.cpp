@@ -54,6 +54,7 @@ QString readFile(const QString filename)
     }
 }
 
+
 void setSkinForApp(QString filename)
 {
     QString qss = getQssFromFile(filename);

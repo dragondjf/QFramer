@@ -40,7 +40,7 @@ void FMainWindow::initUI()
     pstatusbar = new QStatusBar;
     pstatusbar->setFixedHeight(35);
     setStatusBar(pstatusbar);
-    trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
+    trayicon = new QSystemTrayIcon(QIcon(QString(":/images/skin/images/QFramer.ico")), this);
     trayicon->setObjectName(QString("trayicon"));
     trayicon->setToolTip(QString(qApp->applicationName()));
     trayicon->show();

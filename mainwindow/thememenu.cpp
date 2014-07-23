@@ -1,6 +1,6 @@
 #include "thememenu.h"
 #include "QFramer/futil.h"
-#include "mainwindow.h"
+#include<QApplication>
 ThemeMenu::ThemeMenu(QWidget *parent) :
     QMenu(parent)
 {

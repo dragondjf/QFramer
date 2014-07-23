@@ -17,7 +17,6 @@ void SettingDialog::initUI()
     QWidget* tab1 = new QWidget;
     QWidget* tab2 = new QWidget;
     QWidget* tab3 = new QWidget;
-    QWidget* tab4 = new QWidget;
 
     QTabWidget* tabwidget = new QTabWidget;
     tabwidget->addTab(tab1, tr("Home"));

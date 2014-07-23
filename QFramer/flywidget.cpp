@@ -17,7 +17,7 @@ FlyWidget::FlyWidget(QWidget *parent) :
 
 void FlyWidget::initData()
 {
-    m_Pixmap.load(QString(":/skin/images/QFramer.png"));
+    m_Pixmap.load(QString(":/images/skin/images/QFramer.png"));
 }
 
 void FlyWidget::initUI()

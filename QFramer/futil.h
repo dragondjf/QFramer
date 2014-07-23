@@ -10,4 +10,5 @@ void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QS
 QString getQssFromFile(QString filename);
 QString readFile(const QString filename);
 void setSkinForApp(QString filename);
+
 #endif // UTIL_H
