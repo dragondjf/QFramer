@@ -8,9 +8,10 @@ int main(int argc, char *argv[])
     QApplication::setOrganizationName("DJF");
     QApplication::setOrganizationDomain("https://github.com/dragondjf");
     QApplication::setApplicationName("QFramer");
-    setSkinForApp(app, QString(":/qss/skin/qss/fblue.qss"));
 
+    setSkinForApp(QString(":/qss/skin/qss/fblue.qss"));
     MainWindow *main = MainWindow::getInstance();
+    setSkinForApp(QString(":/qss/skin/qss/main.qss"));
     main->setAttribute(Qt::WA_DeleteOnClose);
     main->show();
     return app.exec();
