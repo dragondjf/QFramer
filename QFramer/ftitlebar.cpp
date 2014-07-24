@@ -51,7 +51,7 @@ void FTitleBar::initUI()
 {
     setTitleBarHeight(Title_Height);
     setObjectName(QString("FTitleBar"));
-    setLogoButton(":/skin/images/QFramer.png");
+    setLogoButton(":/images/skin/images/QFramer.png");
     setTitleLabel(tr("QFramer"), "FTitleLabel");
     setSettingButton(":/skin/icons/dark/appbar.control.down.png");
     setSkinButton(":/skin/icons/dark/appbar.clothes.shirt.png");
