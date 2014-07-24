@@ -1,6 +1,25 @@
 #include "wavrecordmanager.h"
+#include "wavutil.h"
 #include<QDir>
 #include<QUrl>
+#include <QThreadPool>
+
+IFlyTekTask::IFlyTekTask(const char *filename, QObject * parent):
+    QThread(parent)
+{
+    wavefilename = filename;
+    connect(this, SIGNAL(finished()), this, SLOT(deleteLater()));
+}
+void IFlyTekTask::run()
+{
+    wavToText(wavefilename);
+}
+
+void IFlyTekTask::setFileName(const char *filename)
+{
+    wavefilename = filename;
+}
+
 WavRecordManager::WavRecordManager(QWidget *parent) :
     QWidget(parent)
 {
@@ -23,7 +42,7 @@ void WavRecordManager::initData()
     connect(audioRecorder, SIGNAL(statusChanged(QMediaRecorder::Status)), this,
             SLOT(updateStatus(QMediaRecorder::Status)));
 
-
+    wavTask = new IFlyTekTask("", this);
 }
 
 void WavRecordManager::initUI()
@@ -106,6 +125,7 @@ void WavRecordManager::clearAudioLevels()
 
 void WavRecordManager::toggleRecord()
 {
+    QString fileName = QString("%1/test.wav").arg(QDir::currentPath());
     if (audioRecorder->state() == QMediaRecorder::StoppedState) {
 //        audioRecorder->setAudioInput(boxValue(ui->audioDeviceBox).toString());
 
@@ -120,9 +140,6 @@ void WavRecordManager::toggleRecord()
         QString container = "audio/x-wav";
 
         audioRecorder->setEncodingSettings(settings, QVideoEncoderSettings(), container);
-
-
-        QString fileName = QString("%1/test.wav").arg(QDir::currentPath());
         audioRecorder->setOutputLocation(QUrl::fromLocalFile(fileName));
         qDebug(qPrintable(fileName));
 
@@ -130,6 +147,8 @@ void WavRecordManager::toggleRecord()
     }
     else {
         audioRecorder->stop();
+        wavTask->setFileName(fileName.toStdString().c_str());
+        wavTask->start();
     }
 }
 

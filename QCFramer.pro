@@ -25,7 +25,6 @@ SOURCES += \
     functionpages/gradientshow.cpp \
     functionpages/mathplot.cpp \
     functionpages/pdftool.cpp \
-    functionpages/recordmanager.cpp \
     functionpages/rightfloatwindow.cpp \
     functionpages/uielement.cpp \
     mainwindow/centerwindow.cpp \
@@ -67,7 +66,6 @@ HEADERS  += \
     functionpages/gradientshow.h \
     functionpages/mathplot.h \
     functionpages/pdftool.h \
-    functionpages/recordmanager.h \
     functionpages/rightfloatwindow.h \
     functionpages/uielement.h \
     mainwindow/centerwindow.h \
@@ -93,9 +91,17 @@ HEADERS  += \
     QFramer/ftabwidget.h \
     QFramer/ftitlebar.h \
     QFramer/futil.h \
-    QFramer/fwigglywidget.h
+    QFramer/fwigglywidget.h \
+    iflytek/include/msp_cmn.h \
+    iflytek/include/msp_errors.h \
+    iflytek/include/msp_types.h \
+    iflytek/include/qisr.h \
+    iflytek/include/qtts.h
 
 RESOURCES += \
     QCFramer.qrc
+
+
+LIBS+= -L "$$PWD/iflytek/lib" -lmsc
 
 RC_ICONS = "skin/images/QFramer.ico"
