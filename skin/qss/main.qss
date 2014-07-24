@@ -84,8 +84,55 @@ QMenu::indicator {
     height: 13px;
 }
 /* ******************QMenu****************** */
+/* ******************QComboBox****************** */
+QComboBox{
+    color:white;
+    font-size: 15px;
+    font-family: "Verdana";
+    background-color: rgb(5, 9, 21);
+}
+
+QComboBox:on{
+    background-color: rgb(5, 9, 21);
+}
+
+QComboBox::drop-down :on{
+    background-color: rgb(5, 9, 21);
+}
+
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+}
+
+QComboBox QAbstractItemView {
+    border: none;
+    color:white;
+    background-color:rgb(47, 54, 65);
+    font-size: 15px;
+    font-family: "Verdana";
+}
 
 
+QComboBox QAbstractItemView::item{
+    height: 40px;
+    color:white;
+    font-size: 15px;
+}
+
+QComboBox QAbstractItemView::item:selected{
+    background-color: rgb(63, 147, 168);
+}
+
+QComboBox QAbstractItemView::item:hover{
+    background-color: rgb(63, 147, 168);
+}
+
+QComboBox:disabled{
+    background-color: gray;
+}
+/* ******************QComboBox****************** */
 /* ******************QStatusBar****************** */
 QStatusBar {
     color: black;
@@ -191,24 +238,24 @@ QTreeView::item:selected:!active {
 QTreeWidget::branch:closed:has-children:!has-siblings,
 QTreeWidget::branch:closed:has-children:has-siblings {
     border-image: none;
-    image: url(:/skin/images/rightsolidarrow.png);
+    image: url(:/images/skin/images/rightsolidarrow.png);
 }
 
 QTreeWidget::branch:closed:has-children:!has-siblings,
 QTreeWidget::branch:closed:has-children:has-siblings:hover {
     border-image: none;
-    image: url(:/skin/images/rightsolidarrow.png);
+    image: url(:/images/skin/images/rightsolidarrow.png);
 }
 
 QTreeWidget::branch:open:has-children:!has-siblings,
 QTreeWidget::branch:open:has-children:has-siblings  {
     border-image: none;
-    image: url(:/skin/images/downsolidarrow.png);
+    image: url(:/images/skin/images/downsolidarrow.png);
 }
 QTreeWidget::branch:open:has-children:!has-siblings,
 QTreeWidget::branch:open:has-children:has-siblings:hover  {
     border-image: none;
-    image: url(:/skin/images/downsolidarrow.png);
+    image: url(:/images/skin/images/downsolidarrow.png);
 }
 /* ******************QTreeWidget****************** */
 
@@ -551,13 +598,13 @@ QPushButton#Voice{
 }
 
 QPushButton#Voice:hover{
-    background-color: rgb(69, 187, 217);
+    background-color: rgb(33, 50, 70);
     color: rgb(40, 47, 63);
     /*border:1px  black;*/
 }
 
 QPushButton#Voice:checked{
-    background-color: rgb(63, 147, 168);
+    background-color: rgb(34, 44, 56);
     color: white;
 }
 

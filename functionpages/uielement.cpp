@@ -120,10 +120,10 @@ void UIElement::initTableWidget()
 void UIElement::initTreeWidget()
 {
     QTreeWidget *treeWidget = new QTreeWidget;
-    treeWidget->setItemDelegate(new FNoFocusDelegate);
+//    treeWidget->setItemDelegate(new FNoFocusDelegate);
     treeWidget->setFocusPolicy(Qt::NoFocus);
     treeWidget->setHeaderHidden(true);
-    treeWidget->setColumnCount(1);
+    treeWidget->setColumnCount(3);
     QList<QTreeWidgetItem *> items;
     for (int i = 0; i < 10; ++i)
     {
@@ -136,7 +136,7 @@ void UIElement::initTreeWidget()
     treeWidget->insertTopLevelItems(0, items);
 
     QTreeWidget *treeWidget2 = new QTreeWidget;
-    treeWidget2->setItemDelegate(new FNoFocusDelegate);
+//    treeWidget2->setItemDelegate(new FNoFocusDelegate);
     treeWidget2->setFocusPolicy(Qt::NoFocus);
     QStringList labels;
     labels << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
@@ -153,14 +153,14 @@ void UIElement::initTreeWidget()
         {
             QStringList childs;
             childs << tr("%1").arg(j) << tr("alert") << tr("show warning");
-            items2.at(i)->addChild(new QTreeWidgetItem(treeWidget2, childs));
+            items2.at(i)->addChild(new QTreeWidgetItem(items2.at(i), childs));
         }
     }
     treeWidget2->insertTopLevelItems(0, items2);
 
 
     QTreeWidget *treeWidget3 = new QTreeWidget;
-    treeWidget3->setItemDelegate(new FNoFocusDelegate);
+//    treeWidget3->setItemDelegate(new FNoFocusDelegate);
     treeWidget3->setFocusPolicy(Qt::NoFocus);
     QStringList labels3;
     labels3 << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
@@ -180,7 +180,7 @@ void UIElement::initTreeWidget()
         {
             QStringList childs3;
             childs3 << tr("%1").arg(j) << tr("alert") << tr("show warning");
-            QTreeWidgetItem* sitem = new QTreeWidgetItem(treeWidget3, childs3);
+            QTreeWidgetItem* sitem = new QTreeWidgetItem(fitem, childs3);
             sitem->setFlags(Qt::ItemIsUserCheckable | Qt::ItemIsSelectable |Qt::ItemIsEnabled);
             sitem->setCheckState(0, Qt::Checked);
             items3.at(i)->addChild(sitem);
