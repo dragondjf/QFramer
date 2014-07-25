@@ -212,6 +212,7 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
     line->setStyleSheet(QString("QLabel{background-color: white;}"));
 
     circle->setPixmap(stackWidget->widget(preindex)->grab());
+//    circle->setScaledContents(true);
     circle->show();
     circle->resize(stackWidget->currentWidget()->size());
     QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
