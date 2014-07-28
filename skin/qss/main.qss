@@ -62,7 +62,7 @@ QMenu::icon:checked { /* appearance of a 'checked' icon */
 
 QMenu::item:disabled
 {
-    background: rgb(125, 125, 125);
+    background-color: gray;
     border: 1px inset gray;
     position: absolute;
     top: 1px;
@@ -412,6 +412,46 @@ QGroupBox::title {
 }
 /* ******************QGroupBox****************** */
 
+/* ******************QToolButton**************** */
+QToolButton{
+    background-color: transparent;
+    color: rgb(92, 113, 134);
+}
+
+
+QToolButton:hover{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    color: white;
+    border: 1px;
+}
+
+QToolButton:disabled{
+    background-color: gray;
+    border: 1px;
+}
+
+QToolButton[popupMode="1"] { /* only for MenuButtonPopup */
+    padding-right: 0px; /* make way for the popup button */
+}
+
+QToolButton::menu-button {
+    border: none;
+}
+
+QToolButton::menu-arrow {
+    image: none;
+}
+
+QToolButton::menu-indicator {
+    image: none;
+}
+
+QToolButton:open { /* when the button has its menu open */
+    background-color: rgb(34, 44, 56);
+}
+
+/* ******************QToolButton**************** */
+
 
 /* ******************FTitleBar****************** */
 
@@ -419,49 +459,16 @@ QFrame#FTitleBar{
     background-color: rgb(33, 50, 70);
 }
 
-QToolButton#titleToolButton{
-    background-color: transparent;
-    color: rgb(92, 113, 134);
-}
-
-
-QToolButton#titleToolButton:hover{
-    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+QFrame QLabel#FTitleLabel{
     color: white;
-    border: 1px;
+    font-size: 12px;
+    padding-left: 5px;
 }
-
-QToolButton#titleToolButton:disabled{
-    background-color: gray;
-    border: 1px;
-}
-
-QToolButton#titleToolButton[popupMode="1"] { /* only for MenuButtonPopup */
-    padding-right: 0px; /* make way for the popup button */
-}
-
-QToolButton#titleToolButton::menu-button {
-    border: none;
-}
-
-QToolButton#titleToolButton::menu-arrow {
-    image: none;
-}
-
-QToolButton#titleToolButton::menu-indicator {
-    image: none;
-}
-
-QToolButton#titleToolButton:open { /* when the button has its menu open */
-    background-color: rgb(34, 44, 56);
-}
-
 
 QToolButton#close{
     background-color: transparent;
     color: white;
 }
-
 
 QToolButton#close:hover{
     background-color: red;
@@ -477,12 +484,7 @@ QWidget#FTabTile{
     background-color: rgb(33, 50, 70);
 }
 
-QFrame QLabel#FTitleLabel{
-    color: white;
-    /*font-family: 'Verdana';*/
-    font-size: 12px;
-    padding-left: 5px;
-}
+
 
 QFrame#FNavgationBar_bottom{
     background-color: rgb(33, 50, 70);

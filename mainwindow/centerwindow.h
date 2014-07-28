@@ -5,7 +5,6 @@
 #include "functionpages/aboutpage.h"
 #include "functionpages/mathplot.h"
 #include"functionpages/uielement.h"
-#include"functionpages/audiorecord/wavrecordmanager.h"
 #include<QVBoxLayout>
 
 class CenterWindow : public FCenterWindow
@@ -15,7 +14,6 @@ class CenterWindow : public FCenterWindow
 public:
     UIElement* uiElements;
     MathPlot* mathPlot;
-    WavRecordManager* recordManger;
     AboutPage* aboutPage;
 
     static CenterWindow* instance;

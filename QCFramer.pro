@@ -16,10 +16,6 @@ SOURCES += \
     dialogs/aboutdialog.cpp \
     dialogs/bgskinpopup.cpp \
     dialogs/settingdialog.cpp \
-    functionpages/audiorecord/qaudiolevel.cpp \
-    functionpages/audiorecord/wavrecordmanager.cpp \
-    functionpages/audiorecord/wavrecordwidget.cpp \
-    functionpages/audiorecord/wavutil.cpp \
     functionpages/aboutpage.cpp \
     functionpages/ftablewidget.cpp \
     functionpages/gradientshow.cpp \
@@ -57,10 +53,6 @@ HEADERS  += \
     dialogs/aboutdialog.h \
     dialogs/bgskinpopup.h \
     dialogs/settingdialog.h \
-    functionpages/audiorecord/qaudiolevel.h \
-    functionpages/audiorecord/wavrecordmanager.h \
-    functionpages/audiorecord/wavrecordwidget.h \
-    functionpages/audiorecord/wavutil.h \
     functionpages/aboutpage.h \
     functionpages/ftablewidget.h \
     functionpages/gradientshow.h \
@@ -91,17 +83,9 @@ HEADERS  += \
     QFramer/ftabwidget.h \
     QFramer/ftitlebar.h \
     QFramer/futil.h \
-    QFramer/fwigglywidget.h \
-    iflytek/include/msp_cmn.h \
-    iflytek/include/msp_errors.h \
-    iflytek/include/msp_types.h \
-    iflytek/include/qisr.h \
-    iflytek/include/qtts.h
+    QFramer/fwigglywidget.h
 
 RESOURCES += \
     QCFramer.qrc
-
-
-LIBS+= -L "$$PWD/iflytek/lib" -lmsc
 
 RC_ICONS = "skin/images/QFramer.ico"

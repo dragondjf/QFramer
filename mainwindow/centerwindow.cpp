@@ -13,12 +13,10 @@ void CenterWindow::initUI()
 {
     uiElements = new UIElement;
     mathPlot = new MathPlot;
-    recordManger = new WavRecordManager;
     aboutPage = new AboutPage;
 
     addWidget(tr("Home"), tr("Home"), uiElements);
     addWidget(tr("MathPlot"),tr("MathPlot"), mathPlot);
-    addWidget(tr("Voice"), tr("Voice"), recordManger);
     addWidget(tr("About"),tr("About"), aboutPage);
     addWiggleWiget();
     setAlignment(TopCenter);

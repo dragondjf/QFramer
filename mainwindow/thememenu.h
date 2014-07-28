@@ -27,6 +27,7 @@ signals:
 public slots:
     void changeTheme1();
     void changeTheme2();
+    void changeThemeFromFile();
 };
 
 #endif // THEMEMENU_H
