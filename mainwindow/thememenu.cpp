@@ -13,7 +13,7 @@ ThemeMenu::ThemeMenu(QWidget *parent) :
 
 void ThemeMenu::initData()
 {
-    actionNames<< tr("BW")<<tr("BB") << tr("Custom Skin");
+    actionNames<< tr("BW")<<tr("BB") << tr("Custom theme");
 }
 
 void ThemeMenu::initUI()
