@@ -37,4 +37,4 @@ if __name__ == '__main__':
             qssContent = qssContent.replace(key, value)
 
     with open(qssOutFileName, 'w') as f:
-      f.write(qssContent)
+        f.write(qssContent)
