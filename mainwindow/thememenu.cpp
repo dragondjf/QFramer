@@ -30,7 +30,7 @@ void ThemeMenu::initConnect()
 {
     connect(actionMaps[tr("BW")], SIGNAL(triggered()), this, SLOT(changeTheme1()));
     connect(actionMaps[tr("BB")], SIGNAL(triggered()), this, SLOT(changeTheme2()));
-    connect(actionMaps[tr("Custom Skin")], SIGNAL(triggered()), this, SLOT(changeThemeFromFile()));
+    connect(actionMaps[tr("Custom theme")], SIGNAL(triggered()), this, SLOT(changeThemeFromFile()));
 }
 
 void ThemeMenu::changeTheme1()
