@@ -26,6 +26,8 @@ Makefile.*
 debug
 release
 
+distwin
+
 QFramer.pro.user
 QFramer.pro.user.*
 QCFramer.pro.user

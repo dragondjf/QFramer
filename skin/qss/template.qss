@@ -90,15 +90,15 @@ QComboBox{
     color:white;
     font-size: 15px;
     font-family: "Verdana";
-    background-color: combox_background_color;
+    background-color: Combox_background_color;
 }
 
 QComboBox:on{
-    background-color: combox_background_color;
+    background-color: Combox_background_color;
 }
 
 QComboBox::drop-down :on{
-    background-color: combox_background_color;
+    background-color: Combox_background_color;
 }
 
 QComboBox::drop-down {
@@ -179,12 +179,6 @@ QSplitter::handle:pressed {
 
 
 /* ******************QHeaderView****************** */
-QHeaderView::section {
-    background-color: #3b4351;
-    color: white;
-    padding-left: 4px;
-    border: 1px solid #6c6c6c;
- }
 
 QHeaderView::section:checked {
     background-color: #112233;
@@ -195,16 +189,17 @@ QHeaderView::section:checked {
 }
 
 QHeaderView{
-    background-color: main_select_color;
+    background-color: HeadView_background_color;
 }
 
 QHeaderView::section {
-    background-color: main_hover_color;;
+    background-color: HeadView_background_color;
+    border: none;
     color: white;
     font-size: 16px;
     min-height: 25px;
     padding-left: 4px;
-    border: 1px solid #252a31;
+    border: 1px solid white;
 }
 /* ******************QHeaderView****************** */
 
@@ -213,7 +208,7 @@ QTreeWidget {
     border: 1px solid #485260;
     /*border: none;*/
     color: white;
-    background-color: #5B677A;
+    background-color: TableTree_background_color;
 }
 
 
@@ -268,7 +263,7 @@ QTableWidget{
     /*border: 1px solid #485260;*/
     border: none;
     color: white;
-    background-color: #5B677A;
+    background-color: TableTree_background_color;
     selection-color: white;
     selection-background-color:main_select_color;
 }
@@ -281,26 +276,23 @@ QTableWidget:disabled{
 
 /* ******************QScrollBar****************** */
 QScrollBar:vertical {
-    border: 1px solid #252A31;
     width: 10px;
     margin: 0px 0px 0px 0px;
-    background: #31394E;
+    background: ScrollBar_background_color;
 }
 QScrollBar::handle:vertical {
-    background: lightgray;
-    /*min-height: 20px;*/
+    background: ScrollBar_handle_color;
+    min-height: 1px;
 }
 
 QScrollBar::add-line:vertical {
-    background: #252A31;
-    /*height: 20px;*/
+    height: 1px;
     subcontrol-position: bottom;
     subcontrol-origin: margin;
 }
 
 QScrollBar::sub-line:vertical {
-    background: #252A31;
-    height: 20px;
+    height: 1px;
     subcontrol-position: top;
     subcontrol-origin: margin;
 }
@@ -317,24 +309,21 @@ QScrollBar::add-page:vertical, QScrollBar::sub-page:vertical {
 
 
 QScrollBar:horizontal {
-    border: 1px solid #252A31;
-    background: #31394E;
+    background: ScrollBar_background_color;
     height: 10px;
     margin: 0px 0px 0px 0px;
 }
 QScrollBar::handle:horizontal {
-    background: lightgray;
-    /*min-width: 20px;*/
+    background: ScrollBar_handle_color;
+    min-width: 1px;
 }
 QScrollBar::add-line:horizontal {
-    background: #252A31;
-    /*width: 20px;*/
+    width: 1px;
     subcontrol-position: right;
     subcontrol-origin: margin;
 }
 QScrollBar::sub-line:horizontal {
-    background: #252A31;
-    /*width: 20px;*/
+    width: 1px;
     subcontrol-position: left;
     subcontrol-origin: margin;
 }
@@ -350,7 +339,7 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 /* ******************QScrollBar****************** */
 
 QPushButton{
-    background-color: main_background_color;
+    background-color: PushButton_background_color;
     border: none;
     color: white;
 }
@@ -462,8 +451,9 @@ QFrame#FTitleBar{
 }
 
 QFrame QLabel#FTitleLabel{
-    color: white;
+    color: Ftitle_color;
     /*font-family: 'Verdana';*/
+    background-color: transparent;
     font-size: 12px;
     padding-left: 5px;
 }
@@ -484,7 +474,7 @@ QToolButton#close:hover{
 
 
 QWidget#FTabTile{
-    background-color: main_background_color;
+    background-color: main_gradient_color;
 }
 
 QFrame#FNavgationBar_bottom{
@@ -649,24 +639,28 @@ QPushButton#Record:disabled{
 }
 
 QLabel#Listening{
-    color: white;
+    color: Label_color;
+    background-color: transparent;
     font-size: 20px;
 }
 
 QLabel#logoLabel{
-    color: main_background_color;
+    color: Label_color;
+    background-color: transparent;
     font-size: 28px;
     padding-left: 5px;
 }
 
 QLabel#content{
-    color: main_background_color;
+    color: Label_color;
+    background-color: transparent;
     font-size: 20px;
     padding-left: 5px;
 }
 
 QLabel#version{
-    color: main_background_color;
+    color: Label_color;
+    background-color: transparent;
     font-size: 20px;
     padding-left: 5px;
 }
@@ -681,37 +675,21 @@ QDialog QFrame#TitleBar{
     background-color: transparent;
 }
 QDialog QLabel#FTitleLabel{
-    color: white;
+    color: Label_color;
     font-size: 12px;
     padding-left: 5px;
 }
 
 QDialog QLabel#logoLabel{
-    color: main_background_color;
+    color: Label_color;
     font-size: 18px;
     padding-left: 5px;
 }
 
 QDialog QLabel#content{
-    color: main_background_color;
+    color: Label_color;
     font-size: 16px;
     padding-left: 5px;
-}
-
-QDialog QPushButton{
-    background-color: main_background_color;
-    border: none;
-    color: white;
-}
-
-QDialog QPushButton:hover{
-    background-color: main_hover_color;
-    color: white;
-}
-
-QDialog QPushButton:pressed{
-    background-color: main_select_color;
-    color: white;
 }
 
 
@@ -787,6 +765,7 @@ QDialog QToolButton#logo:hover{
 
 QDialog QLabel#QFramer{
     height: 132;
+    color: Label_color;
     border-image: url(:/skin/images/logo.png);
 }
 
@@ -798,7 +777,7 @@ QDialog QTextEdit#info{
 }
 
 QDialog QTabWidget::pane { /* The tab widget frame */
-    border-top: 1px solid combox_background_color;
+    border-top: 1px solid Combox_background_color;
 }
 
 QDialog QTabBar::tab {
