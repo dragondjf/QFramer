@@ -16,7 +16,7 @@ With  user interactive experience(UE) become more and more important in modern s
 
 ####3 Download
 + `source:` https://github.com/dragondjf/QCFramer    
-+ `Realease`: http://pan.baidu.com/s/1eQzj05c
++ `Realease`: http://pan.baidu.com/s/1qWI2lXi
 
 ####4: Snapshot
 ![6](doc/v0.21_1.png)
@@ -27,4 +27,4 @@ With  user interactive experience(UE) become more and more important in modern s
 + `Email:` ding465398889@163.com or dragondjf@gmail.com or 465398889@qq.com
 + `Github:` https://github.com/dragondjf/QCFramer
 
->  If this framework id helpful to you , please add a star 
+>  `If this framework id helpful to you , please add a star `
