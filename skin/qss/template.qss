@@ -2,7 +2,7 @@
 /* QMainWindow Style*/
 /***********************************************************/
 QMainWindow{
-    background-color: main_gradient_color;
+    background-color: main_background_color;
 }
 
 QWigdet{
@@ -10,7 +10,7 @@ QWigdet{
 }
 
 QToolBar {
-    background: main_background_color;
+    background: nav_background_color;
     spacing: 0px; /* spacing between items in the tool bar */
 }
 
@@ -36,14 +36,14 @@ QProgressBar QLineEdit{
 /* ******************QMenu****************** */
 QMenu {
     color: white;
-    background-color: main_background_color;
+    background-color: nav_background_color;
     margin: 2px; 
 }
 
 QMenu::item {
     height: 23px;
     padding: 0px 25px 0px 20px;
-    background: main_background_color;
+    background: nav_background_color;
 }
 
 QMenu::item:selected {
@@ -137,7 +137,7 @@ QComboBox:disabled{
 /* ******************QStatusBar****************** */
 QStatusBar {
     color: white;
-    background-color: main_background_color;
+    background-color: nav_background_color;
     border-top: 1px solid black;
 }
 
@@ -160,7 +160,7 @@ QSplitter{
 }
 
 QSplitter::handle {
-    background-color: main_background_color;
+    background-color: nav_background_color;
 }
 
 QSplitter::handle:horizontal {
@@ -355,7 +355,7 @@ QPushButton:disabled{
 
 
 QPushButton#checkable{
-    background-color: main_background_color;
+    background-color: nav_background_color;
     border: none;
     color: white;
 }
@@ -363,7 +363,7 @@ QPushButton#checkable{
 
 QPushButton#checkable:hover{
     background-color: main_hover_color;
-    color: main_background_color;
+    color: nav_background_color;
     /*border:1px  solid black;*/
 }
 
@@ -390,7 +390,7 @@ QLabel{
 /* ******************QGroupBox****************** */
 QGroupBox {
     background-color: main_hover_color;
-    border: 1px solid main_background_color;
+    border: 1px solid nav_background_color;
     margin-top: 5px;  /*leave space at the top for the title */
 }
 
@@ -447,7 +447,7 @@ QToolButton:open { /* when the button has its menu open */
 /* ******************FTitleBar****************** */
 
 QFrame#FTitleBar{
-    background-color: main_background_color;
+    background-color: nav_background_color;
 }
 
 QFrame QLabel#FTitleLabel{
@@ -474,26 +474,26 @@ QToolButton#close:hover{
 
 
 QWidget#FTabTile{
-    background-color: main_gradient_color;
+    background-color: main_background_color;
 }
 
 QFrame#FNavgationBar_bottom{
-    background-color: main_background_color;
+    background-color: nav_background_color;
     border-bottom: 1px solid black;
 }
 
 QFrame#FNavgationBar_top{
-    background-color: main_background_color;
+    background-color: nav_background_color;
     border-top: 1px solid black;
 }
 
 QFrame#FNavgationBar_left{
-    background-color: main_background_color;
+    background-color: nav_background_color;
     border-left: 1px solid black;
 }
 
 QFrame#FNavgationBar_right{
-    background-color: main_background_color;
+    background-color: nav_background_color;
     border-right: 1px solid black;
 }
 
@@ -509,16 +509,16 @@ QWidget#MathPlot{
 }
 
 QWidget#Voice{
-    background-color: main_gradient_color;
+    background-color: main_background_color;
 }
 
 QFrame#About{
-background-color: main_gradient_color;
+background-color: main_background_color;
 }
 
 QFrame#RightFloatWindow
 {
-background-color: main_gradient_color;
+background-color: main_background_color;
 }
 /* ******************centerwindow****************** */
 
@@ -536,7 +536,7 @@ QPushButton#Home{
 
 QPushButton#Home:hover{
     background-color: main_hover_color;
-    color: main_background_color;
+    color: nav_background_color;
     /*border:1px  solid black;*/
 }
 
@@ -564,7 +564,7 @@ QPushButton#MathPlot{
 
 QPushButton#MathPlot:hover{
     background-color: main_hover_color;
-    color: main_background_color;
+    color: nav_background_color;
     /*border:1px  black;*/
 }
 
@@ -591,7 +591,7 @@ QPushButton#Voice{
 
 QPushButton#Voice:hover{
     background-color: main_hover_color;
-    color: main_background_color;
+    color: nav_background_color;
     /*border:1px  black;*/
 }
 
@@ -618,7 +618,7 @@ QPushButton#About{
 
 QPushButton#About:hover{
     background-color: main_hover_color;
-    color: main_background_color;
+    color: nav_background_color;
 }
 
 QPushButton#About:checked{
@@ -668,7 +668,7 @@ QLabel#version{
 /* ******************FDialog****************** */
 
 QDialog{
-    background-color: main_gradient_color;
+    background-color: main_background_color;
 }
 
 QDialog QFrame#TitleBar{
@@ -788,7 +788,7 @@ QDialog QTabBar::tab {
     color: white;
     font-size: 15px;
     /*font-family: "Verdana";*/
-    background-color: main_background_color;
+    background-color: nav_background_color;
 }
 
 QDialog QTabBar::tab:selected{

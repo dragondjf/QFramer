@@ -8,8 +8,8 @@ qssTemplatePath = os.sep.join([qssFolder, 'template.qss'])
 
 
 theme = {
-    'main_gradient_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(24, 148, 120), stop:0.5 rgb(220, 220, 220), stop:1 rgb(14, 148, 246))",
-    'main_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(24, 148, 120), stop:1 rgb(14, 148, 246))",
+    'main_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(24, 148, 120), stop:0.5 rgb(220, 220, 220), stop:1 rgb(14, 148, 246))",
+    'nav_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(24, 148, 120), stop:1 rgb(14, 148, 246))",
     'main_hover_color': "rgb(153, 217, 234)",
     'main_select_color': "rgb(21, 206, 109)",
     'Ftitle_color': 'white',
