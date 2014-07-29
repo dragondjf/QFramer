@@ -8,13 +8,11 @@ def getCHppFiles(rootpath):
     cppfiles = []
     for root, dirs, files in os.walk(rootpath) :
         if '.git' not in root:
-            # print root, dirs, files
             for f in files:
                 fpath = os.sep.join([root, f])
                 if f.endswith(".h"):
                     hfiles.append(fpath)
                 elif f.endswith(".cpp"):
-                    print f
                     cppfiles.append(fpath)
     return hfiles, cppfiles
 
@@ -32,10 +30,12 @@ def main():
     for hf in hfiles + cppfiles:
         with open(hf, 'r+') as fd:
             hcontent = fd.read()
-        if headerInfo not in hcontent:
-            content = headerInfo + "\n" + hcontent
+            index = hcontent.rfind('*' * 76 + "/") + 77
+            validContent = hcontent[index:]
+            content = headerInfo + "\n" + validContent
             with open(hf, 'w') as fd:
                 fd.write(content)
+        print "update %s success" % hf
 
 
 if __name__ == '__main__':

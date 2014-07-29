@@ -12,13 +12,17 @@
 ** Author	: dragondjf
 ** Website	: https://github.com/dragondjf
 ** Project	: https://github.com/dragondjf/QCFramer
-** Blog		: http://www.cnblogs.com/ldcsaa
-** Wiki		: https://github.com/dragondjf/QCFramer
+** Blog		: http://my.oschina.net/dragondjf/home/?ft=atme
+** Wiki		: https://github.com/dragondjf/QCFramer/wiki
 ** Lincence: LGPL V2
 ** QQ: 465398889
 ** Email: dragondjf@gmail.com, ding465398889@163.com, 465398889@qq.com
 ** 
 ****************************************************************************/
+
+
+
+
 
 #ifndef RIGHTFLOATWINDOW_H
 #define RIGHTFLOATWINDOW_H
