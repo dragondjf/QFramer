@@ -54,7 +54,7 @@ if __name__ == '__main__':
     if len(sys.argv) >= 2:
         newQssFileName = sys.argv[1]
     else:
-        newQssFileName = "test.qss"
+        newQssFileName = "green.qss"
 
     qssOutFileName = os.sep.join([qssFolder, newQssFileName])
 
