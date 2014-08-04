@@ -8,18 +8,24 @@ qssTemplatePath = os.sep.join([qssFolder, 'template.qss'])
 
 
 theme = {
-    'main_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(24, 148, 120), stop:0.5 rgb(220, 220, 220), stop:1 rgb(14, 148, 246))",
-    'nav_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(24, 148, 120), stop:1 rgb(14, 148, 246))",
-    'main_hover_color': "rgb(153, 217, 234)",
-    'main_select_color': "rgb(21, 206, 109)",
-    'Ftitle_color': 'white',
-    'Label_color': "black",
-    'PushButton_background_color': "rgb(24, 148, 120)",
-    'Combox_background_color': "rgb(0, 0, 64)",
-    'ScrollBar_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgb(24, 148, 120), stop:1 rgb(14, 148, 246))",
-    'ScrollBar_handle_color': "lightgray",
-    'HeadView_background_color': "rgb(21, 206, 109)",
-    'TableTree_background_color': "rgb(24, 148, 120)"
+    'main_background_color': "white",   # 主窗体背景颜色
+    'nav_background_color': "rgb(94, 183, 38)", # 导航条背景颜色
+    'main_hover_color': "rgb(127, 199, 82)", # 导航条hover背景颜色
+    'main_select_color': "rgb(76, 148, 31)", # 导航条select背景颜色
+    'border_separator': "0px solid rgb(0, 206, 161)", # 分割线背景
+    'Ftitle_color': 'white', # 标题title字体颜色
+    'Menu_border_left': "5px solid rgb(255, 127, 39)", # 菜单左边界
+    'AntimationLine_background-color': 'green', # 页面切换时动画进度条的背景颜色
+    'Label_color': "rgb(255, 127, 39)", # label字体颜色
+    'PushButton_color': "white", # 按钮字体颜色
+    'PushButton_background_color': "rgb(88, 197, 1)", #按钮背景颜色
+    'PushButton_border_left': "5px solid rgb(255, 127, 39)", #按钮左边界颜色
+    'PushButton_border_bottom': "0px solid rgb(255, 127, 39)", #按钮下边界颜色
+    'Combox_background_color': "rgb(0, 0, 64)", #combox背景颜色
+    'ScrollBar_background_color': "white", #滚动条背景颜色
+    'ScrollBar_handle_color': "lightgray", #滚动条滚动颜色
+    'HeadView_background_color': "rgb(21, 206, 109)", # headview背景颜色
+    'TableTree_background_color': "rgb(88, 197, 1)" # tabtree背景颜色
 }
 
 

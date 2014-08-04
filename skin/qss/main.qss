@@ -647,6 +647,10 @@ QPushButton#Record:disabled{
     background-color: gray;
 }
 
+QLabel#AntimationLine{
+    background-color: white;
+}
+
 QLabel#Listening{
     color: white;
     font-size: 20px;

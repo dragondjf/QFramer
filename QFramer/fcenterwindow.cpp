@@ -232,10 +232,9 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
 {
     QLabel* circle = new QLabel(stackWidget->currentWidget());
     QLabel* line = new QLabel(this);
-    line->setObjectName(QString("line"));
+    line->setObjectName(QString("AntimationLine"));
     line->resize(0, 2);
     line->show();
-    line->setStyleSheet(QString("QLabel{background-color: white;}"));
 
     circle->setPixmap(stackWidget->widget(preindex)->grab());
 //    circle->setScaledContents(true);

@@ -47,7 +47,8 @@ QMenu::item {
 }
 
 QMenu::item:selected {
-    background-color: main_hover_color;
+    background-color: main_select_color;
+    border-left: Menu_border_left
 }
 
 QMenu::icon:checked { /* appearance of a 'checked' icon */
@@ -138,7 +139,7 @@ QComboBox:disabled{
 QStatusBar {
     color: white;
     background-color: nav_background_color;
-    border-top: 1px solid black;
+    border-top: border_separator;
 }
 
 QStatusBar QLabel#datatimelabel{
@@ -341,40 +342,39 @@ QScrollBar::add-page:horizontal, QScrollBar::sub-page:horizontal {
 QPushButton{
     background-color: PushButton_background_color;
     border: none;
-    color: white;
+    color: PushButton_color;
 }
 
 QPushButton:pressed{
     background-color: main_select_color;
-    color: white;
+    color: PushButton_color;
 }
 
 QPushButton:disabled{
     background-color: gray;
 }
 
-
 QPushButton#checkable{
     background-color: nav_background_color;
     border: none;
-    color: white;
+    color: PushButton_color;
 }
-
 
 QPushButton#checkable:hover{
     background-color: main_hover_color;
-    color: nav_background_color;
-    /*border:1px  solid black;*/
+    color: PushButton_color;
+    border-left: PushButton_border_left;
 }
 
 QPushButton#checkable:checked{
     background-color: main_select_color;
-    color: white;
+    color: PushButton_color;
+    border-left: PushButton_border_left;
 }
 
 QPushButton#checkable:pressed{
     background-color: main_select_color;
-    color: white;
+    color: PushButton_color;
 }
 
 QPushButton#checkable:disabled{
@@ -474,27 +474,27 @@ QToolButton#close:hover{
 
 
 QWidget#FTabTile{
-    background-color: main_background_color;
+    background-color: nav_background_color;
 }
 
 QFrame#FNavgationBar_bottom{
     background-color: nav_background_color;
-    border-bottom: 1px solid black;
+    border-bottom: border_separator;
 }
 
 QFrame#FNavgationBar_top{
     background-color: nav_background_color;
-    border-top: 1px solid black;
+    border-top: border_separator;
 }
 
 QFrame#FNavgationBar_left{
     background-color: nav_background_color;
-    border-left: 1px solid black;
+    border-left: border_separator;
 }
 
 QFrame#FNavgationBar_right{
     background-color: nav_background_color;
-    border-right: 1px solid black;
+    border-right: border_separator;
 }
 
 /* ******************FTabTile****************** */
@@ -528,21 +528,21 @@ QPushButton#Home{
     background-repeat:no-repeat;
     background-position: center bottom;
     background-color: transparent;
-    color: rgb(92, 113, 134);
+    color: PushButton_color;
     text-align: center bottom;
-    padding-bottom: 5px;
-    border-bottom: 2px solid black;
+    padding-bottom: 2px;
 }
 
 QPushButton#Home:hover{
     background-color: main_hover_color;
-    color: nav_background_color;
-    /*border:1px  solid black;*/
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#Home:checked{
     background-color: main_select_color;
-    color: white;
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#Home:flat{
@@ -556,21 +556,21 @@ QPushButton#MathPlot{
     background-position: center bottom;
     background-color: transparent;
     background-color: transparent;
-    color: rgb(92, 113, 134);
+    color: PushButton_color;
     text-align: center bottom;
-    padding-bottom: 5px;
-
+    padding-bottom: 2px;
 }
 
 QPushButton#MathPlot:hover{
     background-color: main_hover_color;
-    color: nav_background_color;
-    /*border:1px  black;*/
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#MathPlot:checked{
     background-color: main_select_color;
-    color: white;
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#MathPlot:flat{
@@ -583,21 +583,22 @@ QPushButton#Voice{
     background-position: center bottom;
     background-color: transparent;
     background-color: transparent;
-    color: rgb(92, 113, 134);
+    color: PushButton_color;
     text-align: center bottom;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
 
 }
 
 QPushButton#Voice:hover{
     background-color: main_hover_color;
-    color: nav_background_color;
-    /*border:1px  black;*/
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#Voice:checked{
     background-color: main_select_color;
-    color: white;
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#Voice:flat{
@@ -611,19 +612,21 @@ QPushButton#About{
     background-position: center bottom;
     background-color: transparent;
     background-color: transparent;
-    color: rgb(92, 113, 134);
+    color: PushButton_color;
     text-align: center bottom;
-    padding-bottom: 5px;
+    padding-bottom: 2px;
 }
 
 QPushButton#About:hover{
     background-color: main_hover_color;
-    color: nav_background_color;
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#About:checked{
     background-color: main_select_color;
-    color: white;
+    color: PushButton_color;
+    border: PushButton_border_bottom;
 }
 
 QPushButton#About:flat{
@@ -636,6 +639,10 @@ QPushButton#Record{
 
 QPushButton#Record:disabled{
     background-color: gray;
+}
+
+QLabel#AntimationLine{
+    background-color: AntimationLine_background-color;
 }
 
 QLabel#Listening{
