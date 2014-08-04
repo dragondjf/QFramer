@@ -28,8 +28,9 @@ qssFolder = os.sep.join([os.getcwd(), 'skin', 'qss'])
 qssTemplatePath = os.sep.join([qssFolder, 'template.qss'])
 
 
-theme = {
+theme_green = {
     'main_background_color': "white",   # 主窗体背景颜色
+    'main_background_image': "none",
     'nav_background_color': "rgb(94, 183, 38)", # 导航条背景颜色
     'main_hover_color': "rgb(127, 199, 82)", # 导航条hover背景颜色
     'main_select_color': "rgb(76, 148, 31)", # 导航条select背景颜色
@@ -40,6 +41,7 @@ theme = {
     'Label_color': "rgb(255, 127, 39)", # label字体颜色
     'PushButton_color': "white", # 按钮字体颜色
     'PushButton_background_color': "rgb(88, 197, 1)", #按钮背景颜色
+    'PushButton_Pressed_background_color': "rgb(76, 148, 31)",
     'PushButton_border_left': "5px solid rgb(255, 127, 39)", #按钮左边界颜色
     'PushButton_border_bottom': "0px solid rgb(255, 127, 39)", #按钮下边界颜色
     'Combox_background_color': "rgb(0, 0, 64)", #combox背景颜色
@@ -50,11 +52,37 @@ theme = {
 }
 
 
+theme_blue = {
+    'main_background_color': "rgb(51, 79, 91)",   # 主窗体背景颜色
+    'main_background_image': "none",
+    'nav_background_color': "rgb(43, 152, 188)", # 导航条背景颜色
+    'main_hover_color': "rgb(27, 118, 150)", # 导航条hover背景颜色
+    'main_select_color': "rgb(34, 125, 155)", # 导航条select背景颜色
+    'border_separator': "1px solid rgb(34, 125, 155)", # 分割线背景
+    'Ftitle_color': 'white', # 标题title字体颜色
+    'Menu_border_left': "5px solid rgb(255, 127, 39)", # 菜单左边界
+    'AntimationLine_background-color': 'rgb(255, 127, 39)', # 页面切换时动画进度条的背景颜色
+    'Label_color': "rgb(53, 153, 135)", # label字体颜色
+    'PushButton_color': "white", # 按钮字体颜色
+    'PushButton_background_color': "rgb(43, 65, 77)", #按钮背景颜色
+    'PushButton_Pressed_background_color': "rgb(50, 77, 92)",
+    'PushButton_border_left': "5px solid rgb(255, 127, 39)", #按钮左边界颜色
+    'PushButton_border_bottom': "0px solid rgb(255, 127, 39)", #按钮下边界颜色
+    'Combox_background_color': "rgb(0, 0, 64)", #combox背景颜色
+    'ScrollBar_background_color': "white", #滚动条背景颜色
+    'ScrollBar_handle_color': "rgb(70, 97, 102)", #滚动条滚动颜色
+    'HeadView_background_color': "rgb(34, 125, 155)", # headview背景颜色
+    'TableTree_background_color': "rgb(27, 118, 150)" # tabtree背景颜色
+}
+
+
+theme = theme_green
+
 if __name__ == '__main__':
     if len(sys.argv) >= 2:
         newQssFileName = sys.argv[1]
     else:
-        newQssFileName = "green.qss"
+        newQssFileName = "test.qss"
 
     qssOutFileName = os.sep.join([qssFolder, newQssFileName])
 

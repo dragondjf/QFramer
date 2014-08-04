@@ -53,6 +53,8 @@ signals:
 public slots:
     void changeTheme1();
     void changeTheme2();
+    void changeTheme3();
+    void changeTheme4();
     void changeThemeFromFile();
 };
 

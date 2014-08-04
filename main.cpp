@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
     QApplication::setApplicationName("QFramer");
 
     MainWindow *main = MainWindow::getInstance();
-    setSkinForApp(QString(":/qss/skin/qss/fblue.qss"));
+    setSkinForApp(QString(":/qss/skin/qss/GB.qss"));
     main->setAttribute(Qt::WA_DeleteOnClose);
     main->show();
     return app.exec();
