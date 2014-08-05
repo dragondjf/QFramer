@@ -35,6 +35,7 @@ ThemeMenu::ThemeMenu(QWidget *parent) :
     initData();
     initUI();
     initConnect();
+    actionMaps[tr("GB")]->trigger();
 }
 
 void ThemeMenu::initData()
@@ -47,6 +48,7 @@ void ThemeMenu::initUI()
     for(int i=0; i< actionNames.length() ; ++i)
     {
         actions.append(new QAction(actionNames.at(i), this));
+        actions.at(i)->setCheckable(true);
         actionMaps[actionNames.at(i)] = actions.at(i);
     }
     addActions(actions);
@@ -59,6 +61,7 @@ void ThemeMenu::initConnect()
     connect(actionMaps[tr("GB")], SIGNAL(triggered()), this, SLOT(changeTheme3()));
     connect(actionMaps[tr("GG")], SIGNAL(triggered()), this, SLOT(changeTheme4()));
     connect(actionMaps[tr("Custom theme")], SIGNAL(triggered()), this, SLOT(changeThemeFromFile()));
+    connect(this, SIGNAL(triggered(QAction*)), this, SLOT(updateCheckedAction(QAction*)));
 }
 
 void ThemeMenu::changeTheme1()
@@ -88,5 +91,16 @@ void ThemeMenu::changeThemeFromFile()
         tr("Laod qss"), QDir::currentPath(), tr("Qss Files (*.qss)"));
     if (fileName != ""){
         setSkinForApp(fileName);
+    }
+}
+
+void ThemeMenu::updateCheckedAction(QAction *action)
+{
+    foreach (QAction* actionItem, actions) {
+        if(actionItem == action){
+            action->setChecked(true);
+        }else {
+            actionItem->setChecked(false);
+        }
     }
 }

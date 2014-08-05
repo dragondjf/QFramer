@@ -56,6 +56,7 @@ public slots:
     void changeTheme3();
     void changeTheme4();
     void changeThemeFromFile();
+    void updateCheckedAction(QAction* action);
 };
 
 #endif // THEMEMENU_H

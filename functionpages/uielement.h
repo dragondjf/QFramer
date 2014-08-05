@@ -41,6 +41,7 @@ public:
     void initTableWidget();
     void initTreeWidget();
     void initProgressBar();
+    void initAboutLabel();
 signals:
 
 public slots:

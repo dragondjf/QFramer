@@ -1899,11 +1899,15 @@
         <file>skin/images/splash.jpg</file>
         <file>skin/images/splash.png</file>
         <file>skin/images/bg.png</file>
+        <file>skin/images/bear.jpg</file>
     </qresource>
     <qresource prefix="/qss">
         <file>skin/qss/BB.qss</file>
         <file>skin/qss/BW.qss</file>
         <file>skin/qss/GB.qss</file>
         <file>skin/qss/GG.qss</file>
+    </qresource>
+    <qresource prefix="/about">
+        <file>skin/html/about.html</file>
     </qresource>
 </RCC>

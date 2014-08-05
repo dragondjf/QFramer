@@ -28,6 +28,7 @@
 #include "ftablewidget.h"
 #include "QFramer/ftabwidget.h"
 #include "QFramer/fnofocusdelegate.h"
+#include "QFramer/futil.h"
 #include <QGridLayout>
 #include <QGroupBox>
 #include<QLabel>
@@ -53,6 +54,7 @@ void UIElement::initUI()
     initTableWidget();
     initTreeWidget();
     initProgressBar();
+    initAboutLabel();
     for(int i = 1; i< 8; ++i)
     {
         QLabel* label = new QLabel(QString::number(i));
@@ -261,4 +263,27 @@ void UIElement::updateProgressBar()
            progressBars.at(i)->setValue(0);
        }
    }
+}
+
+void UIElement::initAboutLabel()
+{
+    QLabel* label = new QLabel();
+    label->setObjectName("aboutLabel");
+    label->setStyleSheet("\
+                         QLabel#aboutLabel{\
+                            border-image: url(:/images/skin/images/bear.jpg);\
+                            }"\
+                         );
+    label->setAlignment(Qt::AlignBottom | Qt::AlignRight);
+
+    QLabel* labelText = new QLabel(label);
+    QString text;
+    text = readFile(":/about/skin/html/about.html");
+    labelText->setText(text);
+
+    QHBoxLayout* layout = new QHBoxLayout();
+    layout->addStretch();
+    layout->addWidget(labelText);
+    label->setLayout(layout);
+    addWidget(tr("AboutLabel"), QString(""), label);
 }
