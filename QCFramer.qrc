@@ -1910,4 +1910,12 @@
     <qresource prefix="/about">
         <file>skin/html/about.html</file>
     </qresource>
+    <qresource prefix="/ball">
+        <file>skin/ball/black.png</file>
+        <file>skin/ball/blue.png</file>
+        <file>skin/ball/green.png</file>
+        <file>skin/ball/red.png</file>
+        <file>skin/ball/white.png</file>
+        <file>skin/ball/yellow.png</file>
+    </qresource>
 </RCC>

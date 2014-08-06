@@ -1,5 +1,7 @@
 #include "waterwidget.h"
-
+#include <QPixmap>
+#include <QBitmap>
+#include <QPropertyAnimation>
 WaterWidget::WaterWidget(QWidget *parent) :
     QLabel(parent)
 {
@@ -10,7 +12,17 @@ WaterWidget::WaterWidget(QWidget *parent) :
 
 void WaterWidget::initData()
 {
-
+//    ballpaths << QString(":/ball/skin/ball/white.png");
+    ballpaths << QString(":/ball/skin/ball/green.png");
+    ballpaths << QString(":/ball/skin/ball/red.png");
+    ballpaths << QString(":/ball/skin/ball/blue.png");
+    ballpaths << QString(":/ball/skin/ball/yellow.png");
+    ballpaths << QString(":/ball/skin/ball/black.png");
+    count = 0;
+    animationFlag = true;
+    durations << 1000 << 2000 << 3000 << 4000 << 5000;
+    parallelAnimationGroup = new QParallelAnimationGroup;
+    sequentialAnimationGroup = new QSequentialAnimationGroup;
 }
 
 void WaterWidget::initUI()
@@ -23,9 +35,89 @@ void WaterWidget::initUI()
                                                      stop:1 rgba(63, 120, 137, 255));\
                 }";
     setStyleSheet(style);
+
+    switchButton = new QPushButton(tr("sequential"), this);
+    switchButton->setFixedSize(100, 60);
+
+    for(int i=0; i<20 ; i++)
+    {
+        QLabel * ball = new QLabel(this);
+        labels.append(ball);
+        QPixmap m_Pixmap;
+        m_Pixmap.load(ballpaths[i % 5]);
+        m_Pixmap = m_Pixmap.scaled(m_Pixmap.size() / 3);
+        ball->setPixmap(m_Pixmap);
+        ball->resize(m_Pixmap.size());
+        ball->setMask(m_Pixmap.mask());
+        ball->move(i*60, 0);
+    }
+    initAnimations();
+    parallelAnimationGroup->start();
+
 }
 
-void WaterWidget::initConnect()\
+void WaterWidget::initConnect()
 {
+    connect(parallelAnimationGroup, SIGNAL(finished()), this, SLOT(updateCount()));
+    connect(sequentialAnimationGroup, SIGNAL(finished()), this, SLOT(updateCount()));
+    connect(switchButton, SIGNAL(clicked()), this, SLOT(swicthAnimationType()));
+}
 
+void WaterWidget::updateCount()
+{
+    count = count + 1;
+
+    if (animationFlag){
+        foreach (QPropertyAnimation* animation, sequentialAnimations) {
+            animation->setDuration(durations[qrand() % 5]);
+            animation->setEasingCurve(static_cast<QEasingCurve::Type>(qrand() % 41));
+        }
+        sequentialAnimationGroup->start();
+
+    }else{
+        foreach (QPropertyAnimation* animation, parallelAnimations) {
+            animation->setDuration(durations[qrand() % 5]);
+            animation->setEasingCurve(static_cast<QEasingCurve::Type>(qrand() % 41));
+        }
+        parallelAnimationGroup->start();
+    }
+}
+
+void WaterWidget::swicthAnimationType()
+{
+    if(animationFlag){
+        switchButton->setText(tr("parallel"));
+        sequentialAnimationGroup->stop();
+        parallelAnimationGroup->start();
+    }else{
+        switchButton->setText(tr("sequential"));
+        parallelAnimationGroup->stop();
+        sequentialAnimationGroup->start();
+    }
+    animationFlag = not animationFlag;
+}
+
+void WaterWidget::initAnimations()
+{
+    for(int i=0; i<labels.length(); i++)
+    {
+        QPropertyAnimation* animation_pos = new QPropertyAnimation(labels[i], "pos");
+        animation_pos->setDuration(durations[qrand() % 5]);
+        animation_pos->setStartValue(QPoint(labels[i]->x(),0));
+        animation_pos->setEndValue(QPoint(labels[i]->x(), 600));
+        animation_pos->setEasingCurve(QEasingCurve::OutBounce);
+        parallelAnimationGroup->addAnimation(animation_pos);
+        parallelAnimations.append(animation_pos);
+    }
+
+    for(int i=0; i<labels.length(); i++)
+    {
+        QPropertyAnimation* animation_pos = new QPropertyAnimation(labels[i], "pos");
+        animation_pos->setDuration(durations[qrand() % 5]);
+        animation_pos->setStartValue(QPoint(labels[i]->x(),0));
+        animation_pos->setEndValue(QPoint(labels[i]->x(), 600));
+        animation_pos->setEasingCurve(QEasingCurve::OutBounce);
+        sequentialAnimationGroup->addAnimation(animation_pos);
+        sequentialAnimations.append(animation_pos);
+    }
 }

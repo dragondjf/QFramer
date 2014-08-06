@@ -25,9 +25,9 @@ FGraphicsEllipseItem::FGraphicsEllipseItem(qreal x, qreal y, qreal w, qreal h, Q
 
 void FGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
-    QStyleOptionGraphicsItem myoption = (*option);
-    myoption.state &= !QStyle::State_Selected;
-    QGraphicsEllipseItem::paint(painter, &myoption, widget);
+//    QStyleOptionGraphicsItem myoption = (*option);
+//    myoption.state &= !QStyle::State_Selected;
+//    QGraphicsEllipseItem::paint(painter, &myoption, widget);
 }
 
 FGraphicsPixmapItem::FGraphicsPixmapItem(QGraphicsItem *parent):
@@ -69,15 +69,14 @@ void WaterView::initData()
 void WaterView::initUI()
 {
     QGraphicsScene* scene = new QGraphicsScene;
-    scene->addText("Hello, world!");
-    setSceneRect(0, 0, 800, 600);
+    setSceneRect(-100, -100, 700, 700);
     setScene(scene);
     for(int i=0; i<20; i++){
         FGraphicsEllipseItem *item = new FGraphicsEllipseItem(i * 20 + 20, 0, 40, 40);
-        QRadialGradient bgradient(i * 20 + 20, 0 , 20, i * 20 + 20, 0);
-        bgradient.setColorAt(0,QColor(255, 255, 255));
+        QRadialGradient bgradient(0, 0 , 20, 0, 0);
+        bgradient.setColorAt(0,QColor(63, 120, 137));
         bgradient.setColorAt(0.5,QColor(61, 235, 188));
-        bgradient.setColorAt(1.0,QColor(63, 120, 137));
+        bgradient.setColorAt(1.0,QColor(255, 255, 255));
         item->setBrush(QBrush(bgradient));
         item->setPen(QPen(Qt::NoPen));
         item->setFlags(FGraphicsEllipseItem::ItemIsMovable| FGraphicsEllipseItem::ItemIsSelectable);
@@ -100,7 +99,7 @@ void WaterView::initConnect()
 
 void WaterView::resizeEvent(QResizeEvent *event)
 {
-    QLinearGradient bgradient(-event->size().width()/2, 0, event->size().width()/2, 0);
+    QLinearGradient bgradient(0, 100, 100, 0);
     bgradient.setSpread(QGradient::PadSpread);
     bgradient.setColorAt(0, QColor(63, 120, 137));
     bgradient.setColorAt(0.25, QColor(61, 235, 188));
