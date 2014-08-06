@@ -29,6 +29,8 @@
 
 #include <QProgressBar>
 #include "QFramer/ftabwidget.h"
+#include "waterwidget.h"
+#include "waterview.h"
 class UIElement : public FTabWidget
 {
     Q_OBJECT
@@ -42,6 +44,8 @@ public:
     void initTreeWidget();
     void initProgressBar();
     void initAboutLabel();
+    void initWaterWidget();
+    void initWaterView();
 signals:
 
 public slots:

@@ -41,6 +41,7 @@
 #include<QHeaderView>
 #include<QProgressBar>
 #include<QTimer>
+#include<QGraphicsScene>
 UIElement::UIElement(QWidget *parent) :
     FTabWidget(parent)
 {
@@ -55,6 +56,8 @@ void UIElement::initUI()
     initTreeWidget();
     initProgressBar();
     initAboutLabel();
+    initWaterWidget();
+    initWaterView();
     for(int i = 1; i< 8; ++i)
     {
         QLabel* label = new QLabel(QString::number(i));
@@ -286,4 +289,19 @@ void UIElement::initAboutLabel()
     layout->addWidget(labelText);
     label->setLayout(layout);
     addWidget(tr("AboutLabel"), QString(""), label);
+}
+
+
+void UIElement::initWaterWidget()
+{
+    WaterWidget* waterWidget = new WaterWidget;
+    addWidget(tr("Water"), QString(""), waterWidget);
+}
+
+
+void UIElement::initWaterView()
+{
+
+    WaterView* waterView = new WaterView;
+    addWidget(tr("Waterview"), QString(""), waterView);
 }

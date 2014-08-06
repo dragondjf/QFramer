@@ -47,7 +47,9 @@ SOURCES += \
     QFramer/ftitlebar.cpp \
     QFramer/futil.cpp \
     QFramer/fwigglywidget.cpp \
-    main.cpp
+    main.cpp \
+    functionpages/waterwidget.cpp \
+    functionpages/waterview.cpp
 
 HEADERS  += \
     dialogs/aboutdialog.h \
@@ -83,9 +85,14 @@ HEADERS  += \
     QFramer/ftabwidget.h \
     QFramer/ftitlebar.h \
     QFramer/futil.h \
-    QFramer/fwigglywidget.h
+    QFramer/fwigglywidget.h \
+    functionpages/waterwidget.h \
+    functionpages/waterview.h
 
 RESOURCES += \
     QCFramer.qrc
 
 RC_ICONS = "skin/images/QFramer.ico"
+
+FORMS += \
+    skin/ui/form.ui
