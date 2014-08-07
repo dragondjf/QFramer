@@ -31,6 +31,7 @@
 #include "QFramer/ftabwidget.h"
 #include "waterwidget.h"
 #include "waterview.h"
+#include "animationgradientlabel.h"
 class UIElement : public FTabWidget
 {
     Q_OBJECT
@@ -46,6 +47,7 @@ public:
     void initAboutLabel();
     void initWaterWidget();
     void initWaterView();
+    void initAnimationLabel();
 signals:
 
 public slots:

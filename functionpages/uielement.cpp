@@ -58,11 +58,12 @@ void UIElement::initUI()
     initAboutLabel();
     initWaterWidget();
     initWaterView();
-    for(int i = 1; i< 8; ++i)
-    {
-        QLabel* label = new QLabel(QString::number(i));
-        addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString(""), label);
-    }
+    initAnimationLabel();
+//    for(int i = 1; i< 8; ++i)
+//    {
+//        QLabel* label = new QLabel(QString::number(i));
+//        addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString(""), label);
+//    }
     getButtons().at(0)->click();
 }
 
@@ -304,4 +305,11 @@ void UIElement::initWaterView()
 
     WaterView* waterView = new WaterView;
     addWidget(tr("Waterview"), QString(""), waterView);
+}
+
+
+void UIElement::initAnimationLabel()
+{
+    AnimationGradientLabel* label = new AnimationGradientLabel;
+    addWidget(tr("GradientLabel"), QString(""), label);
 }
