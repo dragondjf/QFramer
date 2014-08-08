@@ -516,6 +516,10 @@ QWidget#Voice{
     background-color: white;
 }
 
+QWidget#QssBuilder{
+    background-color: white;
+}
+
 QFrame#About{
 background-color: white;
 }
@@ -609,6 +613,33 @@ QPushButton#Voice:flat{
     border: none;
 }
 
+QPushButton#QssBuilder{
+    background-image: url(:/skin/icons/dark/appbar.tree.leaf.three.png);
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    background-color: transparent;
+    color: white;
+    text-align: center bottom;
+    padding-bottom: 2px;
+
+}
+
+QPushButton#QssBuilder:hover{
+    background-color: rgb(127, 199, 82);
+    color: white;
+    border: 0px solid rgb(255, 127, 39);
+}
+
+QPushButton#QssBuilder:checked{
+    background-color: rgb(76, 148, 31);
+    color: white;
+    border: 0px solid rgb(255, 127, 39);
+}
+
+QPushButton#QssBuilder:flat{
+    border: none;
+}
 
 QPushButton#About{
     background-image: url(:/skin/icons/dark/appbar.message.smiley.png);

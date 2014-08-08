@@ -40,10 +40,14 @@ void CenterWindow::initUI()
     uiElements = new UIElement;
     mathPlot = new MathPlot;
     aboutPage = new AboutPage;
+    qssBuilder = new QssBuilder;
 
     addWidget(tr("Home"), tr("Home"), uiElements);
     addWidget(tr("MathPlot"),tr("MathPlot"), mathPlot);
+
+    addWidget(tr("QssBuilder"),tr("QssBuilder"), qssBuilder);
     addWidget(tr("About"),tr("About"), aboutPage);
+
     addWiggleWiget();
     setAlignment(TopCenter);
 }

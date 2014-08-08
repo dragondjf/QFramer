@@ -50,7 +50,8 @@ SOURCES += \
     main.cpp \
     functionpages/waterwidget.cpp \
     functionpages/waterview.cpp \
-    functionpages/animationgradientlabel.cpp
+    functionpages/animationgradientlabel.cpp \
+    functionpages/qssbuilder.cpp
 
 HEADERS  += \
     dialogs/aboutdialog.h \
@@ -89,7 +90,8 @@ HEADERS  += \
     QFramer/fwigglywidget.h \
     functionpages/waterwidget.h \
     functionpages/waterview.h \
-    functionpages/animationgradientlabel.h
+    functionpages/animationgradientlabel.h \
+    functionpages/qssbuilder.h
 
 RESOURCES += \
     QCFramer.qrc

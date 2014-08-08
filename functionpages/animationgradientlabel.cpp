@@ -48,6 +48,5 @@ void AnimationGradientLabel::timerEvent(QTimerEvent *event)
                 }");
 
     style = style.arg(pos, startColor, middleColor, stopColor);
-    qDebug(qPrintable(style));
     setStyleSheet(style);
 }

@@ -1906,6 +1906,7 @@
         <file>skin/qss/BW.qss</file>
         <file>skin/qss/GB.qss</file>
         <file>skin/qss/GG.qss</file>
+        <file>skin/qss/template.qss</file>
     </qresource>
     <qresource prefix="/about">
         <file>skin/html/about.html</file>

@@ -516,6 +516,10 @@ QWidget#Voice{
     background-color: main_background_color;
 }
 
+QWidget#QssBuilder{
+    background-color: main_background_color;
+}
+
 QFrame#About{
 background-color: main_background_color;
 }
@@ -606,6 +610,34 @@ QPushButton#Voice:checked{
 }
 
 QPushButton#Voice:flat{
+    border: none;
+}
+
+QPushButton#QssBuilder{
+    background-image: url(:/skin/icons/dark/appbar.tree.leaf.three.png);
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    background-color: transparent;
+    color: PushButton_color;
+    text-align: center bottom;
+    padding-bottom: 2px;
+
+}
+
+QPushButton#QssBuilder:hover{
+    background-color: main_hover_color;
+    color: PushButton_color;
+    border: PushButton_border_bottom;
+}
+
+QPushButton#QssBuilder:checked{
+    background-color: main_select_color;
+    color: PushButton_color;
+    border: PushButton_border_bottom;
+}
+
+QPushButton#QssBuilder:flat{
     border: none;
 }
 

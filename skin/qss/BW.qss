@@ -521,6 +521,10 @@ QWidget#Voice{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
 }
 
+QWidget#QssBuilder{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+}
+
 QFrame#About{
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:0.5 rgba(255, 255, 255, 255), stop:1 rgba(33, 50, 70, 255));
 }
@@ -611,6 +615,32 @@ QPushButton#Voice:checked{
 }
 
 QPushButton#Voice:flat{
+    border: none;
+}
+
+
+QPushButton#QssBuilder{
+    background-image: url(:/skin/icons/dark/appbar.tree.leaf.three.png);
+    background-repeat:no-repeat;
+    background-position: center bottom;
+    background-color: transparent;
+    background-color: transparent;
+    color: rgb(92, 113, 134);
+    text-align: center bottom;
+    padding-bottom: 5px;
+}
+
+QPushButton#QssBuilder:hover{
+    background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:0, y2:1, stop:0 rgba(33, 50, 70, 255), stop:1 rgba(255, 255, 255, 255));
+    color: rgb(33, 50, 70);
+}
+
+QPushButton#QssBuilder:checked{
+    background-color: rgb(34, 44, 56);
+    color: white;
+}
+
+QPushButton#QssBuilder:flat{
     border: none;
 }
 

@@ -31,6 +31,7 @@
 #include "functionpages/aboutpage.h"
 #include "functionpages/mathplot.h"
 #include"functionpages/uielement.h"
+#include "functionpages/qssbuilder.h"
 #include<QVBoxLayout>
 
 class CenterWindow : public FCenterWindow
@@ -41,6 +42,7 @@ public:
     UIElement* uiElements;
     MathPlot* mathPlot;
     AboutPage* aboutPage;
+    QssBuilder* qssBuilder;
 
     static CenterWindow* instance;
 
