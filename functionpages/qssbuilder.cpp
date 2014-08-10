@@ -6,6 +6,9 @@
 #include<QJsonDocument>
 #include<QFile>
 #include<QDir>
+#include<QHBoxLayout>
+#include <QRadioButton>
+#include <QButtonGroup>
 QssBuilder::QssBuilder(QWidget *parent) :
     QFrame(parent)
 {
@@ -34,6 +37,10 @@ void QssBuilder::initData()
 
     colorKeys << "main select color";
     colorLabels << "main_select_color";
+    colorValues << "rgb(34, 125, 155)";
+
+    colorKeys << "statusBar background color";
+    colorLabels << "statusBar_background_color";
     colorValues << "rgb(34, 125, 155)";
 
     colorKeys << "separator border";
@@ -99,36 +106,51 @@ void QssBuilder::initData()
 
 void QssBuilder::initUI()
 {
-    QGridLayout* mainLayout = new QGridLayout;
+    QGridLayout* themeLayout = new QGridLayout;
     for(int i=0; i< colorKeys.length(); i++)
     {
         QLabel* label = new QLabel("<h4>" + colorKeys[i] + ":" + "</h4>");
-        label->setStyleSheet("QLabel{\
-           padding: 5px;\
-           color: green;\
-           qproperty-alignment: AlignRight ;\
-        }");
-        label->setFixedSize(250, 36);
+        label->setObjectName("qssBuilderLabel");
+        label->setFixedSize(280, 24);
         QLineEdit* lineedit = new QLineEdit(colorValues[i]);
-        lineedit->setFixedSize(300, 36);
+        lineedit->setFixedSize(300, 24);
         QPushButton* button = new QPushButton;
 
         QString style = QString("QPushButton#setColor{background-color: %1;}");
         style = style.arg(colorValues[i]);
         button->setStyleSheet(style);
         button->setObjectName("setColor");
-        button->setFixedSize(60, 36);
+        button->setFixedSize(60, 24);
         lineedits.append(lineedit);
         buttons.append(button);
 
-        mainLayout->addWidget(label, i, 0);
-        mainLayout->addWidget(lineedit, i, 1);
-        mainLayout->addWidget(button, i, 2);
-        mainLayout->setColumnStretch(4, 1);
+        themeLayout->addWidget(label, i, 0);
+        themeLayout->addWidget(lineedit, i, 1);
+        themeLayout->addWidget(button, i, 2);
+        themeLayout->setColumnStretch(4, 1);
 
         colorMap[colorLabels[i]] = colorValues[i];
     }
 
+
+    QLabel* iconLabel = new QLabel(tr("Icon color:"));
+    QRadioButton* blackButton = new QRadioButton(tr("Balck"));
+    QRadioButton* whiteButton = new QRadioButton(tr("White"));
+    whiteButton->setChecked(true);
+    QButtonGroup* iconGroup = new QButtonGroup;
+    iconGroup->addButton(blackButton, 0);
+    iconGroup->addButton(whiteButton, 1);
+    connect(iconGroup, SIGNAL(buttonClicked(int)), this, SLOT(changeIconColor(int)));
+
+    QGridLayout* previwerLayout = new QGridLayout;
+    previwerLayout->addWidget(iconLabel, 0, 0);
+    previwerLayout->addWidget(blackButton, 0, 1);
+    previwerLayout->addWidget(whiteButton, 0, 2);
+    previwerLayout->setColumnStretch(4, 1);
+    previwerLayout->setRowStretch(1, 1);
+    QHBoxLayout* mainLayout = new QHBoxLayout;
+    mainLayout->addLayout(themeLayout);
+//    mainLayout->addLayout(previwerLayout);
     setLayout(mainLayout);
 }
 
@@ -159,7 +181,21 @@ void QssBuilder::setButtonColor(QColor color)
     buttons.at(currentIndex)->setStyleSheet(style);
 
     colorMap[colorLabels[currentIndex]] = ctr;
+    updateTheme();
+}
 
+void QssBuilder::setButtonColor(QString color)
+{
+    colorMap[colorLabels[currentIndex]] = color;
+    currentIndex = lineedits.indexOf((QLineEdit*)sender());
+    QString style = QString("QPushButton#setColor{background-color: %1;}");
+    style = style.arg(color);
+    buttons.at(currentIndex)->setStyleSheet(style);
+    updateTheme();
+}
+
+void QssBuilder::updateTheme()
+{
     QJsonDocument doc = QJsonDocument(colorMap);
     QFile outFile("customColor.json");
     outFile.open(QIODevice::WriteOnly);
@@ -171,20 +207,30 @@ void QssBuilder::setButtonColor(QColor color)
        qss.replace(colorLabels[i], colorMap[colorLabels[i]].toString());
     }
     qApp->setStyleSheet(qss);
-    qDebug(qPrintable(qss));
 
     QFile outqssFile("test.qss");
     outqssFile.open(QIODevice::WriteOnly);
     outqssFile.write(qss.toStdString().data());
     outqssFile.close();
-
-
 }
 
-void QssBuilder::setButtonColor(QString color)
+
+void QssBuilder::changeIconColor(int mode)
 {
-    currentIndex = lineedits.indexOf((QLineEdit*)sender());
-    QString style = QString("QPushButton#setColor{background-color: %1;}");
-    style = style.arg(color);
-    buttons.at(currentIndex)->setStyleSheet(style);
+    QString qss = getQssFromFile(":/qss/skin/qss/template.qss");
+    for(int i=0; i< colorLabels.length(); i++){
+       qss.replace(colorLabels[i], colorMap[colorLabels[i]].toString());
+    }
+
+    if(mode == 0){
+        qss.replace(QString(":/skin/icons/dark/"), QString(":/skin/icons/light/"));
+    }else if(mode == 1){
+        qss.replace(QString(":/skin/icons/light/"), QString(":/skin/icons/dark/"));
+    }
+
+    qApp->setStyleSheet(qss);
+    QFile outqssFile("test.qss");
+    outqssFile.open(QIODevice::WriteOnly);
+    outqssFile.write(qss.toStdString().data());
+    outqssFile.close();
 }

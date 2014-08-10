@@ -14,7 +14,7 @@
    <string>Form</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">background-color:qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(63, 120, 137, 255), stop:0.471591 rgba(61, 235, 188, 255), stop:0.98 rgba(65, 125, 139, 255), stop:1 rgba(0, 0, 0, 0))</string>
+   <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 82, 112, 255), stop:0.5 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255));</string>
   </property>
  </widget>
  <resources/>

@@ -140,7 +140,7 @@ QComboBox:disabled{
 /* ******************QStatusBar****************** */
 QStatusBar {
     color: white;
-    background-color: nav_background_color;
+    background-color: statusBar_background_color;
     border-top: border_separator;
 }
 
@@ -706,6 +706,12 @@ QLabel#version{
     background-color: transparent;
     font-size: 20px;
     padding-left: 5px;
+}
+
+QLabel#qssBuilderLabel{
+    padding: 5px;
+    color: white;
+    qproperty-alignment: AlignRight;
 }
 
 /* ******************FDialog****************** */

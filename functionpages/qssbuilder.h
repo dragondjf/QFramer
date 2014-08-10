@@ -24,6 +24,7 @@ public:
     QJsonObject colorMap;
 public:
     explicit QssBuilder(QWidget *parent = 0);
+    void updateTheme();
 
 signals:
 
@@ -31,6 +32,7 @@ public slots:
     void getColor();
     void setButtonColor(QColor color);
     void setButtonColor(QString color);
+    void changeIconColor(int mode);
 };
 
 #endif // QSSBUILDER_H

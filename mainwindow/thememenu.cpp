@@ -40,7 +40,7 @@ ThemeMenu::ThemeMenu(QWidget *parent) :
 
 void ThemeMenu::initData()
 {
-    actionNames<< tr("BW")<<tr("BB") << tr("GB")<< tr("GG")<< tr("Custom theme");
+    actionNames<< tr("BW")<<tr("BB") << tr("GB")<< tr("GG")<< tr("GBG")<<tr("Custom theme")<<tr("Blank");
 }
 
 void ThemeMenu::initUI()
@@ -60,7 +60,9 @@ void ThemeMenu::initConnect()
     connect(actionMaps[tr("BB")], SIGNAL(triggered()), this, SLOT(changeTheme2()));
     connect(actionMaps[tr("GB")], SIGNAL(triggered()), this, SLOT(changeTheme3()));
     connect(actionMaps[tr("GG")], SIGNAL(triggered()), this, SLOT(changeTheme4()));
+    connect(actionMaps[tr("GBG")], SIGNAL(triggered()), this, SLOT(changeTheme5()));
     connect(actionMaps[tr("Custom theme")], SIGNAL(triggered()), this, SLOT(changeThemeFromFile()));
+    connect(actionMaps[tr("Blank")], SIGNAL(triggered()), this, SLOT(changeTheme_blank()));
     connect(this, SIGNAL(triggered(QAction*)), this, SLOT(updateCheckedAction(QAction*)));
 }
 
@@ -82,6 +84,16 @@ void ThemeMenu::changeTheme3()
 void ThemeMenu::changeTheme4()
 {
     setSkinForApp(QString(":/qss/skin/qss/GG.qss"));
+}
+
+void ThemeMenu::changeTheme5()
+{
+    setSkinForApp(QString(":/qss/skin/qss/GBG.qss"));
+}
+
+void ThemeMenu::changeTheme_blank()
+{
+    setSkinForApp(QString(""));
 }
 
 void ThemeMenu::changeThemeFromFile()

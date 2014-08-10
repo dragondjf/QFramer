@@ -76,7 +76,33 @@ theme_blue = {
 }
 
 
-theme = theme_green
+theme_gradient= {
+    'main_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:1, stop:0 rgba(0, 82, 112, 255), stop:0.5 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255))",   # 主窗体背景颜色
+    'main_background_image': "none",
+    'nav_background_color': "qlineargradient(spread:pad, x1:-1, y1:0, x2:1 y2:0, stop:0 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255))", # 导航条背景颜色
+    'main_hover_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 82, 112, 255), stop:0.5 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255))", # 导航条hover背景颜色
+    'main_select_color': "rgb(0, 82, 112)", # 导航条select背景颜色
+    'statusBar_background_color': "qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 82, 112, 255), stop:0.5 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255))",
+    'border_separator': "1px solid rgb(0, 82, 112)", # 分割线背景
+    'Ftitle_color': 'white', # 标题title字体颜色
+    'Menu_border_left': "5px solid rgba(0, 211, 197, 255)", # 菜单左边界
+    'AntimationLine_background-color': 'rgba(0, 211, 197, 255)', # 页面切换时动画进度条的背景颜色
+    'Label_color': "white", # label字体颜色
+    'PushButton_color': "white", # 按钮字体颜色
+    'PushButton_background_color': "rgb(43, 65, 77)", #按钮背景颜色
+    'PushButton_Pressed_background_color': "rgb(50, 77, 92)",
+    'PushButton_border_left': "5px solid rgba(0, 211, 197, 255)", #按钮左边界颜色
+    'PushButton_border_bottom': "0px solid rgb(255, 127, 39)", #按钮下边界颜色
+    'Combox_background_color': "rgb(0, 0, 64)", #combox背景颜色
+    'ScrollBar_background_color': "white", #滚动条背景颜色
+    'ScrollBar_handle_color': "rgb(70, 97, 102)", #滚动条滚动颜色
+    'HeadView_background_color': "rgb(0, 82, 112)", # headview背景颜色
+    'TableTree_background_color': "rgb(27, 118, 150)" # tabtree背景颜色
+}
+
+
+
+theme = theme_gradient
 
 if __name__ == '__main__':
     if len(sys.argv) >= 2:
