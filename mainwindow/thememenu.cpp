@@ -35,7 +35,7 @@ ThemeMenu::ThemeMenu(QWidget *parent) :
     initData();
     initUI();
     initConnect();
-    actionMaps[tr("GB")]->trigger();
+    actionMaps[tr("GBG")]->trigger();
 }
 
 void ThemeMenu::initData()

@@ -69,9 +69,9 @@ void WaterView::initData()
 void WaterView::initUI()
 {
     QGraphicsScene* scene = new QGraphicsScene;
-    setSceneRect(-100, -100, 700, 700);
+//    setSceneRect(-100, -100, 700, 700);
     setScene(scene);
-    for(int i=0; i<20; i++){
+    for(int i=0; i<10; i++){
         FGraphicsEllipseItem *item = new FGraphicsEllipseItem(i * 20 + 20, 0, 40, 40);
         QRadialGradient bgradient(0, 0 , 20, 0, 0);
         bgradient.setColorAt(0,QColor(63, 120, 137));
@@ -82,8 +82,8 @@ void WaterView::initUI()
         item->setFlags(FGraphicsEllipseItem::ItemIsMovable| FGraphicsEllipseItem::ItemIsSelectable);
         scene->addItem(item);
     }
-    for(int i=0; i<5; i++){
-        for (int j=0; j<5; j++){
+    for(int i=0; i<3; i++){
+        for (int j=0; j<3; j++){
             FGraphicsPixmapItem *item = new FGraphicsPixmapItem(QPixmap(":/images/skin/images/QFramer.png"));
             item->setFlags(FGraphicsPixmapItem::ItemIsMovable| FGraphicsPixmapItem::ItemIsSelectable);
             item->setPos(j * 120, i * 120 + 40);

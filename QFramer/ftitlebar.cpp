@@ -35,6 +35,7 @@ FTitleBar::FTitleBar(QWidget *parent) :
     initData();
     initUI();
     initConnect();
+    fixButton->click();
 }
 
 FTitleBar* FTitleBar::getInstace()

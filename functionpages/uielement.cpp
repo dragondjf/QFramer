@@ -59,12 +59,7 @@ void UIElement::initUI()
     initWaterWidget();
     initWaterView();
     initAnimationLabel();
-//    for(int i = 1; i< 8; ++i)
-//    {
-//        QLabel* label = new QLabel(QString::number(i));
-//        addWidget(tr("Base UI Element %1").arg(QString::number(i)), QString(""), label);
-//    }
-    getButtons().at(0)->click();
+    getButtons().at(4)->click();
 }
 
 void UIElement::initBaseElements()

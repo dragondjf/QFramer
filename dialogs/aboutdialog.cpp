@@ -57,7 +57,7 @@ void AboutDialog::initUI()
     authorLabel->setObjectName(QString("content"));
 
 
-    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.0.0"));
+    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.4.0"));
     versionLabel->setObjectName(QString("content"));
 
 

@@ -53,7 +53,7 @@ void AboutPage::initUI()
     authorLabel->setObjectName(QString("content"));
     authorLabel->setAlignment(Qt::AlignLeft);
 
-    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.2.0"), this);
+    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.4.0"), this);
     versionLabel->setObjectName(QString("version"));
     versionLabel->setAlignment(Qt::AlignLeft);
 

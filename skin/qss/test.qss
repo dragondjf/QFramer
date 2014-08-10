@@ -141,7 +141,7 @@ QComboBox:disabled{
 QStatusBar {
     color: white;
     background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(0, 82, 112, 255), stop:0.5 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255));
-    border-top: 1px solid rgb(0, 82, 112);
+    border-top: 1px solid white;
 }
 
 QStatusBar QLabel#datatimelabel{
@@ -483,22 +483,22 @@ QWidget#FTabTile{
 
 QFrame#FNavgationBar_bottom{
     background-color: qlineargradient(spread:pad, x1:-1, y1:0, x2:1 y2:0, stop:0 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255));
-    border-bottom: 1px solid rgb(0, 82, 112);
+    border-bottom: 1px solid white;
 }
 
 QFrame#FNavgationBar_top{
     background-color: qlineargradient(spread:pad, x1:-1, y1:0, x2:1 y2:0, stop:0 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255));
-    border-top: 1px solid rgb(0, 82, 112);
+    border-top: 1px solid white;
 }
 
 QFrame#FNavgationBar_left{
     background-color: qlineargradient(spread:pad, x1:-1, y1:0, x2:1 y2:0, stop:0 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255));
-    border-left: 1px solid rgb(0, 82, 112);
+    border-left: 1px solid white;
 }
 
 QFrame#FNavgationBar_right{
     background-color: qlineargradient(spread:pad, x1:-1, y1:0, x2:1 y2:0, stop:0 rgba(0, 211, 197, 255), stop:1 rgba(0, 82, 112, 255));
-    border-right: 1px solid rgb(0, 82, 112);
+    border-right: 1px solid white;
 }
 
 /* ******************FTabTile****************** */
