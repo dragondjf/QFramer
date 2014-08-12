@@ -17,20 +17,21 @@ QFramer必将不负您的期望。
 + `自定义系统托盘`: 支持系统托盘关联自定义菜单
 + `自定义悬浮窗`: 支持悬浮窗
 + `自定义left导航条`: 支持随意添加导航条，只需要关联上相应的功能页面，即可根据tab切换页面
-+ `自定义皮肤主题`:  内置BB和BW两种主题，提供自定义主题接口，增加脚本qssbuilder.py，根据skin/qss/template.qss模板生成自定义的主题qss文件
++ `自定义皮肤主题`:  内置六种种主题，提供自定义主题接口，增加脚本qssbuilder.py，根据skin/qss/template.qss模板生成自定义的主题qss文件
 + `一键绿色版`： 增加脚本deploywin.py,  用于收集QFramer需要的依赖；
 + `内置QCustomPlot`: 高效2d绘图库
 + 更多的特性等你来挖掘......
 
 ####3 下载
 + `source:` https://github.com/dragondjf/QCFramer    
-+ `windows realease`: http://pan.baidu.com/s/1qWI2lXi
++ `windows realease`: http://pan.baidu.com/s/1kTuqgtx
 
 ####4: 快照
-![6](doc/v0.21_1.png)
-![7](doc/v0.21_2.png)
-![8](doc/v0.21_3.png)
-
+![1](doc/v0.24_1.png)
+![2](doc/v0.24_2.png)
+![3](doc/v0.24_3.png)
+![4](doc/v0.24_4.png)
+更多主题等你来挖掘...
 ####5.Contact
 + `Email:` ding465398889@163.com or dragondjf@gmail.com or 465398889@qq.com
 + `Github:` https://github.com/dragondjf/QCFramer

@@ -178,7 +178,7 @@ void QssBuilder::setButtonColor(QColor color)
     QString style = QString("QPushButton#setColor{background-color: %1;}");
     style = style.arg(ctr);
     lineedits.at(currentIndex)->setText(ctr);
-    buttons.at(currentIndex)->setStyleSheet(style);
+      buttons.at(currentIndex)->setStyleSheet(style);
 
     colorMap[colorLabels[currentIndex]] = ctr;
     updateTheme();
@@ -186,8 +186,8 @@ void QssBuilder::setButtonColor(QColor color)
 
 void QssBuilder::setButtonColor(QString color)
 {
-    colorMap[colorLabels[currentIndex]] = color;
     currentIndex = lineedits.indexOf((QLineEdit*)sender());
+    colorMap[colorLabels[currentIndex]] = color;
     QString style = QString("QPushButton#setColor{background-color: %1;}");
     style = style.arg(color);
     buttons.at(currentIndex)->setStyleSheet(style);
