@@ -33,6 +33,9 @@
 #include<QTextEdit>
 #include<QGraphicsDropShadowEffect>
 #include<QPropertyAnimation>
+#include <QEasingCurve>
+#include <QDesktopWidget>
+#include <QApplication>
 AboutDialog::AboutDialog(QWidget *parent) :
     FBaseDialog(parent)
 {
@@ -90,10 +93,27 @@ void AboutDialog::initConnect()
     connect(enterButton, SIGNAL(clicked()), this, SLOT(animationClose()));
 }
 
+void AboutDialog::showEvent(QShowEvent *event)
+{
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "geometry");
+
+    QDesktopWidget* desktopWidget = QApplication::desktop();
+    int x = (desktopWidget->availableGeometry().width() - normalSize.width()) / 2;
+    int y = (desktopWidget->availableGeometry().height() - normalSize.height()) / 2;
+
+    connect(animation, SIGNAL(finished()), animation, SLOT(deleteLater()));
+    animation->setDuration(1500);
+    animation->setStartValue(QRect(x, 0, normalSize.width(), normalSize.height()));
+    animation->setEndValue(QRect(x, y, normalSize.width(), normalSize.height()));
+    animation->setEasingCurve(QEasingCurve::OutElastic);
+    animation->start();
+    QDialog::showEvent(event);
+}
 
 void AboutDialog::animationClose()
 {
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+    connect(animation, SIGNAL(finished()), this, SLOT(deleteLater()));
     connect(animation, SIGNAL(finished()), this, SLOT(close()));
     animation->setDuration(1500);
     animation->setStartValue(1);

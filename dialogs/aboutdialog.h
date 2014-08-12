@@ -28,13 +28,14 @@
 #define ABOUTDIALOG_H
 
 #include "QFramer/fbasedialog.h"
-
+#include <QShowEvent>
 class AboutDialog : public FBaseDialog
 {
     Q_OBJECT
 private:
     QPushButton* enterButton;
-
+protected:
+     void showEvent(QShowEvent * event);
 public:
     explicit AboutDialog(QWidget *parent = 0);
     void initUI();
