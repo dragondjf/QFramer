@@ -1,7 +1,5 @@
 #-------------------------------------------------
-#
-# Project created by QtCreator 2014-08-13T07:16:05
-#
+# Project created by QtCreator 2014-08-13T09:26:14
 #-------------------------------------------------
 
 QT       += core gui printsupport
@@ -12,7 +10,7 @@ TARGET = QFramer_static
 TEMPLATE = app
 
 
-SOURCES += \
+SOURCES += main.cpp\
     dialogs/aboutdialog.cpp \
     dialogs/bgskinpopup.cpp \
     dialogs/settingdialog.cpp \
@@ -29,7 +27,6 @@ SOURCES += \
     mainwindow/centerwindow.cpp \
     mainwindow/lockcontroller.cpp \
     mainwindow/lockmenu.cpp \
-    mainwindow/mainwindow.cpp \
     mainwindow/settingmenu.cpp \
     mainwindow/settingmenucontroller.cpp \
     mainwindow/thememenu.cpp \
@@ -50,9 +47,9 @@ SOURCES += \
     QFramer/ftitlebar.cpp \
     QFramer/futil.cpp \
     QFramer/fwigglywidget.cpp \
-    main.cpp
+    mainwindow/mainwindow.cpp
 
-HEADERS  += \
+HEADERS  +=\
     dialogs/aboutdialog.h \
     dialogs/bgskinpopup.h \
     dialogs/settingdialog.h \
@@ -69,7 +66,6 @@ HEADERS  += \
     mainwindow/centerwindow.h \
     mainwindow/lockcontroller.h \
     mainwindow/lockmenu.h \
-    mainwindow/mainwindow.h \
     mainwindow/settingmenu.h \
     mainwindow/settingmenucontroller.h \
     mainwindow/thememenu.h \
@@ -89,7 +85,8 @@ HEADERS  += \
     QFramer/ftabwidget.h \
     QFramer/ftitlebar.h \
     QFramer/futil.h \
-    QFramer/fwigglywidget.h
+    QFramer/fwigglywidget.h \
+    mainwindow/mainwindow.h
 
 RESOURCES += \
     QCFramer.qrc
