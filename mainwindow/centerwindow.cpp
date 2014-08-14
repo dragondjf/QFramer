@@ -3,7 +3,7 @@
 ** Copyright (C) 2014 dragondjf
 **
 ** QFramer is a frame based on Qt5.3, you will be more efficient with it. 
-** As an Qter，Qt give us a nice coding experience. With user interactive experience(UE) 
+** As an Qter, Qt give us a nice coding experience. With user interactive experience(UE) 
 ** become more and more important in modern software, deveployers should consider business and UE.
 ** So, QFramer is born. QFramer's goal is to be a mature solution 
 ** which you only need to be focus on your business but UE for all Qters.
@@ -20,14 +20,10 @@
 ** 
 ****************************************************************************/
 
-
-
-
-
 #include "centerwindow.h"
-#include"QFramer/fwigglywidget.h"
-#include<QHBoxLayout>
-CenterWindow* CenterWindow::instance = NULL;
+#include "QFramer/fwigglywidget.h"
+#include <QHBoxLayout>
+
 
 CenterWindow::CenterWindow(QWidget *parent) :
     FCenterWindow(parent)
@@ -52,15 +48,6 @@ void CenterWindow::initUI()
     setAlignment(TopCenter);
 }
 
-CenterWindow* CenterWindow::getInstance()
-{
-    if(!instance)
-    {
-        instance = new CenterWindow();
-    }
-    return instance;
-}
-
 
 void CenterWindow::addWiggleWiget()
 {
@@ -69,5 +56,4 @@ void CenterWindow::addWiggleWiget()
     wiggleWidget->setFixedSize(400, 60);
     wiggleWidget->setStyleSheet("background-color: transparent;\
                                  font-size: 20px;");
-
 }

@@ -3,7 +3,7 @@
 ** Copyright (C) 2014 dragondjf
 **
 ** QFramer is a frame based on Qt5.3, you will be more efficient with it. 
-** As an Qter，Qt give us a nice coding experience. With user interactive experience(UE) 
+** As an Qter, Qt give us a nice coding experience. With user interactive experience(UE) 
 ** become more and more important in modern software, deveployers should consider business and UE.
 ** So, QFramer is born. QFramer's goal is to be a mature solution 
 ** which you only need to be focus on your business but UE for all Qters.
@@ -20,10 +20,6 @@
 ** 
 ****************************************************************************/
 
-
-
-
-
 #ifndef RIGHTFLOATWINDOW_H
 #define RIGHTFLOATWINDOW_H
 
@@ -32,6 +28,8 @@
 #include <QShowEvent>
 #include <QHideEvent>
 #include "QFramer/fmovablewidget.h"
+
+
 class RightFloatWindow : public FMovableWidget
 {
     Q_OBJECT

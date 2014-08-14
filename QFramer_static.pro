@@ -25,8 +25,6 @@ SOURCES += main.cpp\
     functionpages/waterview.cpp \
     functionpages/waterwidget.cpp \
     mainwindow/centerwindow.cpp \
-    mainwindow/lockcontroller.cpp \
-    mainwindow/lockmenu.cpp \
     mainwindow/settingmenu.cpp \
     mainwindow/settingmenucontroller.cpp \
     mainwindow/thememenu.cpp \
@@ -64,8 +62,6 @@ HEADERS  +=\
     functionpages/waterview.h \
     functionpages/waterwidget.h \
     mainwindow/centerwindow.h \
-    mainwindow/lockcontroller.h \
-    mainwindow/lockmenu.h \
     mainwindow/settingmenu.h \
     mainwindow/settingmenucontroller.h \
     mainwindow/thememenu.h \

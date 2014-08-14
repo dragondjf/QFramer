@@ -3,7 +3,7 @@
 ** Copyright (C) 2014 dragondjf
 **
 ** QFramer is a frame based on Qt5.3, you will be more efficient with it. 
-** As an Qter，Qt give us a nice coding experience. With user interactive experience(UE) 
+** As an Qter, Qt give us a nice coding experience. With user interactive experience(UE) 
 ** become more and more important in modern software, deveployers should consider business and UE.
 ** So, QFramer is born. QFramer's goal is to be a mature solution 
 ** which you only need to be focus on your business but UE for all Qters.
@@ -20,12 +20,8 @@
 ** 
 ****************************************************************************/
 
-
-
-
-
 #include "ftitlebar.h"
-#include<QHBoxLayout>
+#include <QHBoxLayout>
 
 FTitleBar* FTitleBar::instance = NULL;
 
@@ -57,19 +53,27 @@ void FTitleBar::initData()
     settingButton->setFocusPolicy(Qt::NoFocus);
     settingButton->setObjectName(QString("titleToolButton"));
     skinButton = new QToolButton;\
-    skinButton->setFocusPolicy(Qt::NoFocus);
     skinButton->setObjectName(QString("titleToolButton"));
     fixButton = new QToolButton;
     fixButton->setObjectName(QString("titleToolButton"));
+    fixButton->setFocusPolicy(Qt::NoFocus);
     minButton = new QToolButton;
     minButton->setObjectName(QString("titleToolButton"));
     maxButton = new QToolButton;
     maxButton->setObjectName(QString("titleToolButton"));
     closeButton = new QToolButton;
     closeButton->setObjectName(QString("titleToolButton"));
+
+    logoButton->setFocusPolicy(Qt::NoFocus);
+    settingButton->setFocusPolicy(Qt::NoFocus);
+    skinButton->setFocusPolicy(Qt::NoFocus);
+    fixButton->setFocusPolicy(Qt::NoFocus);
+    minButton->setFocusPolicy(Qt::NoFocus);
+    maxButton->setFocusPolicy(Qt::NoFocus);
+    closeButton->setFocusPolicy(Qt::NoFocus);
+
     normal_max_flag = true;
     fixflag = false;
-
     maxIcon =  new QIcon(QString(":/skin/icons/dark/appbar.fullscreen.box.png"));
     normalIcon =  new QIcon(QString(":/skin/icons/dark/appbar.app.png"));
 }
