@@ -51,8 +51,13 @@ def main():
     for hf in hfiles + cppfiles:
         with open(hf, 'r+') as fd:
             hcontent = fd.read()
-            index = hcontent.rfind('*' * 76 + "/") + 77
-            validContent = hcontent[index:]
+            index = hcontent.rfind('*' * 76 + "/")
+            if index != -1:
+                index += 77
+                validContent = hcontent[index:].lstrip()
+            else:
+                validContent = hcontent
+                print validContent[:50]
             content = headerInfo + "\n" + validContent
             with open(hf, 'w') as fd:
                 fd.write(content)
