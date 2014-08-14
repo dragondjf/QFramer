@@ -29,6 +29,8 @@
 
 #include <QWidget>
 #include <QSlider>
+
+
 class BgSkinPopup : public QWidget
 {
     Q_OBJECT

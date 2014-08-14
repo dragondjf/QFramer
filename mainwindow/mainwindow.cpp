@@ -28,7 +28,9 @@
 #include "centerwindow.h"
 #include "QFramer/futil.h"
 #include "thememenu.h"
-#include"functionpages/rightfloatwindow.h"
+#include "functionpages/rightfloatwindow.h"
+
+
 MainWindow* MainWindow::instance = NULL;
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -56,8 +58,6 @@ void MainWindow::initUI()
 
     themeMenu = new ThemeMenu;
     getTitleBar()->getSkinButton()->setMenu(themeMenu);
-//    lockMenu = new LockMenu(this);
-//    getTitleBar()->getFixButton()->setMenu(lockMenu);
 
     rightfloatWindow = new RightFloatWindow;
 }
@@ -124,7 +124,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         int count = centerWindow->getNavgationBar()->count();
         if(index == 0){
             centerWindow->getNavgationBar()->setCurrentIndex(count - 1);
-        }else if(index > 0){
+        }else if(index <= (count - 1) && index > 0){
             centerWindow->getNavgationBar()->setCurrentIndex(index - 1);
         }
     }
@@ -132,9 +132,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     {
         int index = centerWindow->getNavgationBar()->currentIndex();
         int count = centerWindow->getNavgationBar()->count();
-        if(index == count){
+        if(index == (count - 1)){
             centerWindow->getNavgationBar()->setCurrentIndex(0);
-        }else if(index > 0){
+        }else if(index >= 0 && index < (count - 1)){
             centerWindow->getNavgationBar()->setCurrentIndex(index + 1);
         }
     }

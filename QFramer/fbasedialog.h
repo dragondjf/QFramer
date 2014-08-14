@@ -28,10 +28,11 @@
 #define FBASEDIALOG_H
 
 #include <QDialog>
-#include<QMouseEvent>
-#include<QShowEvent>
-#include<QCloseEvent>
+#include <QMouseEvent>
+#include <QShowEvent>
+#include <QCloseEvent>
 #include "ftitlebar.h"
+
 
 class FBaseDialog : public QDialog
 {

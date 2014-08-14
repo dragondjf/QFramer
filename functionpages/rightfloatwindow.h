@@ -32,6 +32,8 @@
 #include <QShowEvent>
 #include <QHideEvent>
 #include "QFramer/fmovablewidget.h"
+
+
 class RightFloatWindow : public FMovableWidget
 {
     Q_OBJECT

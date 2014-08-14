@@ -29,6 +29,8 @@
 
 #include <QFrame>
 #include <QPaintEvent>
+
+
 class AboutPage : public QFrame
 {
     Q_OBJECT

@@ -25,9 +25,9 @@
 
 
 #include "centerwindow.h"
-#include"QFramer/fwigglywidget.h"
-#include<QHBoxLayout>
-CenterWindow* CenterWindow::instance = NULL;
+#include "QFramer/fwigglywidget.h"
+#include <QHBoxLayout>
+
 
 CenterWindow::CenterWindow(QWidget *parent) :
     FCenterWindow(parent)
@@ -52,15 +52,6 @@ void CenterWindow::initUI()
     setAlignment(TopCenter);
 }
 
-CenterWindow* CenterWindow::getInstance()
-{
-    if(!instance)
-    {
-        instance = new CenterWindow();
-    }
-    return instance;
-}
-
 
 void CenterWindow::addWiggleWiget()
 {
@@ -69,5 +60,4 @@ void CenterWindow::addWiggleWiget()
     wiggleWidget->setFixedSize(400, 60);
     wiggleWidget->setStyleSheet("background-color: transparent;\
                                  font-size: 20px;");
-
 }

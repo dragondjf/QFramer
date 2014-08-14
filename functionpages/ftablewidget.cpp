@@ -25,8 +25,10 @@
 
 
 #include "ftablewidget.h"
-#include<QHeaderView>
-#include<QTableWidgetItem>
+#include <QHeaderView>
+#include <QTableWidgetItem>
+
+
 FTableWidget::FTableWidget(QWidget *parent) :
     QTableWidget(parent)
 {

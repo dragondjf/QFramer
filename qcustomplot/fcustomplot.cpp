@@ -26,6 +26,8 @@
 
 #include "fcustomplot.h"
 #include <QLinearGradient>
+
+
 FCustomPlot::FCustomPlot(QWidget *parent) :
     QCustomPlot(parent)
 {

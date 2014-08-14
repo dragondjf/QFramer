@@ -25,7 +25,9 @@
 
 
 #include "fnofocusdelegate.h"
-#include<QStyleOptionViewItem>
+#include <QStyleOptionViewItem>
+
+
 FNoFocusDelegate::FNoFocusDelegate(QObject *parent) :
     QStyledItemDelegate(parent)
 {

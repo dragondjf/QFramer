@@ -30,9 +30,10 @@
 #include <QFrame>
 #include<QList>
 #include<QWidget>
-#include<QHBoxLayout>
-#include<QVBoxLayout>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
 #include "fcheckablebutton.h"
+
 
 class FNavgationBar : public QFrame
 {
@@ -50,7 +51,7 @@ private:
     QVBoxLayout* mainlayout_rightTop;
     QVBoxLayout* mainlayout_rightCenter;
     QVBoxLayout* mainlayout_rightBottom;
-    bool cIndex;
+    int cIndex;
 public:
 
     QList<FCheckabelButton*> buttons;

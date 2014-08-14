@@ -25,14 +25,15 @@
 
 
 #include "fcenterwindow.h"
-#include<QPushButton>
-#include<QVBoxLayout>
-#include<QPropertyAnimation>
-#include<QParallelAnimationGroup>
-#include<QEasingCurve>
-#include<QLabel>
-#include<QTime>
-#include"ftitlebar.h"
+#include "ftitlebar.h"
+#include <QPushButton>
+#include <QVBoxLayout>
+#include <QPropertyAnimation>
+#include <QParallelAnimationGroup>
+#include <QEasingCurve>
+#include <QLabel>
+#include <QTime>
+
 
 FCenterWindow::FCenterWindow(QWidget *parent)
     :QFrame(parent)

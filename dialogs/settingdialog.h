@@ -28,6 +28,7 @@
 #define SETTINGDIALOG_H
 #include "QFramer/fbasedialog.h"
 
+
 class SettingDialog : public FBaseDialog
 {
     Q_OBJECT

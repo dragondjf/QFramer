@@ -26,14 +26,15 @@
 
 #include "fmainwindow.h"
 #include "futil.h"
-#include<QtCore>
+#include <QtCore>
 
-#include<QMouseEvent>
-#include<QKeyEvent>
+#include <QMouseEvent>
+#include <QKeyEvent>
 #include <QDesktopWidget>
-#include<QApplication>
-#include<QDebug>
-#include<QDir>
+#include <QApplication>
+#include <QDebug>
+#include <QDir>
+
 
 FMainWindow::FMainWindow(QWidget *parent)
     : QMainWindow(parent)

@@ -29,6 +29,7 @@
 
 #include <QLabel>
 
+
 class FShadowLabel : public QLabel
 {
     Q_OBJECT

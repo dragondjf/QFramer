@@ -28,12 +28,14 @@
 #define FMAINWINDOW_H
 
 #include <QMainWindow>
-#include<QStatusBar>
-#include<QSystemTrayIcon>
-#include<QCloseEvent>
-#include"flywidget.h"
-#include"ftitlebar.h"
-#include"fcenterwindow.h"
+#include <QStatusBar>
+#include <QSystemTrayIcon>
+#include <QCloseEvent>
+#include "flywidget.h"
+#include "ftitlebar.h"
+#include "fcenterwindow.h"
+
+
 enum enum_Direction{
     eLeft,
     eTop,

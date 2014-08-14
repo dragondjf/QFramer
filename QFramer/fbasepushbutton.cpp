@@ -25,7 +25,9 @@
 
 
 #include "fbasepushbutton.h"
-#include<QGraphicsDropShadowEffect>
+#include <QGraphicsDropShadowEffect>
+
+
 FBasePushButton::FBasePushButton(QWidget *parent) :
     QPushButton(parent)
 {

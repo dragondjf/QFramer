@@ -25,9 +25,11 @@
 
 
 #include "bgskinpopup.h"
-#include<QFormLayout>
-#include<QLabel>
-#include<QEvent>
+#include <QFormLayout>
+#include <QLabel>
+#include <QEvent>
+
+
 BgSkinPopup::BgSkinPopup(QWidget *parent) :
     QWidget(parent)
 {

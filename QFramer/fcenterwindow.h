@@ -28,10 +28,10 @@
 #define FCENTERWINDOW_H
 
 #include <QFrame>
-#include<QWidget>
-#include<QStackedWidget>
-#include<QResizeEvent>
-#include<QPixmap>
+#include <QWidget>
+#include <QStackedWidget>
+#include <QResizeEvent>
+#include <QPixmap>
 #include "fnavgationbar.h"
 
 class FCenterWindow : public QFrame

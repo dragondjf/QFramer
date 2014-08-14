@@ -25,17 +25,19 @@
 
 
 #include "aboutdialog.h"
-#include"QFramer/fbasepushbutton.h"
-#include"QFramer/fshadowlabel.h"
-#include<QVBoxLayout>
-#include<QLabel>
-#include<QPushButton>
-#include<QTextEdit>
-#include<QGraphicsDropShadowEffect>
-#include<QPropertyAnimation>
+#include "QFramer/fbasepushbutton.h"
+#include "QFramer/fshadowlabel.h"
+#include <QVBoxLayout>
+#include <QLabel>
+#include <QPushButton>
+#include <QTextEdit>
+#include <QGraphicsDropShadowEffect>
+#include <QPropertyAnimation>
 #include <QEasingCurve>
 #include <QDesktopWidget>
 #include <QApplication>
+
+
 AboutDialog::AboutDialog(QWidget *parent) :
     FBaseDialog(parent)
 {

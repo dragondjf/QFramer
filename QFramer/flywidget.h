@@ -28,10 +28,11 @@
 #define FLYWIDGET_H
 
 #include <QWidget>
-#include<QPixmap>
-#include<QMouseEvent>
-#include<QPainter>
-#include<QMenu>
+#include <QPixmap>
+#include <QMouseEvent>
+#include <QPainter>
+#include <QMenu>
+
 
 class FlyWidget : public QWidget
 {

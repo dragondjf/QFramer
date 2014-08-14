@@ -28,6 +28,7 @@
 #include "mainwindow/mainwindow.h"
 #include <QGraphicsDropShadowEffect>
 
+
 RightFloatWindow::RightFloatWindow(QWidget *parent) :
     FMovableWidget(parent)
 {

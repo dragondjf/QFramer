@@ -34,6 +34,7 @@
 #include <QConicalGradient>
 #include <QMouseEvent>
 
+
 class GradientShow : public QWidget
 {
     Q_OBJECT

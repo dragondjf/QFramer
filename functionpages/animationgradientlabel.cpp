@@ -1,5 +1,6 @@
 #include "animationgradientlabel.h"
 
+
 AnimationGradientLabel::AnimationGradientLabel(QWidget *parent) :
     QLabel(parent)
 {

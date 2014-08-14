@@ -29,6 +29,7 @@
 #include "functionpages/rightfloatwindow.h"
 #include <QApplication>
 
+
 SettingMenu::SettingMenu(QWidget *parent) :
     QMenu(parent)
 {

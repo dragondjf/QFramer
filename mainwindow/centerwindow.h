@@ -27,12 +27,13 @@
 #ifndef CENTERWINDOW_H
 #define CENTERWINDOW_H
 
-#include"QFramer/fcenterwindow.h"
+#include "QFramer/fcenterwindow.h"
 #include "functionpages/aboutpage.h"
 #include "functionpages/mathplot.h"
-#include"functionpages/uielement.h"
+#include "functionpages/uielement.h"
 #include "functionpages/qssbuilder.h"
-#include<QVBoxLayout>
+#include <QVBoxLayout>
+
 
 class CenterWindow : public FCenterWindow
 {
@@ -44,12 +45,9 @@ public:
     AboutPage* aboutPage;
     QssBuilder* qssBuilder;
 
-    static CenterWindow* instance;
-
 public:
     explicit CenterWindow(QWidget *parent = 0);
     void initUI();
-    static CenterWindow* getInstance();
     void addWiggleWiget();
 signals:
 

@@ -25,8 +25,8 @@
 
 
 #include "settingdialog.h"
-#include<QVBoxLayout>
-#include<QTabWidget>
+#include <QVBoxLayout>
+#include <QTabWidget>
 SettingDialog::SettingDialog(QWidget *parent) :
     FBaseDialog(parent)
 {

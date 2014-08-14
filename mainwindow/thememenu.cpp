@@ -26,9 +26,9 @@
 
 #include "thememenu.h"
 #include "QFramer/futil.h"
-#include<QApplication>
-#include<QFileDialog>
-#include<QDir>
+#include <QApplication>
+#include <QFileDialog>
+#include <QDir>
 ThemeMenu::ThemeMenu(QWidget *parent) :
     QMenu(parent)
 {

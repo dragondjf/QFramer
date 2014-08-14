@@ -25,11 +25,13 @@
 
 
 #include "gradientshow.h"
-#include<QPainter>
-#include<QLabel>
-#include<QPropertyAnimation>
-#include<QPushButton>
-#include<QGridLayout>
+#include <QPainter>
+#include <QLabel>
+#include <QPropertyAnimation>
+#include <QPushButton>
+#include <QGridLayout>
+
+
 GradientShow::GradientShow(QWidget *parent) :
     QWidget(parent)
 {

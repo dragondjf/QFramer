@@ -31,7 +31,7 @@
 #include <QWidget>
 #include <QLabel>
 
-//! [0]
+
 class FWigglyWidget : public QLabel
 {
     Q_OBJECT
@@ -48,6 +48,6 @@ private:
     QString text;
     int step;
 };
-//! [0]
+
 
 #endif // FWIGGLYWIDGET_H

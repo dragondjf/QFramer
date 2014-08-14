@@ -25,12 +25,14 @@
 
 
 #include "fbasedialog.h"
-#include<QVBoxLayout>
-#include<QPropertyAnimation>
-#include<QDesktopWidget>
-#include<QApplication>
-#include<QGraphicsDropShadowEffect>
-#include<QPushButton>
+#include <QVBoxLayout>
+#include <QPropertyAnimation>
+#include <QDesktopWidget>
+#include <QApplication>
+#include <QGraphicsDropShadowEffect>
+#include <QPushButton>
+
+
 FBaseDialog::FBaseDialog(QWidget *parent) :
     QDialog(parent)
 {

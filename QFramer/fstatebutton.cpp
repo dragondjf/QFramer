@@ -25,8 +25,10 @@
 
 
 #include "fstatebutton.h"
-#include<QtMath>
-#include<QBitmap>
+#include <QtMath>
+#include <QBitmap>
+
+
 FStateButton::FStateButton(const QString &ficon, const QString &bicon, int buttonFlag, QWidget *parent):
     QPushButton(parent), fStateIcon(ficon), bStateIcon(bicon), bflag(buttonFlag)
 {

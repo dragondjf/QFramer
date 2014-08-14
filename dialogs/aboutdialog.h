@@ -29,6 +29,8 @@
 
 #include "QFramer/fbasedialog.h"
 #include <QShowEvent>
+
+
 class AboutDialog : public FBaseDialog
 {
     Q_OBJECT

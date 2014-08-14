@@ -28,7 +28,9 @@
 #define MATHPLOT_H
 
 #include <QWidget>
-#include"qcustomplot/fcustomplot.h"
+#include "qcustomplot/fcustomplot.h"
+
+
 class MathPlot : public QWidget
 {
     Q_OBJECT

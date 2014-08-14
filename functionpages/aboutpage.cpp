@@ -26,12 +26,14 @@
 
 #include "aboutpage.h"
 #include "QFramer/fshadowlabel.h"
-#include<QLabel>
-#include<QVBoxLayout>
-#include<QGraphicsDropShadowEffect>
-#include<QLinearGradient>
-#include<QPainter>
-#include<QColor>
+#include <QLabel>
+#include <QVBoxLayout>
+#include <QGraphicsDropShadowEffect>
+#include <QLinearGradient>
+#include <QPainter>
+#include <QColor>
+
+
 AboutPage::AboutPage(QWidget *parent) :
     QFrame(parent)
 {

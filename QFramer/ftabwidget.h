@@ -28,9 +28,10 @@
 #define FTABWIDGET_H
 
 #include <QWidget>
-#include<QStackedLayout>
+#include <QStackedLayout>
 #include"fcheckablebutton.h"
 #include"QBoxLayout"
+
 
 class FTabWidget : public QWidget
 {

@@ -25,10 +25,10 @@
 
 
 #include "ftabwidget.h"
-#include<QVBoxLayout>
-#include<QHBoxLayout>
-#include<QBoxLayout>
-#include<QStackedLayout>
+#include <QVBoxLayout>
+#include <QHBoxLayout>
+#include <QBoxLayout>
+#include <QStackedLayout>
 FTabWidget::FTabWidget(QWidget *parent) :
     QWidget(parent)
 {

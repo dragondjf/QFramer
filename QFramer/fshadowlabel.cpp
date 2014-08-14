@@ -26,6 +26,8 @@
 
 #include "fshadowlabel.h"
 #include <QGraphicsDropShadowEffect>
+
+
 FShadowLabel::FShadowLabel(const QString &text, QWidget *parent) :
     QLabel(text, parent)
 {

@@ -31,6 +31,7 @@
 #include <QToolButton>
 #include <QLabel>
 
+
 #define Title_Height 25
 
 class FTitleBar : public QFrame

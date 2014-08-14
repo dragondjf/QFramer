@@ -28,7 +28,9 @@
 #define FMOVABLEWIDGET_H
 
 #include <QFrame>
-#include<QMouseEvent>
+#include <QMouseEvent>
+
+
 class FMovableWidget : public QFrame
 {
     Q_OBJECT

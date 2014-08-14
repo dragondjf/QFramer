@@ -31,6 +31,8 @@
 #include <QPainter>
 #include <QStyleOptionViewItem>
 #include <QModelIndex>
+
+
 class FNoFocusDelegate : public QStyledItemDelegate
 {
     Q_OBJECT

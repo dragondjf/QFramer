@@ -31,6 +31,7 @@
 #include "QFramer/futil.h"
 #include "settingmenucontroller.h"
 
+
 class SettingMenu : public QMenu
 {
     Q_OBJECT

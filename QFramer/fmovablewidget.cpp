@@ -26,6 +26,7 @@
 
 #include "fmovablewidget.h"
 
+
 FMovableWidget::FMovableWidget(QWidget *parent) :
     QFrame(parent)
 {

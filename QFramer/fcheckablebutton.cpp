@@ -24,7 +24,7 @@
 
 
 
- #include "fcheckablebutton.h"
+#include "fcheckablebutton.h"
 
 FCheckabelButton::FCheckabelButton(const QString& text)
 {

@@ -31,17 +31,17 @@
 #include "QFramer/futil.h"
 #include <QGridLayout>
 #include <QGroupBox>
-#include<QLabel>
-#include<QPushButton>
-#include<QRadioButton>
-#include<QCheckBox>
-#include<QTreeWidget>
-#include<QTabWidget>
-#include<QSplitter>
-#include<QHeaderView>
-#include<QProgressBar>
-#include<QTimer>
-#include<QGraphicsScene>
+#include <QLabel>
+#include <QPushButton>
+#include <QRadioButton>
+#include <QCheckBox>
+#include <QTreeWidget>
+#include <QTabWidget>
+#include <QSplitter>
+#include <QHeaderView>
+#include <QProgressBar>
+#include <QTimer>
+#include <QGraphicsScene>
 UIElement::UIElement(QWidget *parent) :
     FTabWidget(parent)
 {

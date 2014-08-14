@@ -27,10 +27,11 @@
 #include "settingmenucontroller.h"
 #include "dialogs/settingdialog.h"
 #include "dialogs/aboutdialog.h"
-#include<QDesktopServices>
-#include<QUrl>
-#include<QApplication>
-#include"mainwindow.h"
+#include <QDesktopServices>
+#include <QUrl>
+#include <QApplication>
+#include "mainwindow.h"
+
 
 SettingMenuController::SettingMenuController(QObject *parent) :
     QObject(parent)

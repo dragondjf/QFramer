@@ -25,8 +25,10 @@
 
 
 #include "mathplot.h"
-#include<QGridLayout>
-#include<QLinearGradient>
+#include <QGridLayout>
+#include <QLinearGradient>
+
+
 MathPlot::MathPlot(QWidget *parent) :
     QWidget(parent)
 {

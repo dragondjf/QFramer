@@ -29,6 +29,8 @@
 #include<QApplication>
 #include<QMainWindow>
 #include<QCursor>
+
+
 FlyWidget::FlyWidget(QWidget *parent) :
     QWidget(parent)
 {

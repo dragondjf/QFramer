@@ -25,8 +25,10 @@
 
 
 #include "fnavgationbar.h"
-#include<QHBoxLayout>
-#include<QVBoxLayout>
+#include <QHBoxLayout>
+#include <QVBoxLayout>
+#include <QDebug>
+
 
 FNavgationBar::FNavgationBar(QWidget *parent)
     :QFrame(parent)
@@ -238,7 +240,7 @@ void FNavgationBar::setCurrentIndex(int index)
 
 int FNavgationBar::count()
 {
-    return buttons.length();
+    return buttons.size();
 }
 
 void FNavgationBar::setButtonChecked()
