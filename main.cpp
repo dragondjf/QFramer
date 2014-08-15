@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
     QApplication::setOrganizationName("DJF");
     QApplication::setOrganizationDomain("https://github.com/dragondjf");
     QApplication::setApplicationName("QFramer");
+    QApplication::setWindowIcon(QIcon(":/images/skin/images/QFramer.ico"));
 
     MainWindow *main = MainWindow::getInstance();
     main->setAttribute(Qt::WA_DeleteOnClose);

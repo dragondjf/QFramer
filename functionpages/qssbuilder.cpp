@@ -25,12 +25,16 @@
 #include <QGridLayout>
 #include <QColorDialog>
 #include <QLabel>
-#include <QJsonDocument>
 #include <QFile>
 #include <QDir>
 #include <QHBoxLayout>
 #include <QRadioButton>
 #include <QButtonGroup>
+
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    #include <QJsonDocument>
+    #include <QJsonObject>
+#endif
 
 
 QssBuilder::QssBuilder(QWidget *parent) :
@@ -220,15 +224,18 @@ void QssBuilder::setButtonColor(QString color)
 
 void QssBuilder::updateTheme()
 {
-    QJsonDocument doc = QJsonDocument(colorMap);
-    QFile outFile("customColor.json");
-    outFile.open(QIODevice::WriteOnly);
-    outFile.write(doc.toJson());
-    outFile.close();
+
+//#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+//    QJsonDocument doc = QJsonDocument(QJsonObject::fromVariantMap(colorMap));
+//    QFile outFile("customColor.json");
+//    outFile.open(QIODevice::WriteOnly);
+//    outFile.write(doc.toJson());
+//    outFile.close();
+//#endif
 
     QString qss = getQssFromFile(":/qss/skin/qss/template.qss");
     for(int i=0; i< colorLabels.length(); i++){
-       qss.replace(colorLabels[i], colorMap[colorLabels[i]].toString());
+       qss.replace(colorLabels[i], colorMap[colorLabels[i]]);
     }
     qApp->setStyleSheet(qss);
 
@@ -243,7 +250,7 @@ void QssBuilder::changeIconColor(int mode)
 {
     QString qss = getQssFromFile(":/qss/skin/qss/template.qss");
     for(int i=0; i< colorLabels.length(); i++){
-       qss.replace(colorLabels[i], colorMap[colorLabels[i]].toString());
+       qss.replace(colorLabels[i], colorMap[colorLabels[i]]);
     }
 
     if(mode == 0){

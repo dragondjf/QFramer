@@ -29,8 +29,9 @@
 #include <QDebug>
 #include <QApplication>
 
-
-void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+    void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg);
+#endif
 QString getQssFromFile(QString filename);
 QString readFile(const QString filename);
 void setSkinForApp(QString filename);

@@ -41,12 +41,12 @@ FTableWidget::FTableWidget(QWidget *parent) :
     QStringList headLabels;
     headLabels << tr("RPC no") << tr("RPC type") << tr("RPC content") << tr("RPC mark");
     setHorizontalHeaderLabels(headLabels);
-
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
     horizontalHeader()->setSectionResizeMode(0, QHeaderView::Fixed);
     horizontalHeader()->setSectionResizeMode(1, QHeaderView::Fixed);
     horizontalHeader()->setSectionResizeMode(2, QHeaderView::Fixed);
     horizontalHeader()->setSectionResizeMode(3, QHeaderView::Stretch);
-
+#endif
     for(int row=0; row < 40; ++row)
     {
         insertRow(row);

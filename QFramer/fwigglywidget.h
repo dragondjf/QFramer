@@ -26,7 +26,8 @@
 #include <QBasicTimer>
 #include <QWidget>
 #include <QLabel>
-
+#include <QTimerEvent>
+#include <QPainter>
 
 class FWigglyWidget : public QLabel
 {
