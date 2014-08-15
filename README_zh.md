@@ -24,7 +24,7 @@ QFramer必将不负您的期望。
 + 更多的特性等你来挖掘......
 
 ####4 下载
-+ `source:` https://github.com/dragondjf/QCFramer    
++ `source:` https://github.com/dragondjf/QCFramer/archive/develop.zip
 + `windows realease`: http://pan.baidu.com/s/1qWI2lXi
 
 ####5: 快照

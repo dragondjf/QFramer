@@ -17,7 +17,7 @@ QFramer
 + `......`
 
 ####4 Download
-+ `source:` https://github.com/dragondjf/QCFramer    
++ `source:` https://github.com/dragondjf/QCFramer/archive/develop.zip
 + `Realease`: http://pan.baidu.com/s/1qWI2lXi
 
 ####5: Snapshot
