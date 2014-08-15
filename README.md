@@ -11,7 +11,7 @@ QFramer
 + `custom navgationBar`:  support add custom navagation tab.
 + `custom SystemTray`: support add custom SystemTray and add context menu to SystemTray
 + `custom fly window`: support add fly window on desktop and add context menu to fly window
-+ `custom lefeside bar`: support leftside navagtion for custom widget
++ `custom leftside bar`: support leftside navagtion for custom widget
 + `custom about page`: support custom define about page
 + `custom skin`: support custom ui skin by qss
 + `......`
