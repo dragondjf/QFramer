@@ -21,7 +21,13 @@
 ****************************************************************************/
 
 #include "fstatebutton.h"
-#include <QtMath>
+
+#if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+    #include<QtCore/qmath.h>
+#else
+    #include <QtMath>
+#endif
+
 #include <QBitmap>
 
 

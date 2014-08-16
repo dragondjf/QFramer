@@ -10,8 +10,9 @@ QFramer 基于Qt5的快速开发框架
 对于软件大小没有严格限制的软件而言，在qt5里面可以完美结合三种开发方式，极大提高生产效率，但存在技术门槛较高，坑也较多，资料相对较少的缺陷。为此，QFramer应运而生，采用基于QtWidgets + qss的开发模式，自定义核心控件，提供一套完整风格的自定义控件，使开发者能够将更多的精力专注于业务逻辑，无需过于担心UI体验。
 
 QFramer必将不负您的期望。
-
-####2. 特性
+####2. 版本支持：
+    支持版本Qt4.8和5.3，目前已经在Qt4.8.6、Qt5.3.0、Qt5.3.1上做过验证。
+####3. 特性
 + `自定义标题栏`: 支持自定义设置menu,皮肤切换menu,锁屏解屏按钮，最小化最大化关闭按钮
 + `自定义top导航tab`:  支持随意添加导航条，只需要关联上相应的功能页面，即可根据tab切换页面
 + `自定义系统托盘`: 支持系统托盘关联自定义菜单
@@ -22,16 +23,17 @@ QFramer必将不负您的期望。
 + `内置QCustomPlot`: 高效2d绘图库
 + 更多的特性等你来挖掘......
 
-####3 下载
-+ `source:` https://github.com/dragondjf/QCFramer    
+####4 下载
++ `source:` https://github.com/dragondjf/QCFramer/archive/develop.zip
 + `windows realease`: http://pan.baidu.com/s/1qWI2lXi
 
-####4: 快照
-![6](doc/v0.21_1.png)
-![7](doc/v0.21_2.png)
-![8](doc/v0.21_3.png)
+####5: 快照
+![6](doc/v0.24_1.png)
+![7](doc/v0.24_2.png)
+![8](doc/v0.24_3.png)
+![9](doc/v0.24_4.png)
 
-####5.Contact
+####6.Contact
 + `Email:` ding465398889@163.com or dragondjf@gmail.com or 465398889@qq.com
 + `Github:` https://github.com/dragondjf/QCFramer
 

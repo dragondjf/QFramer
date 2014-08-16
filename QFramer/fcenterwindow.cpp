@@ -232,8 +232,12 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
     line->setObjectName(QString("AntimationLine"));
     line->resize(0, 2);
     line->show();
+    #if QT_VERSION < QT_VERSION_CHECK(5, 0, 0)
+        circle->setPixmap(QPixmap::grabWidget(stackWidget->widget(preindex), stackWidget->widget(preindex)->geometry()));
+    #else
+        circle->setPixmap(stackWidget->widget(preindex)->grab());
+    #endif
 
-    circle->setPixmap(stackWidget->widget(preindex)->grab());
 //    circle->setScaledContents(true);
     circle->show();
     circle->resize(stackWidget->currentWidget()->size());

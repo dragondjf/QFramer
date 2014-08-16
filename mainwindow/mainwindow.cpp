@@ -56,6 +56,8 @@ void MainWindow::initUI()
     getTitleBar()->getSkinButton()->setMenu(themeMenu);
 
     rightfloatWindow = new RightFloatWindow;
+
+
 }
 
 void MainWindow::initConnect()

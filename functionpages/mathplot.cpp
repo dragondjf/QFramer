@@ -236,7 +236,9 @@ void MathPlot::setupScatterStyleDemo(QCustomPlot *customPlot)
     customPlot->graph()->setData(x, y);
     customPlot->graph()->rescaleAxes(true);
     customPlot->graph()->setPen(pen);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
     customPlot->graph()->setName(QCPScatterStyle::staticMetaObject.enumerator(QCPScatterStyle::staticMetaObject.indexOfEnumerator("ScatterShape")).valueToKey(shapes.at(i)));
+#endif
     customPlot->graph()->setLineStyle(QCPGraph::lsLine);
     // set scatter style:
     if (shapes.at(i) != QCPScatterStyle::ssCustom)

@@ -44,7 +44,7 @@ void CenterWindow::initUI()
     addWidget(tr("QssBuilder"),tr("QssBuilder"), qssBuilder);
     addWidget(tr("About"),tr("About"), aboutPage);
 
-    addWiggleWiget();
+//    addWiggleWiget();
     setAlignment(TopCenter);
 }
 

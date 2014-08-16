@@ -26,7 +26,6 @@
 #include <QFrame>
 #include <QLineEdit>
 #include <QPushButton>
-#include <QJsonObject>
 
 
 class QssBuilder : public QFrame
@@ -45,7 +44,7 @@ public:
 
     QList<QLineEdit * > lineedits;
     QList<QPushButton *> buttons;
-    QJsonObject colorMap;
+    QMap<QString, QString> colorMap;
 public:
     explicit QssBuilder(QWidget *parent = 0);
     void updateTheme();

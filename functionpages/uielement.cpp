@@ -165,9 +165,11 @@ void UIElement::initTreeWidget()
     labels << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
     treeWidget2->setHeaderLabels(labels);
     treeWidget2->setColumnCount(3);
+#if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
     treeWidget2->header()->setSectionResizeMode(0, QHeaderView::Fixed);
     treeWidget2->header()->setSectionResizeMode(1, QHeaderView::Fixed);
     treeWidget2->header()->setSectionResizeMode(2, QHeaderView::Stretch);
+#endif
     QList<QTreeWidgetItem *> items2;
     for (int i = 0; i < 10; ++i)
     {
@@ -189,9 +191,12 @@ void UIElement::initTreeWidget()
     labels3 << tr("rpcID") << tr("rpcType") << tr("rpcDetail");
     treeWidget3->setHeaderLabels(labels3);
     treeWidget3->setColumnCount(3);
-    treeWidget3->header()->setSectionResizeMode(0, QHeaderView::Fixed);
-    treeWidget3->header()->setSectionResizeMode(1, QHeaderView::Fixed);
-    treeWidget3->header()->setSectionResizeMode(2, QHeaderView::Stretch);
+
+    #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
+        treeWidget3->header()->setSectionResizeMode(0, QHeaderView::Fixed);
+        treeWidget3->header()->setSectionResizeMode(1, QHeaderView::Fixed);
+        treeWidget3->header()->setSectionResizeMode(2, QHeaderView::Stretch);
+    #endif
     QList<QTreeWidgetItem *> items3;
     for (int i = 0; i < 10; ++i)
     {
