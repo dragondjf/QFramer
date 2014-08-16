@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/SVG/DTD/svg10.dtd" >
+
+<svg
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   width="400"
+   height="450"
+   xml:space="preserve"
+   onload = "startup(evt)">
+
+<script>
+
+<![CDATA[
+
+var curve;
+var equation;
+var alpha = 1;
+var beta = 2;
+var phi = 0.;
+
+var dphi = Math.PI/120.;
+
+function startup(evt)
+{
+  curve = document.getElementById("curve");
+  equation = document.getElementById("equationText");
+  modifyColor();
+  setInterval("Animate()", 2);
+}
+
+function Lissajou(a, b, phi)
+{
+   var dt  = Math.PI/200;
+   var str = "M"; 
+   for (var t=0.; t <= 2*Math.PI; t += dt) {
+      str += (200. + 100.*Math.sin(a*t)) + " "
+            +  (150. + 100.*Math.cos(b*t + phi)) + " ";
+   }
+   curve.setAttributeNS(null,"d", str);
+}
+
+function Animate()
+{
+  Lissajou(alpha, beta, phi);
+  phi += dphi;  
+  phi %= 2.0*Math.PI;
+  if(phi > 2.0*Math.PI - dphi && phi < 2.0*Math.PI + dphi) {  
+    if(alpha==11) {
+      if(beta==11) {
+       alpha=1;
+       beta=2;
+      }
+      else {
+       alpha=1;
+       beta++
+      }
+    }
+    else {
+      alpha++;
+    }
+    modifyColor();
+  }
+  modifyEquation(); 
+}
+
+function modifyEquation()
+{
+  var phi_new = phi/Math.PI;
+  var s = "f(t)=sin(" + parseInt(alpha)+"t) + cos("+parseInt(beta)+"t + " + parseFloat(phi_new).toFixed(1)+" pi)";
+  equation.firstChild.nodeValue = s;
+}
+
+function modifyColor()
+{
+  curve.setAttributeNS(null,"stroke",color()); 
+}
+
+function color(){
+  var r=Math.random()*(16777215);
+  return "#"+Math.floor(r).toString(16);
+}
+
+]]>
+
+</script> 
+
+<g>
+  <path id="curve" stroke-width="3" stroke="blue" fill="none" /> 
+  <text id="titleText" x="110" y="330" font-size="20" fill="blue">
+    <tspan font-family="cursive">Lissajous curve</tspan></text>
+  <text id="equationText" x="80" y="380" font-size="20" fill="black">
+    f(t)=sin(at)+cos(bt+phi)</text>
+</g>
+
+</svg>
