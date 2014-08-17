@@ -54,6 +54,27 @@
     }
 #endif
 
+void loadFonts(QApplication& app) {
+    QFontDatabase database;
+    QStringList fontlist = database.families();
+
+    QStringList preferList;
+//    preferList.append("Microsoft YaHei UI");
+//    preferList.append("微软雅黑");
+    preferList.append("SimSong");
+    preferList.append("宋体");
+    preferList.append("WenQuanYi Micro Hei");
+    preferList.append("文泉驿微米黑");
+
+    foreach (QString font, preferList) {
+        if (fontlist.contains(font)) {
+            app.setFont(QFont(font));
+            qDebug()<<&app<<" set font: "<<font;
+            return;
+        }
+    }
+}
+
 QString getQssFromFile(QString filename)
 {
     QFile f(filename);

@@ -28,10 +28,14 @@
 #include <QTextStream>
 #include <QDebug>
 #include <QApplication>
+#include <QFontDatabase>
+
 
 #if QT_VERSION >= QT_VERSION_CHECK(5, 0, 0)
     void myMessageOutput(QtMsgType type, const QMessageLogContext &context, const QString &msg);
 #endif
+
+void loadFonts(QApplication& app);
 QString getQssFromFile(QString filename);
 QString readFile(const QString filename);
 void setSkinForApp(QString filename);
