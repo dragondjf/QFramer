@@ -86,4 +86,6 @@ HEADERS  +=\
 RESOURCES += \
     QCFramer.qrc
 
-RC_FILE = QFramer.rc
+win32{
+    RC_FILE = QFramer.rc
+}

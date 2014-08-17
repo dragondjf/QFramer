@@ -4,13 +4,32 @@
 #
 #-------------------------------------------------
 
-QT       += core gui
+QT += core gui
 QT += multimedia
 QT += printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = QCFramer
 TEMPLATE = app
+
+DEPENDPATH += .
+INCLUDEPATH += .
+
+
+CONFIG(debug, debug|release) {
+    DESTDIR = ../build/debug
+    OBJECTS_DIR = ../build/debug/.obj
+    MOC_DIR = ../build/debug/.moc
+    RCC_DIR = ../build/debug/.rcc
+    UI_DIR = ../build/debug/.ui
+} else {
+    DESTDIR = ../build/release
+    OBJECTS_DIR = ../build/release/.obj
+    MOC_DIR = ../build/release/.moc
+    RCC_DIR = ../build/release/.rcc
+    UI_DIR = ../build/release/.ui
+}
+
 
 SOURCES += \
     dialogs/aboutdialog.cpp \

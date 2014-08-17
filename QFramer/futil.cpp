@@ -52,7 +52,6 @@
         QTextStream ts(&outFile);
         ts << outmsg <<endl;
     }
-#endif
 
 void loadFonts(QApplication& app) {
     QFontDatabase database;
@@ -74,6 +73,9 @@ void loadFonts(QApplication& app) {
         }
     }
 }
+#endif
+
+
 
 QString getQssFromFile(QString filename)
 {
