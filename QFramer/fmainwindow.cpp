@@ -94,10 +94,10 @@ void FMainWindow::readSettings()
    int h = desktopWidget->availableGeometry().height();
    QSettings settings(QDir::currentPath() + "/QFramer.ini", QSettings::IniFormat);
    settings.beginGroup("FMainWindow");
-   resize(settings.value("size", QSize(w * 0.8, h * 0.8)).toSize());
-   printf("%d\n" ,(settings.value("size", QSize(w * 0.8, h * 0.8)).toSize().height()));
-   printf("%d\n" ,(settings.value("size", QSize(w * 0.8, h * 0.8)).toSize().width()));
-   move(settings.value("pos", QPoint(w * 0.1, h * 0.1)).toPoint());
+   resize(settings.value("size", QSize(w * 0.6, h * 0.6)).toSize());
+   printf("%d\n" ,(settings.value("size", QSize(w * 0.6, h * 0.6)).toSize().height()));
+   printf("%d\n" ,(settings.value("size", QSize(w * 0.6, h * 0.6)).toSize().width()));
+   move(settings.value("pos", QPoint(w * 0.2, h * 0.1)).toPoint());
    settings.endGroup();
 }
 

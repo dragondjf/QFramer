@@ -9,6 +9,23 @@ QT       += core gui printsupport
 TARGET = QFramer_4.8
 TEMPLATE = app
 
+DEPENDPATH += .
+INCLUDEPATH += .
+
+CONFIG(debug, debug|release) {
+    DESTDIR = ../QFramer_4.8_build/debug
+    OBJECTS_DIR = ../QFramer_4.8_build/debug/.obj
+    MOC_DIR = ../QFramer_4.8_build/debug/.moc
+    RCC_DIR = ../QFramer_4.8_build/debug/.rcc
+    UI_DIR = ../QFramer_4.8_build/debug/.ui
+} else {
+    DESTDIR = ../QFramer_4.8_build/release
+    OBJECTS_DIR = ../QFramer_4.8_build/release/.obj
+    MOC_DIR = ../QFramer_4.8_build/release/.moc
+    RCC_DIR = ../QFramer_4.8_build/release/.rcc
+    UI_DIR = ../QFramer_4.8_build/release/.ui
+}
+
 SOURCES += main.cpp\
     dialogs/aboutdialog.cpp \
     dialogs/bgskinpopup.cpp \
