@@ -1,12 +1,346 @@
 <!doctype html>
-<html>
+<html lang="en">
+
     <head>
         <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="chrome=1">
-        <title>Qcframer by dragondjf</title>
-        <link rel="stylesheet" href="stylesheets/styles.css">
+
+        <title>QFramer - It's a solid frame based on Qt5</title>
+
+        <meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+        <meta name="author" content="Hakim El Hattab">
+
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+        <link rel="stylesheet" href="reveal/css/reveal.min.css">
+        <link rel="stylesheet" href="reveal/css/theme/default.css" id="theme">
+
+        <!-- For syntax highlighting -->
+        <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
+
+        <!-- If the query includes 'print-pdf', include the PDF print sheet -->
+        <script>
+            if( window.location.search.match( /print-pdf/gi ) ) {
+                var link = document.createElement( 'link' );
+                link.rel = 'stylesheet';
+                link.type = 'text/css';
+                link.href = 'reveal/css/print/pdf.css';
+                document.getElementsByTagName( 'head' )[0].appendChild( link );
+            }
+        </script>
+
+        <!--[if lt IE 9]>
+        <script src="lib/js/html5shiv.js"></script>
+        <![endif]-->
     </head>
+
     <body>
 
+        <div class="reveal">
+
+            <!-- Any section element inside of this container is displayed as a slide -->
+            <div class="slides">
+                <section>
+                    <h1>QFramer</h1>
+                    <h6>Faster easier strongger prettier</h6>
+                    <p>
+                        <small>Created by <a href="https://github.com/dragondjf/QCFramer">dragondjf</a></small>
+                    </p>
+                </section>
+
+                <section data-markdown>
+                    <script type="text/template">
+                        ### Introduction
+                        
+                        It's a frame based on Qt5.3, you will be more efficient with it.
+                        As an Qter,Qt give us a nice coding experience.With user interactive experience(UE) become more and more important in modern software, 
+                        deveployers should consider business and UE.So, QFramer is born. 
+                        QFramer's goal is to be a mature solution which you only need to be focus on your business but UE for all Qters.
+
+                    </script>
+                </section>
+
+                <!-- Example of nested vertical slides -->
+                <section>
+                    <section id="theme1">
+                        <a href="#" class="navigate-down">
+                           主题1
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/Bw1.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/Bw2.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/Bw3.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#/theme1" class="image">
+                            <img src="doc/themes/Bw4.png" alt="up arrow">
+                        </a>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="theme2">
+                        <a href="#" class="navigate-down">
+                           主题2
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/BB1.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/BB2.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/BB3.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#/theme2" class="image">
+                            <img src="doc/themes/BB4.png" alt="up arrow">
+                        </a>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section id="theme3">
+                        <a href="#" class="navigate-down">
+                           主题3
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GB1.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GB2.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GB3.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#/theme3" class="image">
+                            <img src="doc/themes/GB4.png" alt="up arrow">
+                        </a>
+                    </section>
+                </section>
+
+                <section>
+                    <section id="theme4">
+                        <a href="#" class="navigate-down">
+                           主题4
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GG1.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GG2.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GG3.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#/theme4" class="image">
+                            <img src="doc/themes/GG4.png" alt="up arrow">
+                        </a>
+                    </section>
+                </section>
+
+
+                <section>
+                    <section id="theme5">
+                        <a href="#" class="navigate-down">
+                           主题5
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GBG1.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GBG2.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GBG3.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#/theme5" class="image">
+                            <img src="doc/themes/GBG4.png" alt="up arrow">
+                        </a>
+                    </section>
+                </section>
+
+                 <section>
+                    <section id="theme6">
+                        <a href="#" class="navigate-down">
+                           主题6
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GGG1.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GGG2.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#" class="image navigate-down">
+                            <img src="doc/themes/GGG3.png" alt="Down arrow">
+                        </a>
+                    </section>
+                    <section>
+                        <a href="#/theme6" class="image">
+                            <img src="doc/themes/GGG4.png" alt="up arrow">
+                        </a>
+                    </section>
+                </section>
+
+                <!-- <section id="transitions">
+                    <h2>Transition Styles</h2>
+                    <p>
+                        You can select from different transitions, like: <br>
+                        <a href="?transition=cube#/transitions">Cube</a> -
+                        <a href="?transition=page#/transitions">Page</a> -
+                        <a href="?transition=concave#/transitions">Concave</a> -
+                        <a href="?transition=zoom#/transitions">Zoom</a> -
+                        <a href="?transition=linear#/transitions">Linear</a> -
+                        <a href="?transition=fade#/transitions">Fade</a> -
+                        <a href="?transition=none#/transitions">None</a> -
+                        <a href="?#/transitions">Default</a>
+                    </p>
+                </section>
+
+                <section id="themes">
+                    <h2>Themes</h2>
+                    <p>
+                        Reveal.js comes with a few themes built in: <br>
+                        <a href="?#/themes">Default</a> -
+                        <a href="?theme=sky#/themes">Sky</a> -
+                        <a href="?theme=beige#/themes">Beige</a> -
+                        <a href="?theme=simple#/themes">Simple</a> -
+                        <a href="?theme=serif#/themes">Serif</a> -
+                        <a href="?theme=night#/themes">Night</a> <br>
+                        <a href="?theme=moon#/themes">Moon</a> -
+                        <a href="?theme=solarized#/themes">Solarized</a>
+                    </p>
+                    <p>
+                        <small>
+                            * Theme demos are loaded after the presentation which leads to flicker. In production you should load your theme in the <code>&lt;head&gt;</code> using a <code>&lt;link&gt;</code>.
+                        </small>
+                    </p>
+                </section>
+
+                <section>
+                    <section id="fragments">
+                        <h2>Fragmented Views</h2>
+                        <p>Hit the next arrow...</p>
+                        <p class="fragment">... to step through ...</p>
+                        <ol>
+                            <li class="fragment"><code>any type</code></li>
+                            <li class="fragment"><em>of view</em></li>
+                            <li class="fragment"><strong>fragments</strong></li>
+                        </ol>
+
+                        <aside class="notes">
+                            This slide has fragments which are also stepped through in the notes window.
+                        </aside>
+                    </section>
+                    <section>
+                        <h2>Fragment Styles</h2>
+                        <p>There's a few styles of fragments, like:</p>
+                        <p class="fragment grow">grow</p>
+                        <p class="fragment shrink">shrink</p>
+                        <p class="fragment roll-in">roll-in</p>
+                        <p class="fragment fade-out">fade-out</p>
+                        <p class="fragment highlight-red">highlight-red</p>
+                        <p class="fragment highlight-green">highlight-green</p>
+                        <p class="fragment highlight-blue">highlight-blue</p>
+                        <p class="fragment current-visible">current-visible</p>
+                        <p class="fragment highlight-current-blue">highlight-current-blue</p>
+                    </section>
+                </section> -->
+
+                <section>
+                    <h1>Thank you for you support!</h1>
+                    <h3>By Dragondjf</h3>
+                </section>
+
+            </div>
+
+        </div>
+
+        <script src="reveal/lib/js/head.min.js"></script>
+        <script src="reveal/js/reveal.min.js"></script>
+
+        <script>
+
+            // Full list of configuration options available here:
+            // https://github.com/hakimel/reveal.js#configuration
+            Reveal.initialize({
+                controls: true,
+                progress: true,
+                history: true,
+                center: true,
+
+                theme: Reveal.getQueryHash().theme, // available themes are in /css/theme
+                transition: Reveal.getQueryHash().transition || 'default', // default/cube/page/concave/zoom/linear/fade/none
+
+                // Parallax scrolling
+                // parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
+                // parallaxBackgroundSize: '2100px 900px',
+
+                // Optional libraries used to extend on reveal.js
+                dependencies: [
+                    { src: 'reveal/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+                    { src: 'reveal/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+                    { src: 'reveal/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+                    { src: 'reveal/plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+                    { src: 'reveal/plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+                ]
+            });
+
+        </script>
+         <a style="display: block;" href="https://github.com/dragondjf/QCFramer">
+            <img style="position: absolute; top: 0; right: 0; border: 0;" src="https://github-camo.global.ssl.fastly.net/365986a132ccd6a44c23a9169022c0b5c890c387/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f7265645f6161303030302e706e67" alt="Fork QFramer on GitHub">
+        </a>
     </body>
 </html>
