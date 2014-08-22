@@ -4,33 +4,36 @@
 #
 #-------------------------------------------------
 
-QT += core gui
-QT += multimedia
-QT += printsupport
+QT       += core gui printsupport
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = QCFramer
+# application name
+TARGET = QFramer
+
+# type
 TEMPLATE = app
 
 DEPENDPATH += .
 INCLUDEPATH += .
 
+# build dir
+BuildDir =build_$$QT_VERSION
 
 CONFIG(debug, debug|release) {
-    DESTDIR = ../build/debug
-    OBJECTS_DIR = ../build/debug/.obj
-    MOC_DIR = ../build/debug/.moc
-    RCC_DIR = ../build/debug/.rcc
-    UI_DIR = ../build/debug/.ui
+    DESTDIR = $$PWD/$$BuildDir/debug
+    OBJECTS_DIR = $$PWD/$$BuildDir/debug/.obj
+    MOC_DIR = $$PWD/$$BuildDir/debug/.moc
+    RCC_DIR = $$PWD/$$BuildDir/debug/.rcc
+    UI_DIR = $$PWD/$$BuildDir/debug/.ui
 } else {
-    DESTDIR = ../build/release
-    OBJECTS_DIR = ../build/release/.obj
-    MOC_DIR = ../build/release/.moc
-    RCC_DIR = ../build/release/.rcc
-    UI_DIR = ../build/release/.ui
+    DESTDIR = $$PWD/$$BuildDir/release
+    OBJECTS_DIR = $$PWD/$$BuildDir/release/.obj
+    MOC_DIR = $$PWD/$$BuildDir/release/.moc
+    RCC_DIR = $$PWD/$$BuildDir/release/.rcc
+    UI_DIR = $$PWD/$$BuildDir/release/.ui
 }
 
-
+# source
 SOURCES += \
     dialogs/aboutdialog.cpp \
     dialogs/bgskinpopup.cpp \
@@ -39,7 +42,6 @@ SOURCES += \
     functionpages/ftablewidget.cpp \
     functionpages/gradientshow.cpp \
     functionpages/mathplot.cpp \
-    functionpages/pdftool.cpp \
     functionpages/rightfloatwindow.cpp \
     functionpages/uielement.cpp \
     mainwindow/centerwindow.cpp \
@@ -70,6 +72,7 @@ SOURCES += \
     functionpages/animationgradientlabel.cpp \
     functionpages/qssbuilder.cpp
 
+# header
 HEADERS  += \
     dialogs/aboutdialog.h \
     dialogs/bgskinpopup.h \
@@ -78,7 +81,6 @@ HEADERS  += \
     functionpages/ftablewidget.h \
     functionpages/gradientshow.h \
     functionpages/mathplot.h \
-    functionpages/pdftool.h \
     functionpages/rightfloatwindow.h \
     functionpages/uielement.h \
     mainwindow/centerwindow.h \
@@ -108,10 +110,21 @@ HEADERS  += \
     functionpages/animationgradientlabel.h \
     functionpages/qssbuilder.h
 
+# resources
 RESOURCES += \
-    QCFramer.qrc
-
-RC_ICONS = "skin/images/QFramer.ico"
+    QFramer.qrc
 
 FORMS += \
     skin/ui/form.ui
+
+# QT4.8 applciation icon
+contains(QT_MAJOR_VERSION, 4){
+    win32{
+        RC_FILE = QFramer.rc
+    }
+}
+
+# QT5 applciation icon
+contains(QT_MAJOR_VERSION, 5){
+    RC_ICONS = "skin/images/QFramer.ico"
+}
