@@ -8,7 +8,7 @@
 ** So, QFramer is born. QFramer's goal is to be a mature solution 
 ** which you only need to be focus on your business but UE for all Qters.
 **
-** Version	: 0.2.2.0
+** Version	: 0.2.5.0
 ** Author	: dragondjf
 ** Website	: https://github.com/dragondjf
 ** Project	: https://github.com/dragondjf/QCFramer
@@ -51,11 +51,11 @@ void AboutPage::initUI()
     authorLabel->setObjectName(QString("content"));
     authorLabel->setAlignment(Qt::AlignLeft);
 
-    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.4.0"), this);
+    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.5.0"), this);
     versionLabel->setObjectName(QString("version"));
     versionLabel->setAlignment(Qt::AlignLeft);
 
-    FShadowLabel *lincenceLabel = new FShadowLabel(tr("lincence: LGPL v2"), this);
+    FShadowLabel *lincenceLabel = new FShadowLabel(tr("lincence: LGPL v3"), this);
     lincenceLabel->setObjectName(QString("content"));
     lincenceLabel->setAlignment(Qt::AlignLeft);
 

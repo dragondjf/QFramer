@@ -21,10 +21,10 @@ QFramer
 + `Realease`: http://pan.baidu.com/s/1qWI2lXi
 
 ####5: Snapshot
-![6](doc/v0.24_1.png)
-![7](doc/v0.24_2.png)
-![8](doc/v0.24_3.png)
-![9](doc/v0.24_4.png)
+![6](doc/v0.25_1.png)
+![7](doc/v0.25_2.png)
+![8](doc/v0.25_3.png)
+![9](doc/v0.25_4.png)
 
 ####6.Contact
 + `Email:` ding465398889@163.com or dragondjf@gmail.com or 465398889@qq.com
