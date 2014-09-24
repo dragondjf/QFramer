@@ -31,4 +31,4 @@ QFramer
 + `Email:` ding465398889@163.com or dragondjf@gmail.com or 465398889@qq.com
 + `Github:` https://github.com/dragondjf/QCFramer
 
->  `If this framework id helpful to you , please add a star `
+>  `If this framework is helpful to you , please add a star `
