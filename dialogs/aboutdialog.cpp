@@ -8,7 +8,7 @@
 ** So, QFramer is born. QFramer's goal is to be a mature solution 
 ** which you only need to be focus on your business but UE for all Qters.
 **
-** Version	: 0.2.2.0
+** Version	: 0.2.5.0
 ** Author	: dragondjf
 ** Website	: https://github.com/dragondjf
 ** Project	: https://github.com/dragondjf/QCFramer
@@ -58,7 +58,7 @@ void AboutDialog::initUI()
     authorLabel->setObjectName(QString("content"));
 
 
-    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.4.0"));
+    FShadowLabel *versionLabel = new FShadowLabel(tr("version:0.2.5.0"));
     versionLabel->setObjectName(QString("content"));
 
 
