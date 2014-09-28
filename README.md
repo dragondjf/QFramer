@@ -3,7 +3,6 @@ QFramer
 + <a href="http://qt.qframer.com">Why QFramer?</a>  
 + <a href="http://dragondjf.github.io/qframer/Qt--QFramer.html">How to use QFramer?</a>
 
->>>>>>> af73716975170f250e642df79d9ae64b67786cb7
 ####1.Introduction
 >It's a frame based on Qt5.3, you will be more efficient with it. As an Qter,Qt give us a nice coding experience.With  user interactive experience(UE) become more and more important in modern software, deveployers should consider business and UE.So, QFramer is born. QFramer's goal is to be a mature solution which you only need to be focus on your business but UE for all Qters.
 
