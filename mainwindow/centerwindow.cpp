@@ -38,11 +38,11 @@ void CenterWindow::initUI()
     aboutPage = new AboutPage;
     qssBuilder = new QssBuilder;
 
-    addWidget(tr("Home"), tr("Home"), uiElements);
-    addWidget(tr("MathPlot"),tr("MathPlot"), mathPlot);
+    addWidget(tr("Home"), "Home", uiElements);
+    addWidget(tr("MathPlot"),"MathPlot", mathPlot);
 
-    addWidget(tr("QssBuilder"),tr("QssBuilder"), qssBuilder);
-    addWidget(tr("About"),tr("About"), aboutPage);
+    addWidget(tr("QssBuilder"),"QssBuilder", qssBuilder);
+    addWidget(tr("About"),"About", aboutPage);
 
 //    addWiggleWiget();
     setAlignment(TopCenter);
