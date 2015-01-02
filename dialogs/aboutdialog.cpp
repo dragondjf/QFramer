@@ -51,7 +51,7 @@ void AboutDialog::initUI()
     FShadowLabel *infoLabel = new FShadowLabel(tr("Faster Easier Stronger Prettier"));
     infoLabel->setObjectName(QString("content"));
 
-    FShadowLabel *lincenceLabel = new FShadowLabel(tr("lincence: LGPL v2"), this);
+    FShadowLabel *lincenceLabel = new FShadowLabel(tr("lincence: LGPL v3"), this);
     lincenceLabel->setObjectName(QString("content"));
 
     FShadowLabel *authorLabel = new FShadowLabel(tr("author:dragondjf"));
