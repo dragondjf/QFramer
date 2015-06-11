@@ -136,6 +136,56 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
             centerWindow->getNavgationBar()->setCurrentIndex(index + 1);
         }
     }
+    else if(event->key() == Qt::Key_F1)
+    {
+        delete centerWindow->getNavgationBar()->layout();
+        centerWindow->setAlignment(centerWindow->TopCenter);
+    }
+    else if(event->key() == Qt::Key_Space)
+    {
+        delete centerWindow->getNavgationBar()->layout();
+        int i = 1 + (int)12 * rand() / (RAND_MAX + 1);
+        switch (i) {
+        case 1:
+            centerWindow->setAlignment(centerWindow->TopLeft);
+            break;
+        case 2:
+            centerWindow->setAlignment(centerWindow->TopCenter);
+            break;
+        case 3:
+            centerWindow->setAlignment(centerWindow->TopRight);
+            break;
+        case 4:
+            centerWindow->setAlignment(centerWindow->RightTop);
+            break;
+        case 5:
+            centerWindow->setAlignment(centerWindow->RightCenter);
+            break;
+        case 6:
+            centerWindow->setAlignment(centerWindow->RightBottom);
+            break;
+        case 7:
+            centerWindow->setAlignment(centerWindow->BottomRight);
+            break;
+        case 8:
+            centerWindow->setAlignment(centerWindow->BottomCenter);
+            break;
+        case 9:
+            centerWindow->setAlignment(centerWindow->BottomLeft);
+            break;
+        case 10:
+            centerWindow->setAlignment(centerWindow->LeftBottom);
+            break;
+        case 11:
+            centerWindow->setAlignment(centerWindow->LeftCenter);
+            break;
+        case 12:
+            centerWindow->setAlignment(centerWindow->LeftTop);
+            break;
+        default:
+            break;
+        }
+    }
 
     FMainWindow::keyPressEvent(event);
 }

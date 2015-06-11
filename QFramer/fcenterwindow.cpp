@@ -78,64 +78,85 @@ void FCenterWindow::setAlignment(Alignment_Direction direction)
         navagationBar->setObjectName(QString("FNavgationBar_bottom"));
         navagationBar->setAlignment_topLeft();
         navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::TopToBottom);
         break;
     case TopCenter:
         navagationBar->setObjectName(QString("FNavgationBar_bottom"));
         navagationBar->setAlignment_topCenter();
+        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
+
         swicthLayout(QBoxLayout::TopToBottom);
         break;
     case TopRight:
         navagationBar->setObjectName(QString("FNavgationBar_bottom"));
         navagationBar->setAlignment_topRight();
+        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::TopToBottom);
         break;
     case RightTop:
         navagationBar->setObjectName(QString("FNavgationBar_left"));
         navagationBar->setAlignment_rightTop();
-        swicthLayout(QBoxLayout::RightToLeft);
         navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
+        swicthLayout(QBoxLayout::RightToLeft);
         break;
     case RightCenter:
         navagationBar->setObjectName(QString("FNavgationBar_left"));
         navagationBar->setAlignment_rightCenter();
-        swicthLayout(QBoxLayout::RightToLeft);
         navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
+        swicthLayout(QBoxLayout::RightToLeft);
         break;
     case RightBottom:
         navagationBar->setObjectName(QString("FNavgationBar_left"));
         navagationBar->setAlignment_rightBottom();
-        swicthLayout(QBoxLayout::RightToLeft);
         navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
+        swicthLayout(QBoxLayout::RightToLeft);
         break;
     case BottomRight:
         navagationBar->setObjectName(QString("FNavgationBar_top"));
         navagationBar->setAlignment_bottomRight();
+        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::BottomToTop);
         break;
     case BottomCenter:
         navagationBar->setObjectName(QString("FNavgationBar_top"));
         navagationBar->setAlignment_bottomCenter();
+        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::BottomToTop);
         break;
     case BottomLeft:
         navagationBar->setObjectName(QString("FNavgationBar_top"));
         navagationBar->setAlignment_bottomLeft();
+        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::BottomToTop);
         break;
     case LeftBottom:
         navagationBar->setObjectName(QString("FNavgationBar_right"));
         navagationBar->setAlignment_leftBottom();
+        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::LeftToRight);
         break;
     case LeftCenter:
         navagationBar->setObjectName(QString("FNavgationBar_right"));
         navagationBar->setAlignment_leftCenter();
+        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::LeftToRight);
         break;
     case LeftTop:
         navagationBar->setObjectName(QString("FNavgationBar_right"));
         navagationBar->setAlignment_leftTop();
+        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
         swicthLayout(QBoxLayout::LeftToRight);
         break;
     default:
