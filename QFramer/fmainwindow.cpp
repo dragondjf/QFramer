@@ -57,7 +57,7 @@ void FMainWindow::initUI()
     setMaximumSize(desktopWidget->availableGeometry().size());
     readSettings();
 
-    setWindowFlags(Qt::FramelessWindowHint | Qt::WindowMinimizeButtonHint);
+    setWindowFlags(Qt::FramelessWindowHint);
     setWindowTitle("QFramer");
 
     pstatusbar = new QStatusBar;

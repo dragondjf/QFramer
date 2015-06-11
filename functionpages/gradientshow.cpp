@@ -55,7 +55,8 @@ void GradientShow::mousePressEvent(QMouseEvent *event)
 
 void GradientShow::paintEvent(QPaintEvent *event)
 {
-    QPainter painter(this);
+    Q_UNUSED(event);
+//    QPainter painter(this);
 
     // Gradient used with QBrush
 

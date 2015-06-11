@@ -60,6 +60,7 @@ void FTabWidget::initConnect()
 
 void FTabWidget::addWidget(const QString &tile, const QString &objectName, QWidget *widget)
 {
+    Q_UNUSED(objectName)
     buttonTitles  << tile;
     FCheckabelButton* button = new FCheckabelButton(tile);
     buttons.append(button);

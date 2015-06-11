@@ -86,9 +86,6 @@ HEADERS  += \
 RESOURCES += \
     QFramer.qrc
 
-FORMS += \
-    skin/ui/form.ui
-
 # QT4.8 applciation icon
 contains(QT_MAJOR_VERSION, 4){
     win32{

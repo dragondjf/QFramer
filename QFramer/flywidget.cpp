@@ -76,6 +76,7 @@ void FlyWidget::mousePressEvent(QMouseEvent *event)
 
 void FlyWidget::mouseDoubleClickEvent(QMouseEvent *event)
 {
+    Q_UNUSED(event)
     p->setVisible(not p->isVisible());
 }
 
@@ -90,18 +91,21 @@ void FlyWidget::mouseMoveEvent(QMouseEvent *event)
 
 void FlyWidget::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event)
     QPainter painter(this);
     painter.drawPixmap(0, 0, m_Pixmap);
 }
 
 void FlyWidget::leaveEvent(QEvent *event)
 {
+    Q_UNUSED(event)
     //鼠标离开窗口时是普通的指针
     setCursor(Qt::ArrowCursor);
 }
 
 void FlyWidget::enterEvent(QEvent *event)
 {
+    Q_UNUSED(event)
     //鼠标留在窗口上时是一个手指
     setCursor(Qt::PointingHandCursor);
 }

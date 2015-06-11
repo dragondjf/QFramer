@@ -21,6 +21,7 @@
 ****************************************************************************/
 
 #include "ftitlebar.h"
+#include "ftoolbutton.h"
 #include <QHBoxLayout>
 
 FTitleBar* FTitleBar::instance = NULL;
@@ -46,22 +47,22 @@ FTitleBar* FTitleBar::getInstace()
 void FTitleBar::initData()
 {
     title = tr("");
-    logoButton = new QToolButton;
+    logoButton = new FToolButton();
     logoButton->setObjectName(QString("titleToolButton"));
     titleLabel = new QLabel;
-    settingButton = new QToolButton;
+    settingButton = new FToolButton();
     settingButton->setFocusPolicy(Qt::NoFocus);
     settingButton->setObjectName(QString("titleToolButton"));
-    skinButton = new QToolButton;\
+    skinButton = new FToolButton();\
     skinButton->setObjectName(QString("titleToolButton"));
-    fixButton = new QToolButton;
+    fixButton = new FToolButton();
     fixButton->setObjectName(QString("titleToolButton"));
     fixButton->setFocusPolicy(Qt::NoFocus);
-    minButton = new QToolButton;
+    minButton = new FToolButton();
     minButton->setObjectName(QString("titleToolButton"));
-    maxButton = new QToolButton;
+    maxButton = new FToolButton();
     maxButton->setObjectName(QString("titleToolButton"));
-    closeButton = new QToolButton;
+    closeButton = new FToolButton();
     closeButton->setObjectName(QString("titleToolButton"));
 
     logoButton->setFocusPolicy(Qt::NoFocus);
@@ -191,7 +192,7 @@ void FTitleBar::setLogoButton(const char *str, const char *objectName)
         logoButton->setObjectName(QString(objectName));
 }
 
-QToolButton* FTitleBar::getLogoButton()
+FToolButton* FTitleBar::getLogoButton()
 {
     return logoButton;
 }
@@ -245,7 +246,7 @@ void FTitleBar::setSettingButton(const char *str, const char *objectName)
 }
 
 
-QToolButton* FTitleBar::getSettingButton()
+FToolButton* FTitleBar::getSettingButton()
 {
     return settingButton;
 }
@@ -273,7 +274,7 @@ void FTitleBar::setSkinButton(const char *str, const char *objectName)
     }
 }
 
-QToolButton* FTitleBar::getSkinButton()
+FToolButton* FTitleBar::getSkinButton()
 {
     return skinButton;
 }
@@ -301,7 +302,7 @@ void FTitleBar::setFixButton(const char *str, const char *objectName)
     }
 }
 
-QToolButton* FTitleBar::getFixButton()
+FToolButton* FTitleBar::getFixButton()
 {
     return fixButton;
 }
@@ -328,7 +329,7 @@ void FTitleBar::setMinButton(const char *str, const char *objectName)
     }
 }
 
-QToolButton* FTitleBar::getMinButton()
+FToolButton* FTitleBar::getMinButton()
 {
     return minButton;
 }
@@ -358,7 +359,7 @@ void FTitleBar::setMaxButton(const char *str, const char *objectName)
 }
 
 
-QToolButton* FTitleBar::getMaxButton()
+FToolButton* FTitleBar::getMaxButton()
 {
     return maxButton;
 }
@@ -387,7 +388,7 @@ void FTitleBar::setCloseButton(const char *str, const char *objectName)
     }
 }
 
-QToolButton* FTitleBar::getCloseButton()
+FToolButton* FTitleBar::getCloseButton()
 {
     return closeButton;
 }

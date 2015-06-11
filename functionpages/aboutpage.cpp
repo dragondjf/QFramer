@@ -93,6 +93,7 @@ void AboutPage::initUI()
 
 void AboutPage::paintEvent(QPaintEvent *event)
 {
+    Q_UNUSED(event)
 //    QPainter painter(this);
 
 //    QLinearGradient linearGrad1(geometry().topLeft(), geometry().bottomRight());

@@ -63,6 +63,7 @@ void RightFloatWindow::showEvent(QShowEvent *event)
 
 void RightFloatWindow::hideEvent(QHideEvent *event)
 {
+    Q_UNUSED(event)
     MainWindow::getInstance()->settingMenu->\
             getActionMaps()["Show rightBar"]->setText(tr("Show rightBar"));
 }

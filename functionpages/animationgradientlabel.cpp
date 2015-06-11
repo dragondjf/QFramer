@@ -46,6 +46,7 @@ void AnimationGradientLabel::initConnect()
 
 void AnimationGradientLabel::timerEvent(QTimerEvent *event)
 {
+    Q_UNUSED(event)
     QString style;
     QString pos;
     QString startColor;

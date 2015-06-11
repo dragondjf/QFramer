@@ -47,6 +47,9 @@ FGraphicsEllipseItem::FGraphicsEllipseItem(qreal x, qreal y, qreal w, qreal h, Q
 
 void FGraphicsEllipseItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
 {
+    Q_UNUSED(painter)
+    Q_UNUSED(option)
+    Q_UNUSED(widget)
 //    QStyleOptionGraphicsItem myoption = (*option);
 //    myoption.state &= !QStyle::State_Selected;
 //    QGraphicsEllipseItem::paint(painter, &myoption, widget);

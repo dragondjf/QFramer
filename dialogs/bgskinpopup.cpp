@@ -91,6 +91,7 @@ bool BgSkinPopup::eventFilter(QObject *watched, QEvent *event)
 
 void BgSkinPopup::updateBackgroundColor(const int value)
 {
+    Q_UNUSED(value)
     int red = redSlider->value();
     int green = greenSlider->value();
     int blue = blueSlider->value();
