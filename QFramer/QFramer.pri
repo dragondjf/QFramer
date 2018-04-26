@@ -3,7 +3,7 @@ HEADERS += \
     QFramer/fbasepushbutton.h \
     QFramer/fcenterwindow.h \
     QFramer/fcheckablebutton.h \
-    QFramer/flywidget.h \
+    QFramer/FlyWidget.h \
     QFramer/fmainwindow.h \
     QFramer/fmovablewidget.h \
     QFramer/fnavgationbar.h \
@@ -11,17 +11,17 @@ HEADERS += \
     QFramer/fshadowlabel.h \
     QFramer/fstatebutton.h \
     QFramer/ftabwidget.h \
-    QFramer/ftitlebar.h \
+    QFramer/FTitleBar.h \
     QFramer/futil.h \
     QFramer/fwigglywidget.h \
-    $$PWD/ftoolbutton.h
+    QFramer/FToolButton.h
 
 SOURCES += \
     QFramer/fbasedialog.cpp \
     QFramer/fbasepushbutton.cpp \
     QFramer/fcenterwindow.cpp \
     QFramer/fcheckablebutton.cpp \
-    QFramer/flywidget.cpp \
+    QFramer/FlyWidget.cpp \
     QFramer/fmainwindow.cpp \
     QFramer/fmovablewidget.cpp \
     QFramer/fnavgationbar.cpp \
@@ -29,7 +29,10 @@ SOURCES += \
     QFramer/fshadowlabel.cpp \
     QFramer/fstatebutton.cpp \
     QFramer/ftabwidget.cpp \
-    QFramer/ftitlebar.cpp \
+    QFramer/FTitleBar.cpp \
     QFramer/futil.cpp \
     QFramer/fwigglywidget.cpp \
-    $$PWD/ftoolbutton.cpp
+    QFramer/FToolButton.cpp
+
+RESOURCES += \
+    QFramer/QFramer.qrc
