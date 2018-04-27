@@ -29,10 +29,10 @@
 #include <QCursor>
 
 FlyWidget::FlyWidget(QWidget *parent) :
-    QWidget(parent)
+    QWidget(parent),
+    m_parent(parent),
+    m_settingMenu(nullptr)
 {
-    settingmenu = NULL;
-    m_parent = parent;
     initData();
     initUI();
     initConnect();
@@ -46,10 +46,9 @@ void FlyWidget::initData()
 void FlyWidget::initUI()
 {
     setWindowFlags(Qt::FramelessWindowHint | Qt::ToolTip);
-
-    m_Pixmap.load(QString(":/skin/images/QFramer.png"));
-    resize(m_Pixmap.size());
-    setMask(m_Pixmap.mask());
+    m_pixmap.load(QString(":/skin/images/QFramer.png"));
+    resize(m_pixmap.size());
+    setMask(m_pixmap.mask());
 }
 
 void FlyWidget::initConnect()
@@ -59,44 +58,46 @@ void FlyWidget::initConnect()
 
 void FlyWidget::setMenu(QMenu *menu)
 {
-    settingmenu = menu;
+    m_settingMenu = menu;
 }
 
 QMenu* FlyWidget::getMenu()
 {
-    return settingmenu;
-}
-
-void FlyWidget::mousePressEvent(QMouseEvent *event)
-{
-    // 按住左键可以托动窗口，按下右键关闭程序
-    if (event->button() & Qt::LeftButton) {
-        m_CurrentPos = event->globalPos() - frameGeometry().topLeft();
-    } else if (event->button() & Qt::RightButton) {
-        settingmenu->exec(QCursor::pos());
-    } else {
-        QWidget::mousePressEvent(event);
-    }
+    return m_settingMenu;
 }
 
 void FlyWidget::mouseMoveEvent(QMouseEvent *event)
 {
     if (event->buttons() & Qt::LeftButton) {
-        move(event->globalPos() - m_CurrentPos);
+        move(event->globalPos() - m_currentPos);
     } else {
         QWidget::mouseMoveEvent(event);
+    }
+}
+
+void FlyWidget::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() & Qt::LeftButton) {
+        m_currentPos = event->globalPos() - frameGeometry().topLeft();
+    } else if (event->button() & Qt::RightButton) {
+        if (m_settingMenu) {
+            m_settingMenu->exec(QCursor::pos());
+        }
+    } else {
+        QWidget::mousePressEvent(event);
     }
 }
 
 void FlyWidget::mouseDoubleClickEvent(QMouseEvent *)
 {
     m_parent->setVisible(!m_parent->isVisible());
+    hide();
 }
 
 void FlyWidget::paintEvent(QPaintEvent *)
 {
     QPainter painter(this);
-    painter.drawPixmap(0, 0, m_Pixmap);
+    painter.drawPixmap(0, 0, m_pixmap);
 }
 
 void FlyWidget::leaveEvent(QEvent *)

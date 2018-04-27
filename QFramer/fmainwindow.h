@@ -26,7 +26,7 @@
 #include <QMainWindow>
 #include <QStatusBar>
 #include <QSystemTrayIcon>
-#include "flywidget.h"
+#include "FlyWidget.h"
 #include "FTitleBar.h"
 
 class QPoint;
@@ -48,6 +48,9 @@ class FMainWindow : public QMainWindow
 private:
     QPoint dragPosition;
 
+    void initData();
+    void initUI();
+    void initConnect();
     void readSettings();
     void writeSettings();
 
@@ -57,25 +60,22 @@ private:
     QSystemTrayIcon *trayicon;
 
 protected:
-    void mouseMoveEvent(QMouseEvent *e);
-    void mousePressEvent(QMouseEvent *e);
-    void mouseReleaseEvent(QMouseEvent *e);
-    void mouseDoubleClickEvent(QMouseEvent *e);
-    void keyPressEvent(QKeyEvent *e);
+    void mouseMoveEvent(QMouseEvent *event);
+    void mousePressEvent(QMouseEvent *event);
+    void mouseReleaseEvent(QMouseEvent *event);
+    void mouseDoubleClickEvent(QMouseEvent *event);
+    void keyPressEvent(QKeyEvent *event);
     void closeEvent(QCloseEvent * event);
-    void SetCursorStyle(enum_Direction i);
 
 public:
     FMainWindow(QWidget *parent = 0);
-    void initData();
-    void initUI();
-    void initConnect();
+    ~FMainWindow();
     FTitleBar* getTitleBar();
     FlyWidget* getFlyWidget();
     QStatusBar* getStatusBar();
     QSystemTrayIcon* getQSystemTrayIcon();
+    void SetCursorStyle(enum_Direction i);
     void animationClose();
-    ~FMainWindow();
 
 signals:
     void Hidden();

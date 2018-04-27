@@ -84,7 +84,7 @@ HEADERS  += \
 
 # resources
 RESOURCES += \
-    QFramer.qrc
+    QFrame.qrc
 
 # QT4.8 applciation icon
 contains(QT_MAJOR_VERSION, 4){

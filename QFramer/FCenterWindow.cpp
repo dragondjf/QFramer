@@ -2,10 +2,10 @@
 **
 ** Copyright (C) 2014 dragondjf
 **
-** QFramer is a frame based on Qt5.3, you will be more efficient with it. 
-** As an Qter, Qt give us a nice coding experience. With user interactive experience(UE) 
+** QFramer is a frame based on Qt5.3, you will be more efficient with it.
+** As an Qter, Qt give us a nice coding experience. With user interactive experience(UE)
 ** become more and more important in modern software, deveployers should consider business and UE.
-** So, QFramer is born. QFramer's goal is to be a mature solution 
+** So, QFramer is born. QFramer's goal is to be a mature solution
 ** which you only need to be focus on your business but UE for all Qters.
 **
 ** Version	: 0.2.5.0
@@ -17,19 +17,19 @@
 ** Lincence: LGPL V2
 ** QQ: 465398889
 ** Email: dragondjf@gmail.com, ding465398889@163.com, 465398889@qq.com
-** 
+**
 ****************************************************************************/
 
-#include "fcenterwindow.h"
-#include "ftitlebar.h"
-#include <QPushButton>
+#include "FCenterWindow.h"
+#include <QStackedWidget>
 #include <QVBoxLayout>
+#include <QTime>
+#include <QLabel>
+#include <QPixmap>
+#include <QEasingCurve>
 #include <QPropertyAnimation>
 #include <QParallelAnimationGroup>
-#include <QEasingCurve>
-#include <QLabel>
-#include <QTime>
-
+#include "FTitleBar.h"
 
 FCenterWindow::FCenterWindow(QWidget *parent)
     :QFrame(parent)
@@ -57,12 +57,93 @@ void FCenterWindow::initUI()
     navlayout->setContentsMargins(0, 0 ,0 ,0);
     navlayout->setSpacing(0);
 
-    mainLayout = new QVBoxLayout;
+    QVBoxLayout *mainLayout = new QVBoxLayout(this);
     mainLayout->addWidget(FTitleBar::getInstace());
     mainLayout->addLayout(navlayout);
     mainLayout->setContentsMargins(0, 0 ,0 ,0);
     mainLayout->setSpacing(0);
-    setLayout(mainLayout);
+}
+
+void FCenterWindow::initConnect()
+{
+    connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(switchscreen(int)));
+}
+
+void FCenterWindow::setAlignment(FNavgationBar::AlignmentDirection direction)
+{
+    switch (direction) {
+    case FNavgationBar::TopLeft:
+    case FNavgationBar::TopCenter:
+    case FNavgationBar::TopRight:
+        navagationBar->setObjectName(QString("FNavgationBar_bottom"));
+        navagationBar->setAlignment(direction);
+        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
+        navlayout->setDirection(QBoxLayout::TopToBottom);
+        break;
+    case FNavgationBar::RightTop:
+    case FNavgationBar::RightCenter:
+    case FNavgationBar::RightBottom:
+        navagationBar->setObjectName(QString("FNavgationBar_left"));
+        navagationBar->setAlignment(direction);
+        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
+        navlayout->setDirection(QBoxLayout::RightToLeft);
+        break;
+    case FNavgationBar::BottomRight:
+    case FNavgationBar::BottomCenter:
+    case FNavgationBar::BottomLeft:
+        navagationBar->setObjectName(QString("FNavgationBar_top"));
+        navagationBar->setAlignment(direction);
+        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
+        navagationBar->adjustSize();
+        navlayout->setDirection(QBoxLayout::BottomToTop);
+        break;
+    case FNavgationBar::LeftBottom:
+    case FNavgationBar::LeftCenter:
+    case FNavgationBar::LeftTop:
+        navagationBar->setObjectName(QString("FNavgationBar_right"));
+        navagationBar->setAlignment(direction);
+        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
+        navagationBar->adjustSize();
+        navlayout->setDirection(QBoxLayout::LeftToRight);
+        break;
+    }
+}
+
+void FCenterWindow::addWidget(QWidget *widget, const QString &tile, const QString &obejctName)
+{
+    if (!widget) return;
+    navagationBar->addNavgationTile(tile, obejctName);
+    widget->setObjectName(obejctName.isEmpty() ? tile : obejctName);
+    stackWidget->addWidget(widget);
+    setAlignment(FNavgationBar::TopCenter);
+}
+
+FNavgationBar* FCenterWindow::getNavgationBar()
+{
+    return navagationBar;
+}
+
+void FCenterWindow::switchscreen(const int index)
+{
+    AnimationDirection animation = animationTop;
+    if (index == stackWidget->currentIndex()) {
+        return;
+    } else if (index > stackWidget->currentIndex()) {
+        animation = FCenterWindow::animationRight;
+    } else if (index < stackWidget->currentIndex()) {
+        animation = FCenterWindow::animationLeft;
+    }
+
+    //  QTime time = QTime::currentTime();
+    //  qsrand(static_cast<uint>(time.msec() + time.second() * 1000));
+    //  int n = qrand() % 9;
+    //  animation = static_cast<AnimationDirection>(n);
+
+    stackWidget->setCurrentIndex(index);
+    cloudAntimation(animation);
+    preindex = index;
 }
 
 void FCenterWindow::swicthLayout(QBoxLayout::Direction direction)
@@ -70,184 +151,9 @@ void FCenterWindow::swicthLayout(QBoxLayout::Direction direction)
     navlayout->setDirection(direction);
 }
 
-
-void FCenterWindow::setAlignment(Alignment_Direction direction)
+void FCenterWindow::cloudAntimation(AnimationDirection direction)
 {
-    switch (direction) {
-    case TopLeft:
-        navagationBar->setObjectName(QString("FNavgationBar_bottom"));
-        navagationBar->setAlignment_topLeft();
-        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::TopToBottom);
-        break;
-    case TopCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_bottom"));
-        navagationBar->setAlignment_topCenter();
-        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
-        navagationBar->adjustSize();
-
-        swicthLayout(QBoxLayout::TopToBottom);
-        break;
-    case TopRight:
-        navagationBar->setObjectName(QString("FNavgationBar_bottom"));
-        navagationBar->setAlignment_topRight();
-        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::TopToBottom);
-        break;
-    case RightTop:
-        navagationBar->setObjectName(QString("FNavgationBar_left"));
-        navagationBar->setAlignment_rightTop();
-        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::RightToLeft);
-        break;
-    case RightCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_left"));
-        navagationBar->setAlignment_rightCenter();
-        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::RightToLeft);
-        break;
-    case RightBottom:
-        navagationBar->setObjectName(QString("FNavgationBar_left"));
-        navagationBar->setAlignment_rightBottom();
-        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::RightToLeft);
-        break;
-    case BottomRight:
-        navagationBar->setObjectName(QString("FNavgationBar_top"));
-        navagationBar->setAlignment_bottomRight();
-        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::BottomToTop);
-        break;
-    case BottomCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_top"));
-        navagationBar->setAlignment_bottomCenter();
-        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::BottomToTop);
-        break;
-    case BottomLeft:
-        navagationBar->setObjectName(QString("FNavgationBar_top"));
-        navagationBar->setAlignment_bottomLeft();
-        navagationBar->resize(QSize(stackWidget->width(), navagationBar->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::BottomToTop);
-        break;
-    case LeftBottom:
-        navagationBar->setObjectName(QString("FNavgationBar_right"));
-        navagationBar->setAlignment_leftBottom();
-        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::LeftToRight);
-        break;
-    case LeftCenter:
-        navagationBar->setObjectName(QString("FNavgationBar_right"));
-        navagationBar->setAlignment_leftCenter();
-        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::LeftToRight);
-        break;
-    case LeftTop:
-        navagationBar->setObjectName(QString("FNavgationBar_right"));
-        navagationBar->setAlignment_leftTop();
-        navagationBar->resize(QSize(navagationBar->width(), stackWidget->height()));
-        navagationBar->adjustSize();
-        swicthLayout(QBoxLayout::LeftToRight);
-        break;
-    default:
-        break;
-    }
-}
-
-
-void FCenterWindow::initConnect()
-{
-    connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(switchscreen(int)));
-}
-
-
-void FCenterWindow::addWidget(const QString &tile, const QString &obejctName, QWidget *widget)
-{
-    navagationBar->addNavgationTile(tile, obejctName);
-    widget->setObjectName(obejctName);
-    stackWidget->addWidget(widget);
-}
-
-FNavgationBar* FCenterWindow::getNavgationBar(){
-    return navagationBar;
-}
-
-void FCenterWindow::switchscreen(const int index)
-{
-    int n = 0;
-    if (index == stackWidget->currentIndex())
-    {
-        return;
-    }
-    else if(index > stackWidget->currentIndex())
-    {
-        n = 2;
-    }
-    else if (index < stackWidget->currentIndex())
-    {
-        n = 6;
-    }
-
-    stackWidget->setCurrentIndex(index);
-
-//    QTime time;
-//    time= QTime::currentTime();
-//    qsrand(time.msec()+time.second()*1000);
-//    int n = qrand()%9;
-//    n = 0;
-    switch (n) {
-    case 0:
-        cloudAntimation(animationTop);
-        break;
-    case 1:
-        cloudAntimation(animationTopRight);
-        break;
-    case 2:
-        cloudAntimation(animationRight);
-        break;
-    case 3:
-        cloudAntimation(animationBottomRight);
-        break;
-    case 4:
-        cloudAntimation(animationBottom);
-        break;
-    case 5:
-        cloudAntimation(animationBottomLeft);
-        break;
-    case 6:
-        cloudAntimation(animationLeft);
-        break;
-    case 7:
-        cloudAntimation(animationTopLeft);
-        break;
-    case 8:
-        cloudAntimation(animationCenter);
-        break;
-    default:
-        break;
-    }
-    preindex = index;
-
-}
-
-
-void FCenterWindow::switchscreen()
-{
-    stackWidget->setCurrentIndex(currentIndex);
-}
-
-void FCenterWindow::cloudAntimation(animation_Direction direction)
-{
+    // TODO : not read
     QLabel* circle = new QLabel(stackWidget->currentWidget());
     QLabel* line = new QLabel(this);
     line->setObjectName(QString("AntimationLine"));
@@ -259,11 +165,10 @@ void FCenterWindow::cloudAntimation(animation_Direction direction)
         circle->setPixmap(stackWidget->widget(preindex)->grab());
     #endif
 
-//    circle->setScaledContents(true);
+//  circle->setScaledContents(true);
     circle->show();
     circle->resize(stackWidget->currentWidget()->size());
     QPropertyAnimation *animation = new QPropertyAnimation(circle, "geometry");
-
     animation->setDuration(1000);
     animation->setStartValue(circle->geometry());
 

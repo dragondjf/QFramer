@@ -20,49 +20,57 @@
 **
 ****************************************************************************/
 
-#ifndef FLYWIDGET_H
-#define FLYWIDGET_H
+#ifndef FNAVGATIONBAR_H
+#define FNAVGATIONBAR_H
 
+#include <QFrame>
 #include <QWidget>
-#include <QPoint>
-#include <QPixmap>
-#include <QMenu>
+#include <QList>
+#include "FCheckableButton.h"
 
-class QMouseEvent;
-class QPaintEvent;
-class QEvent;
 
-class FlyWidget : public QWidget
+class FNavgationBar : public QFrame
 {
     Q_OBJECT
 private:
-    QWidget *m_parent;
-    QMenu   *m_settingMenu;
-    QPixmap m_pixmap;
-    QPoint  m_currentPos;
+    int m_index;
+    QList<QString> buttonTitles;
+    QList<FCheckabelButton*> buttons;
 
     void initData();
-    void initUI();
     void initConnect();
-
-protected:
-    void mouseMoveEvent(QMouseEvent *event);
-    void mousePressEvent(QMouseEvent *event);
-    void mouseDoubleClickEvent(QMouseEvent * event);
-    void paintEvent(QPaintEvent *event);
-    void enterEvent(QEvent *event);
-    void leaveEvent(QEvent *event);
+    void initUI();
 
 public:
-    explicit FlyWidget(QWidget *parent = 0);
+    enum AlignmentDirection{
+        TopLeft,
+        TopCenter,
+        TopRight,
+        RightTop,
+        RightCenter,
+        RightBottom,
+        BottomRight,
+        BottomCenter,
+        BottomLeft,
+        LeftBottom,
+        LeftCenter,
+        LeftTop,
+    };
 
-    void setMenu(QMenu* menu);
-    QMenu* getMenu();
+    explicit FNavgationBar(QWidget *parent = 0);
+
+    int  count();
+    int  currentIndex();
+    void setCurrentIndex(int index);
+    void addNavgationTile(const QString& tile, const QString &objectName = QString());
+    void setAlignment(FNavgationBar::AlignmentDirection direction);
 
 signals:
+    void indexChanged(int index);
 
-public slots:
+private slots:
+    void setButtonChecked();
 
 };
 
-#endif // FLYWIDGET_H
+#endif // FNAVGATIONBAR_H

@@ -33,7 +33,6 @@
 #include <QDebug>
 #include <QDir>
 
-
 FMainWindow::FMainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
@@ -43,8 +42,14 @@ FMainWindow::FMainWindow(QWidget *parent)
     initConnect();
 }
 
+FMainWindow::~FMainWindow()
+{
+    qDebug("mainwindow deinit");
+}
+
 void FMainWindow::initData()
 {
+
 }
 
 void FMainWindow::initUI()
@@ -111,6 +116,10 @@ FTitleBar* FMainWindow::getTitleBar()
     return titleBar;
 }
 
+FlyWidget* FMainWindow::getFlyWidget()
+{
+    return flyWidget;
+}
 QStatusBar* FMainWindow::getStatusBar()
 {
     return pstatusbar;
@@ -121,9 +130,86 @@ QSystemTrayIcon* FMainWindow::getQSystemTrayIcon()
     return trayicon;
 }
 
-FlyWidget* FMainWindow::getFlyWidget()
+void FMainWindow::SetCursorStyle(enum_Direction direction)
 {
-    return flyWidget;
+    switch (direction) {
+    case eTop:
+    case eBottom:
+        setCursor(Qt::SizeVerCursor);
+        break;
+    case eRight:
+    case eLeft:
+        setCursor(Qt::SizeHorCursor);
+        break;
+    case eNormal:
+        setCursor(Qt::ArrowCursor);
+        break;
+    }
+}
+
+void FMainWindow::animationClose()
+{
+    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
+    connect(animation, SIGNAL(finished()), this, SLOT(close()));
+    animation->setDuration(1500);
+    animation->setStartValue(1);
+    animation->setEndValue(0);
+    animation->start();
+}
+
+void FMainWindow::mouseMoveEvent(QMouseEvent *event)
+{
+    if (!isMaximized() && !(event->y() < titleBar->height() && event->x() > titleBar->width() - 120)) {
+        if (titleBar->getFixedflag()) {
+            move(event->globalPos() - dragPosition);
+        }
+    } else {
+        QMainWindow::mouseMoveEvent(event);
+    }
+}
+
+void FMainWindow::mousePressEvent(QMouseEvent *event)
+{
+    if (event->button() & Qt::LeftButton) {
+        dragPosition = event->globalPos() - frameGeometry().topLeft();
+    } else {
+        QMainWindow::mousePressEvent(event);
+    }
+}
+
+void FMainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    if (event->button() & Qt::LeftButton) {
+        titleBar->clearChecked();
+    } else {
+        QMainWindow::mouseReleaseEvent(event);
+    }
+}
+
+void FMainWindow::mouseDoubleClickEvent(QMouseEvent *event)
+{
+    if (event->button() & Qt::LeftButton && !(event->y() < titleBar->height() && event->x() > titleBar->width() - 120)) {
+        swithMaxNormal();
+    } else {
+        QMainWindow::mouseDoubleClickEvent(event);
+    }
+}
+
+void FMainWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Escape) {
+        titleBar->getCloseButton()->click();
+    } else if (event->key() == Qt::Key_F11) {
+        titleBar->getMaxButton()->click();
+    } else {
+        QMainWindow::keyPressEvent(event);
+    }
+}
+
+void FMainWindow::closeEvent(QCloseEvent *event)
+{
+    writeSettings();
+    QMainWindow::closeEvent(event);
 }
 
 void FMainWindow::swithMaxNormal()
@@ -140,102 +226,21 @@ void FMainWindow::showFlyWidget()
     flyWidget->show();
 }
 
-void FMainWindow::mousePressEvent(QMouseEvent *e)
-{
-    if (e->button() & Qt::LeftButton) {
-        dragPosition = e->globalPos() - frameGeometry().topLeft();
-    } else {
-        QMainWindow::mousePressEvent(e);
-    }
-}
-
-void FMainWindow::mouseDoubleClickEvent(QMouseEvent *e)
-{
-    if (e->button() & Qt::LeftButton && !(e->y() < titleBar->height() && e->x() > titleBar->width() - 120)) {
-        swithMaxNormal();
-    } else {
-        QMainWindow::mouseDoubleClickEvent(e);
-    }
-}
-
-void FMainWindow::SetCursorStyle(enum_Direction direction)
-{
-    // 设置上下左右以及右上、右下、左上、坐下的鼠标形状
-    switch (direction) {
-    case eTop:
-    case eBottom:
-        setCursor(Qt::SizeVerCursor);
-        break;
-    case eRight:
-    case eLeft:
-        setCursor(Qt::SizeHorCursor);
-        break;
-    case eNormal:
-        setCursor(Qt::ArrowCursor);
-        break;
-    }
-}
-
-void FMainWindow::mouseReleaseEvent(QMouseEvent *e)
-{
-    if (e->button() & Qt::LeftButton) {
-        titleBar->clearChecked();
-    } else {
-        QMainWindow::mouseReleaseEvent(e);
-    }
-}
-
-void FMainWindow::mouseMoveEvent(QMouseEvent *e)
-{
-    if (!isMaximized() &&
-        !(e->y() < titleBar->height() && e->x() > titleBar->width() - 120)) {
-        if (titleBar->getFixedflag()) {
-            move(e->globalPos() - dragPosition);
-        }
-    } else {
-        QMainWindow::mouseMoveEvent(e);
-    }
-}
-
-void FMainWindow::keyPressEvent(QKeyEvent *e)
-{
-    if (e->key() == Qt::Key_Escape) {
-        close();
-    } else if (e->key() == Qt::Key_F11) {
-        titleBar->getMaxButton()->click();
-    } else {
-        QMainWindow::keyPressEvent(e);
-    }
-}
-
-void FMainWindow::closeEvent(QCloseEvent *event)
-{
-    writeSettings();
-    QMainWindow::closeEvent(event);
-}
-
-void FMainWindow::animationClose()
-{
-    QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
-    connect(animation, SIGNAL(finished()), this, SLOT(close()));
-    animation->setDuration(1500);
-    animation->setStartValue(1);
-    animation->setEndValue(0);
-    animation->start();
-}
-
 void FMainWindow::onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason)
 {
     switch (reason) {
-    case QSystemTrayIcon::Trigger:      //单击
-    case QSystemTrayIcon::DoubleClick:  //双击
-        if(isHidden()) {
-            show(); //恢复窗口显示
-            //一下两句缺一均不能有效将窗口置顶
+    case QSystemTrayIcon::Trigger:     // click
+    case QSystemTrayIcon::DoubleClick:
+        if (isHidden()) {
+            show();
+            flyWidget->hide();
+
+            // These two codes put the window to the top
             setWindowState(Qt::WindowActive);
             activateWindow();
         } else {
             hide();
+            flyWidget->show();
         }
         break;
     case QSystemTrayIcon::Context:
@@ -243,9 +248,4 @@ void FMainWindow::onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reas
     case QSystemTrayIcon::Unknown:
         break;
     }
-}
-
-FMainWindow::~FMainWindow()
-{
-    qDebug("mainwindow deinit");
 }
