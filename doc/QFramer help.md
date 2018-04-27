@@ -1,6 +1,6 @@
 QFramer help 
 ===============================================
-#####1.How to use QFramer in your project?
+##### 1.How to use QFramer in your project?
 + 1.**`New`** a Qt project in your Qt Creater IDE;
 + 2.**`Copy`** directory **【QFramer】** to your project folder, add `include(./QFramer/QFramer.pri)` in your **.pro** file
 
@@ -8,7 +8,7 @@ QFramer help
 
         #include "QFramer/fcenterwindow.h"
 
-#####2. How to use QFramer in your code?
+##### 2. How to use QFramer in your code?
 
 
 + 1. custom your mainwindow inherited by `FMainWindow`
