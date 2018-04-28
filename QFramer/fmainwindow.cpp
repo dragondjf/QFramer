@@ -67,6 +67,9 @@ void FMainWindow::initUI()
     pstatusbar->setFixedHeight(35);
     setStatusBar(pstatusbar);
 
+    centerWindow = new FCenterWindow(this);
+    setCentralWidget(centerWindow);
+
     trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
     trayicon->setObjectName(QString("trayicon"));
     trayicon->setToolTip(QString(qApp->applicationName()));
@@ -74,6 +77,10 @@ void FMainWindow::initUI()
 
     flyWidget = new FlyWidget(this);
     flyWidget->move(desktopWidgetRect.width() * 4 / 5, desktopWidgetRect.height() / 5);
+
+
+    themeMenu = new FThemeMenu(this);
+    titleBar->getSkinButton()->setMenu(themeMenu);
 }
 
 void FMainWindow::initConnect( )
@@ -120,6 +127,20 @@ FlyWidget* FMainWindow::getFlyWidget()
 {
     return flyWidget;
 }
+
+FCenterWindow *FMainWindow::getCenterWindow()
+{
+    return centerWindow;
+}
+
+void FMainWindow::setCenterWindow(FCenterWindow *center)
+{
+    if (center) {
+        setCentralWidget(center);
+        centerWindow = center;
+    }
+}
+
 QStatusBar* FMainWindow::getStatusBar()
 {
     return pstatusbar;
@@ -128,6 +149,11 @@ QStatusBar* FMainWindow::getStatusBar()
 QSystemTrayIcon* FMainWindow::getQSystemTrayIcon()
 {
     return trayicon;
+}
+
+FThemeMenu* FMainWindow::getThemeMenu()
+{
+    return themeMenu;
 }
 
 void FMainWindow::SetCursorStyle(enum_Direction direction)
@@ -149,6 +175,7 @@ void FMainWindow::SetCursorStyle(enum_Direction direction)
 
 void FMainWindow::animationClose()
 {
+    // TODO : not read
     QPropertyAnimation *animation = new QPropertyAnimation(this, "windowOpacity");
     connect(animation, SIGNAL(finished()), this, SLOT(close()));
     animation->setDuration(1500);
@@ -197,7 +224,10 @@ void FMainWindow::mouseDoubleClickEvent(QMouseEvent *event)
 
 void FMainWindow::keyPressEvent(QKeyEvent *event)
 {
-    if (event->key() == Qt::Key_Escape) {
+    if (event->key() == Qt::Key_Left || event->key() == Qt::Key_Right ||
+        event->key() == Qt::Key_F1 || event->key() == Qt::Key_F2) {
+        QApplication::sendEvent(centerWindow, event);
+    } else if (event->key() == Qt::Key_Escape) {
         titleBar->getCloseButton()->click();
     } else if (event->key() == Qt::Key_F11) {
         titleBar->getMaxButton()->click();

@@ -14,7 +14,8 @@ HEADERS += \
     QFramer/FTitleBar.h \
     QFramer/FToolButton.h \
     QFramer/futil.h \
-    QFramer/fwigglywidget.h
+    QFramer/fwigglywidget.h \
+    QFramer/FThemeMenu.h
 
 SOURCES += \
     QFramer/fbasedialog.cpp \
@@ -32,7 +33,8 @@ SOURCES += \
     QFramer/FTitleBar.cpp \
     QFramer/FToolButton.cpp \
     QFramer/futil.cpp \
-    QFramer/fwigglywidget.cpp
+    QFramer/fwigglywidget.cpp \
+    QFramer/FThemeMenu.cpp
 
 RESOURCES += \
     QFramer/QFramer.qrc

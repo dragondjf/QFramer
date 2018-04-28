@@ -26,14 +26,18 @@
 #include <QMainWindow>
 #include <QStatusBar>
 #include <QSystemTrayIcon>
+#include <QMenu>
 #include "FlyWidget.h"
 #include "FTitleBar.h"
+#include "FCenterWindow.h"
+#include "FThemeMenu.h"
 
 class QPoint;
 class QMouseEvent;
 class QKeyEvent;
 class QCloseEvent;
 
+// TODO : put it in the class
 enum enum_Direction{
     eLeft,
     eTop,
@@ -56,8 +60,10 @@ private:
 
     FTitleBar *titleBar;
     FlyWidget *flyWidget;
+    FCenterWindow *centerWindow;
     QStatusBar *pstatusbar;
     QSystemTrayIcon *trayicon;
+    FThemeMenu *themeMenu;
 
 protected:
     void mouseMoveEvent(QMouseEvent *event);
@@ -70,10 +76,16 @@ protected:
 public:
     FMainWindow(QWidget *parent = 0);
     ~FMainWindow();
+
     FTitleBar* getTitleBar();
     FlyWidget* getFlyWidget();
+    FCenterWindow* getCenterWindow();
+    void setCenterWindow(FCenterWindow* center);
     QStatusBar* getStatusBar();
     QSystemTrayIcon* getQSystemTrayIcon();
+    FThemeMenu *getThemeMenu();
+
+    // TODO : 设置上下左右以及右上、右下、左上、坐下的鼠标形状
     void SetCursorStyle(enum_Direction i);
     void animationClose();
 

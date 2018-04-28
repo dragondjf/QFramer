@@ -69,6 +69,27 @@ void FCenterWindow::initConnect()
     connect(navagationBar, SIGNAL(indexChanged(int)), this, SLOT(switchscreen(int)));
 }
 
+void FCenterWindow::keyPressEvent(QKeyEvent *event)
+{
+    if (event->key() == Qt::Key_Left) {
+        int count = navagationBar->count();
+        int index = (navagationBar->currentIndex() + count - 1) % count;
+        navagationBar->setCurrentIndex(index);
+    } else if(event->key() == Qt::Key_Right) {
+        int count = navagationBar->count();
+        int index = (navagationBar->currentIndex() + 1) % count;
+        navagationBar->setCurrentIndex(index);
+    } else if (event->key() == Qt::Key_F1) {
+        setAlignment(FNavgationBar::TopCenter);
+    } else if (event->key() == Qt::Key_F2) {
+        QTime time = QTime::currentTime();
+        qsrand(static_cast<uint>(time.msec() + time.second() * 1000));
+        setAlignment(static_cast<FNavgationBar::AlignmentDirection>(qrand() % 12));
+    } else {
+        QFrame::keyPressEvent(event);
+    }
+}
+
 void FCenterWindow::setAlignment(FNavgationBar::AlignmentDirection direction)
 {
     switch (direction) {

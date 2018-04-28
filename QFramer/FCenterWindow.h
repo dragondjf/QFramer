@@ -43,6 +43,9 @@ private:
     void initUI();
     void initConnect();
 
+protected:
+    void keyPressEvent(QKeyEvent *event);
+
 public:
     enum AnimationDirection {
         animationTop,
@@ -56,7 +59,6 @@ public:
         animationCenter
     };
 
-public:
     explicit FCenterWindow(QWidget *parent = 0);
 
     void setAlignment(FNavgationBar::AlignmentDirection direction);
