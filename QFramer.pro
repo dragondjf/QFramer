@@ -37,6 +37,9 @@ CONFIG(debug, debug|release) {
 
 # source
 SOURCES += \
+    main.cpp \
+    mainwindow/mainwindow.cpp \
+    mainwindow/settingmenu.cpp \
     dialogs/aboutdialog.cpp \
     dialogs/bgskinpopup.cpp \
     dialogs/settingdialog.cpp \
@@ -46,14 +49,8 @@ SOURCES += \
     functionpages/mathplot.cpp \
     functionpages/rightfloatwindow.cpp \
     functionpages/uielement.cpp \
-    mainwindow/centerwindow.cpp \
-    mainwindow/mainwindow.cpp \
-    mainwindow/settingmenu.cpp \
-    mainwindow/settingmenucontroller.cpp \
-    mainwindow/thememenu.cpp \
     qcustomplot/fcustomplot.cpp \
     qcustomplot/qcustomplot.cpp \
-    main.cpp \
     functionpages/waterwidget.cpp \
     functionpages/waterview.cpp \
     functionpages/animationgradientlabel.cpp \
@@ -61,6 +58,8 @@ SOURCES += \
 
 # header
 HEADERS  += \
+    mainwindow/mainwindow.h \
+    mainwindow/settingmenu.h \
     dialogs/aboutdialog.h \
     dialogs/bgskinpopup.h \
     dialogs/settingdialog.h \
@@ -70,11 +69,6 @@ HEADERS  += \
     functionpages/mathplot.h \
     functionpages/rightfloatwindow.h \
     functionpages/uielement.h \
-    mainwindow/centerwindow.h \
-    mainwindow/mainwindow.h \
-    mainwindow/settingmenu.h \
-    mainwindow/settingmenucontroller.h \
-    mainwindow/thememenu.h \
     qcustomplot/fcustomplot.h \
     qcustomplot/qcustomplot.h \
     functionpages/waterwidget.h \
@@ -84,7 +78,7 @@ HEADERS  += \
 
 # resources
 RESOURCES += \
-    QFramer.qrc
+    QFrame.qrc
 
 # QT4.8 applciation icon
 contains(QT_MAJOR_VERSION, 4){
