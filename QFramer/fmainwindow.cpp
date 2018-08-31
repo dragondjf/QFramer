@@ -61,16 +61,8 @@ void FMainWindow::initUI()
     setMaximumSize(desktopWidgetRect.size());
     readSettings();
 
-    titleBar = FTitleBar::getInstace();
-
-    pstatusbar = new QStatusBar;
-    pstatusbar->setFixedHeight(35);
-    setStatusBar(pstatusbar);
-
-    centerWindow = new FCenterWindow(this);
-    setCentralWidget(centerWindow);
-
-    trayicon = new QSystemTrayIcon(QIcon(QString(":/skin/images/QFramer.ico")), this);
+    trayicon = new QSystemTrayIcon(this);
+    trayicon->setIcon(QIcon(QString(":/skin/images/QFramer.ico")));
     trayicon->setObjectName(QString("trayicon"));
     trayicon->setToolTip(QString(qApp->applicationName()));
     trayicon->show();
@@ -78,9 +70,23 @@ void FMainWindow::initUI()
     flyWidget = new FlyWidget(this);
     flyWidget->move(desktopWidgetRect.width() * 4 / 5, desktopWidgetRect.height() / 5);
 
+    titleBar = FTitleBar::getInstace();
 
     themeMenu = new FThemeMenu(this);
     titleBar->getSkinButton()->setMenu(themeMenu);
+
+    settingMenu = new FSettingMenu(this);
+    titleBar->getSettingButton()->setMenu(settingMenu);
+    trayicon->setContextMenu(settingMenu);
+    flyWidget->setMenu(settingMenu);
+    connect(settingMenu->getActionMaps()[tr("Exit")], &QAction::triggered, this, &FMainWindow::animationClose);
+
+    pstatusbar = new QStatusBar;
+    pstatusbar->setFixedHeight(35);
+    setStatusBar(pstatusbar);
+
+    centerWindow = new FCenterWindow(this);
+    setCentralWidget(centerWindow);
 }
 
 void FMainWindow::initConnect( )
@@ -156,18 +162,28 @@ FThemeMenu* FMainWindow::getThemeMenu()
     return themeMenu;
 }
 
-void FMainWindow::SetCursorStyle(enum_Direction direction)
+FSettingMenu *FMainWindow::getSettingMenu()
+{
+    return settingMenu;
+}
+
+void FMainWindow::setSystemIcon(const QString &icon_path)
+{
+    trayicon->setIcon(QIcon(icon_path));
+}
+
+void FMainWindow::setCursorStyle(FMainWindow::CursorDirection direction)
 {
     switch (direction) {
-    case eTop:
-    case eBottom:
+    case Top:
+    case Bottom:
         setCursor(Qt::SizeVerCursor);
         break;
-    case eRight:
-    case eLeft:
+    case Right:
+    case Left:
         setCursor(Qt::SizeHorCursor);
         break;
-    case eNormal:
+    case Normal:
         setCursor(Qt::ArrowCursor);
         break;
     }

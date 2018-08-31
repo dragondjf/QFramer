@@ -67,11 +67,10 @@ void FNavgationBar::setCurrentIndex(int index)
 
 void FNavgationBar::addNavgationTile(const QString &tile, const QString &objectName)
 {
-    buttonTitles << tile;
     FCheckabelButton* button = new FCheckabelButton(tile);
-    buttons.append(button);
     button->setObjectName(objectName.isEmpty() ? tile : objectName);
     connect(button, SIGNAL(clicked()), this, SLOT(setButtonChecked()));
+    buttons.append(button);
 }
 
 void FNavgationBar::setAlignment(FNavgationBar::AlignmentDirection direction)

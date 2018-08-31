@@ -23,11 +23,8 @@
 #ifndef UIELEMENT_H
 #define UIELEMENT_H
 
+#include "QFramer/FTabWidget.h"
 #include <QProgressBar>
-#include "QFramer/ftabwidget.h"
-#include "waterwidget.h"
-#include "waterview.h"
-#include "animationgradientlabel.h"
 
 class UIElement : public FTabWidget
 {

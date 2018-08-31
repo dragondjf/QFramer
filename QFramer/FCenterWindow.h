@@ -62,7 +62,7 @@ public:
     explicit FCenterWindow(QWidget *parent = 0);
 
     void setAlignment(FNavgationBar::AlignmentDirection direction);
-    void addWidget(QWidget* widget, const QString &tile, const QString &obejctName = QString());
+    void addWidget(QWidget* widget, const QString &tile, const QString &objectName = QString());
 
     FNavgationBar* getNavgationBar();
 signals:

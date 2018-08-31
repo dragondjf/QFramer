@@ -24,36 +24,35 @@
 #define FTABWIDGET_H
 
 #include <QWidget>
+#include <QVBoxLayout>
 #include <QStackedLayout>
 #include "FCheckableButton.h"
-#include "QBoxLayout"
-
 
 class FTabWidget : public QWidget
 {
     Q_OBJECT
-
 private:
+    int m_index;
     QList<FCheckabelButton*> buttons;
-    QList<QString> buttonTitles;
 
-private:
-    void initUI();
-    void initConnect();
-
-public:
-    QWidget* tabTile;
-    QBoxLayout* mainLayout;
-    QStackedLayout* stackLayout;
     QVBoxLayout* tabLayout;
+    QStackedLayout* stackLayout;
+
+    void initUI();
+
 public:
     explicit FTabWidget(QWidget *parent = 0);
+
+    void addWidget(const QString &tile, const QString &objectName, QWidget *widget);
+
+    int  currentIndex();
+    void setCurrentIndex(int index);
     QList<FCheckabelButton*> getButtons();
 
 signals:
-        void indexChanged(int i);
+    void indexChanged(int i);
+
 public slots:
-    void addWidget(const QString &tile, const QString &objectName, QWidget *widget);
     void setButtonChecked();
 };
 

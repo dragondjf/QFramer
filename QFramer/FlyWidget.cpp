@@ -66,6 +66,13 @@ QMenu* FlyWidget::getMenu()
     return m_settingMenu;
 }
 
+void FlyWidget::setPixmap(const QString &pixmax_path)
+{
+    m_pixmap.load(pixmax_path);
+    resize(m_pixmap.size());
+    setMask(m_pixmap.mask());
+}
+
 void FlyWidget::mouseMoveEvent(QMouseEvent *event)
 {
     if (event->buttons() & Qt::LeftButton) {

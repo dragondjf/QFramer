@@ -29,22 +29,14 @@
 #include <QMenu>
 #include "FlyWidget.h"
 #include "FTitleBar.h"
-#include "FCenterWindow.h"
 #include "FThemeMenu.h"
+#include "FSettingMenu.h"
+#include "FCenterWindow.h"
 
 class QPoint;
 class QMouseEvent;
 class QKeyEvent;
 class QCloseEvent;
-
-// TODO : put it in the class
-enum enum_Direction{
-    eLeft,
-    eTop,
-    eRight,
-    eBottom,
-    eNormal
-};
 
 class FMainWindow : public QMainWindow
 {
@@ -58,12 +50,13 @@ private:
     void readSettings();
     void writeSettings();
 
-    FTitleBar *titleBar;
-    FlyWidget *flyWidget;
+    FlyWidget  *flyWidget;
+    FTitleBar  *titleBar;
+    FThemeMenu *themeMenu;
+    FSettingMenu  *settingMenu;
     FCenterWindow *centerWindow;
     QStatusBar *pstatusbar;
     QSystemTrayIcon *trayicon;
-    FThemeMenu *themeMenu;
 
 protected:
     void mouseMoveEvent(QMouseEvent *event);
@@ -79,19 +72,28 @@ public:
 
     FTitleBar* getTitleBar();
     FlyWidget* getFlyWidget();
+    FThemeMenu *getThemeMenu();
+    FSettingMenu  *getSettingMenu();
     FCenterWindow* getCenterWindow();
     void setCenterWindow(FCenterWindow* center);
     QStatusBar* getStatusBar();
     QSystemTrayIcon* getQSystemTrayIcon();
-    FThemeMenu *getThemeMenu();
 
-    // TODO : 设置上下左右以及右上、右下、左上、坐下的鼠标形状
-    void SetCursorStyle(enum_Direction i);
-    void animationClose();
+    void setSystemIcon(const QString &icon_path);
+    // 设置上下左右以及右上、右下、左上、坐下的鼠标形状
+    enum CursorDirection {
+        Left,
+        Top,
+        Right,
+        Bottom,
+        Normal
+    };
+    void setCursorStyle(CursorDirection direction);
 
 signals:
     void Hidden();
 public slots:
+    void animationClose();
     void swithMaxNormal();
     void showFlyWidget();
     void onSystemTrayIconClicked(QSystemTrayIcon::ActivationReason reason);

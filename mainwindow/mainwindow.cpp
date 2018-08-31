@@ -52,8 +52,8 @@ void MainWindow::initUI()
 {
     uiElements = new UIElement;
     mathPlot = new MathPlot;
-    aboutPage = new AboutPage;
     qssBuilder = new QssBuilder;
+    aboutPage = new AboutPage;
 
     getCenterWindow()->addWidget(uiElements, "Home");
     getCenterWindow()->addWidget(mathPlot, "MathPlot");

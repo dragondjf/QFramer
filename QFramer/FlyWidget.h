@@ -58,6 +58,7 @@ public:
 
     void setMenu(QMenu* menu);
     QMenu* getMenu();
+    void setPixmap(const QString &pixmax_path);
 
 signals:
 

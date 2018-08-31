@@ -132,11 +132,11 @@ void FCenterWindow::setAlignment(FNavgationBar::AlignmentDirection direction)
     }
 }
 
-void FCenterWindow::addWidget(QWidget *widget, const QString &tile, const QString &obejctName)
+void FCenterWindow::addWidget(QWidget *widget, const QString &tile, const QString &objectName)
 {
     if (!widget) return;
-    navagationBar->addNavgationTile(tile, obejctName);
-    widget->setObjectName(obejctName.isEmpty() ? tile : obejctName);
+    navagationBar->addNavgationTile(tile, objectName);
+    widget->setObjectName(objectName.isEmpty() ? tile : objectName);
     stackWidget->addWidget(widget);
     setAlignment(FNavgationBar::TopCenter);
 }

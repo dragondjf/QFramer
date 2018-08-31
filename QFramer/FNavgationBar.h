@@ -34,7 +34,6 @@ class FNavgationBar : public QFrame
     Q_OBJECT
 private:
     int m_index;
-    QList<QString> buttonTitles;
     QList<FCheckabelButton*> buttons;
 
     void initData();
@@ -42,7 +41,7 @@ private:
     void initUI();
 
 public:
-    enum AlignmentDirection{
+    enum AlignmentDirection {
         TopLeft,
         TopCenter,
         TopRight,

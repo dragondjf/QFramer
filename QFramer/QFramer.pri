@@ -8,9 +8,10 @@ HEADERS += \
     QFramer/fmovablewidget.h \
     QFramer/FNavgationBar.h \
     QFramer/fnofocusdelegate.h \
-    QFramer/fshadowlabel.h \
+    QFramer/FSettingMenu.h \
+    QFramer/FShadowLabel.h \
     QFramer/fstatebutton.h \
-    QFramer/ftabwidget.h \
+    QFramer/FTabWidget.h \
     QFramer/FTitleBar.h \
     QFramer/FToolButton.h \
     QFramer/futil.h \
@@ -27,9 +28,10 @@ SOURCES += \
     QFramer/fmovablewidget.cpp \
     QFramer/FNavgationBar.cpp \
     QFramer/fnofocusdelegate.cpp \
-    QFramer/fshadowlabel.cpp \
+    QFramer/FSettingMenu.cpp \
+    QFramer/FShadowLabel.cpp \
     QFramer/fstatebutton.cpp \
-    QFramer/ftabwidget.cpp \
+    QFramer/FTabWidget.cpp \
     QFramer/FTitleBar.cpp \
     QFramer/FToolButton.cpp \
     QFramer/futil.cpp \
